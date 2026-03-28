@@ -1,0 +1,64 @@
+---
+---
+
+<nav
+  id="main-nav"
+  class="fixed top-0 w-full z-50 transition-all duration-300 py-5 px-6 md:px-12"
+>
+  <div class="max-w-page mx-auto flex justify-between items-center">
+    <a href="#" class="font-serif font-black text-xl text-forest tracking-tight">
+      Dan Healing Arts
+    </a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="#methode" class="text-forest font-medium hover:text-sage transition-colors">Die Methode</a>
+      <a href="#module" class="text-forest font-medium hover:text-sage transition-colors">Module</a>
+      <a href="#ueber" class="text-forest font-medium hover:text-sage transition-colors">Über Daniel</a>
+      <a href="#kontakt" class="inline-flex items-center px-6 py-2.5 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors">
+        Anmelden
+      </a>
+    </div>
+    <!-- Mobile menu button -->
+    <button id="menu-btn" class="md:hidden text-forest p-2" aria-label="Menü öffnen">
+      <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-canvas border-t border-stone/20 px-6 py-6 flex-col gap-5">
+    <a href="#methode" class="text-forest font-medium">Die Methode</a>
+    <a href="#module" class="text-forest font-medium">Module</a>
+    <a href="#ueber" class="text-forest font-medium">Über Daniel</a>
+    <a href="#kontakt" class="inline-flex justify-center px-6 py-3 bg-forest text-white rounded-btn font-medium">
+      Anmelden
+    </a>
+  </div>
+</nav>
+
+<script>
+  // Scroll: transparent → solid
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav?.classList.add('bg-canvas/95', 'backdrop-blur-md', 'border-b', 'border-stone/20', 'shadow-sm');
+    } else {
+      nav?.classList.remove('bg-canvas/95', 'backdrop-blur-md', 'border-b', 'border-stone/20', 'shadow-sm');
+    }
+  });
+
+  // Mobile menu toggle
+  document.getElementById('menu-btn')?.addEventListener('click', () => {
+    document.getElementById('mobile-menu')?.classList.toggle('hidden');
+    document.getElementById('mobile-menu')?.classList.toggle('flex');
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('mobile-menu')?.classList.add('hidden');
+      document.getElementById('mobile-menu')?.classList.remove('flex');
+    });
+  });
+</script>
