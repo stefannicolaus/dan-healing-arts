@@ -5,7 +5,14 @@ const module = [
     titel: 'Rücken & Nacken',
     motto: 'Vergangenes loslassen, um voran zu schreiten',
     datum: '18.–19. April 2026',
-    beschreibung: 'Präzise Faszienarbeit kombiniert mit somatischer Präsenz. Hören, Fühlen und die Sprache des Gewebes verstehen. Berührung, die nicht zwingt, sondern lauscht und antwortet.',
+    beschreibung: 'Der Rücken als zentrales Trage- und Wahrnehmungsorgan — Ort, an dem Aufrichtung, Schutz und Loslassen zusammenwirken. Mit präsenter Berührung alte Muster lösen und Raum für Leichtigkeit schaffen.',
+    schwerpunkte: [
+      'Grundlagen der somatischen Tiefenmassage',
+      'Kontaktqualität & Druckwahrnehmung',
+      'Arbeit entlang der Wirbelsäule',
+      'Integration von Rücken, Schultern und Nacken',
+      'Körpermechanik und Eigenwahrnehmung',
+    ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-1-ruecken-nacken/',
   },
   {
@@ -13,7 +20,14 @@ const module = [
     titel: 'Bauch, Becken & Beine',
     motto: 'In der Erde verwurzelt ins Gleichgewicht finden',
     datum: '13.–14. Juni 2026',
-    beschreibung: 'Erdung und strukturelle Integration. Arbeit an Bauch, Becken und Beinen — Faszientechniken für Psoas und die Verbindung zwischen den Körperzentren.',
+    beschreibung: 'Basis und Verwurzelung — die Körperregionen, in denen sich Stabilität, Erdung und Lebenskraft verankern. Arbeit mit Psoas, Iliacus und der Becken umgebenden Muskulatur.',
+    schwerpunkte: [
+      'Arbeit mit Beinen, Becken, Hüften (Psoas) und Bauchraum',
+      'Faszienketten der unteren Körperhälfte',
+      'Verbindung von Erdung und Aufrichtung',
+      'Emotionale Regulation durch körperliche Präsenz',
+      'Zentrierung und Stabilität im Geben',
+    ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-2-bauch-becken-beine/',
   },
   {
@@ -21,7 +35,14 @@ const module = [
     titel: 'Brustkorb & Herzraum',
     motto: 'Dem Herzen Raum geben',
     datum: '22.–23. August 2026',
-    beschreibung: 'Raum für das Herz schaffen — Einschränkungen im Brustbereich lösen und den Atem frei fließen lassen durch sanfte, aufmerksame Berührung.',
+    beschreibung: 'Der Raum des Herzens, wo Atem, Gefühl und Ausdruck aufeinandertreffen. Einschränkungen im Brustkorb lösen, den Atem frei fließen lassen — Berührung, die zu Beziehung wird.',
+    schwerpunkte: [
+      'Arbeit mit Brustkorb, Schultern und Armen',
+      'Öffnung und Mobilisierung des Atemraums',
+      'Emotionale Präsenz und Mitgefühl in der Berührung',
+      'Ausdruckskraft und Verbindung über die Arme',
+      'Berührung als Beziehung',
+    ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-3-brustkorb-schulterguertel-arme-herzraum/',
   },
   {
@@ -29,7 +50,14 @@ const module = [
     titel: 'Gesicht, Kopf & Nacken',
     motto: 'Im Raum der Stille Klarheit finden',
     datum: '17.–18. Oktober 2026',
-    beschreibung: 'Feine, sensible Strukturen, in denen sich Wahrnehmung und Identität konzentrieren. Abschlussmodul mit kraniosacralen und myofaszialen Integrationstechniken.',
+    beschreibung: 'Feine, sensible Strukturen, in denen sich Wahrnehmung und Identität verdichten. Arbeit an Kiefer, Schädel und craniosacralen Faszien — die Integration des gesamten Lernwegs.',
+    schwerpunkte: [
+      'Arbeit mit Gesicht, Kiefer, Kopf und Nacken',
+      'Craniosacrale und myofasziale Integration',
+      'Verbindung zwischen Nervensystem und Gewebe',
+      'Feine Wahrnehmung & subtile Präsenz',
+      'Abschluss und Integration der Ausbildungsreihe',
+    ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-4-gesicht-kopf-nacken-vertiefung/',
   },
 ];
@@ -61,9 +89,17 @@ const module = [
             <p class="font-sans text-stone/70 text-sm italic mb-5">
               {m.motto}
             </p>
-            <p class="font-sans text-stone text-base leading-relaxed mb-6">
+            <p class="font-sans text-stone text-base leading-relaxed mb-5">
               {m.beschreibung}
             </p>
+            <ul class="space-y-1 mb-6">
+              {m.schwerpunkte.map((punkt) => (
+                <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
+                  <span class="text-sage mt-0.5 shrink-0">—</span>
+                  {punkt}
+                </li>
+              ))}
+            </ul>
             <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
               <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
               <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
@@ -96,9 +132,17 @@ const module = [
             <p class="font-sans text-stone/70 text-sm italic mb-5">
               {m.motto}
             </p>
-            <p class="font-sans text-stone text-base leading-relaxed mb-6">
+            <p class="font-sans text-stone text-base leading-relaxed mb-5">
               {m.beschreibung}
             </p>
+            <ul class="space-y-1 mb-6">
+              {m.schwerpunkte.map((punkt) => (
+                <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
+                  <span class="text-sage mt-0.5 shrink-0">—</span>
+                  {punkt}
+                </li>
+              ))}
+            </ul>
             <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
               <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
               <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
