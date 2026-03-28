@@ -1,0 +1,42 @@
+---
+---
+
+<div class="marquee-wrapper overflow-hidden bg-forest py-4 select-none">
+  <div class="marquee-track flex items-center gap-0 whitespace-nowrap">
+    {[1, 2].map(() => (
+      <div class="marquee-content flex items-center gap-0 shrink-0">
+        {[
+          'Somatische Körperarbeit',
+          'Faszien Release',
+          'Präzise Berührung',
+          'Tiefe Präsenz',
+          'Loslassen',
+          'Verbindung',
+          'Körperweisheit',
+          'Innere Stille',
+        ].map((word) => (
+          <span class="inline-flex items-center gap-6 px-6">
+            <span class="font-serif text-white/90 text-sm md:text-base tracking-wide">{word}</span>
+            <span class="text-sage/60 text-lg leading-none">◆</span>
+          </span>
+        ))}
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .marquee-track {
+    animation: marquee 30s linear infinite;
+    width: max-content;
+  }
+
+  .marquee-wrapper:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
