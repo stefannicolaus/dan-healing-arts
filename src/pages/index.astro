@@ -1,8 +1,26 @@
 ---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Methode from '../components/Methode.astro';
+import FuerWen from '../components/FuerWen.astro';
+import Module from '../components/Module.astro';
+import Testimonials from '../components/Testimonials.astro';
+import UeberDaniel from '../components/UeberDaniel.astro';
+import Kontakt from '../components/Kontakt.astro';
+import Footer from '../components/Footer.astro';
 ---
-<html lang="de">
-  <head><meta charset="utf-8" /><title>Dan Healing Arts</title></head>
-  <body>
-    <h1>Dan Healing Arts — coming soon</h1>
-  </body>
-</html>
+
+<Layout>
+  <Nav />
+  <main>
+    <Hero />
+    <Methode />
+    <FuerWen />
+    <Module />
+    <Testimonials />
+    <UeberDaniel />
+    <Kontakt />
+  </main>
+  <Footer />
+</Layout>
