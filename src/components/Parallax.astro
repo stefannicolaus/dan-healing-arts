@@ -1,0 +1,24 @@
+---
+const { src, height = "45vh" } = Astro.props;
+---
+
+<div
+  class="parallax-section w-full"
+  style={`background-image: url('${src}'); height: ${height};`}
+></div>
+
+<style>
+  .parallax-section {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* Fallback for mobile (fixed attachment doesn't work well on iOS) */
+  @media (max-width: 768px) {
+    .parallax-section {
+      background-attachment: scroll;
+    }
+  }
+</style>

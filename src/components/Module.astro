@@ -14,6 +14,8 @@ const module = [
       'Körpermechanik und Eigenwahrnehmung',
     ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-1-ruecken-nacken/',
+    bild: '/images/modul-1-ruecken-nacken.jpg',
+    bildAlt: 'Hände bei der Faszienarbeit entlang der Wirbelsäule',
   },
   {
     nr: 'Modul 2',
@@ -29,6 +31,8 @@ const module = [
       'Zentrierung und Stabilität im Geben',
     ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-2-bauch-becken-beine/',
+    bild: '/images/modul-2-bauch-becken-beine.jpg',
+    bildAlt: 'Sanfte Hände im Bereich Bauch und Becken',
   },
   {
     nr: 'Modul 3',
@@ -44,6 +48,8 @@ const module = [
       'Berührung als Beziehung',
     ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-3-brustkorb-schulterguertel-arme-herzraum/',
+    bild: '/images/modul-3-herzraum.jpg',
+    bildAlt: 'Hände auf dem Herzraum — sanfte Brustkorb-Arbeit',
   },
   {
     nr: 'Modul 4',
@@ -59,6 +65,8 @@ const module = [
       'Abschluss und Integration der Ausbildungsreihe',
     ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-4-gesicht-kopf-nacken-vertiefung/',
+    bild: '/images/modul-4-gesicht-kopf.jpg',
+    bildAlt: 'Sanfte Hände am Kopf — craniosacrale Arbeit',
   },
 ];
 ---
@@ -78,42 +86,51 @@ const module = [
     <!-- Zeile 1: 60% + 40% -->
     <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 mb-6">
       {module.slice(0, 2).map((m) => (
-        <div class="bg-canvas p-8 md:p-10 rounded-card flex flex-col justify-between min-h-[380px] border border-stone/10 hover:border-stone/30 hover:shadow-md transition-all duration-200">
-          <div>
-            <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-3 block">
-              {m.nr}
-            </span>
-            <h4 class="font-serif font-bold text-forest text-2xl md:text-3xl mb-2">
-              {m.titel}
-            </h4>
-            <p class="font-sans text-stone/70 text-sm italic mb-5">
-              {m.motto}
-            </p>
-            <p class="font-sans text-stone text-base leading-relaxed mb-5">
-              {m.beschreibung}
-            </p>
-            <ul class="space-y-1 mb-6">
-              {m.schwerpunkte.map((punkt) => (
-                <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
-                  <span class="text-sage mt-0.5 shrink-0">—</span>
-                  {punkt}
-                </li>
-              ))}
-            </ul>
-            <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
-              <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
-              <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
-              <span class="px-3 py-1.5 bg-surface-lo rounded-full">Jupiterhaus Zürich</span>
-            </div>
+        <div class="bg-canvas rounded-card overflow-hidden flex flex-col border border-stone/10 hover:border-stone/30 hover:shadow-md transition-all duration-200">
+          <div class="h-52 overflow-hidden">
+            <img
+              src={m.bild}
+              alt={m.bildAlt}
+              class="w-full h-full object-cover object-center"
+            />
           </div>
-          <a
-            href={m.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 self-start inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
-          >
-            Anmelden →
-          </a>
+          <div class="p-8 md:p-10 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-3 block">
+                {m.nr}
+              </span>
+              <h4 class="font-serif font-bold text-forest text-2xl md:text-3xl mb-2">
+                {m.titel}
+              </h4>
+              <p class="font-sans text-stone/70 text-sm italic mb-5">
+                {m.motto}
+              </p>
+              <p class="font-sans text-stone text-base leading-relaxed mb-5">
+                {m.beschreibung}
+              </p>
+              <ul class="space-y-1 mb-6">
+                {m.schwerpunkte.map((punkt) => (
+                  <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
+                    <span class="text-sage mt-0.5 shrink-0">—</span>
+                    {punkt}
+                  </li>
+                ))}
+              </ul>
+              <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
+                <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
+                <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
+                <span class="px-3 py-1.5 bg-surface-lo rounded-full">Jupiterhaus Zürich</span>
+              </div>
+            </div>
+            <a
+              href={m.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-8 self-start inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
+            >
+              Anmelden →
+            </a>
+          </div>
         </div>
       ))}
     </div>
@@ -121,42 +138,51 @@ const module = [
     <!-- Zeile 2: 40% + 60% -->
     <div class="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-6">
       {module.slice(2, 4).map((m) => (
-        <div class="bg-canvas p-8 md:p-10 rounded-card flex flex-col justify-between min-h-[380px] border border-stone/10 hover:border-stone/30 hover:shadow-md transition-all duration-200">
-          <div>
-            <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-3 block">
-              {m.nr}
-            </span>
-            <h4 class="font-serif font-bold text-forest text-2xl md:text-3xl mb-2">
-              {m.titel}
-            </h4>
-            <p class="font-sans text-stone/70 text-sm italic mb-5">
-              {m.motto}
-            </p>
-            <p class="font-sans text-stone text-base leading-relaxed mb-5">
-              {m.beschreibung}
-            </p>
-            <ul class="space-y-1 mb-6">
-              {m.schwerpunkte.map((punkt) => (
-                <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
-                  <span class="text-sage mt-0.5 shrink-0">—</span>
-                  {punkt}
-                </li>
-              ))}
-            </ul>
-            <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
-              <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
-              <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
-              <span class="px-3 py-1.5 bg-surface-lo rounded-full">Jupiterhaus Zürich</span>
-            </div>
+        <div class="bg-canvas rounded-card overflow-hidden flex flex-col border border-stone/10 hover:border-stone/30 hover:shadow-md transition-all duration-200">
+          <div class="h-52 overflow-hidden">
+            <img
+              src={m.bild}
+              alt={m.bildAlt}
+              class="w-full h-full object-cover object-center"
+            />
           </div>
-          <a
-            href={m.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="mt-8 self-start inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
-          >
-            Anmelden →
-          </a>
+          <div class="p-8 md:p-10 flex flex-col flex-1 justify-between">
+            <div>
+              <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-3 block">
+                {m.nr}
+              </span>
+              <h4 class="font-serif font-bold text-forest text-2xl md:text-3xl mb-2">
+                {m.titel}
+              </h4>
+              <p class="font-sans text-stone/70 text-sm italic mb-5">
+                {m.motto}
+              </p>
+              <p class="font-sans text-stone text-base leading-relaxed mb-5">
+                {m.beschreibung}
+              </p>
+              <ul class="space-y-1 mb-6">
+                {m.schwerpunkte.map((punkt) => (
+                  <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
+                    <span class="text-sage mt-0.5 shrink-0">—</span>
+                    {punkt}
+                  </li>
+                ))}
+              </ul>
+              <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
+                <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
+                <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
+                <span class="px-3 py-1.5 bg-surface-lo rounded-full">Jupiterhaus Zürich</span>
+              </div>
+            </div>
+            <a
+              href={m.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-8 self-start inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
+            >
+              Anmelden →
+            </a>
+          </div>
         </div>
       ))}
     </div>
