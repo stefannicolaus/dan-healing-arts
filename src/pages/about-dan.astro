@@ -5,6 +5,7 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import Parallax from '../components/Parallax.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const paigeUSA = allTestimonials.find(t => t.id === 'paige-usa')?.data;
@@ -31,12 +32,18 @@ const stats = [
       <div class="max-w-page mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          <!-- Portrait -->
-          <div class="order-2 md:order-1">
+          <!-- Portraits -->
+          <div class="order-2 md:order-1 space-y-6">
             <img
               src="/images/daniel-portrait.jpg"
               alt="Daniel Wendt — Dan Healing Arts"
               class="w-full rounded-card object-cover"
+            />
+            <img
+              src="/images/general/daniel-portrait-2.jpg"
+              alt="Daniel Wendt in session — Dan Healing Arts"
+              class="w-full rounded-card object-cover"
+              loading="lazy"
             />
           </div>
 
@@ -93,6 +100,9 @@ const stats = [
         </div>
       </div>
     </section>
+
+    <!-- ===== PARALLAX — after bio ===== -->
+    <Parallax src="/images/general/dan-outside-38.jpg" height="45vh" />
 
     <!-- ===== TESTIMONIAL: PAIGE, USA ===== -->
     {paigeUSA && (

@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TrainingCard from '../components/TrainingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import Parallax from '../components/Parallax.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const elyUK = allTestimonials.find(t => t.id === 'ely-uk')?.data;
@@ -124,6 +125,9 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
       </div>
     </section>
 
+    <!-- ===== PARALLAX — after Training Pathway ===== -->
+    <Parallax src="/images/general/dan-outside-38.jpg" height="50vh" />
+
     <!-- ===== 4. VIDEO INSIGHTS ===== -->
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
@@ -222,6 +226,9 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
         photo={janeUSA.photo}
       />
     )}
+
+    <!-- ===== PARALLAX — before About Teaser ===== -->
+    <Parallax src="/images/general/training-flyer-2.jpg" height="40vh" />
 
     <!-- ===== 7. ABOUT TEASER ===== -->
     <section class="py-24 px-6 md:px-12 bg-canvas">

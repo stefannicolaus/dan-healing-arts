@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import Parallax from '../components/Parallax.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
@@ -25,10 +27,15 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <!-- ===== 1. HERO ===== -->
     <section class="relative">
-      <!-- No image yet — using warm gradient as placeholder -->
-      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden bg-gradient-to-b from-stone/20 to-canvas flex items-center justify-center">
-        <div class="relative z-10 flex items-center justify-center w-full h-full">
-          <span class="font-sans text-forest text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider opacity-30">
+      <!-- Hero image -->
+      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+        <img
+          src="/images/spain/hero.jpg"
+          alt="Hidden Paradise retreat center in the Alpujarra mountains of southern Spain"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+          <span class="font-sans text-white text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider opacity-60">
             SPAIN
           </span>
         </div>
@@ -60,7 +67,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <!-- ===== 2. DEEPENING YOUR PRACTICE ===== -->
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection>
+        <TextImageSection image="/images/spain/dsc2233.jpg" imageAlt="Practitioners in deep bodywork training at Hidden Paradise, Spain">
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
             Deepening Your Practice
           </h2>
@@ -87,10 +94,13 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       </div>
     </section>
 
+    <!-- ===== PARALLAX between sections ===== -->
+    <Parallax src="/images/spain/hidden-paradise-62.jpg" height="45vh" />
+
     <!-- ===== 3. THE TRAINING EXPERIENCE ===== -->
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
-        <TextImageSection reversed>
+        <TextImageSection image="/images/spain/dsc2128.jpg" imageAlt="Training experience at Hidden Paradise — group bodywork practice in Spain" reversed>
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
             The Training Experience
           </h2>
@@ -182,12 +192,27 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       />
     )}
 
+    <!-- ===== PARALLAX before venue ===== -->
+    <Parallax src="/images/spain/hidden-paradise-36.jpg" height="45vh" />
+
     <!-- ===== 8. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
           The Space That Holds the Work
         </h2>
+
+        <div class="mb-12">
+          <PhotoGallery
+            images={[
+              { src: "/images/spain/hidden-paradise-62.jpg", alt: "Hidden Paradise retreat center view from above" },
+              { src: "/images/spain/dsc08074.jpg", alt: "Practice space at Hidden Paradise Spain" },
+              { src: "/images/spain/dsc08001.jpg", alt: "Natural surroundings at Hidden Paradise retreat" },
+              { src: "/images/spain/dsc2128.jpg", alt: "Mountain landscape at Hidden Paradise, Alpujarra Spain" },
+            ]}
+            caption="Hidden Paradise — Alpujarra mountains, southern Spain"
+          />
+        </div>
 
         <div class="max-w-3xl font-sans text-stone leading-relaxed space-y-4">
           <p>

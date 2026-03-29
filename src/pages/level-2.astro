@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TrainingCard from '../components/TrainingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import Parallax from '../components/Parallax.astro';
+import TextImageSection from '../components/TextImageSection.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const jeremyUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
@@ -33,31 +35,33 @@ const elements = [
 
     <!-- ===== 1. HERO / INTRO ===== -->
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Level 2 Training</p>
-        <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-          An Evolution of Sensitivity
-        </h1>
-        <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
-          The natural next step for all who have completed the foundation.
-        </p>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            Our Level 2 training is the natural next step for all who have completed the foundation. Here we deepen our capacity to feel the tissue's subtle intelligence, the quiet pulses of emotion, and the energetic currents that weave through the body.
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/level2/hero.jpg" imageAlt="Advanced Level 2 bodywork training — practitioners deepening their sensitivity">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Level 2 Training</p>
+          <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
+            An Evolution of Sensitivity
+          </h1>
+          <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
+            The natural next step for all who have completed the foundation.
           </p>
-          <p>
-            In addition to learning new massage sequences and release techniques, you'll discover how to enhance your sessions through trance induction, and intonation — tools that allow the body to surrender beyond the thinking mind.
-          </p>
-          <p>
-            We also explore how posture, movement, and breath reflect the inner landscape of a person — and how these patterns can either restrict or support emotional flow.
-          </p>
-          <p>
-            You'll learn to recognize these expressions in your clients and to meet them skillfully, integrating physical, emotional, and energetic dimensions into one coherent language of touch.
-          </p>
-          <p>
-            This is where bodywork becomes art — when presence, sound, and movement begin to communicate more than technique ever could.
-          </p>
-        </div>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Our Level 2 training is the natural next step for all who have completed the foundation. Here we deepen our capacity to feel the tissue's subtle intelligence, the quiet pulses of emotion, and the energetic currents that weave through the body.
+            </p>
+            <p>
+              In addition to learning new massage sequences and release techniques, you'll discover how to enhance your sessions through trance induction, and intonation — tools that allow the body to surrender beyond the thinking mind.
+            </p>
+            <p>
+              We also explore how posture, movement, and breath reflect the inner landscape of a person — and how these patterns can either restrict or support emotional flow.
+            </p>
+            <p>
+              You'll learn to recognize these expressions in your clients and to meet them skillfully, integrating physical, emotional, and energetic dimensions into one coherent language of touch.
+            </p>
+            <p>
+              This is where bodywork becomes art — when presence, sound, and movement begin to communicate more than technique ever could.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
 
@@ -70,6 +74,9 @@ const elements = [
         photo={jeremyUSA.photo}
       />
     )}
+
+    <!-- ===== PARALLAX — between sections ===== -->
+    <Parallax src="/images/level2/massage-15.jpg" height="45vh" />
 
     <!-- ===== 2. THE LANGUAGE OF ELEMENTS ===== -->
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
@@ -121,25 +128,30 @@ const elements = [
       />
     )}
 
+    <!-- ===== PARALLAX — between sections ===== -->
+    <Parallax src="/images/level2/dsc08054.jpg" height="45vh" />
+
     <!-- ===== 3. EMBODIMENT IN PRACTICE ===== -->
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          Embodiment in Practice
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
-          <p>
-            Throughout the retreat, the five elements and their emotional resonances will color our movement, meditation, and partner work. They serve as mirrors, not methods — ways of refining perception and deepening your somatic vocabulary.
-          </p>
-          <p>
-            We explore how the qualities of the elements express through touch, sound, and rhythm: the grounded steadiness of earth, the fluid yielding of water, the clear direction of fire, the expansive breath of air, and the spacious stillness of space.
-          </p>
-          <p>
-            By journey's end, you will have learned not only new, advanced techniques, but a subtler form of listening — how to meet another person's body from the inside out, with presence that includes the whole spectrum of feeling.
-          </p>
-        </div>
+        <TextImageSection image="/images/level2/massage-35.png" imageAlt="Practitioners working with emotional body dimensions in advanced bodywork training" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            Embodiment in Practice
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+            <p>
+              Throughout the retreat, the five elements and their emotional resonances will color our movement, meditation, and partner work. They serve as mirrors, not methods — ways of refining perception and deepening your somatic vocabulary.
+            </p>
+            <p>
+              We explore how the qualities of the elements express through touch, sound, and rhythm: the grounded steadiness of earth, the fluid yielding of water, the clear direction of fire, the expansive breath of air, and the spacious stillness of space.
+            </p>
+            <p>
+              By journey's end, you will have learned not only new, advanced techniques, but a subtler form of listening — how to meet another person's body from the inside out, with presence that includes the whole spectrum of feeling.
+            </p>
+          </div>
+        </TextImageSection>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
           <div class="bg-surface-lo rounded-card p-8">
             <h3 class="font-serif text-xl text-text-main mb-3">Prerequisites</h3>
             <p class="font-sans text-stone leading-relaxed">

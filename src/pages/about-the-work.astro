@@ -5,6 +5,8 @@ import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import Parallax from '../components/Parallax.astro';
+import TextImageSection from '../components/TextImageSection.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const ilinca = allTestimonials.find(t => t.id === 'erika-lithuania')?.data;
@@ -24,27 +26,29 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <!-- ===== 1. HERO ===== -->
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-          Myofascial Somatic Liberation
-        </h1>
-        <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
-          A holistic approach to deep, slow and nuanced bodywork.
-        </p>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            Myofascial Somatic Liberation is a holistic approach to deep, slow and nuanced bodywork — where presence, sensitivity and depth open space for profound emotional release and inner transformation.
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/about/work-hero.jpg" imageAlt="Daniel Wendt practicing myofascial somatic bodywork">
+          <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
+            Myofascial Somatic Liberation
+          </h1>
+          <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
+            A holistic approach to deep, slow and nuanced bodywork.
           </p>
-          <p>
-            At its core, this work is a unique and well-balanced blend of myofascial release, deep tissue massage, and energy work. It brings playful ease into therapeutic depth, grounding mystical insight in the physical tissue through a bridge of modern anatomy.
-          </p>
-          <p>
-            It is a method designed to relieve chronic tension, pain, and deeply held emotional patterns — all while honoring the natural rhythm of your nervous system and supporting your body's primal needs.
-          </p>
-          <p>
-            This naturally leads us to two essential elements for applying deep touch: slowness and simplicity.
-          </p>
-        </div>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Myofascial Somatic Liberation is a holistic approach to deep, slow and nuanced bodywork — where presence, sensitivity and depth open space for profound emotional release and inner transformation.
+            </p>
+            <p>
+              At its core, this work is a unique and well-balanced blend of myofascial release, deep tissue massage, and energy work. It brings playful ease into therapeutic depth, grounding mystical insight in the physical tissue through a bridge of modern anatomy.
+            </p>
+            <p>
+              It is a method designed to relieve chronic tension, pain, and deeply held emotional patterns — all while honoring the natural rhythm of your nervous system and supporting your body's primal needs.
+            </p>
+            <p>
+              This naturally leads us to two essential elements for applying deep touch: slowness and simplicity.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
 
@@ -60,21 +64,23 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <!-- ===== 2. THE POWER OF SLOWNESS ===== -->
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          The Power of Slowness
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            Slowness is the most powerful tool for guiding the body out of protective patterns and into a parasympathetic state, where rest, regulation, and a deep sense of safety emerge. It invites trust, not only between giver and receiver, but also within the body itself. From that trust, the release of held emotion and stagnant energy unfolds naturally.
-          </p>
-          <p>
-            At the same time, the body's connective tissue — the fascia — requires time to feel, respond, and reorganize. It opens when it's met with presence. Through slowing down, we give the system space to adapt and unwind. Muscular tension and subtle patterns of resistance begin to soften — not because we push through them, but because we listen.
-          </p>
-          <p>
-            By allowing the body to set the pace, we are guided into deeper layers that would otherwise remain hidden, creating the conditions for real transformation to occur.
-          </p>
-        </div>
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/about/massage-25.jpg" imageAlt="Deep slow bodywork session demonstrating the power of presence and slowness" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            The Power of Slowness
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Slowness is the most powerful tool for guiding the body out of protective patterns and into a parasympathetic state, where rest, regulation, and a deep sense of safety emerge. It invites trust, not only between giver and receiver, but also within the body itself. From that trust, the release of held emotion and stagnant energy unfolds naturally.
+            </p>
+            <p>
+              At the same time, the body's connective tissue — the fascia — requires time to feel, respond, and reorganize. It opens when it's met with presence. Through slowing down, we give the system space to adapt and unwind. Muscular tension and subtle patterns of resistance begin to soften — not because we push through them, but because we listen.
+            </p>
+            <p>
+              By allowing the body to set the pace, we are guided into deeper layers that would otherwise remain hidden, creating the conditions for real transformation to occur.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
 
@@ -88,32 +94,37 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       />
     )}
 
+    <!-- ===== PARALLAX — between major sections ===== -->
+    <Parallax src="/images/about/work-3.jpg" height="45vh" />
+
     <!-- ===== 3. THE EASE OF SIMPLICITY ===== -->
     <section class="py-24 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          The Ease of Simplicity
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4 mb-14">
-          <p>
-            True depth comes not from complexity, but from simplicity and attunement. We don't need to create complicated techniques and sequences or get lost in an over-intellectualized approach to anatomy. Instead, we learn to follow the body's natural structures — muscle pathways, fascial lines, bones, joints, ligaments, and energy channels — which clearly reveal themselves when we slow down, listen, and feel.
-          </p>
-          <p>
-            This work is never mechanical. It requires moment-to-moment listening, a dance between your hands, your presence, and the subtle intelligence within the body. It's about sensing the unique physical and energetic landscape beneath your hands, and how touching someone also affects you.
-          </p>
-        </div>
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/about/work-4.jpg" imageAlt="Practitioner and client in a session demonstrating the ease and simplicity of deep bodywork">
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            The Ease of Simplicity
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-14">
+            <p>
+              True depth comes not from complexity, but from simplicity and attunement. We don't need to create complicated techniques and sequences or get lost in an over-intellectualized approach to anatomy. Instead, we learn to follow the body's natural structures — muscle pathways, fascial lines, bones, joints, ligaments, and energy channels — which clearly reveal themselves when we slow down, listen, and feel.
+            </p>
+            <p>
+              This work is never mechanical. It requires moment-to-moment listening, a dance between your hands, your presence, and the subtle intelligence within the body. It's about sensing the unique physical and energetic landscape beneath your hands, and how touching someone also affects you.
+            </p>
+          </div>
 
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          Self-care for the Practitioner
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            The givers' well-being is often overlooked — yet it is the foundation of all true support. Our own physical and emotional state shapes not only the quality of our touch, but the depth to which we can hold space for another. That's why this work emphasizes self-awareness, proper use of body weight, alignment, and nervous system regulation — not only for your clients, but for you.
-          </p>
-          <p>
-            To truly offer support, we must begin with ourselves. Honoring our limits. Listening to our needs. Creating space to rest and refill. From this place of inner balance, our presence becomes clear, our hands attuned, and the work becomes sustainable — filled with ease, inspiration, and joy that radiates far beyond the treatment room.
-          </p>
-        </div>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            Self-care for the Practitioner
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              The givers' well-being is often overlooked — yet it is the foundation of all true support. Our own physical and emotional state shapes not only the quality of our touch, but the depth to which we can hold space for another. That's why this work emphasizes self-awareness, proper use of body weight, alignment, and nervous system regulation — not only for your clients, but for you.
+            </p>
+            <p>
+              To truly offer support, we must begin with ourselves. Honoring our limits. Listening to our needs. Creating space to rest and refill. From this place of inner balance, our presence becomes clear, our hands attuned, and the work becomes sustainable — filled with ease, inspiration, and joy that radiates far beyond the treatment room.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
 
