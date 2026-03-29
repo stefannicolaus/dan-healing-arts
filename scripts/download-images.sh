@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -e
+
+BASE_DIR="$(dirname "$0")/../public/images"
+
+mkdir -p "$BASE_DIR/portugal"
+mkdir -p "$BASE_DIR/mazunte"
+mkdir -p "$BASE_DIR/general"
+
+echo "Downloading Portugal images..."
+curl -sL "https://static.wixstatic.com/media/6194ac_1f6bc65e94b74dfc8077490e8dde97d7~mv2.jpg" -o "$BASE_DIR/portugal/hero.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_38ac4d54331d4848ab2f1691e270373c~mv2.jpg" -o "$BASE_DIR/portugal/gallery-1.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_bdd84b27980f4d06868aa7281d570a53~mv2.jpg" -o "$BASE_DIR/portugal/gallery-2.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_d90534f04ba44450a422e1dcb56317a3~mv2.jpg" -o "$BASE_DIR/portugal/gallery-3.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_be7e65eca6cf4dfb85c31050f63b8731~mv2.jpg" -o "$BASE_DIR/portugal/gallery-4.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_3f9eb5970ba34ac9b0422a2e2d5aba2e~mv2.jpg" -o "$BASE_DIR/portugal/learning-art.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_2c9b50810d6045ffbf594d813b28350f~mv2.jpg" -o "$BASE_DIR/portugal/training-experience.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_211fb21678bc409e847bbd65cf6602d0~mv2.jpg" -o "$BASE_DIR/portugal/experiential.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_a6ca74565443407aa9eaaa7669e588d1~mv2.jpg" -o "$BASE_DIR/portugal/venue-1.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_bd10fee85c02406a9c907abb8e7f965f~mv2.jpg" -o "$BASE_DIR/portugal/venue-2.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_c477069954bb47269b64f921192754f0~mv2.png" -o "$BASE_DIR/portugal/venue-3.png"
+curl -sL "https://static.wixstatic.com/media/6194ac_8a0de1b62a6d431fae1cd32fe257d69c~mv2.jpg" -o "$BASE_DIR/portugal/food.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_195731b3c9884c2094088bf74d775f41~mv2.png" -o "$BASE_DIR/portugal/room-dorm.png"
+curl -sL "https://static.wixstatic.com/media/6194ac_d766eface81b4cce8c447dfea109368e~mv2.jpg" -o "$BASE_DIR/portugal/room-twin-shared.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_86d359daf7634874a4e6a2999093cab7~mv2.jpg" -o "$BASE_DIR/portugal/room-twin-private.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_bca45fbb3f384a439b66b8747bb60a4f~mv2.jpeg" -o "$BASE_DIR/portugal/room-glamping.jpeg"
+
+echo "Downloading Mazunte images..."
+curl -sL "https://static.wixstatic.com/media/6f41eb_1cd7c638325a44afb82c6c77d5d2180d~mv2.jpg" -o "$BASE_DIR/mazunte/hero.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_d5083b968f924ba9bd3a51770bcd26ea~mv2.jpg" -o "$BASE_DIR/mazunte/gallery-1.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_455eb75bbe58403a960b0346c1a7d300~mv2.jpg" -o "$BASE_DIR/mazunte/gallery-2.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_bc46fb97aae04061b7408be8bc8d366a~mv2.jpg" -o "$BASE_DIR/mazunte/gallery-3.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_ffcc22ae153349c08d811b22a49c0344~mv2.jpg" -o "$BASE_DIR/mazunte/gallery-4.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_bdeb3b9efd294cdaa1bb376fe35ca87a~mv2.jpg" -o "$BASE_DIR/mazunte/learning-art.jpg"
+curl -sL "https://static.wixstatic.com/media/6194ac_46b4640dff7a46069d28858cb1887490~mv2.jpg" -o "$BASE_DIR/mazunte/training-experience.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_5c81aaa8a7084ad2b9bee98d2e026cae~mv2.jpg" -o "$BASE_DIR/mazunte/venue-garden.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_19f7ee7f273245be8ad6f434dee11b83~mv2.jpg" -o "$BASE_DIR/mazunte/sunset.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_13bf3ea5da4443e4a83d6acbeb7aa164~mv2.jpg" -o "$BASE_DIR/mazunte/food-1.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_4921804ba9f2492688cb4eae28f8b688~mv2.jpg" -o "$BASE_DIR/mazunte/food-2.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_3134267ebdd04b0ba56513db3873ba00~mv2.jpeg" -o "$BASE_DIR/mazunte/food-3.jpeg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_6db1df7bad944518a9accd1954e2c530~mv2.jpg" -o "$BASE_DIR/mazunte/food-4.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_ce4172df5ad140b88a7e7d1d615c4e99~mv2.jpg" -o "$BASE_DIR/mazunte/group-photo.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_33ae50b38b954d71a79edfc72bf2a369~mv2.jpg" -o "$BASE_DIR/mazunte/room-triple.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_7d1ee971abec4cd6ba9a3cdc790a887f~mv2.jpg" -o "$BASE_DIR/mazunte/room-twin.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_aa238310bdc44d93a2ffec889994ecad~mv2.jpg" -o "$BASE_DIR/mazunte/room-single.jpg"
+curl -sL "https://static.wixstatic.com/media/6f41eb_176adeeaaca24bab80ebbdc2c795e67f~mv2.jpg" -o "$BASE_DIR/mazunte/no-lodging.jpg"
+
+echo "Downloading General images..."
+curl -sL "https://static.wixstatic.com/media/6f41eb_835d2d5f0042489095ed1f668b290562~mv2.jpg" -o "$BASE_DIR/general/logo-mandala.jpg"
+
+echo "Done."
