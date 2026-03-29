@@ -39,3 +39,23 @@ Content-Quellen:
 
 - Neue Seite: Astro + Hetzner/Coolify
 - Bestehende Seite: Wix (bleibt erstmal)
+
+## QC
+
+**URL:** https://schweiz.danhealingarts.com (wenn live)
+**Haupt-Website:** https://danhealingarts.com (Wix, extern)
+**Seitentyp:** Landing Page (Schweizer Kurse)
+
+**Seiten zu prüfen:**
+- Startseite schweiz.danhealingarts.com
+- Kurs-Übersicht (4 Module)
+- Einzelnes Modul-Detail
+- Buchungs-/Kontaktseite
+- Mobile Menu
+
+**Besonderheiten:**
+- Astro auf Hetzner/Coolify — Dev-Server localhost:4321
+- Deutsch (Schweizer Kurse), Hauptseite ist Englisch
+- Healing Arts Ästhetik: Warm, ruhig, vertrauenswürdig
+- Preise in CHF (nicht EUR)
+- Daniel's Brand-Farben/Fonts aus Wix-Seite übernehmen
