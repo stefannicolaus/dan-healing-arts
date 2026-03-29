@@ -133,24 +133,34 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          <!-- Video placeholder 1 -->
+          <!-- Video 1: Portugal Training -->
           <div>
-            <div class="w-full aspect-video rounded-card bg-stone/10 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-stone/40">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
+            <div class="relative w-full aspect-video rounded-card overflow-hidden">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/6X1a70jgbM0"
+                title="An Insight into the Bodywork Trainings — Portugal"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full"
+                loading="lazy"
+              ></iframe>
             </div>
-            <p class="font-sans text-stone text-sm mt-3 text-center">A glimpse into the training — the touch, the space, the transformation</p>
+            <p class="font-sans text-stone text-sm mt-3 text-center">Portugal, September 2025</p>
           </div>
 
-          <!-- Video placeholder 2 -->
+          <!-- Video 2: México Training -->
           <div>
-            <div class="w-full aspect-video rounded-card bg-stone/10 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-stone/40">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
+            <div class="relative w-full aspect-video rounded-card overflow-hidden">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/mB88cuuMA84"
+                title="An Insight into the Bodywork Trainings — México"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full"
+                loading="lazy"
+              ></iframe>
             </div>
-            <p class="font-sans text-stone text-sm mt-3 text-center">Participants share their experience of the Level 1 training</p>
+            <p class="font-sans text-stone text-sm mt-3 text-center">México, January 2023</p>
           </div>
 
         </div>
