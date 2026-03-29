@@ -53,13 +53,13 @@ const stats = [
       </div>
 
       <!-- Statistiken -->
-      <div class="grid grid-cols-3 gap-6">
+      <div class="grid grid-cols-3 gap-4 md:gap-6">
         {stats.map((s) => (
           <div>
-            <p class="font-serif font-black text-forest text-4xl md:text-5xl mb-1">
+            <p class="font-serif font-black text-forest text-3xl md:text-5xl mb-1">
               {s.zahl}
             </p>
-            <p class="font-sans text-stone text-xs uppercase tracking-widest font-bold">
+            <p class="font-sans text-stone text-[10px] md:text-xs uppercase tracking-widest font-bold">
               {s.label}
             </p>
           </div>

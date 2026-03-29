@@ -1,6 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
+  safelist: [
+    'bg-canvas/95',
+    'backdrop-blur-md',
+    'border-b',
+    'border-stone/20',
+    'shadow-sm',
+  ],
   theme: {
     extend: {
       colors: {
