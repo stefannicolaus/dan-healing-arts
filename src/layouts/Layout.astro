@@ -2,19 +2,26 @@
 interface Props {
   title?: string;
   description?: string;
+  lang?: string;
+  canonicalPath?: string;
+  ogImage?: string;
 }
 
 const {
-  title = 'Somatische Tiefenmassage & Faszien Release — Wochenendkurse Zürich | Dan Healing Arts',
-  description = 'Lerne präzise Faszienarbeit mit somatischer Präsenz. 4 Wochenendkurse in Zürich mit Daniel Wendt. Einzeln buchbar, je 420 CHF.',
+  title = 'Dan Healing Arts — Learn to Listen with Your Hands',
+  description = 'Immersive trainings in fascia-based somatic bodywork with Daniel Wendt.',
+  lang = 'en',
+  canonicalPath = '/',
+  ogImage = '/images/daniel-bodywork.jpg',
 } = Astro.props;
 
-const canonicalURL = 'https://schweiz.danhealingarts.com/';
-const ogImage = 'https://schweiz.danhealingarts.com/images/daniel-bodywork.jpg';
+const baseUrl = 'https://schweiz.danhealingarts.com';
+const canonicalURL = baseUrl + canonicalPath;
+const ogImageURL = ogImage.startsWith('http') ? ogImage : baseUrl + ogImage;
 ---
 
 <!doctype html>
-<html lang="de">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,15 +36,15 @@ const ogImage = 'https://schweiz.danhealingarts.com/images/daniel-bodywork.jpg';
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:locale" content="de_CH" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_CH' : 'en_US'} />
     <meta property="og:site_name" content="Dan Healing Arts" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={ogImageURL} />
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
