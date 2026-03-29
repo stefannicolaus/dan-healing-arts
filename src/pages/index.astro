@@ -1,272 +1,37 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
+import ZurichHero from '../components/ZurichHero.astro';
+import ZurichMethode from '../components/ZurichMethode.astro';
+import ZurichFuerWen from '../components/ZurichFuerWen.astro';
+import ZurichModule from '../components/ZurichModule.astro';
+import ZurichTestimonials from '../components/ZurichTestimonials.astro';
+import ZurichUeberDaniel from '../components/ZurichUeberDaniel.astro';
+import ZurichKontakt from '../components/ZurichKontakt.astro';
+import Parallax from '../components/Parallax.astro';
+import StatsDivider from '../components/StatsDivider.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialDivider from '../components/TestimonialDivider.astro';
-import TrainingCard from '../components/TrainingCard.astro';
-import ApplyButton from '../components/ApplyButton.astro';
-
-const allTestimonials = await getCollection('testimonials');
-const elyUK = allTestimonials.find(t => t.id === 'ely-uk')?.data;
-const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 ---
 
 <Layout
-  lang="en"
-  title="Dan Healing Arts — Learn to Listen with Your Hands"
-  description="Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway in fascia-based bodywork."
+  lang="de"
+  title="Somatische Tiefenmassage & Faszien Release — Wochenendkurse Zürich | Dan Healing Arts"
+  description="Lerne präzise Faszienarbeit mit somatischer Präsenz. 4 Wochenendkurse in Zürich mit Daniel Wendt. Einzeln buchbar, je 420 CHF."
   canonicalPath="/"
 >
-  <Nav lang="en" />
-
+  <Nav lang="de" />
   <main>
-
-    <!-- ===== 1. HERO ===== -->
-    <section class="min-h-screen grid grid-cols-1 lg:grid-cols-2 bg-canvas">
-
-      <!-- Text column -->
-      <div class="flex flex-col justify-center px-6 md:px-12 lg:px-16 pt-32 pb-16 lg:pt-24">
-        <p class="font-sans text-stone text-xs uppercase tracking-widest mb-6">Dan Healing Arts</p>
-        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-text-main leading-tight mb-6">
-          Learn to Listen<br />with Your Hands
-        </h1>
-        <p class="font-sans text-stone text-lg leading-relaxed max-w-lg mb-10">
-          Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway in fascia-based bodywork that transforms how you touch and how you listen.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <ApplyButton text="Explore Trainings" href="/dates" />
-          <a
-            href="/about-the-work"
-            class="inline-flex items-center px-8 py-3.5 border border-forest text-forest rounded-btn font-medium text-base hover:bg-forest hover:text-white transition-colors duration-200"
-          >
-            About the Work
-          </a>
-        </div>
-      </div>
-
-      <!-- Image column -->
-      <div class="relative min-h-[50vh] lg:min-h-screen overflow-hidden">
-        <img
-          src="/images/daniel-bodywork.jpg"
-          alt="Daniel Wendt performing bodywork"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-      </div>
-
-    </section>
-
-    <!-- ===== 2. TESTIMONIAL DIVIDER — Ely, UK ===== -->
-    {elyUK && (
-      <TestimonialDivider
-        quote={elyUK.quote}
-        name={elyUK.name}
-        location={elyUK.location}
-        photo={elyUK.photo}
-      />
-    )}
-
-    <!-- ===== 3. TRAINING PATHWAY ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">Training Pathway</p>
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Two Levels of Learning</h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-          <!-- Level 1 -->
-          <a
-            href="/level-1"
-            class="bg-white rounded-card shadow-sm hover:shadow-md transition-shadow duration-200 p-8 group"
-          >
-            <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4">
-              Level 1
-            </span>
-            <h3 class="font-serif font-black text-text-main text-2xl leading-tight mb-4 group-hover:text-forest transition-colors">
-              The Essence of Deep Touch
-            </h3>
-            <p class="font-sans text-stone leading-relaxed">
-              A foundational immersion into the art of slow, listening touch. You'll learn to work with fascia, breath and somatic awareness — building a complete framework for deep bodywork practice.
-            </p>
-            <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">
-              Learn more
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
-          </a>
-
-          <!-- Level 2 -->
-          <a
-            href="/level-2"
-            class="bg-white rounded-card shadow-sm hover:shadow-md transition-shadow duration-200 p-8 group"
-          >
-            <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4">
-              Level 2
-            </span>
-            <h3 class="font-serif font-black text-text-main text-2xl leading-tight mb-4 group-hover:text-forest transition-colors">
-              An Evolution of Sensitivity
-            </h3>
-            <p class="font-sans text-stone leading-relaxed">
-              A deeper exploration for practitioners who have completed Level 1. This training refines your perception, expands your vocabulary of touch and takes your listening to a more subtle dimension.
-            </p>
-            <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">
-              Learn more
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/>
-                <polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 4. VIDEO INSIGHTS ===== -->
-    <section class="py-24 px-6 md:px-12 bg-surface-lo">
-      <div class="max-w-page mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12 text-center">
-          An Insight into the Bodywork Trainings
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-          <!-- Video placeholder 1 -->
-          <div>
-            <div class="w-full aspect-video rounded-card bg-stone/10 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-stone/40">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
-            </div>
-            <p class="font-sans text-stone text-sm mt-3 text-center">A glimpse into the training — the touch, the space, the transformation</p>
-          </div>
-
-          <!-- Video placeholder 2 -->
-          <div>
-            <div class="w-full aspect-video rounded-card bg-stone/10 flex items-center justify-center">
-              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="text-stone/40">
-                <polygon points="5 3 19 12 5 21 5 3"/>
-              </svg>
-            </div>
-            <p class="font-sans text-stone text-sm mt-3 text-center">Participants share their experience of the Level 1 training</p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== 5. UPCOMING TRAININGS ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Upcoming Trainings</h2>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          <TrainingCard
-            title="Level 1a — Rücken & Nacken"
-            date="18–19 April 2026"
-            location="Zürich, Switzerland"
-            level="Level 1a"
-            href="/zurich"
-          />
-          <TrainingCard
-            title="The Essence of Deep Touch"
-            date="1–7 June 2026"
-            location="Portugal"
-            level="Level 1"
-            href="/portugal"
-          />
-          <TrainingCard
-            title="Level 1b — Bauch, Becken, Beine"
-            date="13–14 June 2026"
-            location="Zürich, Switzerland"
-            level="Level 1b"
-            href="/zurich"
-          />
-          <TrainingCard
-            title="The Essence of Deep Touch"
-            date="24–30 January 2027"
-            location="Mazunte, México"
-            level="Level 1"
-            href="/mazunte"
-          />
-        </div>
-
-        <a href="/dates" class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
-          View all dates
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"/>
-            <polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===== 6. TESTIMONIAL DIVIDER — Jane, USA ===== -->
-    {janeUSA && (
-      <TestimonialDivider
-        quote={janeUSA.quote}
-        name={janeUSA.name}
-        location={janeUSA.location}
-        photo={janeUSA.photo}
-      />
-    )}
-
-    <!-- ===== 7. ABOUT TEASER ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
-
-        <!-- Image — 2/5 -->
-        <div class="md:col-span-2 rounded-card overflow-hidden">
-          <img
-            src="/images/daniel-portrait.jpg"
-            alt="Daniel Wendt"
-            class="w-full h-full object-cover"
-          />
-        </div>
-
-        <!-- Text — 3/5 -->
-        <div class="md:col-span-3">
-          <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">About</p>
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">Daniel Wendt</h2>
-          <p class="font-sans text-stone text-lg leading-relaxed mb-8">
-            With over 18 years of experience in bodywork and yoga, Daniel has guided more than 22 trainings across Germany, Mexico, Portugal, and beyond. His approach weaves together deep tissue work, fascial release, and somatic awareness into an integrated practice rooted in presence and connection.
-          </p>
-          <a href="/about-dan" class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
-            Read more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="5" y1="12" x2="19" y2="12"/>
-              <polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== 8. CONTACT SECTION ===== -->
-    <section class="py-24 px-6 md:px-12 bg-surface-lo">
-      <div class="max-w-page mx-auto text-center">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">Get in Touch</h2>
-        <p class="font-sans text-stone text-lg leading-relaxed max-w-xl mx-auto mb-10">
-          Have questions about the trainings or want to apply? Reach out directly.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <ApplyButton text="Contact" href="/contact" />
-          <a
-            href="mailto:danhealingarts@gmail.com"
-            class="inline-flex items-center px-8 py-3.5 border border-forest text-forest rounded-btn font-medium text-base hover:bg-forest hover:text-white transition-colors duration-200"
-          >
-            danhealingarts@gmail.com
-          </a>
-        </div>
-      </div>
-    </section>
-
+    <ZurichHero />
+    <StatsDivider />
+    <ZurichMethode />
+    <Parallax src="/images/parallax-1.jpg" height="50vh" />
+    <ZurichFuerWen />
+    <ZurichModule />
+    <ZurichTestimonials />
+    <StatsDivider />
+    <ZurichUeberDaniel />
+    <Parallax src="/images/parallax-2.jpg" height="50vh" />
+    <ZurichKontakt />
   </main>
-
-  <!-- ===== 9. FOOTER ===== -->
-  <Footer lang="en" />
-
+  <Footer lang="de" />
 </Layout>
