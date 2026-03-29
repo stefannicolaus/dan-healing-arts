@@ -1,0 +1,73 @@
+---
+interface Props {
+  title: string;
+  image: string;
+  earlyPrice: number;
+  earlyLabel: string;
+  earlyDeadline: string;
+  regularPrice: number;
+  regularLabel: string;
+  currency: string;
+  applyLink?: string;
+}
+
+const {
+  title,
+  image,
+  earlyPrice,
+  earlyLabel,
+  earlyDeadline,
+  regularPrice,
+  regularLabel,
+  currency,
+  applyLink = '/contact',
+} = Astro.props;
+---
+
+<div class="bg-white rounded-card overflow-hidden shadow-sm border border-stone/10 flex flex-col">
+  <div class="aspect-[4/3] overflow-hidden">
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover"
+    />
+  </div>
+
+  <div class="p-8 flex flex-col flex-1">
+    <h3 class="font-serif font-black text-text-main text-2xl leading-tight mb-6">
+      {title}
+    </h3>
+
+    <div class="space-y-4 mb-8 flex-1">
+      <!-- Early Bird -->
+      <div class="rounded-btn bg-surface-lo border border-stone/10 p-4">
+        <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-1">
+          {earlyLabel}
+        </p>
+        <p class="font-serif font-black text-forest text-3xl">
+          {currency}{earlyPrice}
+        </p>
+        <p class="font-sans text-stone text-xs mt-1">
+          Until {earlyDeadline}
+        </p>
+      </div>
+
+      <!-- Regular -->
+      <div class="rounded-btn bg-surface-lo border border-stone/10 p-4">
+        <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-stone mb-1">
+          {regularLabel}
+        </p>
+        <p class="font-serif font-black text-text-main text-3xl">
+          {currency}{regularPrice}
+        </p>
+      </div>
+    </div>
+
+    <a
+      href={applyLink}
+      class="inline-flex justify-center items-center w-full px-6 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
+    >
+      Apply for this Room
+    </a>
+  </div>
+</div>

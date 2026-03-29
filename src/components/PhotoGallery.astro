@@ -1,0 +1,33 @@
+---
+interface GalleryImage {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  images: GalleryImage[];
+  caption?: string;
+}
+
+const { images, caption } = Astro.props;
+---
+
+<div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+    {images.map((img) => (
+      <div class="aspect-[4/3] overflow-hidden rounded-btn">
+        <img
+          src={img.src}
+          alt={img.alt}
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    ))}
+  </div>
+  {caption && (
+    <p class="font-sans text-stone text-sm text-center mt-4">
+      {caption}
+    </p>
+  )}
+</div>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  quote: string;
+  name: string;
+  location: string;
+  photo?: string;
+}
+
+const { quote, name, location, photo } = Astro.props;
+---
+
+<div class="bg-surface-lo py-16 px-6 md:px-12">
+  <div class="max-w-page mx-auto">
+    {photo ? (
+      <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+        <img
+          src={photo}
+          alt={name}
+          class="w-24 h-24 rounded-full object-cover shrink-0"
+        />
+        <div>
+          <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed mb-4">
+            "{quote}"
+          </p>
+          <p class="font-sans text-stone text-sm font-medium">
+            {name} — <span class="font-normal">{location}</span>
+          </p>
+        </div>
+      </div>
+    ) : (
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="block font-serif text-forest text-6xl leading-none mb-4 select-none" aria-hidden="true">"</span>
+        <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed mb-6">
+          {quote}
+        </p>
+        <p class="font-sans text-stone text-sm font-medium">
+          {name} — <span class="font-normal">{location}</span>
+        </p>
+      </div>
+    )}
+  </div>
+</div>
