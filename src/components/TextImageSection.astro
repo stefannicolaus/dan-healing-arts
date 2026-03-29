@@ -1,23 +1,29 @@
 ---
 interface Props {
-  image: string;
-  imageAlt: string;
+  image?: string;
+  imageAlt?: string;
   reversed?: boolean;
 }
 
 const { image, imageAlt, reversed = false } = Astro.props;
 ---
 
-<div class={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 md:gap-16 items-center`}>
-  <div class="w-full md:w-1/2 shrink-0">
-    <img
-      src={image}
-      alt={imageAlt}
-      class="w-full h-auto rounded-card object-cover"
-      loading="lazy"
-    />
+{image ? (
+  <div class={`flex flex-col ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 md:gap-16 items-center`}>
+    <div class="w-full md:w-1/2 shrink-0">
+      <img
+        src={image}
+        alt={imageAlt}
+        class="w-full h-auto rounded-card object-cover"
+        loading="lazy"
+      />
+    </div>
+    <div class="w-full md:w-1/2">
+      <slot />
+    </div>
   </div>
-  <div class="w-full md:w-1/2">
+) : (
+  <div class="max-w-3xl">
     <slot />
   </div>
-</div>
+)}

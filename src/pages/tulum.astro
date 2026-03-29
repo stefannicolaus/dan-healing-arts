@@ -1,14 +1,22 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import TestimonialDivider from '../components/TestimonialDivider.astro';
+import TextImageSection from '../components/TextImageSection.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+
+const allTestimonials = await getCollection('testimonials');
+const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
+const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
+const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 ---
 
 <Layout
   lang="en"
-  title="Tulum — Dan Healing Arts"
-  description="Bodywork training at Casa Arkaana — an ecological retreat center in the jungle near Chemuyil, Yucatán Peninsula, Mexico. Dates to be announced."
+  title="Tulum — The Essence of Deep Touch | Dan Healing Arts"
+  description="A Myofascial Somatic Liberation Training at Casa Arkaana — an ecological retreat center in the jungle near Chemuyil, Yucatán Peninsula, Mexico. Dates to be announced."
   canonicalPath="/tulum"
 >
   <Nav lang="en" />
@@ -16,79 +24,262 @@ import ApplyButton from '../components/ApplyButton.astro';
   <main>
 
     <!-- ===== 1. HERO ===== -->
-    <section class="relative min-h-[60vh] flex items-center justify-center bg-surface-mid overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
-      <div class="relative z-10 text-center">
-        <h1 class="font-serif text-5xl md:text-7xl text-white uppercase tracking-widest">
-          TULUM
-        </h1>
+    <section class="relative">
+      <!-- No image yet — using bg-surface-mid as placeholder -->
+      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden bg-surface-mid flex items-center justify-center">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"></div>
+        <div class="relative z-10 flex items-center justify-center w-full h-full">
+          <span class="font-sans text-white text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider">
+            TULUM
+          </span>
+        </div>
+      </div>
+
+      <!-- Below image, centered text block -->
+      <div class="bg-canvas py-16 px-6 md:px-12 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">
+            The Essence of Deep Touch
+          </h2>
+          <p class="font-sans text-stone text-lg italic mb-2">
+            A Myofascial Somatic Liberation Training —{' '}
+            <a href="/level-1" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+              Level 1
+            </a>
+          </p>
+          <p class="font-sans text-stone text-base mb-4">
+            Tulum, Mexico . Dates to Be Announced
+          </p>
+          <p class="font-sans text-stone text-base italic mb-10">
+            An immersive training in fascia release, deep tissue massage and nervous system attunement — held in the jungle.
+          </p>
+          <ApplyButton text="Get in Touch" />
+        </div>
       </div>
     </section>
 
-    <!-- ===== 2. ANNOUNCEMENT ===== -->
-    <section class="py-16 px-6 md:px-12 bg-canvas text-center">
-      <div class="max-w-2xl mx-auto">
-        <p class="font-sans text-xs font-bold uppercase tracking-[0.2rem] text-forest mb-4">
-          Coming Soon
-        </p>
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">
-          Dates to Be Announced
-        </h2>
+    <!-- ===== 2. LEARNING THE ART OF DEEP TOUCH ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            Learning the Art of Deep Touch
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              <strong class="text-text-main">The Essence of Deep Touch</strong> is an immersive{' '}
+              <strong class="text-text-main">professional training in fascia-based bodywork.</strong>
+              {' '}It offers the Level 1 training program of the Myofascial Somatic Liberation pathway.
+            </p>
+            <p>
+              → <em><a href="/level-1" class="text-forest hover:text-sage transition-colors underline underline-offset-4">Learn more about the full Level 1 training</a></em>
+            </p>
+            <p>
+              Over the course of the training, you will learn how to offer deep, slow and emotionally attuned massage sessions that work not only with muscles and fascia, but with the nervous system and emotional body.
+            </p>
+            <p>
+              Alongside learning practical hands-on techniques, you will also receive nourishing touch each day, allowing you to experience the work within your own system.
+            </p>
+            <p>
+              Through this reciprocal process, the body softens, perception deepens, and a natural understanding begins to emerge of how to support others through touch.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
 
-    <!-- ===== 3. LOCATION ===== -->
+    <!-- ===== 3. THE TRAINING EXPERIENCE ===== -->
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <TextImageSection reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            The Training Experience
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision.
+            </p>
+            <p>
+              You'll learn to offer full-body touch that is structurally and anatomically grounded, drawing from myofascial release and deep tissue techniques while remaining sensitive to the nervous system and emotional responses that can unfold through touch.
+            </p>
+            <p>
+              Alongside these hands-on techniques, the training cultivates the subtle skills of presence, listening and energetic awareness that allow sessions to become deeply restorative and transformative.
+            </p>
+            <p>
+              During this training you will develop{' '}
+              <strong class="text-text-main">both the practical skills and the embodied sensitivity needed to begin offering this work to others.</strong>
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+
+    <!-- ===== 4. EXPERIENTIAL LEARNING ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection>
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+            <p>
+              The learning is highly experiential and hands-on.
+              Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice.
+            </p>
+            <p>
+              Through this rhythm of practicing and being worked on, your system becomes more receptive and your hands gradually become more refined and precise, learning to respond to what they meet in the body.
+            </p>
+            <p>
+              Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably.
+            </p>
+          </div>
+          <ApplyButton text="Get in Touch" />
+        </TextImageSection>
+      </div>
+    </section>
+
+    <!-- ===== 5. TESTIMONIAL — REBECCA, CANADA ===== -->
+    {rebeccaCanada && (
+      <TestimonialDivider
+        quote={rebeccaCanada.quote}
+        name={rebeccaCanada.name}
+        location={rebeccaCanada.location}
+        photo={rebeccaCanada.photo}
+      />
+    )}
+
+    <!-- ===== 6. THE FIELD WE PRACTICE IN ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          Casa Arkaana
+          The Field We Practice In
         </h2>
         <div class="font-sans text-stone leading-relaxed space-y-4">
           <p>
-            Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum in the Yucatán Peninsula of Mexico.
+            This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize.
           </p>
           <p>
-            Run by Maja and Asdrubal, the center focuses on healing arts, conscious transformation, permaculture, and slow living. Just 6 km from pristine beaches and close to cenotes, it offers a deeply nourishing environment for retreat work.
+            It is not only about learning how to touch, but also about remembering how to listen.
           </p>
           <p>
-            <a
-              href="https://www.casaarkaana.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-forest hover:text-sage transition-colors underline underline-offset-4"
-            >
-              www.casaarkaana.com
-            </a>
+            Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands.
+          </p>
+          <p>
+            In this relational space, connection deepens — with your own body, with others, and with the deeper intelligence that lives beneath the surface.
+          </p>
+          <p>
+            More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- ===== 4. TESTIMONIAL ===== -->
-    <section class="py-24 px-6 md:px-12 bg-surface-lo">
-      <div class="max-w-page mx-auto max-w-2xl text-center">
-        <blockquote class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed mb-6">
-          "Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other."
-        </blockquote>
-        <p class="font-sans text-stone text-sm">
-          — Sahil
-        </p>
+    <!-- ===== 7. TESTIMONIAL — LASSE, FINLAND ===== -->
+    {lasseFinland && (
+      <TestimonialDivider
+        quote={lasseFinland.quote}
+        name={lasseFinland.name}
+        location={lasseFinland.location}
+        photo={lasseFinland.photo}
+      />
+    )}
+
+    <!-- ===== 8. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
+          The Space That Holds the Work
+        </h2>
+
+        <div class="max-w-3xl font-sans text-stone leading-relaxed space-y-4">
+          <p>
+            Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum on the Yucatán Peninsula of Mexico.
+          </p>
+          <p>
+            Run by Maja and Asdrubal, the center is dedicated to healing arts, conscious transformation, permaculture and slow living — values that are woven into the fabric of everyday life there.
+          </p>
+          <p>
+            Just 6 km from pristine beaches and close to cenotes, the location offers both the stillness of deep jungle and easy access to the extraordinary natural world of the Yucatán Peninsula.
+          </p>
+          <p>
+            "Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other." — Sahil
+          </p>
+          <p>
+            <a href="https://www.casaarkaana.com" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+              Location: www.casaarkaana.com
+            </a>
+          </p>
+          <p>
+            Between sessions, there is space to walk in the jungle, swim in cenotes, integrate, and simply be — allowing the work to settle beyond the mat and table.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- ===== 5. CTA ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas text-center">
-      <div class="max-w-2xl mx-auto">
-        <p class="font-sans italic text-stone text-lg mb-8">
-          Dates will be announced soon. If you're interested in training at Casa Arkaana, reach out directly.
-        </p>
+    <!-- ===== 9. WHO IS THIS TRAINING FOR ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          Who Is This Training For
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+          <p>
+            This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork.
+          </p>
+          <p>
+            It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work.
+          </p>
+          <p>
+            If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path.
+          </p>
+          <p>
+            <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
+          </p>
+        </div>
         <ApplyButton text="Get in Touch" />
+      </div>
+    </section>
+
+    <!-- ===== 10. TESTIMONIAL — LAURA, UK ===== -->
+    {lauraUK && (
+      <TestimonialDivider
+        quote={lauraUK.quote}
+        name={lauraUK.name}
+        location={lauraUK.location}
+        photo={lauraUK.photo}
+      />
+    )}
+
+    <!-- ===== 11. INTERESTED? (CTA instead of pricing) ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+          Interested?
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+          <p>
+            Dates and details for the Tulum training will be announced soon.
+          </p>
+          <p>
+            If you're interested in training at Casa Arkaana, reach out directly — I'm happy to share more and let you know as soon as details are confirmed.
+          </p>
+          <p class="italic">
+            After your message, I'll personally respond with more information and next steps.
+          </p>
+        </div>
+        <ApplyButton text="Get in Touch" />
+      </div>
+    </section>
+
+    <!-- ===== 12. CLOSING STATEMENT ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto text-center max-w-3xl">
+        <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
+          This training is an invitation to slow down, to listen, and to reconnect with the intelligence of touch — in yourself and in others. If you feel called, you're warmly welcome to join us.
+        </p>
       </div>
     </section>
 
   </main>
 
-  <!-- ===== 6. FOOTER ===== -->
+  <!-- ===== FOOTER ===== -->
   <Footer lang="en" />
 
 </Layout>
