@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import ApplyButton from '../components/ApplyButton.astro';
+---
+
+<Layout
+  lang="en"
+  title="Tulum — Dan Healing Arts"
+  description="Bodywork training at Casa Arkaana — an ecological retreat center in the jungle near Chemuyil, Yucatán Peninsula, Mexico. Dates to be announced."
+  canonicalPath="/tulum"
+>
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="relative min-h-[60vh] flex items-center justify-center bg-surface-mid overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+      <div class="relative z-10 text-center">
+        <h1 class="font-serif text-5xl md:text-7xl text-white uppercase tracking-widest">
+          TULUM
+        </h1>
+      </div>
+    </section>
+
+    <!-- ===== 2. ANNOUNCEMENT ===== -->
+    <section class="py-16 px-6 md:px-12 bg-canvas text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="font-sans text-xs font-bold uppercase tracking-[0.2rem] text-forest mb-4">
+          Coming Soon
+        </p>
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">
+          Dates to Be Announced
+        </h2>
+      </div>
+    </section>
+
+    <!-- ===== 3. LOCATION ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          Casa Arkaana
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4">
+          <p>
+            Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum in the Yucatán Peninsula of Mexico.
+          </p>
+          <p>
+            Run by Maja and Asdrubal, the center focuses on healing arts, conscious transformation, permaculture, and slow living. Just 6 km from pristine beaches and close to cenotes, it offers a deeply nourishing environment for retreat work.
+          </p>
+          <p>
+            <a
+              href="https://www.casaarkaana.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-forest hover:text-sage transition-colors underline underline-offset-4"
+            >
+              www.casaarkaana.com
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. TESTIMONIAL ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto max-w-2xl text-center">
+        <blockquote class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed mb-6">
+          "Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other."
+        </blockquote>
+        <p class="font-sans text-stone text-sm">
+          — Sahil
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 5. CTA ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas text-center">
+      <div class="max-w-2xl mx-auto">
+        <p class="font-sans italic text-stone text-lg mb-8">
+          Dates will be announced soon. If you're interested in training at Casa Arkaana, reach out directly.
+        </p>
+        <ApplyButton text="Get in Touch" />
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 6. FOOTER ===== -->
+  <Footer lang="en" />
+
+</Layout>
