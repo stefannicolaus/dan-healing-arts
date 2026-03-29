@@ -1,32 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
-import Hero from '../components/Hero.astro';
-import Methode from '../components/Methode.astro';
-import Parallax from '../components/Parallax.astro';
-import StatsDivider from '../components/StatsDivider.astro';
-import FuerWen from '../components/FuerWen.astro';
-import Module from '../components/Module.astro';
-import Testimonials from '../components/Testimonials.astro';
-import UeberDaniel from '../components/UeberDaniel.astro';
-import Kontakt from '../components/Kontakt.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout>
   <Nav />
-  <main>
-    <Hero />
-    <StatsDivider />
-    <Methode />
-    <Parallax src="/images/parallax-1.jpg" height="50vh" />
-    <FuerWen />
-    <Module />
-    <Testimonials />
-    <StatsDivider />
-    <UeberDaniel />
-    <Parallax src="/images/parallax-2.jpg" height="50vh" />
-    <Kontakt />
+  <main class="pt-32 pb-16">
+    <div class="max-w-page mx-auto px-6 md:px-12 text-center">
+      <h1 class="font-serif text-4xl text-text-main">Dan Healing Arts</h1>
+      <p class="text-stone mt-4">Full site coming soon.</p>
+    </div>
   </main>
   <Footer />
 </Layout>

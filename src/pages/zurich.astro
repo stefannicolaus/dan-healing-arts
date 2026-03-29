@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import ZurichHero from '../components/ZurichHero.astro';
+import ZurichMethode from '../components/ZurichMethode.astro';
+import ZurichFuerWen from '../components/ZurichFuerWen.astro';
+import ZurichModule from '../components/ZurichModule.astro';
+import ZurichTestimonials from '../components/ZurichTestimonials.astro';
+import ZurichUeberDaniel from '../components/ZurichUeberDaniel.astro';
+import ZurichKontakt from '../components/ZurichKontakt.astro';
+import Parallax from '../components/Parallax.astro';
+import StatsDivider from '../components/StatsDivider.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  lang="de"
+  title="Somatische Tiefenmassage & Faszien Release — Wochenendkurse Zürich | Dan Healing Arts"
+  description="Lerne präzise Faszienarbeit mit somatischer Präsenz. 4 Wochenendkurse in Zürich mit Daniel Wendt. Einzeln buchbar, je 420 CHF."
+  canonicalPath="/zurich"
+>
+  <Nav lang="de" />
+  <main>
+    <ZurichHero />
+    <StatsDivider />
+    <ZurichMethode />
+    <Parallax src="/images/parallax-1.jpg" height="50vh" />
+    <ZurichFuerWen />
+    <ZurichModule />
+    <ZurichTestimonials />
+    <StatsDivider />
+    <ZurichUeberDaniel />
+    <Parallax src="/images/parallax-2.jpg" height="50vh" />
+    <ZurichKontakt />
+  </main>
+  <Footer lang="de" />
+</Layout>
