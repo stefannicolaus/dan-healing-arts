@@ -1,0 +1,544 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import TestimonialDivider from '../components/TestimonialDivider.astro';
+import TextImageSection from '../components/TextImageSection.astro';
+import PhotoGallery from '../components/PhotoGallery.astro';
+import PricingCard from '../components/PricingCard.astro';
+import ApplyButton from '../components/ApplyButton.astro';
+
+const allTestimonials = await getCollection('testimonials');
+const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
+const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
+const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
+---
+
+<Layout
+  lang="en"
+  title="Portugal Retreat — The Essence of Deep Touch | Dan Healing Arts"
+  description="A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement. Portugal, 1–7 June 2026."
+  canonicalPath="/portugal"
+  ogImage="/images/portugal/hero.jpg"
+>
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="relative">
+      <!-- Full-width image with gradient overlay -->
+      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
+        <img
+          src="/images/portugal/hero.jpg"
+          alt="Portugal retreat — The Essence of Deep Touch"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/50"></div>
+        <!-- Large overlay text -->
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="font-sans text-white text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider">
+            PORTUGAL
+          </span>
+        </div>
+      </div>
+
+      <!-- Below image, centered text block -->
+      <div class="bg-canvas py-16 px-6 md:px-12 text-center">
+        <div class="max-w-2xl mx-auto">
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">
+            The Essence of Deep Touch
+          </h2>
+          <p class="font-sans text-stone text-lg italic mb-2">
+            A Myofascial Somatic Liberation Training —{' '}
+            <a href="/level-1" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+              Level 1
+            </a>
+          </p>
+          <p class="font-sans text-stone text-base mb-4">
+            Portugal . 1 - 7 June, 2026
+          </p>
+          <p class="font-sans text-stone text-base italic mb-10">
+            A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement.
+          </p>
+          <ApplyButton />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. PHOTO GALLERY ===== -->
+    <section class="py-16 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <PhotoGallery
+          images={[
+            { src: '/images/portugal/gallery-1.jpg', alt: 'Portugal training — bodywork session' },
+            { src: '/images/portugal/gallery-2.jpg', alt: 'Portugal training — group practice' },
+            { src: '/images/portugal/gallery-3.jpg', alt: 'Portugal training — outdoor space' },
+            { src: '/images/portugal/gallery-4.jpg', alt: 'Portugal training — participants' },
+          ]}
+          caption="Real moments from the Portugal Training"
+        />
+      </div>
+    </section>
+
+    <!-- ===== 3. LEARNING THE ART OF DEEP TOUCH ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection
+          image="/images/portugal/learning-art.jpg"
+          imageAlt="Learning the art of deep touch — hands-on bodywork"
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            Learning the Art of Deep Touch
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              <strong class="text-text-main">The Essence of Deep Touch</strong> is an immersive{' '}
+              <strong class="text-text-main">professional training in fascia-based bodywork.</strong>
+              {' '}It offers the Level 1 training program of the Myofascial Somatic Liberation pathway.
+            </p>
+            <p>
+              → <em><a href="/level-1" class="text-forest hover:text-sage transition-colors underline underline-offset-4">Learn more about the full Level 1 training</a></em>
+            </p>
+            <p>
+              Over the course of a week, you will learn how to offer deep, slow and emotionally attuned massage sessions that work not only with muscles and fascia, but with the nervous system and emotional body.
+            </p>
+            <p>
+              Alongside learning practical hands-on techniques, you will also receive nourishing touch each day, allowing you to experience the work within your own system.
+            </p>
+            <p>
+              Through this reciprocal process, the body softens, perception deepens, and a natural understanding begins to emerge of how to support others through touch.
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+
+    <!-- ===== 4. THE TRAINING EXPERIENCE ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <TextImageSection
+          image="/images/portugal/training-experience.jpg"
+          imageAlt="The training experience — somatic bodywork practice"
+          reversed
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            The Training Experience
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision.
+            </p>
+            <p>
+              You'll learn to offer full-body touch that is structurally and anatomically grounded, drawing from myofascial release and deep tissue techniques while remaining sensitive to the nervous system and emotional responses that can unfold through touch.
+            </p>
+            <p>
+              Alongside these hands-on techniques, the training cultivates the subtle skills of presence, listening and energetic awareness that allow sessions to become deeply restorative and transformative.
+            </p>
+            <p>
+              During this week you will develop{' '}
+              <strong class="text-text-main">both the practical skills and the embodied sensitivity needed to begin offering this work to others.</strong>
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+
+    <!-- ===== 5. EXPERIENTIAL LEARNING ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection
+          image="/images/portugal/experiential.jpg"
+          imageAlt="Experiential learning — hands-on bodywork practice"
+        >
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+            <p>
+              The learning is highly experiential and hands-on.
+              Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice.
+            </p>
+            <p>
+              Through this rhythm of practicing and being worked on, your system becomes more receptive and your hands gradually become more refined and precise, learning to respond to what they meet in the body.
+            </p>
+            <p>
+              Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably.
+            </p>
+          </div>
+          <ApplyButton />
+        </TextImageSection>
+      </div>
+    </section>
+
+    <!-- ===== 6. TESTIMONIAL — REBECCA, CANADA ===== -->
+    {rebeccaCanada && (
+      <TestimonialDivider
+        quote={rebeccaCanada.quote}
+        name={rebeccaCanada.name}
+        location={rebeccaCanada.location}
+        photo={rebeccaCanada.photo}
+      />
+    )}
+
+    <!-- ===== 7. THE FIELD WE PRACTICE IN ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          The Field We Practice In
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4">
+          <p>
+            This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience - through touch, presence and the body's natural capacity to release and reorganize.
+          </p>
+          <p>
+            It is not only about learning how to touch, but also about remembering how to listen.
+          </p>
+          <p>
+            Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands.
+          </p>
+          <p>
+            In this relational space, connection deepens - with your own body, with others, and with the deeper intelligence that lives beneath the surface.
+          </p>
+          <p>
+            More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8. TESTIMONIAL — LASSE, FINLAND ===== -->
+    {lasseFinland && (
+      <TestimonialDivider
+        quote={lasseFinland.quote}
+        name={lasseFinland.name}
+        location={lasseFinland.location}
+        photo={lasseFinland.photo}
+      />
+    )}
+
+    <!-- ===== 9. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
+          The Space That Holds the Work
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+          <!-- Text column -->
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Nestled in nature just 30 minutes from Lisbon, The Shanti Space offers a safe and beautiful container for deep emotional and physical exploration.
+            </p>
+            <p>
+              Surrounded by rolling hills, quiet walking paths, and open skies, the land itself supports slowing down, sensing inward, and reconnecting with natural rhythms.
+            </p>
+            <p>
+              The venue, an old Quinta set in a national park, is endowed with beautiful fruit trees, giant oak corks, grape vines, vistas and a stream at the end of the garden.
+            </p>
+            <p>
+              <a href="http://www.theshantispace.com/" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+                Location: www.theshantispace.com
+              </a>
+            </p>
+            <p>
+              The practice spaces are warm, light-filled, and intentionally designed to support embodied learning, focused practice, and rest.
+            </p>
+            <p>
+              The Garden Shala is a beautiful converted glass Victorian Greenhouse, a great workshop space along with an incredible outdoor yoga deck overlooking the valley of high trees.
+            </p>
+            <p>
+              Between sessions, there is space to walk, breathe, integrate, and simply be - allowing the work to settle beyond the mat and table.
+            </p>
+          </div>
+
+          <!-- Images column -->
+          <div class="space-y-4">
+            <div class="rounded-card overflow-hidden aspect-[4/3]">
+              <img
+                src="/images/portugal/venue-1.jpg"
+                alt="The Shanti Space — outdoor venue near Lisbon"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-card overflow-hidden aspect-[4/3]">
+                <img
+                  src="/images/portugal/venue-2.jpg"
+                  alt="The Shanti Space — Garden Shala greenhouse"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+              <div class="rounded-card overflow-hidden aspect-[4/3]">
+                <img
+                  src="/images/portugal/venue-3.png"
+                  alt="The Shanti Space — outdoor yoga deck"
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 10. HELD & NOURISHED ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <TextImageSection
+          image="/images/portugal/food.jpg"
+          imageAlt="Nourishing food prepared with care at the Portugal retreat"
+          reversed
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            Held & Nourished
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Throughout the retreat, you'll be nourished with three daily meals prepared with care, love and vitality by our amazing chef Zoe (
+              <a href="https://www.wild-delicacies.com/" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+                www.wild-delicacies.com
+              </a>
+              )
+            </p>
+            <p>
+              The food is nutrition-dense, gluten-free, and designed to support deep physical and emotional work - grounding the nervous system while keeping the body clear, and well-fueled.
+            </p>
+            <p>
+              Meals are made from fresh, seasonal ingredients and thoughtfully balanced to sustain energy, aid digestion, and support the body's natural rhythms.
+            </p>
+            <p>
+              Shared meals also become moments of connection and integration - time to rest, digest, and gently transition between inner work and daily life.
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+
+    <!-- ===== 11. TESTIMONIAL — LAURA, UK ===== -->
+    {lauraUK && (
+      <TestimonialDivider
+        quote={lauraUK.quote}
+        name={lauraUK.name}
+        location={lauraUK.location}
+        photo={lauraUK.photo}
+      />
+    )}
+
+    <!-- ===== 12. WHO IS THIS TRAINING FOR ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          Who Is This Training For
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+          <p>
+            This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork.
+          </p>
+          <p>
+            It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work.
+          </p>
+          <p>
+            If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path.
+          </p>
+          <p>
+            <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
+          </p>
+        </div>
+        <ApplyButton />
+      </div>
+    </section>
+
+    <!-- ===== 13. A DAY AT THE TRAINING ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
+          A Day at the Training
+        </h2>
+        <div class="max-w-2xl">
+          <table class="w-full font-sans">
+            <tbody>
+              {[
+                { time: '08:00', activity: 'Yoga, breathwork, chanting, sharing' },
+                { time: '09:15', activity: 'Breakfast' },
+                { time: '10:00', activity: 'Massage demo and practice' },
+                { time: '13:30', activity: 'Lunch and break' },
+                { time: '15:30', activity: 'Massage demo and practice' },
+                { time: '18:30', activity: 'Sharing and closing for the day' },
+                { time: '19:00', activity: 'Dinner' },
+                { time: '20:00', activity: 'Different rituals and group activities (optional)' },
+              ].map(({ time, activity }) => (
+                <tr class="border-b border-stone/10 last:border-0">
+                  <td class="py-4 pr-8 text-forest font-medium text-sm whitespace-nowrap w-20">
+                    {time}
+                  </td>
+                  <td class="py-4 text-stone leading-relaxed">
+                    {activity}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 14. WHAT YOU'LL RECEIVE ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          What You'll Receive
+        </h2>
+        <ul class="font-sans text-stone leading-relaxed space-y-3 mb-10">
+          {[
+            '7 days/ 6 nights accommodation',
+            '3 daily nourishing meals',
+            'Daily bodywork/massage lessons and practice sessions',
+            'Daily yoga, meditation, breathwork, and voice work',
+            'Integration circles, kirtan and ceremonial spaces',
+            'Course manual',
+            'Video recordings of all bodywork sequences',
+            'Certificate of completion',
+            'Pre- and post-retreat support',
+          ].map((item) => (
+            <li class="flex items-start gap-3">
+              <span class="text-forest mt-1 shrink-0">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </span>
+              {item}
+            </li>
+          ))}
+        </ul>
+        <ApplyButton />
+      </div>
+    </section>
+
+    <!-- ===== 15. YOUR STAY AT THE SHANTI SPACE (PRICING) ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+          Your Stay at The Shanti Space
+        </h2>
+
+        <div class="font-sans text-stone leading-relaxed space-y-3 mb-12 max-w-3xl">
+          <p>
+            A range of comfortable accommodation options are available on-site, allowing you to fully immerse yourself in the retreat experience.
+          </p>
+          <p>
+            <strong class="text-text-main">All options include full participation in the training, meals, and practices.</strong> Also included are the Training Manual, Video Recordings of all bodywork sequences, a Certificate of Completion and a Group Zoom Integration Call.
+          </p>
+          <p class="italic">
+            After your application, I'll personally confirm availability and next steps.
+          </p>
+          <p>
+            Choose the room option that feels right for you below.
+          </p>
+        </div>
+
+        <!-- Pricing Cards Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <PricingCard
+            title="Spacious Shared Dorm (6 people max.)"
+            image="/images/portugal/room-dorm.png"
+            earlyPrice={1549}
+            earlyLabel="Regular"
+            earlyDeadline="until 30. April 2026"
+            regularPrice={1749}
+            regularLabel="Late Bird from 1. May 2026"
+            currency="EUR "
+          />
+          <PricingCard
+            title="Shared Twin Room / shared bathroom"
+            image="/images/portugal/room-twin-shared.jpg"
+            earlyPrice={1699}
+            earlyLabel="Early Bird"
+            earlyDeadline="until 30. April 2026"
+            regularPrice={1849}
+            regularLabel="Regular"
+            currency="EUR "
+          />
+          <PricingCard
+            title="Shared Twin Room / private bathroom"
+            image="/images/portugal/room-twin-private.jpg"
+            earlyPrice={1799}
+            earlyLabel="Early Bird"
+            earlyDeadline="until 30. April 2026"
+            regularPrice={1949}
+            regularLabel="Regular"
+            currency="EUR "
+          />
+          <PricingCard
+            title="Private Single Glamping Tent / shared bathroom"
+            image="/images/portugal/room-glamping.jpeg"
+            earlyPrice={1999}
+            earlyLabel="Early Bird"
+            earlyDeadline="until 30. April 2026"
+            regularPrice={2149}
+            regularLabel="Regular"
+            currency="EUR "
+          />
+        </div>
+
+        <p class="font-sans text-stone text-base">
+          Still unsure which option is right for you? Feel free to reach out with any questions.{' '}
+          → <a href="/contact" class="text-forest hover:text-sage transition-colors underline underline-offset-4">Get in touch</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== 16. PRACTICAL DETAILS ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
+          Practical Details
+        </h2>
+        <dl class="font-sans space-y-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 border-b border-stone/10 pb-6">
+            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Dates & Schedule</dt>
+            <dd class="sm:col-span-2 text-text-main leading-relaxed">
+              June 1 - 7, 2026<br />
+              Arrival: June 1, 15:00<br />
+              Departure: June 7, 12:00
+            </dd>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 border-b border-stone/10 pb-6">
+            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Location</dt>
+            <dd class="sm:col-span-2 text-text-main leading-relaxed">
+              The Shanti Space, near Lisbon, Portugal<br />
+              ~30 min from Lisbon airport
+            </dd>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 border-b border-stone/10 pb-6">
+            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Certification</dt>
+            <dd class="sm:col-span-2 text-text-main leading-relaxed">
+              Level 1 Training Certificate upon full participation
+            </dd>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Payment</dt>
+            <dd class="sm:col-span-2 text-text-main leading-relaxed">
+              Deposit required, cancellation terms during booking
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- ===== 17. CLOSING STATEMENT ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto text-center max-w-3xl">
+        <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
+          This training is an invitation to slow down, to listen, and to reconnect with the intelligence of touch - in yourself and in others. If you feel called, you're warmly welcome to join us.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== 18. FOOTER ===== -->
+  <Footer lang="en" />
+
+</Layout>
