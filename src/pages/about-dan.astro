@@ -1,0 +1,124 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import TestimonialDivider from '../components/TestimonialDivider.astro';
+import ApplyButton from '../components/ApplyButton.astro';
+
+const allTestimonials = await getCollection('testimonials');
+const paigeUSA = allTestimonials.find(t => t.id === 'paige-usa')?.data;
+
+const stats = [
+  { number: '18', label: 'Years in bodywork & yoga' },
+  { number: '20+', label: 'Bodywork training courses' },
+  { number: '2,500+', label: 'Hours of yoga teacher training' },
+];
+---
+
+<Layout
+  lang="en"
+  title="About Dan — Dan Healing Arts"
+  description="Meet Daniel Wendt — Myofascial Somatic Release Practitioner and teacher with 18 years of experience guiding people to reconnect with their bodies and lives."
+  canonicalPath="/about-dan"
+>
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- ===== 1. HERO ===== -->
+    <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
+
+          <!-- Portrait -->
+          <div class="order-2 md:order-1">
+            <img
+              src="/images/daniel-portrait.jpg"
+              alt="Daniel Wendt — Dan Healing Arts"
+              class="w-full rounded-card object-cover"
+            />
+          </div>
+
+          <!-- Bio intro -->
+          <div class="order-1 md:order-2">
+            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Founder &amp; Trainer</p>
+            <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
+              Daniel Wendt
+            </h1>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-3 gap-4 mb-10">
+              {stats.map(({ number, label }) => (
+                <div class="text-center bg-surface-lo rounded-card p-4">
+                  <p class="font-serif text-3xl text-forest font-bold mb-1">{number}</p>
+                  <p class="font-sans text-stone text-xs leading-tight">{label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div class="font-sans text-stone leading-relaxed space-y-4">
+              <p>
+                Hi, my name is Daniel.
+              </p>
+              <p>
+                By nature, more of an adventurer and explorer than a philosopher, I have always looked for direct experiences throughout my life's journey.
+              </p>
+              <p>
+                From backpacking to construction work, from rap stages to real estate agencies, from hitchhiking the world to starting a family and taking care of two wonderful kids, I have been through immensely beautiful as well as tough and painful times.
+              </p>
+              <p>
+                I found freedom, peace and inspiration when I started to dive deep into bodywork and yoga 18 years ago and eventually broke free from many limiting beliefs and conventional norms.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 2. FULL BIO ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <div class="font-sans text-stone leading-relaxed space-y-4">
+          <p>
+            During this profound inner and outer journey, I experienced how physical and emotional depth and openness are related, and realized how modern anatomy can help me perceive traditional mystical wisdom in my own body.
+          </p>
+          <p>
+            In my classes, treatments, trainings and retreats, I am teaching a unique blend of myofascial release, deep tissue massage and energy work. In the setting of a very safe container I invite you to explore the beauty and importance of deep human connection and experience your own body as an infinite space of awareness in which you can recharge and heal.
+          </p>
+          <p>
+            As a teacher in 2,500+ hours of yoga teacher training and over 20 bodywork training courses, I have accompanied a great number of people on their way to becoming yoga teachers and massage therapists and I am happy to learn and teach more about the possibilities this human body offers to unleash our full potential.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL: PAIGE, USA ===== -->
+    {paigeUSA && (
+      <TestimonialDivider
+        quote={paigeUSA.quote}
+        name={paigeUSA.name}
+        location={paigeUSA.location}
+        photo={paigeUSA.photo}
+      />
+    )}
+
+    <!-- ===== 3. CTA ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl text-center">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+          Ready to Begin?
+        </h2>
+        <p class="font-sans text-stone text-lg leading-relaxed mb-10">
+          Join one of the upcoming trainings and discover what becomes possible when you learn to truly listen with your hands.
+        </p>
+        <ApplyButton />
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+
+</Layout>

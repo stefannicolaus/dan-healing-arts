@@ -1,0 +1,192 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import TestimonialDivider from '../components/TestimonialDivider.astro';
+import TrainingCard from '../components/TrainingCard.astro';
+import ApplyButton from '../components/ApplyButton.astro';
+
+const allTestimonials = await getCollection('testimonials');
+const jeremyUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
+const robinUSA = allTestimonials.find(t => t.id === 'ely-uk')?.data;
+const samUSA = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
+
+const elements = [
+  { element: 'Earth', emotion: 'Fear' },
+  { element: 'Water', emotion: 'Sadness' },
+  { element: 'Fire', emotion: 'Anger' },
+  { element: 'Air', emotion: 'Joy' },
+  { element: 'Space', emotion: 'Shame' },
+];
+---
+
+<Layout
+  lang="en"
+  title="Level 2: An Evolution of Sensitivity — Dan Healing Arts"
+  description="The advanced training in fascia-based somatic bodywork. Deepen your capacity to feel subtle tissue intelligence, emotional currents, and the elemental language of the body."
+  canonicalPath="/level-2"
+>
+  <Nav lang="en" />
+
+  <main>
+
+    <!-- ===== 1. HERO / INTRO ===== -->
+    <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Level 2 Training</p>
+        <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
+          An Evolution of Sensitivity
+        </h1>
+        <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
+          The natural next step for all who have completed the foundation.
+        </p>
+        <div class="font-sans text-stone leading-relaxed space-y-4">
+          <p>
+            Our Level 2 training is the natural next step for all who have completed the foundation. Here we deepen our capacity to feel the tissue's subtle intelligence, the quiet pulses of emotion, and the energetic currents that weave through the body.
+          </p>
+          <p>
+            In addition to learning new massage sequences and release techniques, you'll discover how to enhance your sessions through trance induction, and intonation — tools that allow the body to surrender beyond the thinking mind.
+          </p>
+          <p>
+            We also explore how posture, movement, and breath reflect the inner landscape of a person — and how these patterns can either restrict or support emotional flow.
+          </p>
+          <p>
+            You'll learn to recognize these expressions in your clients and to meet them skillfully, integrating physical, emotional, and energetic dimensions into one coherent language of touch.
+          </p>
+          <p>
+            This is where bodywork becomes art — when presence, sound, and movement begin to communicate more than technique ever could.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL 1 ===== -->
+    {jeremyUSA && (
+      <TestimonialDivider
+        quote={jeremyUSA.quote}
+        name={jeremyUSA.name}
+        location={jeremyUSA.location}
+        photo={jeremyUSA.photo}
+      />
+    )}
+
+    <!-- ===== 2. THE LANGUAGE OF ELEMENTS ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          The Language of the Elements and Emotions
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+          <p>
+            This training unfolds as an inner journey through the five elements and the five primal emotions.
+            Each element is an invitation to explore how emotion moves through your own body — not as a concept to apply, but as a direct experience.
+          </p>
+          <p>
+            When you allow yourself to feel these qualities — the contraction of fear, the softening of sadness, the ignition of anger, the expansion of joy, the subtle withdrawal of shame — you begin to recognize them in the bodies of others with natural empathy and precision.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+          {elements.map(({ element, emotion }) => (
+            <div class="bg-canvas rounded-card p-6">
+              <p class="font-serif text-forest text-lg font-bold mb-1">{element}</p>
+              <p class="font-sans text-stone text-sm">{emotion}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="font-serif text-2xl text-text-main mb-4">Touching Emotion Through Presence</h3>
+        <div class="font-sans text-stone leading-relaxed space-y-4">
+          <p>
+            In the practical bodywork sessions, we do not try to "work on fear" or "release sadness." Instead, we attune to what is alive in the field, and allow these elemental languages to inform the quality of our touch.
+          </p>
+          <p>
+            Rather than aiming for catharsis, we explore presence as the medicine. Rather than trying to make something happen, we learn to listen so closely that the body begins to reorganize itself.
+          </p>
+          <p>
+            Every emotion has its own rhythm, its own language, and our task as practitioners is simply to accompany that movement. To hold space without demand, and to allow the body's intelligence to unfold in its own time.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL 2 ===== -->
+    {robinUSA && (
+      <TestimonialDivider
+        quote={robinUSA.quote}
+        name={robinUSA.name}
+        location={robinUSA.location}
+        photo={robinUSA.photo}
+      />
+    )}
+
+    <!-- ===== 3. EMBODIMENT IN PRACTICE ===== -->
+    <section class="py-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto max-w-3xl">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+          Embodiment in Practice
+        </h2>
+        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+          <p>
+            Throughout the retreat, the five elements and their emotional resonances will color our movement, meditation, and partner work. They serve as mirrors, not methods — ways of refining perception and deepening your somatic vocabulary.
+          </p>
+          <p>
+            We explore how the qualities of the elements express through touch, sound, and rhythm: the grounded steadiness of earth, the fluid yielding of water, the clear direction of fire, the expansive breath of air, and the spacious stillness of space.
+          </p>
+          <p>
+            By journey's end, you will have learned not only new, advanced techniques, but a subtler form of listening — how to meet another person's body from the inside out, with presence that includes the whole spectrum of feeling.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-surface-lo rounded-card p-8">
+            <h3 class="font-serif text-xl text-text-main mb-3">Prerequisites</h3>
+            <p class="font-sans text-stone leading-relaxed">
+              Level 2 is open to all graduates of the Level 1 training. You bring your foundation — we deepen it together.
+            </p>
+          </div>
+          <div class="bg-surface-lo rounded-card p-8">
+            <h3 class="font-serif text-xl text-text-main mb-3">Format</h3>
+            <p class="font-sans text-stone leading-relaxed">
+              A 6-day immersive retreat combining hands-on bodywork, movement, meditation, and shared ceremony.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIAL 3 ===== -->
+    {samUSA && (
+      <TestimonialDivider
+        quote={samUSA.quote}
+        name={samUSA.name}
+        location={samUSA.location}
+        photo={samUSA.photo}
+      />
+    )}
+
+    <!-- ===== 4. UPCOMING TRAININGS ===== -->
+    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+      <div class="max-w-page mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
+          Upcoming Level 2 Trainings
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          <TrainingCard
+            title="An Evolution of Sensitivity"
+            date="10–16 May 2026"
+            location="Alpujarra, Spain"
+            level="Level 2"
+            href="/spain"
+          />
+        </div>
+        <ApplyButton />
+      </div>
+    </section>
+
+  </main>
+
+  <Footer lang="en" />
+
+</Layout>
