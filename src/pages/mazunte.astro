@@ -55,19 +55,23 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
     </section>
     </FadeIn>
 
-    <!-- ===== 2. PHOTO GALLERY ===== -->
+    <!-- ===== 2. VIDEO ===== -->
     <FadeIn>
-    <section class="py-16 px-6 md:px-12 bg-canvas">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <PhotoGallery
-          images={[
-            { src: '/images/mazunte/gallery-1.jpg', alt: 'Mazunte training — bodywork session' },
-            { src: '/images/mazunte/gallery-2.jpg', alt: 'Mazunte training — group practice' },
-            { src: '/images/mazunte/gallery-3.jpg', alt: 'Mazunte training — outdoor space' },
-            { src: '/images/mazunte/gallery-4.jpg', alt: 'Mazunte training — participants' },
-          ]}
-          caption="Real moments from the Mazunte Training"
-        />
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10 text-center">
+          Real moments from the Mazunte Training
+        </h2>
+        <div class="relative w-full max-w-3xl mx-auto aspect-video rounded-card overflow-hidden">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/mB88cuuMA84"
+            title="Myofascial Somatic Liberation — Bodywork Training Level 1, Mazunte"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="absolute inset-0 w-full h-full"
+            loading="lazy"
+          ></iframe>
+        </div>
       </div>
     </section>
     </FadeIn>
@@ -183,28 +187,41 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
 
     <!-- ===== 7. THE FIELD WE PRACTICE IN ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          The Field We Practice In
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            This training isn't just about learning to touch - it's about remembering how to listen.
-          </p>
-          <p>
-            Within a warm, grounded, and playful group field, you'll experience the healing power of connection: with your body, with others and with the intelligence that lives beneath the surface.
-          </p>
-          <p>
-            Energetic awareness and supportive pacing are woven into the hands-on bodywork - not to overwhelm you with information, but to support learning that can truly land and integrate in your system.
-          </p>
-          <p>
-            You will be held in an environment that supports what is ready to move, physically, emotionally and energetically, allowing release to unfold naturally, in its own time.
-          </p>
-          <p>
-            This is not only a training, but a journey: a spiraling movement of opening, unwinding and empowerment.
-          </p>
-        </div>
+    <section class="py-12 md:pb-6 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/mazunte/gallery-1.jpg" imageAlt="Bodywork session during the Mazunte training">
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            The Field We Practice In
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              This training isn't just about learning to touch - it's about remembering how to listen.
+            </p>
+            <p>
+              Within a warm, grounded, and playful group field, you'll experience the healing power of connection: with your body, with others and with the intelligence that lives beneath the surface.
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
+
+    <FadeIn>
+    <section class="py-6 md:py-12 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/mazunte/gallery-2.jpg" imageAlt="Group practice at the Mazunte training" reversed>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Energetic awareness and supportive pacing are woven into the hands-on bodywork - not to overwhelm you with information, but to support learning that can truly land and integrate in your system.
+            </p>
+            <p>
+              You will be held in an environment that supports what is ready to move, physically, emotionally and energetically, allowing release to unfold naturally, in its own time.
+            </p>
+            <p>
+              This is not only a training, but a journey: a spiraling movement of opening, unwinding and empowerment.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
@@ -221,71 +238,55 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
 
     <!-- ===== 9. VENUE — THE PLACE THAT HOLDS THE WORK ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
+    <section class="py-12 md:pb-6 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
-          The Place That Holds the Work
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-          <!-- Text column -->
+        <TextImageSection image="/images/mazunte/venue-garden.jpg" imageAlt="Bliss Haven Retreat Center — lush garden near the beach in Mazunte" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            The Space That Holds the Work
+          </h2>
           <div class="font-sans text-stone leading-relaxed space-y-4">
             <p>
               Set in the tranquil yet vibrant beach town of Mazunte, this training unfolds in a place where scenic coastlines, coconut trees and a laid-back rhythm of life welcome you in.
             </p>
             <p>
-              The sun and ever-present warm, tropical breeze caress your body, while the sound of the ocean becomes a continuous, soothing symphony in the background - holding and nourishing every step of your process.
+              Bliss Haven Retreat Center is tucked into a lush garden just a few minutes walk from the beach. With a pool, communal spaces and beautiful accommodations, it's a place where time slows down, and your body remembers how to rest.
             </p>
             <p>
-              The coast is also famous for its incredible wildlife with humpback whales passing along the shore from December to March, as well as turtles and dolphins which can be seen all year around.
+              The coast is famous for its incredible wildlife — humpback whales passing along the shore from December to March, as well as turtles and dolphins which can be seen all year around.
+            </p>
+            <p>
+              Just like the beaches, the village of Mazunte with many amazing restaurants and a rich culture is only a few minutes walk away.
             </p>
             <p>
               <a href="https://blisshaven.yoga/" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
                 Location: blisshaven.yoga
               </a>
             </p>
-            <p>
-              Bliss Haven Retreat Center is tucked into a lush garden just a few minutes walk from the beach. With a pool, communal spaces and beautiful accommodations, it's a place where time slows down, and your body remembers how to rest.
-            </p>
-            <p>
-              Just like the beaches, the village of Mazunte with many amazing and affordable restaurants and a rich culture is only a few minutes walk away.
-            </p>
-            <p>
-              Included in the training is a group excursion to see the amazing sunrise at Punta Cometa, Mexico's most southwestern point with 180-degree ocean view.
-            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
 
-            <div class="rounded-card overflow-hidden aspect-[4/3] mt-6">
-              <img
-                src="/images/mazunte/venue-garden.jpg"
-                alt="Bliss Haven Retreat Center — lush garden near the beach"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-
-            <p class="pt-4">
+    <FadeIn>
+    <section class="py-6 md:py-12 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/mazunte/sunset.jpg" imageAlt="Mazunte sunset — Pacific Ocean coastline">
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              The sun and ever-present warm tropical breeze caress your body, while the sound of the ocean becomes a continuous, soothing symphony in the background — holding and nourishing every step of your process.
+            </p>
+            <p>
               In the early mornings, during the breaks and in the evenings you will have time to explore the rich culture and culinary delights of Mazunte.
-            </p>
-            <p>
-              The whole area offers many spots that can help you integrate the work you are giving and receiving.
             </p>
             <p>
               Each day you will have the opportunity to absorb the sounds of nature while sitting on the beach, watch the sunrise, and experience the cleansing and refreshing qualities of a dip in the Pacific Ocean.
             </p>
-
-            <div class="rounded-card overflow-hidden aspect-[4/3] mt-2">
-              <img
-                src="/images/mazunte/sunset.jpg"
-                alt="Mazunte sunset — Pacific Ocean coastline"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
+            <p>
+              Included in the training is a group excursion to see the amazing sunrise at Punta Cometa, Mexico's most southwestern point with 180-degree ocean view.
+            </p>
           </div>
-
-          <!-- Images column (placeholder for layout balance) -->
-          <div class="hidden md:block"></div>
-        </div>
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
@@ -296,68 +297,32 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
-          Held & Nourished
-        </h2>
-
-        <div class="max-w-3xl mb-10">
+        <TextImageSection
+          image="/images/mazunte/food-1.jpg"
+          imageAlt="Fresh nourishing meal prepared at the Mazunte retreat"
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            Held & Nourished
+          </h2>
           <div class="font-sans text-stone leading-relaxed space-y-4">
             <p>
               <strong class="text-text-main">Breakfast and lunch are included each day</strong>, prepared by the amazing catering team of{' '}
               <a href="https://umamisanagus.mx/" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
                 Umami Restaurant
               </a>
+              {' '}— offering fresh, nourishing and grounding meals to support our time together.
             </p>
             <p>
-              offering fresh, nourishing and grounding meals to support our time together.
+              These shared meals also become moments of connection and integration — time to rest, digest and gently transition between inner work and daily life.
             </p>
             <p>
-              These shared meals also become moments of connection and integration - time to rest, digest and gently transition between inner work and daily life.
-            </p>
-            <p>
-              <strong class="text-text-main">Dinner is left open</strong> so you can explore Mazunte in your own way. Whether that means quiet solo meals, nourishing moments with new friends or spontaneous group dinners.
+              <strong class="text-text-main">Dinner is left open</strong> so you can explore Mazunte in your own way — whether that means quiet solo meals, nourishing moments with new friends or spontaneous group dinners.
             </p>
             <p>
               The retreat center also offers a well-equipped communal kitchen, available if you wish to prepare your own food in the evenings.
             </p>
           </div>
-        </div>
-
-        <!-- 2x2 food grid -->
-        <div class="grid grid-cols-2 gap-4 max-w-2xl">
-          <div class="rounded-card overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/mazunte/food-1.jpg"
-              alt="Fresh nourishing meal at Mazunte retreat"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div class="rounded-card overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/mazunte/food-2.jpg"
-              alt="Nourishing food prepared by Umami Restaurant"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div class="rounded-card overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/mazunte/food-3.jpeg"
-              alt="Grounding meals at the Mazunte retreat"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-          <div class="rounded-card overflow-hidden aspect-[4/3]">
-            <img
-              src="/images/mazunte/food-4.jpg"
-              alt="Shared meals — moments of connection"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
-          </div>
-        </div>
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
@@ -375,25 +340,27 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
     <!-- ===== 12. WHO IS THIS TRAINING FOR ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          Who Is This Training For
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
-          <p>
-            This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork.
-          </p>
-          <p>
-            It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work.
-          </p>
-          <p>
-            If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path.
-          </p>
-          <p>
-            <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
-          </p>
-        </div>
-        <ApplyButton />
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/mazunte/gallery-4.jpg" imageAlt="Mazunte retreat — participants in the training space" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            Who Is This Training For
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+            <p>
+              This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork.
+            </p>
+            <p>
+              It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work.
+            </p>
+            <p>
+              If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path.
+            </p>
+            <p>
+              <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
+            </p>
+          </div>
+          <ApplyButton />
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
@@ -516,6 +483,17 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
           />
         </div>
 
+        <dl class="font-sans text-sm space-y-3 mt-8 mb-6">
+          <div class="flex gap-6">
+            <dt class="text-stone font-bold uppercase tracking-[0.12rem] text-xs w-28 shrink-0 pt-0.5">Certification</dt>
+            <dd class="text-text-main">Level 1 Training Certificate upon full participation</dd>
+          </div>
+          <div class="flex gap-6">
+            <dt class="text-stone font-bold uppercase tracking-[0.12rem] text-xs w-28 shrink-0 pt-0.5">Payment</dt>
+            <dd class="text-text-main">Deposit required, cancellation terms during booking</dd>
+          </div>
+        </dl>
+
         <p class="font-sans text-stone text-base">
           Still unsure which option is right for you? Feel free to reach out with any questions.{' '}
           → <a href="/contact" class="text-forest hover:text-sage transition-colors underline underline-offset-4">Get in touch</a>
@@ -526,49 +504,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-mazunte')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 16. PRACTICAL DETAILS ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
-          Practical Details
-        </h2>
-        <dl class="font-sans space-y-6">
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 border-b border-stone/10 pb-6">
-            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Dates & Schedule</dt>
-            <dd class="sm:col-span-2 text-text-main leading-relaxed">
-              January 24 - 30, 2027<br />
-              Arrival: January 24, 15:00<br />
-              Departure: January 30, 13:00
-            </dd>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 border-b border-stone/10 pb-6">
-            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Location</dt>
-            <dd class="sm:col-span-2 text-text-main leading-relaxed">
-              Bliss Haven Retreat Center, Mazunte, Mexico<br />
-              ~60 min from Puerto Escondido (PXM) and Huatulco (HUX)
-            </dd>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 border-b border-stone/10 pb-6">
-            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Certification</dt>
-            <dd class="sm:col-span-2 text-text-main leading-relaxed">
-              Level 1 Training Certificate upon full participation
-            </dd>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            <dt class="text-stone text-xs font-bold uppercase tracking-[0.15rem]">Payment</dt>
-            <dd class="sm:col-span-2 text-text-main leading-relaxed">
-              Deposit required, cancellation terms during booking
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-    </FadeIn>
-
-    <StatsDivider />
-
-    <!-- ===== 17. CLOSING STATEMENT ===== -->
+    <!-- ===== 16. CLOSING STATEMENT ===== -->
     <FadeIn>
     <section class="py-8 md:py-12 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto text-center max-w-3xl">
