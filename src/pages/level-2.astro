@@ -141,10 +141,10 @@ const elements = [
           </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
+        <div class="grid grid-cols-5 gap-3 mb-10">
           {elements.map(({ element, emotion, icon }) => (
-            <div class="bg-canvas rounded-card p-6 flex items-start gap-4">
-              <div class="text-forest shrink-0 mt-0.5" set:html={icon} />
+            <div class="bg-canvas rounded-card p-4 flex flex-col items-center text-center gap-3">
+              <div class="text-forest" set:html={icon} />
               <div>
                 <p class="font-serif text-forest text-lg font-bold mb-1">{element}</p>
                 <p class="font-sans text-stone text-sm">{emotion}</p>
