@@ -356,7 +356,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
           A Day at the Training
         </h2>
-        <div class="max-w-2xl">
+        <div class="max-w-2xl rounded-card overflow-hidden border border-stone/10 shadow-sm">
           <table class="w-full font-sans">
             <tbody>
               {[
@@ -368,13 +368,16 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
                 { time: '18:30', activity: 'Sharing and closing for the day' },
                 { time: '19:00', activity: 'Dinner' },
                 { time: '20:00', activity: 'Different rituals and group activities (optional)' },
-              ].map(({ time, activity }) => (
-                <tr class="border-b border-stone/10 last:border-0">
-                  <td class="py-4 pr-8 text-forest font-medium text-sm whitespace-nowrap w-20">
-                    {time}
+              ].map(({ time, activity }, i) => (
+                <tr class={`${i % 2 === 0 ? 'bg-canvas' : 'bg-surface-lo'} last:border-0`}>
+                  <td class="py-4 pl-6 pr-6 w-28 align-middle">
+                    <div class="flex items-center gap-3">
+                      <span class="shrink-0 w-2 h-2 rounded-full bg-forest/40 block"></span>
+                      <span class="font-serif text-forest font-bold text-base whitespace-nowrap">{time}</span>
+                    </div>
                   </td>
-                  <td class="py-4 text-stone leading-relaxed">
-                    {activity}
+                  <td class="py-4 pr-6 text-stone leading-relaxed border-l border-stone/10">
+                    <span class="pl-4 block">{activity}</span>
                   </td>
                 </tr>
               ))}

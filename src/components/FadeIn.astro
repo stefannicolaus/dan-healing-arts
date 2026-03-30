@@ -1,0 +1,46 @@
+---
+interface Props {
+  delay?: number; // optional delay in ms (e.g. 100, 200)
+  class?: string;
+}
+
+const { delay = 0, class: className = '' } = Astro.props;
+---
+
+<div
+  class={`fade-in-block ${className}`}
+  style={delay ? `transition-delay: ${delay}ms` : ''}
+>
+  <slot />
+</div>
+
+<style>
+  .fade-in-block {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 600ms ease, transform 600ms ease;
+  }
+
+  .fade-in-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  const blocks = document.querySelectorAll('.fade-in-block');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12 }
+  );
+
+  blocks.forEach((el) => observer.observe(el));
+</script>

@@ -10,24 +10,83 @@ interface Props {
 }
 
 const { images, caption } = Astro.props;
+
+// Split: first image is featured, rest fill the right column
+const [featured, ...rest] = images;
 ---
 
 <div>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-    {images.map((img) => (
-      <div class="aspect-[4/3] overflow-hidden rounded-btn">
+  {images.length >= 2 ? (
+    <!-- Dynamic layout: featured left, grid right -->
+    <div class="grid grid-cols-2 gap-3 md:gap-4">
+
+      <!-- Featured image: spans full height left column -->
+      <div class="gallery-item relative overflow-hidden rounded-lg">
         <img
-          src={img.src}
-          alt={img.alt}
-          class="w-full h-full object-cover"
+          src={featured.src}
+          alt={featured.alt}
+          class="w-full h-full object-cover transition-transform duration-500 ease-out"
           loading="lazy"
         />
+        <div class="gallery-caption absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 opacity-0 transition-opacity duration-300">
+          <p class="font-sans text-white text-xs leading-snug">{featured.alt}</p>
+        </div>
       </div>
-    ))}
-  </div>
+
+      <!-- Right column: remaining images stacked -->
+      <div class="grid grid-rows-3 gap-3 md:gap-4">
+        {rest.slice(0, 3).map((img) => (
+          <div class="gallery-item relative overflow-hidden rounded-lg">
+            <img
+              src={img.src}
+              alt={img.alt}
+              class="w-full h-full object-cover transition-transform duration-500 ease-out"
+              loading="lazy"
+            />
+            <div class="gallery-caption absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 opacity-0 transition-opacity duration-300">
+              <p class="font-sans text-white text-xs leading-snug">{img.alt}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  ) : (
+    <!-- Fallback for single image or empty -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      {images.map((img) => (
+        <div class="gallery-item relative aspect-[4/3] overflow-hidden rounded-lg">
+          <img
+            src={img.src}
+            alt={img.alt}
+            class="w-full h-full object-cover transition-transform duration-500 ease-out"
+            loading="lazy"
+          />
+          <div class="gallery-caption absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent px-4 py-3 opacity-0 transition-opacity duration-300">
+            <p class="font-sans text-white text-xs leading-snug">{img.alt}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
   {caption && (
     <p class="font-sans text-stone text-sm text-center mt-4">
       {caption}
     </p>
   )}
 </div>
+
+<style>
+  .gallery-item {
+    min-height: 160px;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.02);
+  }
+
+  .gallery-item:hover .gallery-caption {
+    opacity: 1;
+  }
+</style>
