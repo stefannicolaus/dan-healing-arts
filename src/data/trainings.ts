@@ -14,7 +14,7 @@ export const trainings: Training[] = [
     location: "Zürich, Switzerland",
     level: "Level 1a",
     href: "/zurich",
-    image: "/images/general/dan-two-men.jpg",
+    image: "/images/zurich/hero.jpg",
   },
   {
     title: "An Evolution of Sensitivity",
@@ -38,7 +38,7 @@ export const trainings: Training[] = [
     location: "Zürich, Switzerland",
     level: "Level 1b",
     href: "/zurich",
-    image: "/images/general/dan-two-men.jpg",
+    image: "/images/zurich/hero.jpg",
   },
   {
     title: "The Essence of Deep Touch",
