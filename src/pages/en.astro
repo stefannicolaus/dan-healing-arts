@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { homepageTrainings } from '../data/trainings';
+import { trainings } from '../data/trainings';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -234,8 +234,8 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Upcoming Trainings</h2>
         </FadeIn>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          {homepageTrainings.map(t => (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+          {trainings.map(t => (
             <TrainingCard
               title={t.title}
               date={t.date}
