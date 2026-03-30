@@ -24,34 +24,19 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
   canonicalPath="/portugal"
   ogImage="/images/portugal/hero.jpg"
 >
-  <Nav lang="en" heroMode />
+  <Nav lang="en" />
 
   <main>
 
     <!-- ===== 1. HERO ===== -->
-    <section class="relative">
-      <!-- Full-width image with gradient overlay -->
-      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
-        <img
-          src="/images/portugal/hero.jpg"
-          alt="Portugal retreat — The Essence of Deep Touch"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/60"></div>
-        <!-- Large overlay text -->
-        <div class="absolute inset-0 flex items-center justify-center">
-          <span class="font-sans text-white text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider">
-            PORTUGAL
-          </span>
-        </div>
-      </div>
-
-      <!-- Below image, centered text block -->
-      <div class="bg-canvas py-16 px-6 md:px-12 text-center">
-        <div class="max-w-2xl mx-auto">
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">
+    <FadeIn>
+    <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/portugal/hero.jpg" imageAlt="Portugal retreat — The Essence of Deep Touch">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Portugal · Level 1</p>
+          <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             The Essence of Deep Touch
-          </h2>
+          </h1>
           <p class="font-sans text-stone text-lg italic mb-2">
             A Myofascial Somatic Liberation Training —{' '}
             <a href="/level-1" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
@@ -59,15 +44,16 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
             </a>
           </p>
           <p class="font-sans text-stone text-base mb-4">
-            Portugal . 1 - 7 June, 2026
+            Portugal · 1 – 7 June, 2026
           </p>
           <p class="font-sans text-stone text-base italic mb-10">
             A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement.
           </p>
           <ApplyButton />
-        </div>
+        </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 2. PHOTO GALLERY ===== -->
     <FadeIn>

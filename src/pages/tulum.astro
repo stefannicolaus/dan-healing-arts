@@ -23,32 +23,19 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
   description="A Myofascial Somatic Liberation Training at Casa Arkaana — an ecological retreat center in the jungle near Chemuyil, Yucatán Peninsula, Mexico. Dates to be announced."
   canonicalPath="/tulum"
 >
-  <Nav lang="en" heroMode />
+  <Nav lang="en" />
 
   <main>
 
     <!-- ===== 1. HERO ===== -->
-    <section class="relative">
-      <!-- Hero image -->
-      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
-        <img
-          src="/images/tulum/hero.jpg"
-          alt="Casa Arkaana — ecological retreat center in the jungle near Tulum, Mexico"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-black/50 flex items-center justify-center">
-          <span class="font-sans text-white text-6xl md:text-8xl lg:text-9xl font-bold uppercase tracking-wider opacity-60">
-            TULUM
-          </span>
-        </div>
-      </div>
-
-      <!-- Below image, centered text block -->
-      <div class="bg-canvas py-16 px-6 md:px-12 text-center">
-        <div class="max-w-2xl mx-auto">
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">
+    <FadeIn>
+    <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/tulum/hero.jpg" imageAlt="Casa Arkaana — ecological retreat center in the jungle near Tulum, Mexico">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Tulum, Mexico · Level 1</p>
+          <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             The Essence of Deep Touch
-          </h2>
+          </h1>
           <p class="font-sans text-stone text-lg italic mb-2">
             A Myofascial Somatic Liberation Training —{' '}
             <a href="/level-1" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
@@ -56,15 +43,16 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
             </a>
           </p>
           <p class="font-sans text-stone text-base mb-4">
-            Tulum, Mexico . Dates to Be Announced
+            Tulum, Mexico · Dates to Be Announced
           </p>
           <p class="font-sans text-stone text-base italic mb-10">
             An immersive training in fascia release, deep tissue massage and nervous system attunement — held in the jungle.
           </p>
           <ApplyButton text="Get in Touch" />
-        </div>
+        </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <StatsDivider />
 
