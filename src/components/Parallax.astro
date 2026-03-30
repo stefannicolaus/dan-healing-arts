@@ -1,10 +1,10 @@
 ---
-const { src, height = "45vh" } = Astro.props;
+const { src, height = "45vh", position = "center" } = Astro.props;
 ---
 
 <div
   class="parallax-section w-full"
-  style={`background-image: url('${src}'); height: ${height};`}
+  style={`background-image: url('${src}'); height: ${height}; background-position: ${position};`}
 ></div>
 
 <style>
