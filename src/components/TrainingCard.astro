@@ -16,13 +16,23 @@ const { title, date, location, level, href, image } = Astro.props;
   class="training-card block bg-white border border-stone/10 rounded-card overflow-hidden hover:shadow-lg transition-all duration-200 group relative"
 >
   {image && (
-    <div class="overflow-hidden aspect-[16/7]">
+    <div class="relative overflow-hidden aspect-[16/7]">
       <img
         src={image}
         alt={location}
         class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
         loading="lazy"
       />
+      <!-- Location overlay -->
+      <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 to-transparent pt-8 pb-3 px-4">
+        <p class="font-sans text-white text-sm font-semibold flex items-center gap-1.5">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          {location}
+        </p>
+      </div>
     </div>
   )}
 
@@ -46,13 +56,15 @@ const { title, date, location, level, href, image } = Astro.props;
         </svg>
         {date}
       </p>
-      <p class="font-sans text-stone text-sm flex items-center gap-2">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-forest/60" aria-hidden="true">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
-          <circle cx="12" cy="10" r="3"/>
-        </svg>
-        {location}
-      </p>
+      {!image && (
+        <p class="font-sans text-stone text-sm flex items-center gap-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 text-forest/60" aria-hidden="true">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          {location}
+        </p>
+      )}
     </div>
 
     <span class="absolute bottom-6 right-6 text-forest/40 group-hover:text-forest group-hover:translate-x-1 transition-all duration-200" aria-hidden="true">
