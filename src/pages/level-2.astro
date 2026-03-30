@@ -17,11 +17,45 @@ const robinUSA = allTestimonials.find(t => t.id === 'robin-usa')?.data;
 const samUSA = allTestimonials.find(t => t.id === 'sam-usa')?.data;
 
 const elements = [
-  { element: 'Earth', emotion: 'Fear' },
-  { element: 'Water', emotion: 'Sadness' },
-  { element: 'Fire', emotion: 'Anger' },
-  { element: 'Air', emotion: 'Joy' },
-  { element: 'Space', emotion: 'Shame' },
+  {
+    element: 'Earth',
+    emotion: 'Fear',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="3,30 12,12 18,20 24,10 33,30"/>
+      <line x1="3" y1="30" x2="33" y2="30"/>
+    </svg>`,
+  },
+  {
+    element: 'Water',
+    emotion: 'Sadness',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 6 C18 6 10 16 10 22 a8 8 0 0 0 16 0 C26 16 18 6 18 6z"/>
+    </svg>`,
+  },
+  {
+    element: 'Fire',
+    emotion: 'Anger',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 4 C18 4 24 10 22 16 C26 12 26 8 24 6 C28 10 28 18 24 22 C26 20 27 26 24 28 C22 30 14 30 12 28 C8 24 10 18 12 16 C10 20 10 24 13 26 C10 22 10 14 14 10 C14 14 16 16 18 14 C16 10 18 4 18 4z"/>
+    </svg>`,
+  },
+  {
+    element: 'Air',
+    emotion: 'Joy',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 14 Q18 8 30 14"/>
+      <path d="M6 20 Q16 14 26 20 Q30 22 32 20"/>
+      <path d="M6 26 Q14 20 22 26 Q26 28 30 24"/>
+    </svg>`,
+  },
+  {
+    element: 'Space',
+    emotion: 'Shame',
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="18" cy="18" r="13"/>
+      <circle cx="18" cy="18" r="2" fill="currentColor" stroke="none"/>
+    </svg>`,
+  },
 ];
 ---
 
@@ -100,10 +134,13 @@ const elements = [
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-10">
-          {elements.map(({ element, emotion }) => (
-            <div class="bg-canvas rounded-card p-6">
-              <p class="font-serif text-forest text-lg font-bold mb-1">{element}</p>
-              <p class="font-sans text-stone text-sm">{emotion}</p>
+          {elements.map(({ element, emotion, icon }) => (
+            <div class="bg-canvas rounded-card p-6 flex items-start gap-4">
+              <div class="text-forest shrink-0 mt-0.5" set:html={icon} />
+              <div>
+                <p class="font-serif text-forest text-lg font-bold mb-1">{element}</p>
+                <p class="font-sans text-stone text-sm">{emotion}</p>
+              </div>
             </div>
           ))}
         </div>
