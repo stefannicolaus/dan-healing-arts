@@ -9,48 +9,47 @@ interface Props {
 const { quote, name, location, photo } = Astro.props;
 ---
 
-<div class="testimonial-divider bg-surface-lo py-20 md:py-32 px-6 md:px-12">
-  <div class="max-w-page mx-auto">
+<div class="testimonial-divider relative py-10 md:py-14 px-6 md:px-12 overflow-hidden">
 
+  <!-- Textured background: warm earthy tone with subtle grain -->
+  <div class="absolute inset-0 bg-umber"></div>
+  <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noise%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noise)%22/%3E%3C/svg%3E'); background-size: 150px;"></div>
+
+  <div class="relative z-10 max-w-3xl mx-auto text-center">
     {photo ? (
-      <!-- With photo: left-aligned, photo beside attribution -->
-      <div class="max-w-3xl mx-auto">
-        <span class="block font-serif text-forest/20 leading-none select-none mb-4" style="font-size: clamp(5rem, 12vw, 9rem); line-height: 0.8;" aria-hidden="true">"</span>
-        <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed mb-8">
-          {quote}
+      <div class="flex flex-col items-center">
+        <p class="font-serif italic text-white/90 text-lg md:text-xl leading-relaxed">
+          &ldquo;{quote}&rdquo;
         </p>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3 mt-6">
           <img
             src={photo}
             alt={name}
-            class="w-14 h-14 rounded-full object-cover shrink-0"
+            class="w-10 h-10 rounded-full object-cover shrink-0"
           />
-          <p class="font-sans text-stone text-sm font-medium">
-            — {name} <span class="font-normal text-stone/70">{location}</span>
+          <p class="font-sans text-white/60 text-sm">
+            — {name}, {location}
           </p>
         </div>
       </div>
     ) : (
-      <!-- Without photo: centered -->
-      <div class="text-center max-w-3xl mx-auto">
-        <span class="block font-serif text-forest/20 leading-none select-none mb-4" style="font-size: clamp(5rem, 12vw, 9rem); line-height: 0.8;" aria-hidden="true">"</span>
-        <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed mb-8">
-          {quote}
+      <div>
+        <p class="font-serif italic text-white/90 text-lg md:text-xl leading-relaxed">
+          &ldquo;{quote}&rdquo;
         </p>
-        <p class="font-sans text-stone text-sm font-medium">
-          — {name} <span class="font-normal text-stone/70">{location}</span>
+        <p class="font-sans text-white/60 text-sm mt-6">
+          — {name}, {location}
         </p>
       </div>
     )}
-
   </div>
 </div>
 
 <style>
   .testimonial-divider {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 600ms ease, transform 600ms ease;
+    transform: translateY(16px);
+    transition: opacity 500ms ease, transform 500ms ease;
   }
 
   .testimonial-divider.visible {
