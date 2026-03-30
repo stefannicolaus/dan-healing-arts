@@ -7,7 +7,6 @@ import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
-import PhotoGallery from '../components/PhotoGallery.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
 
@@ -56,7 +55,33 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 2. LEARNING THE ART OF DEEP TOUCH ===== -->
+    <!-- ===== 2. VIDEO ===== -->
+    <!-- TODO Daniel: YouTube-Video-ID einfügen und diesen Block aktivieren -->
+    <!--
+    <FadeIn>
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10 text-center">
+          Real moments from the Tulum Training
+        </h2>
+        <div class="relative w-full max-w-3xl mx-auto aspect-video rounded-card overflow-hidden">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/VIDEO_ID_HERE"
+            title="Myofascial Somatic Liberation — Bodywork Training Level 1, Tulum"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="absolute inset-0 w-full h-full"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    </FadeIn>
+
+    <StatsDivider />
+    -->
+
+    <!-- ===== 3. LEARNING THE ART OF DEEP TOUCH ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
@@ -90,11 +115,15 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 3. THE TRAINING EXPERIENCE ===== -->
+    <!-- ===== 4. THE TRAINING EXPERIENCE ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection reversed>
+        <TextImageSection
+          image="/images/tulum/sahil.jpg"
+          imageAlt="Bodywork training session at Casa Arkaana, Tulum"
+          reversed
+        >
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
             The Training Experience
           </h2>
@@ -120,12 +149,15 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 4. EXPERIENTIAL LEARNING ===== -->
+    <!-- ===== 5. EXPERIENTIAL LEARNING ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
+        <TextImageSection
+          image="/images/tulum/hero.jpg"
+          imageAlt="Hands-on bodywork practice at the Tulum training"
+        >
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
             <p>
               The learning is highly experiential and hands-on.
               Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice.
@@ -137,15 +169,13 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
               Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably.
             </p>
           </div>
-          <div class="mt-8 mb-4">
-            <ApplyButton text="Get in Touch" />
-          </div>
+          <ApplyButton text="Get in Touch" />
         </TextImageSection>
       </div>
     </section>
     </FadeIn>
 
-    <!-- ===== 5. TESTIMONIAL — REBECCA, CANADA ===== -->
+    <!-- ===== 6. TESTIMONIAL — REBECCA, CANADA ===== -->
     {rebeccaCanada && (
       <TestimonialDivider
         quote={rebeccaCanada.quote}
@@ -155,35 +185,48 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       />
     )}
 
-    <!-- ===== 6. THE FIELD WE PRACTICE IN ===== -->
+    <!-- ===== 7. THE FIELD WE PRACTICE IN ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          The Field We Practice In
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize.
-          </p>
-          <p>
-            It is not only about learning how to touch, but also about remembering how to listen.
-          </p>
-          <p>
-            Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands.
-          </p>
-          <p>
-            In this relational space, connection deepens — with your own body, with others, and with the deeper intelligence that lives beneath the surface.
-          </p>
-          <p>
-            More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment.
-          </p>
-        </div>
+    <section class="py-12 md:pb-6 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/tulum/venue.jpg" imageAlt="Practice space at Casa Arkaana — jungle retreat center near Tulum">
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            The Field We Practice In
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize.
+            </p>
+            <p>
+              It is not only about learning how to touch, but also about remembering how to listen.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
 
-    <!-- ===== 7. TESTIMONIAL — LASSE, FINLAND ===== -->
+    <FadeIn>
+    <section class="py-6 md:py-12 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/tulum/hero.jpg" imageAlt="Bodywork practice session at the Tulum jungle training" reversed>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands.
+            </p>
+            <p>
+              In this relational space, connection deepens — with your own body, with others, and with the deeper intelligence that lives beneath the surface.
+            </p>
+            <p>
+              More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment.
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
+
+    <!-- ===== 8. TESTIMONIAL — LASSE, FINLAND ===== -->
     {lasseFinland && (
       <TestimonialDivider
         quote={lasseFinland.quote}
@@ -196,81 +239,83 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <!-- ===== PARALLAX before venue ===== -->
     <Parallax src="/images/tulum/hero.jpg" height="40vh" />
 
-    <!-- ===== 8. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
+    <!-- ===== 9. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
+    <FadeIn>
+    <section class="py-12 md:pb-6 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/tulum/venue.jpg" imageAlt="Casa Arkaana — ecological retreat center in the jungle near Tulum" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            The Space That Holds the Work
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum on the Yucatán Peninsula of Mexico.
+            </p>
+            <p>
+              Run by Maja and Asdrubal, the center is dedicated to healing arts, conscious transformation, permaculture and slow living — values that are woven into the fabric of everyday life there.
+            </p>
+            <p>
+              Just 6 km from pristine beaches and close to cenotes, the location offers both the stillness of deep jungle and easy access to the extraordinary natural world of the Yucatán Peninsula.
+            </p>
+            <p>
+              <a href="https://www.casaarkaana.com" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+                Location: www.casaarkaana.com
+              </a>
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
+
+    <FadeIn>
+    <section class="py-6 md:py-12 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/tulum/twin-room.jpg" imageAlt="Accommodation at Casa Arkaana retreat center">
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              "Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other." — Sahil
+            </p>
+            <p>
+              Between sessions, there is space to walk in the jungle, swim in cenotes, integrate, and simply be — allowing the work to settle beyond the mat and table.
+            </p>
+          </div>
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
+
+    <StatsDivider />
+
+    <!-- ===== 10. HELD & NOURISHED ===== -->
+    <!-- TODO Daniel: Bitte Details zum Essen / Catering bei Casa Arkaana ergänzen + passendes Bild bereitstellen -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
-          The Space That Holds the Work
-        </h2>
-
-        <div class="mb-12">
-          <PhotoGallery
-            images={[
-              { src: "/images/tulum/venue.jpg", alt: "Casa Arkaana — ecological retreat center jungle entrance" },
-              { src: "/images/tulum/single-room.jpg", alt: "Single room accommodation at Casa Arkaana" },
-              { src: "/images/tulum/twin-room.jpg", alt: "Twin room at Casa Arkaana" },
-              { src: "/images/tulum/private-bath.jpg", alt: "Private bathroom at Casa Arkaana retreat" },
-            ]}
-            caption="Casa Arkaana — Chemuyil, Yucatán Peninsula, Mexico"
-          />
-        </div>
-
-        <div class="max-w-3xl font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum on the Yucatán Peninsula of Mexico.
-          </p>
-          <p>
-            Run by Maja and Asdrubal, the center is dedicated to healing arts, conscious transformation, permaculture and slow living — values that are woven into the fabric of everyday life there.
-          </p>
-          <p>
-            Just 6 km from pristine beaches and close to cenotes, the location offers both the stillness of deep jungle and easy access to the extraordinary natural world of the Yucatán Peninsula.
-          </p>
-          <p>
-            "Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other." — Sahil
-          </p>
-          <p>
-            <a href="https://www.casaarkaana.com" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
-              Location: www.casaarkaana.com
-            </a>
-          </p>
-          <p>
-            Between sessions, there is space to walk in the jungle, swim in cenotes, integrate, and simply be — allowing the work to settle beyond the mat and table.
-          </p>
-        </div>
+        <TextImageSection
+          image="/images/tulum/sahil.jpg"
+          imageAlt="Nourishing meals at Casa Arkaana — TODO: replace with food image"
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            Held & Nourished
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4">
+            <p>
+              Throughout the retreat, you'll be nourished with daily meals prepared with care and intention — designed to support the depth of work you're moving through.
+            </p>
+            <p>
+              The food is thoughtfully prepared to ground the nervous system while keeping the body clear and well-fueled throughout the training.
+            </p>
+            <p>
+              Shared meals also become moments of connection and integration — time to rest, digest, and gently transition between inner work and daily life.
+            </p>
+          </div>
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
 
-    <!-- ===== 9. WHO IS THIS TRAINING FOR ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          Who Is This Training For
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          <p>
-            This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork.
-          </p>
-          <p>
-            It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work.
-          </p>
-          <p>
-            If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path.
-          </p>
-          <p>
-            <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
-          </p>
-        </div>
-        <div class="mt-8 mb-4">
-          <ApplyButton text="Get in Touch" />
-        </div>
-      </div>
-    </section>
-    </FadeIn>
-
-    <!-- ===== 10. TESTIMONIAL — LAURA, UK ===== -->
+    <!-- ===== 11. TESTIMONIAL — LAURA, UK ===== -->
     {lauraUK && (
       <TestimonialDivider
         quote={lauraUK.quote}
@@ -280,7 +325,80 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       />
     )}
 
-    <!-- ===== 11. INTERESTED? (CTA instead of pricing) ===== -->
+    <!-- ===== 12. WHO IS THIS TRAINING FOR ===== -->
+    <FadeIn>
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection image="/images/tulum/single-room.jpg" imageAlt="Casa Arkaana training — participants in the practice space" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            Who Is This Training For
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
+            <p>
+              This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork.
+            </p>
+            <p>
+              It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work.
+            </p>
+            <p>
+              If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path.
+            </p>
+            <p>
+              <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
+            </p>
+          </div>
+          <ApplyButton text="Get in Touch" />
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
+
+    <StatsDivider />
+
+    <!-- ===== 13. WHAT YOU'LL RECEIVE ===== -->
+    <FadeIn>
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
+      <div class="max-w-page mx-auto">
+        <TextImageSection
+          image="/images/tulum/private-bath.jpg"
+          imageAlt="Casa Arkaana accommodation and facilities"
+          reversed
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            What You'll Receive
+          </h2>
+          <ul class="font-sans text-stone leading-relaxed space-y-3 mb-10">
+            {[
+              '7 days/ 6 nights accommodation',
+              '3 daily nourishing meals',
+              'Daily bodywork/massage lessons and practice sessions',
+              'Daily yoga, meditation, breathwork, and voice work',
+              'Integration circles, kirtan and ceremonial spaces',
+              'Course manual',
+              'Video recordings of all bodywork sequences',
+              'Certificate of completion',
+              'Pre- and post-retreat support',
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="text-forest mt-1 shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <ApplyButton text="Get in Touch" />
+        </TextImageSection>
+      </div>
+    </section>
+    </FadeIn>
+
+    <StatsDivider />
+
+    <!-- ===== 14. YOUR STAY AT CASA ARKAANA (PRICING) ===== -->
+    <!-- TODO Daniel: Preise und Zimmeroptionen ergänzen wenn bestätigt -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
@@ -307,7 +425,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 12. CLOSING STATEMENT ===== -->
+    <!-- ===== 15. CLOSING STATEMENT ===== -->
     <FadeIn>
     <section class="py-8 md:py-12 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto text-center max-w-3xl">
