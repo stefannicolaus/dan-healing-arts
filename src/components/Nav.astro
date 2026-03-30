@@ -1,9 +1,10 @@
 ---
 interface Props {
   lang?: string;
+  heroMode?: boolean;
 }
 
-const { lang = 'en' } = Astro.props;
+const { lang = 'en', heroMode = false } = Astro.props;
 
 const isDe = lang === 'de';
 
@@ -13,10 +14,15 @@ const datePaths = ['/zurich', '/portugal', '/mazunte', '/spain', '/tulum'];
 const isActive = (href: string) => path === href || path === href.replace(/\/$/, '');
 const isDatesActive = datePaths.some(p => path === p);
 
+// heroMode: white links initially, switches to forest after scroll
+const base = heroMode ? 'text-white' : 'text-forest';
+const hover = heroMode ? 'hover:text-white/70' : 'hover:text-sage';
+const activeBorder = heroMode ? 'border-white' : 'border-forest';
+
 const linkClass = (href: string) =>
   isActive(href)
-    ? 'text-forest font-medium border-b-2 border-forest pb-0.5 transition-colors'
-    : 'text-forest font-medium hover:text-sage transition-colors';
+    ? `nav-link font-medium border-b-2 ${activeBorder} ${base} pb-0.5 transition-colors`
+    : `nav-link font-medium ${base} ${hover} transition-colors`;
 
 const mobileLinkClass = (href: string) =>
   isActive(href)
@@ -27,6 +33,7 @@ const mobileLinkClass = (href: string) =>
 <nav
   id="main-nav"
   class="fixed top-0 w-full z-50 transition-all duration-300 py-3 px-6 md:px-12"
+  data-hero={heroMode ? 'true' : 'false'}
 >
   <div class="max-w-page mx-auto flex justify-between items-center">
     <!-- Logo -->
@@ -68,7 +75,7 @@ const mobileLinkClass = (href: string) =>
 
           <!-- Dates dropdown -->
           <div class="relative group">
-            <button class={`${isDatesActive ? 'text-forest font-medium border-b-2 border-forest pb-0.5' : 'text-forest font-medium hover:text-sage transition-colors'} flex items-center gap-1 cursor-pointer`}>
+            <button class={`nav-link ${isDatesActive ? `font-medium border-b-2 ${activeBorder} ${base} pb-0.5` : `font-medium ${base} ${hover} transition-colors`} flex items-center gap-1 cursor-pointer`}>
               Dates
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"/>
@@ -93,7 +100,7 @@ const mobileLinkClass = (href: string) =>
           </a>
 
           <!-- Instagram -->
-          <a href="https://www.instagram.com/dan.healing.arts/" target="_blank" rel="noopener" aria-label="Instagram" class="text-forest hover:text-sage transition-colors ml-2">
+          <a href="https://www.instagram.com/dan.healing.arts/" target="_blank" rel="noopener" aria-label="Instagram" class={`nav-link ${base} ${hover} transition-colors ml-2`}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
               <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
@@ -157,13 +164,33 @@ const mobileLinkClass = (href: string) =>
 <script>
   // Scroll: transparent → solid
   const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
+  const isHeroMode = nav?.dataset.hero === 'true';
+  const navLinks = nav?.querySelectorAll<HTMLElement>('.nav-link');
+
+  function updateNav() {
+    const scrolled = window.scrollY > 60;
+    if (scrolled) {
       nav?.classList.add('bg-canvas/95', 'backdrop-blur-md', 'border-b', 'border-stone/20', 'shadow-sm');
+      if (isHeroMode && navLinks) {
+        navLinks.forEach(el => {
+          el.classList.remove('text-white', 'hover:text-white/70', 'border-white');
+          el.classList.add('text-forest', 'hover:text-sage');
+          if (el.classList.contains('border-b-2')) el.classList.add('border-forest');
+        });
+      }
     } else {
       nav?.classList.remove('bg-canvas/95', 'backdrop-blur-md', 'border-b', 'border-stone/20', 'shadow-sm');
+      if (isHeroMode && navLinks) {
+        navLinks.forEach(el => {
+          el.classList.remove('text-forest', 'hover:text-sage', 'border-forest');
+          el.classList.add('text-white', 'hover:text-white/70');
+          if (el.classList.contains('border-b-2')) el.classList.add('border-white');
+        });
+      }
     }
-  });
+  }
+
+  window.addEventListener('scroll', updateNav);
 
   // Mobile menu toggle
   document.getElementById('menu-btn')?.addEventListener('click', () => {
