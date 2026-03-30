@@ -4,19 +4,18 @@ interface Props {
   name: string;
   location: string;
   photo?: string;
-  variant?: 'paper' | 'linen';
+  variant?: 'stone' | 'gradient';
 }
 
-const { quote, name, location, photo, variant = 'paper' } = Astro.props;
-const textureSrc = variant === 'linen' ? '/images/general/texture-linen.jpg' : '/images/general/texture-paper.jpg';
+const { quote, name, location, photo, variant = 'stone' } = Astro.props;
 ---
 
-<div class="testimonial-divider relative py-10 md:py-14 px-6 md:px-12 overflow-hidden">
-
-  <!-- Texture background image -->
-  <div class="absolute inset-0">
-    <img src={textureSrc} alt="" class="w-full h-full object-cover" aria-hidden="true" />
-  </div>
+<div class:list={[
+  'testimonial-divider relative py-10 md:py-14 px-6 md:px-12',
+  variant === 'gradient'
+    ? 'testimonial-gradient'
+    : 'border-y border-stone/15'
+]} style={variant === 'stone' ? 'background-color: #E8E0D4;' : ''}>
 
   <div class="relative z-10 max-w-3xl mx-auto text-center">
     {photo ? (
@@ -58,6 +57,10 @@ const textureSrc = variant === 'linen' ? '/images/general/texture-linen.jpg' : '
   .testimonial-divider.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+
+  .testimonial-gradient {
+    background: linear-gradient(180deg, #F8F5F0 0%, #E4DACB 30%, #E4DACB 70%, #F8F5F0 100%);
   }
 </style>
 
