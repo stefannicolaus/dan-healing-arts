@@ -6,6 +6,22 @@ interface Props {
 const { lang = 'en' } = Astro.props;
 
 const isDe = lang === 'de';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const datePaths = ['/zurich', '/portugal', '/mazunte', '/spain', '/tulum'];
+const isActive = (href: string) => path === href || path === href.replace(/\/$/, '');
+const isDatesActive = datePaths.some(p => path === p);
+
+const linkClass = (href: string) =>
+  isActive(href)
+    ? 'text-forest font-medium border-b-2 border-forest pb-0.5 transition-colors'
+    : 'text-forest font-medium hover:text-sage transition-colors';
+
+const mobileLinkClass = (href: string) =>
+  isActive(href)
+    ? 'text-forest font-medium border-b-2 border-forest pb-0.5'
+    : 'text-forest font-medium';
 ---
 
 <nav
@@ -46,13 +62,13 @@ const isDe = lang === 'de';
       /* ===== ENGLISH: Multi-page Navigation ===== */
       <>
         <div class="hidden lg:flex items-center gap-8">
-          <a href="/about" class="text-forest font-medium hover:text-sage transition-colors whitespace-nowrap">About this work</a>
-          <a href="/level-1" class="text-forest font-medium hover:text-sage transition-colors">Level 1</a>
-          <a href="/level-2" class="text-forest font-medium hover:text-sage transition-colors">Level 2</a>
+          <a href="/about" class={`${linkClass('/about')} whitespace-nowrap`}>About this work</a>
+          <a href="/level-1" class={linkClass('/level-1')}>Level 1</a>
+          <a href="/level-2" class={linkClass('/level-2')}>Level 2</a>
 
           <!-- Dates dropdown -->
           <div class="relative group">
-            <button class="text-forest font-medium hover:text-sage transition-colors flex items-center gap-1 cursor-pointer">
+            <button class={`${isDatesActive ? 'text-forest font-medium border-b-2 border-forest pb-0.5' : 'text-forest font-medium hover:text-sage transition-colors'} flex items-center gap-1 cursor-pointer`}>
               Dates
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 12 15 18 9"/>
@@ -70,8 +86,8 @@ const isDe = lang === 'de';
             </div>
           </div>
 
-          <a href="/sessions" class="text-forest font-medium hover:text-sage transition-colors">Sessions</a>
-          <a href="/about-dan" class="text-forest font-medium hover:text-sage transition-colors whitespace-nowrap">About Dan</a>
+          <a href="/sessions" class={linkClass('/sessions')}>Sessions</a>
+          <a href="/about-dan" class={`${linkClass('/about-dan')} whitespace-nowrap`}>About Dan</a>
           <a href="/contact" class="inline-flex items-center px-6 py-2.5 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors">
             Contact
           </a>
@@ -111,17 +127,17 @@ const isDe = lang === 'de';
       </>
     ) : (
       <>
-        <a href="/about" class="text-forest font-medium">About this work</a>
-        <a href="/level-1" class="text-forest font-medium">Level 1</a>
-        <a href="/level-2" class="text-forest font-medium">Level 2</a>
+        <a href="/about" class={mobileLinkClass('/about')}>About this work</a>
+        <a href="/level-1" class={mobileLinkClass('/level-1')}>Level 1</a>
+        <a href="/level-2" class={mobileLinkClass('/level-2')}>Level 2</a>
         <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-stone pt-1">Dates</p>
-        <a href="/zurich" class="pl-4 text-stone font-medium hover:text-forest transition-colors">Zürich</a>
-        <a href="/portugal" class="pl-4 text-stone font-medium hover:text-forest transition-colors">Portugal</a>
-        <a href="/mazunte" class="pl-4 text-stone font-medium hover:text-forest transition-colors">Mazunte</a>
-        <a href="/spain" class="pl-4 text-stone font-medium hover:text-forest transition-colors">Spain</a>
-        <a href="/tulum" class="pl-4 text-stone font-medium hover:text-forest transition-colors">Tulum</a>
-        <a href="/sessions" class="text-forest font-medium">Sessions</a>
-        <a href="/about-dan" class="text-forest font-medium">About Dan</a>
+        <a href="/zurich" class={`pl-4 font-medium transition-colors ${isActive('/zurich') ? 'text-forest border-b-2 border-forest pb-0.5' : 'text-stone hover:text-forest'}`}>Zürich</a>
+        <a href="/portugal" class={`pl-4 font-medium transition-colors ${isActive('/portugal') ? 'text-forest border-b-2 border-forest pb-0.5' : 'text-stone hover:text-forest'}`}>Portugal</a>
+        <a href="/mazunte" class={`pl-4 font-medium transition-colors ${isActive('/mazunte') ? 'text-forest border-b-2 border-forest pb-0.5' : 'text-stone hover:text-forest'}`}>Mazunte</a>
+        <a href="/spain" class={`pl-4 font-medium transition-colors ${isActive('/spain') ? 'text-forest border-b-2 border-forest pb-0.5' : 'text-stone hover:text-forest'}`}>Spain</a>
+        <a href="/tulum" class={`pl-4 font-medium transition-colors ${isActive('/tulum') ? 'text-forest border-b-2 border-forest pb-0.5' : 'text-stone hover:text-forest'}`}>Tulum</a>
+        <a href="/sessions" class={mobileLinkClass('/sessions')}>Sessions</a>
+        <a href="/about-dan" class={mobileLinkClass('/about-dan')}>About Dan</a>
         <a href="/contact" class="inline-flex justify-center px-6 py-3 bg-forest text-white rounded-btn font-medium">
           Contact
         </a>
