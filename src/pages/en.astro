@@ -25,46 +25,40 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
   <main>
 
     <!-- ===== 1. HERO ===== -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section class="relative min-h-screen flex items-center pt-28 pb-16 md:pt-32 md:pb-24 bg-canvas">
+      <div class="max-w-page mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
 
-      <!-- Full-bleed background image -->
-      <img
-        src="/images/daniel-bodywork.jpg"
-        alt="Daniel Wendt performing bodywork"
-        class="absolute inset-0 w-full h-full object-cover"
-        fetchpriority="high"
-      />
-
-      <!-- Warm gradient overlay -->
-      <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-canvas/90"></div>
-
-      <!-- Centered text content -->
-      <div class="relative z-10 text-center px-6 md:px-12 max-w-3xl mx-auto pt-32 pb-32">
-        <p class="font-sans text-white/70 text-xs uppercase tracking-[0.25em] mb-6">Dan Healing Arts</p>
-        <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight mb-6">
-          Learn to Listen<br />with Your Hands
-        </h1>
-        <p class="font-sans text-white/80 text-lg leading-relaxed max-w-xl mx-auto mb-10">
-          Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <ApplyButton text="Explore Trainings" href="/dates" />
-          <a
-            href="/about-the-work"
-            class="inline-flex items-center px-8 py-3.5 border border-white/60 text-white rounded-btn font-medium text-base hover:bg-white/10 hover:border-white transition-colors duration-200 backdrop-blur-sm"
-          >
-            About the Work
-          </a>
+        <!-- Text -->
+        <div>
+          <p class="font-sans text-stone text-xs uppercase tracking-[0.25em] mb-6">Dan Healing Arts</p>
+          <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-text-main leading-[1.1] mb-6">
+            Learn to Listen<br />with Your Hands
+          </h1>
+          <p class="font-sans text-stone text-lg leading-relaxed max-w-lg mb-10">
+            Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway in fascia-based bodywork that transforms how you touch and how you listen.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <ApplyButton text="Explore Trainings" href="/dates" />
+            <a
+              href="/about-the-work"
+              class="inline-flex items-center px-8 py-3 border border-forest text-forest rounded-btn font-medium hover:bg-forest hover:text-white transition-colors duration-200"
+            >
+              About the Work
+            </a>
+          </div>
         </div>
-      </div>
 
-      <!-- Scroll indicator -->
-      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 scroll-indicator" aria-hidden="true">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-60">
-          <polyline points="6 9 12 15 18 9"/>
-        </svg>
-      </div>
+        <!-- Image -->
+        <div class="rounded-lg overflow-hidden">
+          <img
+            src="/images/daniel-bodywork.jpg"
+            alt="Daniel Wendt giving a deep somatic bodywork session"
+            class="w-full h-[500px] md:h-[600px] object-cover"
+            fetchpriority="high"
+          />
+        </div>
 
+      </div>
     </section>
 
     <!-- ===== 2. TESTIMONIAL DIVIDER — Ely, UK ===== -->
@@ -78,7 +72,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     )}
 
     <!-- ===== 3. TRAINING PATHWAY ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas">
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <FadeIn>
         <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">Training Pathway</p>
@@ -141,7 +135,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     <Parallax src="/images/general/dan-outside-38.jpg" height="50vh" />
 
     <!-- ===== 4. VIDEO INSIGHTS ===== -->
-    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12 text-center">
           An Insight into the Bodywork Trainings
@@ -184,13 +178,13 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     </section>
 
     <!-- ===== 5. UPCOMING TRAININGS ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas">
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <FadeIn>
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Upcoming Trainings</h2>
         </FadeIn>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
           <TrainingCard
             title="Level 1a — Rücken & Nacken"
             date="18–19 April 2026"
@@ -245,7 +239,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     <Parallax src="/images/general/training-flyer-2.jpg" height="40vh" />
 
     <!-- ===== 7. ABOUT TEASER ===== -->
-    <section class="py-24 px-6 md:px-12 bg-canvas">
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-canvas">
       <FadeIn>
       <div class="max-w-page mx-auto grid grid-cols-1 md:grid-cols-5 gap-12 items-center">
 
@@ -279,7 +273,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     </section>
 
     <!-- ===== 8. CONTACT SECTION ===== -->
-    <section class="py-24 px-6 md:px-12 bg-surface-lo">
+    <section class="py-16 md:py-20 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto text-center">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">Get in Touch</h2>
         <p class="font-sans text-stone text-lg leading-relaxed max-w-xl mx-auto mb-10">
@@ -304,13 +298,3 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
 </Layout>
 
-<style>
-  @keyframes bounce-gentle {
-    0%, 100% { transform: translateX(-50%) translateY(0); }
-    50%       { transform: translateX(-50%) translateY(6px); }
-  }
-
-  .scroll-indicator {
-    animation: bounce-gentle 2s ease-in-out infinite;
-  }
-</style>
