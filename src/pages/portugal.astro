@@ -8,6 +8,7 @@ import TextImageSection from '../components/TextImageSection.astro';
 import PhotoGallery from '../components/PhotoGallery.astro';
 import PricingCard from '../components/PricingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import FadeIn from '../components/FadeIn.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
@@ -68,6 +69,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     </section>
 
     <!-- ===== 2. PHOTO GALLERY ===== -->
+    <FadeIn>
     <section class="py-16 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <PhotoGallery
@@ -81,8 +83,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         />
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 3. LEARNING THE ART OF DEEP TOUCH ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
@@ -114,8 +118,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 4. THE TRAINING EXPERIENCE ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <TextImageSection
@@ -144,8 +150,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 5. EXPERIENTIAL LEARNING ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
@@ -168,6 +176,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 6. TESTIMONIAL — REBECCA, CANADA ===== -->
     {rebeccaCanada && (
@@ -180,6 +189,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 7. THE FIELD WE PRACTICE IN ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
@@ -204,6 +214,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 8. TESTIMONIAL — LASSE, FINLAND ===== -->
     {lasseFinland && (
@@ -216,6 +227,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 9. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
@@ -282,8 +294,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 10. HELD & NOURISHED ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <TextImageSection
@@ -315,6 +329,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 11. TESTIMONIAL — LAURA, UK ===== -->
     {lauraUK && (
@@ -327,6 +342,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 12. WHO IS THIS TRAINING FOR ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
@@ -349,8 +365,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         <ApplyButton />
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 13. A DAY AT THE TRAINING ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
@@ -386,8 +404,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 14. WHAT YOU'LL RECEIVE ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
@@ -418,8 +438,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         <ApplyButton />
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 15. YOUR STAY AT THE SHANTI SPACE (PRICING) ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -491,8 +513,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </p>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 16. PRACTICAL DETAILS ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
@@ -529,8 +553,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </dl>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 17. CLOSING STATEMENT ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto text-center max-w-3xl">
         <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
@@ -538,6 +564,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </p>
       </div>
     </section>
+    </FadeIn>
 
   </main>
 

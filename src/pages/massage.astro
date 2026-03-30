@@ -7,6 +7,7 @@ import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import Parallax from '../components/Parallax.astro';
 import ApplyButton from '../components/ApplyButton.astro';
+import FadeIn from '../components/FadeIn.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
@@ -48,6 +49,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
     </section>
 
     <!-- ===== 2. WAS IST SOMATISCHE TIEFENMASSAGE? ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
@@ -71,6 +73,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 3. TESTIMONIAL — REBECCA, CANADA ===== -->
     {rebeccaCanada && (
@@ -86,6 +89,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
     <Parallax src="/images/level1/inside-12.jpg" height="45vh" />
 
     <!-- ===== 5. FÜR WEN IST DIESE ARBEIT? ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10 text-center">
@@ -119,8 +123,10 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 6. WIE EINE SITZUNG ABLÄUFT ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
@@ -145,6 +151,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 7. TESTIMONIAL — LASSE, FINLAND ===== -->
     {lasseFinland && (
@@ -160,6 +167,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
     <Parallax src="/images/level1/outside-27.jpg" height="45vh" />
 
     <!-- ===== 9. PREISE & BUCHUNG ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -173,8 +181,10 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
         <ApplyButton text="Termin anfragen" href="/contact" />
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 10. CLOSING STATEMENT ===== -->
+    <FadeIn>
     <section class="py-20 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto text-center max-w-3xl">
         <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
@@ -182,6 +192,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
         </p>
       </div>
     </section>
+    </FadeIn>
 
   </main>
 

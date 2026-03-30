@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
+import FadeIn from '../components/FadeIn.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const paigeUSA = allTestimonials.find(t => t.id === 'paige-usa')?.data;
@@ -28,6 +29,7 @@ const stats = [
   <main>
 
     <!-- ===== 1. HERO ===== -->
+    <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
@@ -83,8 +85,10 @@ const stats = [
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 2. FULL BIO ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto max-w-3xl">
         <div class="font-sans text-stone leading-relaxed space-y-4">
@@ -100,6 +104,7 @@ const stats = [
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== PARALLAX — after bio ===== -->
     <Parallax src="/images/general/dan-outside-38.jpg" height="45vh" />
@@ -115,6 +120,7 @@ const stats = [
     )}
 
     <!-- ===== 3. CTA ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl text-center">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -126,6 +132,7 @@ const stats = [
         <ApplyButton />
       </div>
     </section>
+    </FadeIn>
 
   </main>
 

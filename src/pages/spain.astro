@@ -8,6 +8,7 @@ import TextImageSection from '../components/TextImageSection.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import PhotoGallery from '../components/PhotoGallery.astro';
+import FadeIn from '../components/FadeIn.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
@@ -65,6 +66,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     </section>
 
     <!-- ===== 2. DEEPENING YOUR PRACTICE ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/spain/dsc2233.jpg" imageAlt="Practitioners in deep bodywork training at Hidden Paradise, Spain">
@@ -93,11 +95,13 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== PARALLAX between sections ===== -->
     <Parallax src="/images/spain/hidden-paradise-62.jpg" height="45vh" />
 
     <!-- ===== 3. THE TRAINING EXPERIENCE ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/spain/dsc2128.jpg" imageAlt="Training experience at Hidden Paradise — group bodywork practice in Spain" reversed>
@@ -122,8 +126,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 4. EXPERIENTIAL LEARNING ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection>
@@ -145,6 +151,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 5. TESTIMONIAL — REBECCA, CANADA ===== -->
     {rebeccaCanada && (
@@ -157,6 +164,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 6. THE FIELD WE PRACTICE IN ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
@@ -181,6 +189,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 7. TESTIMONIAL — LASSE, FINLAND ===== -->
     {lasseFinland && (
@@ -196,6 +205,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <Parallax src="/images/spain/hidden-paradise-36.jpg" height="45vh" />
 
     <!-- ===== 8. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
@@ -238,8 +248,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 9. WHO IS THIS TRAINING FOR ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
@@ -264,6 +276,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 10. TESTIMONIAL — LAURA, UK ===== -->
     {lauraUK && (
@@ -276,6 +289,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 11. INTERESTED? (CTA instead of pricing) ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -297,8 +311,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </div>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 12. PRACTICAL DETAILS ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
@@ -333,8 +349,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </dl>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== 13. CLOSING STATEMENT ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto text-center max-w-3xl">
         <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
@@ -342,6 +360,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </p>
       </div>
     </section>
+    </FadeIn>
 
   </main>
 

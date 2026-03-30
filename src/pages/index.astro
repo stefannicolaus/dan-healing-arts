@@ -11,6 +11,7 @@ import ZurichKontakt from '../components/ZurichKontakt.astro';
 import Parallax from '../components/Parallax.astro';
 import StatsDivider from '../components/StatsDivider.astro';
 import Footer from '../components/Footer.astro';
+import FadeIn from '../components/FadeIn.astro';
 ---
 
 <Layout
@@ -23,15 +24,15 @@ import Footer from '../components/Footer.astro';
   <main>
     <ZurichHero />
     <StatsDivider />
-    <ZurichMethode />
+    <FadeIn><ZurichMethode /></FadeIn>
     <Parallax src="/images/parallax-1.jpg" height="50vh" />
-    <ZurichFuerWen />
-    <ZurichModule />
+    <FadeIn><ZurichFuerWen /></FadeIn>
+    <FadeIn><ZurichModule /></FadeIn>
     <ZurichTestimonials />
     <StatsDivider />
-    <ZurichUeberDaniel />
+    <FadeIn><ZurichUeberDaniel /></FadeIn>
     <Parallax src="/images/parallax-2.jpg" height="50vh" />
-    <ZurichKontakt />
+    <FadeIn><ZurichKontakt /></FadeIn>
   </main>
   <Footer lang="de" />
 </Layout>

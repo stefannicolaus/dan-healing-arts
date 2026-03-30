@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import TrainingCard from '../components/TrainingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
+import FadeIn from '../components/FadeIn.astro';
 
 const trainings = [
   {
@@ -59,6 +60,7 @@ const trainings = [
     <Parallax src="/images/general/dan-outside-38.jpg" height="40vh" />
 
     <!-- ===== HEADER ===== -->
+    <FadeIn>
     <section class="pt-32 pb-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
@@ -70,8 +72,10 @@ const trainings = [
         </p>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== TRAINING CARDS ===== -->
+    <FadeIn>
     <section class="pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
@@ -88,6 +92,7 @@ const trainings = [
         <ApplyButton />
       </div>
     </section>
+    </FadeIn>
 
   </main>
 

@@ -7,6 +7,7 @@ import TestimonialDivider from '../components/TestimonialDivider.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
+import FadeIn from '../components/FadeIn.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const ilinca = allTestimonials.find(t => t.id === 'erika-lithuania')?.data;
@@ -25,6 +26,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
   <main>
 
     <!-- ===== 1. HERO ===== -->
+    <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/about/work-hero.jpg" imageAlt="Daniel Wendt practicing myofascial somatic bodywork">
@@ -51,6 +53,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== TESTIMONIAL: ILINCA ===== -->
     {ilinca && (
@@ -63,6 +66,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 2. THE POWER OF SLOWNESS ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/about/massage-25.jpg" imageAlt="Deep slow bodywork session demonstrating the power of presence and slowness" reversed>
@@ -83,6 +87,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== TESTIMONIAL: NICO ===== -->
     {nico && (
@@ -98,6 +103,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <Parallax src="/images/about/work-3.jpg" height="45vh" />
 
     <!-- ===== 3. THE EASE OF SIMPLICITY ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/about/work-4.jpg" imageAlt="Practitioner and client in a session demonstrating the ease and simplicity of deep bodywork">
@@ -127,6 +133,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         </TextImageSection>
       </div>
     </section>
+    </FadeIn>
 
     <!-- ===== TESTIMONIAL: VIRI ===== -->
     {viri && (
@@ -139,6 +146,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     )}
 
     <!-- ===== 4. LEARNING IN A SHARED FIELD ===== -->
+    <FadeIn>
     <section class="py-24 px-6 md:px-12 bg-surface-lo">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
@@ -155,6 +163,7 @@ const viri = allTestimonials.find(t => t.id === 'laura-uk')?.data;
         <ApplyButton />
       </div>
     </section>
+    </FadeIn>
 
   </main>
 
