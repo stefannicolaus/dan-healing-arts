@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import { homepageTrainings } from '../data/trainings';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -234,38 +235,16 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
         </FadeIn>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
-          <TrainingCard
-            title="Level 1a — Rücken & Nacken"
-            date="18–19 April 2026"
-            location="Zürich, Switzerland"
-            level="Level 1a"
-            href="/zurich"
-            image="/images/general/dan-two-men.jpg"
-          />
-          <TrainingCard
-            title="The Essence of Deep Touch"
-            date="1–7 June 2026"
-            location="Portugal"
-            level="Level 1"
-            href="/portugal"
-            image="/images/portugal/hero.jpg"
-          />
-          <TrainingCard
-            title="Level 1b — Bauch, Becken, Beine"
-            date="13–14 June 2026"
-            location="Zürich, Switzerland"
-            level="Level 1b"
-            href="/zurich"
-            image="/images/general/dan-two-men.jpg"
-          />
-          <TrainingCard
-            title="The Essence of Deep Touch"
-            date="24–30 January 2027"
-            location="Mazunte, México"
-            level="Level 1"
-            href="/mazunte"
-            image="/images/mazunte/hero.jpg"
-          />
+          {homepageTrainings.map(t => (
+            <TrainingCard
+              title={t.title}
+              date={t.date}
+              location={t.location}
+              level={t.level}
+              href={t.href}
+              image={t.image}
+            />
+          ))}
         </div>
 
         <a href="/dates" class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
