@@ -15,7 +15,7 @@ const { quote, name, location, photo, variant = 'stone' } = Astro.props;
   variant === 'gradient'
     ? 'testimonial-gradient py-10 md:py-14'
     : 'py-6 md:py-8'
-]} style={variant === 'stone' ? 'background-color: #E8E0D4;' : ''}>
+]}>
 
   {variant === 'stone' && (
     <div class="flex items-center justify-center gap-6 max-w-page mx-auto mb-6 md:mb-8">
