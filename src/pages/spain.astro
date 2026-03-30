@@ -9,6 +9,7 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import PhotoGallery from '../components/PhotoGallery.astro';
 import FadeIn from '../components/FadeIn.astro';
+import StatsDivider from '../components/StatsDivider.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
@@ -65,9 +66,11 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       </div>
     </section>
 
+    <StatsDivider />
+
     <!-- ===== 2. DEEPENING YOUR PRACTICE ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-surface-lo">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/spain/dsc2233.jpg" imageAlt="Practitioners in deep bodywork training at Hidden Paradise, Spain">
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -102,7 +105,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <!-- ===== 3. THE TRAINING EXPERIENCE ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-surface-lo">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection image="/images/spain/dsc2128.jpg" imageAlt="Training experience at Hidden Paradise — group bodywork practice in Spain" reversed>
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -127,6 +130,8 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       </div>
     </section>
     </FadeIn>
+
+    <StatsDivider />
 
     <!-- ===== 4. EXPERIENTIAL LEARNING ===== -->
     <FadeIn>
@@ -250,9 +255,11 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     </section>
     </FadeIn>
 
+    <StatsDivider />
+
     <!-- ===== 9. WHO IS THIS TRAINING FOR ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-surface-lo">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
           Who Is This Training For
@@ -313,9 +320,11 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     </section>
     </FadeIn>
 
+    <StatsDivider />
+
     <!-- ===== 12. PRACTICAL DETAILS ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-surface-lo">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
           Practical Details
@@ -350,6 +359,8 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
       </div>
     </section>
     </FadeIn>
+
+    <StatsDivider />
 
     <!-- ===== 13. CLOSING STATEMENT ===== -->
     <FadeIn>

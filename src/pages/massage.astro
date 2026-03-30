@@ -8,6 +8,7 @@ import TextImageSection from '../components/TextImageSection.astro';
 import Parallax from '../components/Parallax.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import FadeIn from '../components/FadeIn.astro';
+import StatsDivider from '../components/StatsDivider.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
@@ -90,31 +91,31 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
 
     <!-- ===== 5. FÜR WEN IST DIESE ARBEIT? ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-surface-lo">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10 text-center">
           Für wen ist diese Arbeit?
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <div class="bg-canvas rounded-card p-8">
+          <div class="bg-surface-lo rounded-card p-8">
             <h3 class="font-serif text-xl text-text-main mb-3">Chronische Verspannungen</h3>
             <p class="font-sans text-stone leading-relaxed">
               Nacken, Rücken, Schultern — tiefgehende Lösung von Spannungsmustern, die sich über Jahre aufgebaut haben.
             </p>
           </div>
-          <div class="bg-canvas rounded-card p-8">
+          <div class="bg-surface-lo rounded-card p-8">
             <h3 class="font-serif text-xl text-text-main mb-3">Emotionale Verarbeitung</h3>
             <p class="font-sans text-stone leading-relaxed">
               Der Körper speichert, was der Verstand verdrängt. Somatische Tiefenmassage kann helfen, diese Schichten sanft zu öffnen.
             </p>
           </div>
-          <div class="bg-canvas rounded-card p-8">
+          <div class="bg-surface-lo rounded-card p-8">
             <h3 class="font-serif text-xl text-text-main mb-3">Erschöpfung & Burnout</h3>
             <p class="font-sans text-stone leading-relaxed">
               Eine Einladung, das Nervensystem herunterfahren zu lassen. Ankommen im eigenen Körper, Raum zum Atmen finden.
             </p>
           </div>
-          <div class="bg-canvas rounded-card p-8">
+          <div class="bg-surface-lo rounded-card p-8">
             <h3 class="font-serif text-xl text-text-main mb-3">Körperbewusstsein</h3>
             <p class="font-sans text-stone leading-relaxed">
               Für alle, die eine tiefere Verbindung zum eigenen Körper suchen — ob als persönliche Praxis oder als Ergänzung zu Yoga, Meditation oder Therapie.
@@ -124,6 +125,8 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
       </div>
     </section>
     </FadeIn>
+
+    <StatsDivider />
 
     <!-- ===== 6. WIE EINE SITZUNG ABLÄUFT ===== -->
     <FadeIn>
@@ -168,7 +171,7 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
 
     <!-- ===== 9. PREISE & BUCHUNG ===== -->
     <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-surface-lo">
+    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
           Buchung
@@ -182,6 +185,8 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
       </div>
     </section>
     </FadeIn>
+
+    <StatsDivider />
 
     <!-- ===== 10. CLOSING STATEMENT ===== -->
     <FadeIn>
