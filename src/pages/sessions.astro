@@ -21,31 +21,37 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
   description="Deep, slow bodywork with Daniel Wendt. Myofascial work that reaches beyond muscles and fascia — touching the nervous system and emotional body. Zürich & worldwide."
   canonicalPath="/sessions"
 >
-  <Nav lang="en" heroMode />
+  <Nav lang="en" />
 
   <main>
 
     <!-- ===== 1. HERO ===== -->
-    <section class="relative">
-      <div class="relative w-full h-[70vh] min-h-[500px] overflow-hidden">
-        <img
-          src="/images/about/work-3.jpg"
-          alt="Somatic Deep Tissue Bodywork with Daniel Wendt"
-          class="absolute inset-0 w-full h-full object-cover"
-        />
-        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/30"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-          <h1 class="font-serif text-white text-4xl md:text-6xl lg:text-7xl mb-4">
-            Somatic Deep Tissue Bodywork
+    <section class="h-[100dvh] flex flex-col justify-center px-6 md:px-12 pt-[72px]">
+      <div class="max-w-page mx-auto w-full flex flex-col md:flex-row items-stretch gap-8 lg:gap-16 h-full py-6 md:py-8">
+
+        <!-- Image: 55% -->
+        <div class="w-full md:w-[55%] shrink-0 min-h-0">
+          <div class="rounded-card overflow-hidden h-full bg-surface-mid relative">
+            <img
+              src="/images/daniel-bodywork.jpg"
+              alt="Daniel Wendt offering private somatic bodywork session"
+              class="w-full h-full object-cover object-top"
+            />
+          </div>
+        </div>
+
+        <!-- Text: 45% -->
+        <div class="w-full md:w-[45%] flex flex-col justify-center items-start">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Private Sessions</p>
+          <h1 class="font-serif font-black text-forest text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
+            Touch that listens.
           </h1>
-          <p class="font-sans text-white/90 text-lg md:text-xl mb-8">
-            Private Sessions with Daniel Wendt
-          </p>
-          <p class="font-sans text-white/80 text-base md:text-lg max-w-2xl italic mb-10">
-            A deep, slow bodywork practice that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence, awareness, and trust.
+          <p class="font-sans text-stone text-base md:text-lg font-light leading-relaxed mb-8 max-w-md">
+            Deep, slow bodywork that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence and trust.
           </p>
           <ApplyButton text="Book a Session" href="/contact" />
         </div>
+
       </div>
     </section>
 
