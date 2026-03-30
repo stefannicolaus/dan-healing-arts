@@ -241,12 +241,10 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-10">
-          The Space That Holds the Work
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
-          <!-- Text column -->
+        <TextImageSection image="/images/portugal/venue-1.jpg" imageAlt="The Shanti Space — outdoor venue near Lisbon" reversed>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
+            The Space That Holds the Work
+          </h2>
           <div class="font-sans text-stone leading-relaxed space-y-4">
             <p>
               Nestled in nature just 30 minutes from Lisbon, The Shanti Space offers a safe and beautiful container for deep emotional and physical exploration.
@@ -258,51 +256,18 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
               The venue, an old Quinta set in a national park, is endowed with beautiful fruit trees, giant oak corks, grape vines, vistas and a stream at the end of the garden.
             </p>
             <p>
+              The Garden Shala is a beautiful converted glass Victorian Greenhouse, a great workshop space along with an incredible outdoor yoga deck overlooking the valley of high trees.
+            </p>
+            <p>
+              Between sessions, there is space to walk, breathe, integrate, and simply be — allowing the work to settle beyond the mat and table.
+            </p>
+            <p>
               <a href="http://www.theshantispace.com/" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
                 Location: www.theshantispace.com
               </a>
             </p>
-            <p>
-              The practice spaces are warm, light-filled, and intentionally designed to support embodied learning, focused practice, and rest.
-            </p>
-            <p>
-              The Garden Shala is a beautiful converted glass Victorian Greenhouse, a great workshop space along with an incredible outdoor yoga deck overlooking the valley of high trees.
-            </p>
-            <p>
-              Between sessions, there is space to walk, breathe, integrate, and simply be - allowing the work to settle beyond the mat and table.
-            </p>
           </div>
-
-          <!-- Images column -->
-          <div class="space-y-4">
-            <div class="rounded-card overflow-hidden aspect-[4/3]">
-              <img
-                src="/images/portugal/venue-1.jpg"
-                alt="The Shanti Space — outdoor venue near Lisbon"
-                class="w-full h-full object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div class="grid grid-cols-2 gap-4">
-              <div class="rounded-card overflow-hidden aspect-[4/3]">
-                <img
-                  src="/images/portugal/venue-2.jpg"
-                  alt="The Shanti Space — Garden Shala greenhouse"
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-              <div class="rounded-card overflow-hidden aspect-[4/3]">
-                <img
-                  src="/images/portugal/venue-3.png"
-                  alt="The Shanti Space — outdoor yoga deck"
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
