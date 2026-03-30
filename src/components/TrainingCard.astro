@@ -16,11 +16,11 @@ const { title, date, location, level, href, image } = Astro.props;
   class="training-card block bg-white border border-stone/10 rounded-card overflow-hidden hover:shadow-lg transition-all duration-200 group relative"
 >
   {image && (
-    <div class="overflow-hidden h-48">
+    <div class="overflow-hidden aspect-[16/7]">
       <img
         src={image}
         alt={location}
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
         loading="lazy"
       />
     </div>
