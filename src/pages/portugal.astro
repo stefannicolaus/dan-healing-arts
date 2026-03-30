@@ -352,33 +352,39 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <!-- ===== 14. WHAT YOU'LL RECEIVE ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          What You'll Receive
-        </h2>
-        <ul class="font-sans text-stone leading-relaxed space-y-3 mb-10">
-          {[
-            '7 days/ 6 nights accommodation',
-            '3 daily nourishing meals',
-            'Daily bodywork/massage lessons and practice sessions',
-            'Daily yoga, meditation, breathwork, and voice work',
-            'Integration circles, kirtan and ceremonial spaces',
-            'Course manual',
-            'Video recordings of all bodywork sequences',
-            'Certificate of completion',
-            'Pre- and post-retreat support',
-          ].map((item) => (
-            <li class="flex items-start gap-3">
-              <span class="text-forest mt-1 shrink-0">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </span>
-              {item}
-            </li>
-          ))}
-        </ul>
-        <ApplyButton />
+      <div class="max-w-page mx-auto">
+        <TextImageSection
+          image="/images/portugal/gallery-2.jpg"
+          imageAlt="Portugal training — participants in the practice space"
+          reversed
+        >
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
+            What You'll Receive
+          </h2>
+          <ul class="font-sans text-stone leading-relaxed space-y-3 mb-10">
+            {[
+              '7 days/ 6 nights accommodation',
+              '3 daily nourishing meals',
+              'Daily bodywork/massage lessons and practice sessions',
+              'Daily yoga, meditation, breathwork, and voice work',
+              'Integration circles, kirtan and ceremonial spaces',
+              'Course manual',
+              'Video recordings of all bodywork sequences',
+              'Certificate of completion',
+              'Pre- and post-retreat support',
+            ].map((item) => (
+              <li class="flex items-start gap-3">
+                <span class="text-forest mt-1 shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <ApplyButton />
+        </TextImageSection>
       </div>
     </section>
     </FadeIn>
