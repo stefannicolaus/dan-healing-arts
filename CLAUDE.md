@@ -40,6 +40,22 @@ Content-Quellen:
 - Neue Seite: Astro + Hetzner/Coolify
 - Bestehende Seite: Wix (bleibt erstmal)
 
+## BRIEFING-DOKUMENTE LESEN (PFLICHT)
+
+Wenn Daniel ein Briefing-Dokument schickt (Google Doc / .docx):
+
+1. **Datei herunterladen** via `mcp__google-workspace__get_drive_file_download_url`
+2. **Bilder extrahieren**: `unzip /pfad/zur/datei.docx "word/media/*" -d /tmp/dan-doc/`
+3. **Alle Bilder visuell lesen** (Read tool auf jedes image*.png/jpg) — die Screenshots zeigen welcher Abschnitt welche Änderung bekommt
+4. **Text lesen** via `mcp__google-workspace__get_doc_content`
+5. **Erst dann** Bilder und Text zusammen interpretieren
+
+**VERBOTEN:** Nur den XML-Text parsen ohne die eingebetteten Screenshots zu sehen. Ohne visuelle Kontrolle der Screenshots werden Foto-Zuordnungen falsch gemacht.
+
+**Fotos:** Immer Originale aus den Google Drive Fotoordnern nehmen — NIE die eingebetteten Screenshots aus dem Dokument (schlechte Qualität). Fotoordner: https://drive.google.com/drive/folders/1Im7Z54V1HWXKQphMWf98KcawOTJMr37X
+
+---
+
 ## QC
 
 **URL:** https://schweiz.danhealingarts.com (wenn live)
