@@ -107,29 +107,31 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Two Levels of Learning</h2>
         </FadeIn>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="flex flex-col gap-16">
 
           <!-- Level 1 -->
           <a
             href="/level-1"
-            class="bg-white rounded-card shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden group"
+            class="flex flex-col md:flex-row rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white"
           >
-            <div class="overflow-hidden aspect-[16/7]">
-              <img
-                src="/images/level1/hero.jpg"
-                alt="Level 1 — The Essence of Deep Touch"
-                class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                loading="lazy"
-              />
+            <div class="w-full md:w-[45%] shrink-0">
+              <div class="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                <img
+                  src="/images/level1/hero.jpg"
+                  alt="Level 1 — The Essence of Deep Touch"
+                  class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <div class="p-8">
-              <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4">
+            <div class="w-full md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
+              <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4 self-start">
                 Level 1
               </span>
-              <h3 class="font-serif font-black text-text-main text-2xl leading-tight mb-4 group-hover:text-forest transition-colors">
+              <h3 class="font-serif font-black text-text-main text-2xl md:text-3xl leading-tight mb-4 group-hover:text-forest transition-colors">
                 The Essence of Deep Touch
               </h3>
-              <p class="font-sans text-stone leading-relaxed">
+              <p class="font-sans text-stone text-base leading-relaxed">
                 A foundational immersion into the art of slow, listening touch. You'll learn to work with fascia, breath and somatic awareness — building a complete framework for deep bodywork practice.
               </p>
               <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">
@@ -145,24 +147,26 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
           <!-- Level 2 -->
           <a
             href="/level-2"
-            class="bg-white rounded-card shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden group"
+            class="flex flex-col md:flex-row-reverse rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white"
           >
-            <div class="overflow-hidden aspect-[16/7]">
-              <img
-                src="/images/level2/hero.jpg"
-                alt="Level 2 — An Evolution of Sensitivity"
-                class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-                loading="lazy"
-              />
+            <div class="w-full md:w-[45%] shrink-0">
+              <div class="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                <img
+                  src="/images/level2/hero.jpg"
+                  alt="Level 2 — An Evolution of Sensitivity"
+                  class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
             </div>
-            <div class="p-8">
-              <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4">
+            <div class="w-full md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
+              <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4 self-start">
                 Level 2
               </span>
-              <h3 class="font-serif font-black text-text-main text-2xl leading-tight mb-4 group-hover:text-forest transition-colors">
+              <h3 class="font-serif font-black text-text-main text-2xl md:text-3xl leading-tight mb-4 group-hover:text-forest transition-colors">
                 An Evolution of Sensitivity
               </h3>
-              <p class="font-sans text-stone leading-relaxed">
+              <p class="font-sans text-stone text-base leading-relaxed">
                 A deeper exploration for practitioners who have completed Level 1. This training refines your perception, expands your vocabulary of touch and takes your listening to a more subtle dimension.
               </p>
               <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">

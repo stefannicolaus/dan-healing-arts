@@ -16,6 +16,8 @@ const module = [
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-1-ruecken-nacken/',
     bild: '/images/modul-1-ruecken-nacken.jpg',
     bildAlt: 'Hände bei der Faszienarbeit entlang der Wirbelsäule',
+    bildPos: 'object-center',
+    bildLinks: true,
   },
   {
     nr: 'Modul 2',
@@ -33,10 +35,12 @@ const module = [
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-2-bauch-becken-beine/',
     bild: '/images/modul-2-bauch-becken-beine.jpg',
     bildAlt: 'Sanfte Hände im Bereich Bauch und Becken',
+    bildPos: 'object-top',
+    bildLinks: false,
   },
   {
     nr: 'Modul 3',
-    titel: 'Brustkorb & Herzraum',
+    titel: 'Brustkorb, Schultergürtel & Arme',
     motto: 'Dem Herzen Raum geben',
     datum: '22.–23. August 2026',
     beschreibung: 'Der Raum des Herzens, wo Atem, Gefühl und Ausdruck aufeinandertreffen. Einschränkungen im Brustkorb lösen, den Atem frei fließen lassen — Berührung, die zu Beziehung wird.',
@@ -49,7 +53,9 @@ const module = [
     ],
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-3-brustkorb-schulterguertel-arme-herzraum/',
     bild: '/images/modul-3-herzraum.jpg',
-    bildAlt: 'Hände auf dem Herzraum — sanfte Brustkorb-Arbeit',
+    bildAlt: 'Hände auf dem Herzraum — Brustkorb-Arbeit',
+    bildPos: 'object-top',
+    bildLinks: true,
   },
   {
     nr: 'Modul 4',
@@ -67,129 +73,90 @@ const module = [
     link: 'https://jupiterhaus.ch/events/somatische-tiefenmassage-faszien-release-modul-4-gesicht-kopf-nacken-vertiefung/',
     bild: '/images/modul-4-gesicht-kopf.jpg',
     bildAlt: 'Sanfte Hände am Kopf — craniosacrale Arbeit',
+    bildPos: 'object-top',
+    bildLinks: false,
   },
 ];
 ---
 
-<section id="module" class="py-12 md:py-16 bg-parchment">
-  <div class="max-w-page mx-auto px-6 md:px-12">
+<section id="module" class="bg-parchment">
 
-    <div class="mb-16">
-      <h2 class="font-serif font-black text-forest text-4xl md:text-6xl mb-4 tracking-tight">
-        Die 4 Module
-      </h2>
-      <p class="font-sans text-stone text-xl">
-        Grundlagen und Vertiefung der somatischen Körperarbeit
-      </p>
-    </div>
-
-    <!-- Zeile 1: 60% + 40% -->
-    <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr] gap-6 mb-6">
-      {module.slice(0, 2).map((m) => (
-        <div class="bg-canvas rounded-card overflow-hidden flex flex-col border border-stone/10 hover:border-stone/30 hover:shadow-md transition-all duration-200">
-          <div class="h-52 overflow-hidden">
-            <img
-              src={m.bild}
-              alt={m.bildAlt}
-              class="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div class="p-8 md:p-10 flex flex-col flex-1 justify-between">
-            <div>
-              <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-3 block">
-                {m.nr}
-              </span>
-              <h4 class="font-serif font-bold text-forest text-2xl md:text-3xl mb-2">
-                {m.titel}
-              </h4>
-              <p class="font-sans text-stone/70 text-sm italic mb-5">
-                {m.motto}
-              </p>
-              <p class="font-sans text-stone text-base leading-relaxed mb-5">
-                {m.beschreibung}
-              </p>
-              <ul class="space-y-1 mb-6">
-                {m.schwerpunkte.map((punkt) => (
-                  <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
-                    <span class="text-sage mt-0.5 shrink-0">—</span>
-                    {punkt}
-                  </li>
-                ))}
-              </ul>
-              <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
-                <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
-                <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
-                <span class="px-3 py-1.5 bg-surface-lo rounded-full">Jupiterhaus Zürich</span>
-              </div>
-            </div>
-            <a
-              href={m.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-8 self-start inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
-            >
-              Anmelden →
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <!-- Zeile 2: 40% + 60% -->
-    <div class="grid grid-cols-1 md:grid-cols-[1fr_1.5fr] gap-6">
-      {module.slice(2, 4).map((m) => (
-        <div class="bg-canvas rounded-card overflow-hidden flex flex-col border border-stone/10 hover:border-stone/30 hover:shadow-md transition-all duration-200">
-          <div class="h-52 overflow-hidden">
-            <img
-              src={m.bild}
-              alt={m.bildAlt}
-              class="w-full h-full object-cover object-center"
-            />
-          </div>
-          <div class="p-8 md:p-10 flex flex-col flex-1 justify-between">
-            <div>
-              <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-3 block">
-                {m.nr}
-              </span>
-              <h4 class="font-serif font-bold text-forest text-2xl md:text-3xl mb-2">
-                {m.titel}
-              </h4>
-              <p class="font-sans text-stone/70 text-sm italic mb-5">
-                {m.motto}
-              </p>
-              <p class="font-sans text-stone text-base leading-relaxed mb-5">
-                {m.beschreibung}
-              </p>
-              <ul class="space-y-1 mb-6">
-                {m.schwerpunkte.map((punkt) => (
-                  <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
-                    <span class="text-sage mt-0.5 shrink-0">—</span>
-                    {punkt}
-                  </li>
-                ))}
-              </ul>
-              <div class="flex flex-wrap gap-3 text-sm font-medium text-stone">
-                <span class="px-3 py-1.5 bg-surface-lo rounded-full">{m.datum}</span>
-                <span class="px-3 py-1.5 bg-surface-lo rounded-full">420 CHF</span>
-                <span class="px-3 py-1.5 bg-surface-lo rounded-full">Jupiterhaus Zürich</span>
-              </div>
-            </div>
-            <a
-              href={m.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="mt-8 self-start inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
-            >
-              Anmelden →
-            </a>
-          </div>
-        </div>
-      ))}
-    </div>
-
-    <p class="mt-12 text-center font-sans text-stone text-sm italic">
-      Alle Module einzeln buchbar oder als Gesamtreihe — jeweils 9:30–19:30 Uhr
+  <!-- Header -->
+  <div class="py-12 md:py-16 max-w-page mx-auto px-6 md:px-12">
+    <h2 class="font-serif font-black text-forest text-4xl md:text-6xl mb-4 tracking-tight">
+      Die vier Module
+    </h2>
+    <p class="font-sans text-stone text-xl">
+      Alle Module können unabhängig voneinander besucht werden — und entfalten im Zusammenspiel ihre volle Tiefe.
     </p>
-
   </div>
+
+  <!-- Module: gestapelt, abwechselnd links/rechts -->
+  {module.map((m, i) => (
+    <>
+      <!-- Trenner vor jedem Modul -->
+      <div class="py-2 px-6 flex items-center justify-center gap-6 max-w-page mx-auto">
+        <div class="flex-1 h-px bg-stone/30"></div>
+        <img src="/images/dan-logo-v2.png" alt="" aria-hidden="true" class="h-8 w-auto opacity-40" />
+        <div class="flex-1 h-px bg-stone/30"></div>
+      </div>
+
+      <div class="py-12 md:py-16 max-w-page mx-auto px-6 md:px-12">
+        <div class={`flex flex-col ${m.bildLinks ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
+
+          <!-- Bild -->
+          <div class="w-full md:w-[45%] shrink-0">
+            <div class="rounded-card overflow-hidden aspect-[4/3]">
+              <img
+                src={m.bild}
+                alt={m.bildAlt}
+                class={`w-full h-full object-cover ${m.bildPos}`}
+              />
+            </div>
+          </div>
+
+          <!-- Text -->
+          <div class="w-full md:w-[55%]">
+            <span class="font-sans font-bold text-xs tracking-widest uppercase text-sage mb-2 block">
+              {m.nr}
+            </span>
+            <p class="font-sans text-stone/60 text-sm italic mb-4">{m.motto}</p>
+            <h3 class="font-serif font-black text-forest text-3xl md:text-4xl mb-6 tracking-tight">
+              {m.titel}
+            </h3>
+            <p class="font-sans text-stone text-base md:text-lg leading-[1.75] mb-6">
+              {m.beschreibung}
+            </p>
+            <ul class="space-y-2 mb-8">
+              {m.schwerpunkte.map((punkt) => (
+                <li class="font-sans text-stone/80 text-sm flex items-start gap-2">
+                  <span class="text-sage mt-0.5 shrink-0">—</span>
+                  {punkt}
+                </li>
+              ))}
+            </ul>
+            <div class="flex flex-wrap gap-3 text-sm font-medium text-stone mb-6">
+              <span class="px-3 py-1.5 bg-canvas rounded-full border border-stone/15">{m.datum}</span>
+              <span class="px-3 py-1.5 bg-canvas rounded-full border border-stone/15">420 CHF</span>
+              <span class="px-3 py-1.5 bg-canvas rounded-full border border-stone/15">Jupiterhaus Zürich</span>
+            </div>
+            <a
+              href={m.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center px-7 py-3 bg-forest text-white rounded-btn font-medium hover:bg-sage transition-colors duration-200"
+            >
+              Anmelden →
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </>
+  ))}
+
+  <p class="pb-12 text-center font-sans text-stone text-sm italic">
+    Alle Module einzeln buchbar oder als Gesamtreihe — jeweils 9:30–19:30 Uhr
+  </p>
+
 </section>

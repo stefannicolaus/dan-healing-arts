@@ -4,7 +4,8 @@ import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import ZurichHero from '../components/ZurichHero.astro';
 import ZurichMethode from '../components/ZurichMethode.astro';
-import ZurichFuerWen from '../components/ZurichFuerWen.astro';
+import ZurichWasEntwickelst from '../components/ZurichWasEntwickelst.astro';
+import ZurichErfahrungsraum from '../components/ZurichErfahrungsraum.astro';
 import ZurichModule from '../components/ZurichModule.astro';
 import ZurichTestimonials from '../components/ZurichTestimonials.astro';
 import ZurichUeberDaniel from '../components/ZurichUeberDaniel.astro';
@@ -32,7 +33,8 @@ const ilincaGermany = allTestimonials.find(t => t.id === 'ilinca-germany')?.data
     <StatsDivider />
     <FadeIn><ZurichMethode /></FadeIn>
     <Parallax src="/images/parallax-1.jpg" height="50vh" />
-    <FadeIn><ZurichFuerWen /></FadeIn>
+    <FadeIn><ZurichWasEntwickelst /></FadeIn>
+    <FadeIn><ZurichErfahrungsraum /></FadeIn>
     <FadeIn><ZurichModule /></FadeIn>
     {nicoUSA && (
       <TestimonialDivider
