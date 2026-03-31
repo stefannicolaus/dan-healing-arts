@@ -38,7 +38,7 @@ export const trainings: Training[] = [
     location: "Zürich, Switzerland",
     level: "Level 1b",
     href: "/zurich",
-    image: "/images/zurich/hero.jpg",
+    image: "/images/zurich/hero-l1b.jpg",
   },
   {
     title: "The Essence of Deep Touch",
