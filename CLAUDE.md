@@ -56,6 +56,21 @@ Wenn Daniel ein Briefing-Dokument schickt (Google Doc / .docx):
 
 ---
 
+## DEPLOY (PFLICHT — immer diesen Befehl, nie abkürzen)
+
+```bash
+npm run build && \
+rsync -az --delete dist/ root@178.104.15.187:/tmp/dan-dist/ && \
+rsync nginx.conf root@178.104.15.187:/tmp/nginx-default.conf && \
+ssh root@178.104.15.187 "docker cp /tmp/dan-dist/. 44bb0dde9718:/usr/share/nginx/html/ && docker cp /tmp/nginx-default.conf 44bb0dde9718:/etc/nginx/conf.d/default.conf && docker exec 44bb0dde9718 nginx -s reload"
+```
+
+Der Deploy-Hook (`post-deploy-check.sh`) prüft danach automatisch ob die Live-Site den neuen Inhalt liefert. Erst wenn das grün ist: fertig.
+
+**Container-ID:** `44bb0dde9718` | **Server:** `root@178.104.15.187`
+
+---
+
 ## QC
 
 **URL:** https://schweiz.danhealingarts.com (wenn live)
