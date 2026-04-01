@@ -2,11 +2,6 @@ media:
   input: public/images
   output: /images
 
-actions:
-  - name: optimize-images
-    label: "🖼️ Bilder optimieren"
-    workflow: optimize-images.yml
-
 content:
   - name: kurstermine
     label: "Kurstermine & Module"
