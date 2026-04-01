@@ -30,6 +30,625 @@ content:
       - name: bildAlt
         label: "Bild-Beschreibung (für Barrierefreiheit)"
         type: string
+
+  - name: zurich-methode
+    label: "🏠 Zürich — Methode-Text"
+    type: file
+    path: src/content/zurichSektionen/methode.yaml
+    format: yaml
+    fields:
+      - name: label
+        label: "Label (oben klein, z.B. Philosophie)"
+        type: string
+      - name: heading
+        label: "Überschrift"
+        type: string
+      - name: paragraphs
+        label: "Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
+      - name: highlight
+        label: "Hervorhebung (letzter Satz, grün)"
+        type: string
+
+  - name: zurich-entwickelst
+    label: "🏠 Zürich — Was du entwickelst"
+    type: file
+    path: src/content/zurichSektionen/entwickelst.yaml
+    format: yaml
+    fields:
+      - name: label
+        label: "Label (oben klein)"
+        type: string
+      - name: heading
+        label: "Überschrift"
+        type: string
+      - name: image
+        label: "Bild"
+        type: image
+      - name: imageAlt
+        label: "Bild Alt-Text"
+        type: string
+      - name: paragraphs
+        label: "Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
+      - name: highlight
+        label: "Hervorhebung (letzter Satz, grün)"
+        type: string
+
+  - name: zurich-erfahrungsraum
+    label: "🏠 Zürich — Erfahrungsraum"
+    type: file
+    path: src/content/zurichSektionen/erfahrungsraum.yaml
+    format: yaml
+    fields:
+      - name: label
+        label: "Label"
+        type: string
+      - name: heading
+        label: "Überschrift"
+        type: string
+      - name: image
+        label: "Bild"
+        type: image
+      - name: imageAlt
+        label: "Bild Alt-Text"
+        type: string
+      - name: paragraphs
+        label: "Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
+      - name: highlight
+        label: "Hervorhebung"
+        type: string
+
+  - name: zurich-ueber
+    label: "🏠 Zürich — Über Daniel"
+    type: file
+    path: src/content/zurichSektionen/ueber.yaml
+    format: yaml
+    fields:
+      - name: heading
+        label: "Überschrift"
+        type: string
+      - name: image
+        label: "Portrait-Bild"
+        type: image
+      - name: imageAlt
+        label: "Bild Alt-Text"
+        type: string
+      - name: paragraphs
+        label: "Bio-Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
+
+  - name: trainings
+    label: "📅 Alle Trainings & Termine"
+    type: collection
+    path: src/content/trainings
+    format: yaml
+    fields:
+      - name: title
+        label: "Titel"
+        type: string
+      - name: date
+        label: "Datum"
+        type: string
+      - name: location
+        label: "Ort"
+        type: string
+      - name: level
+        label: "Level"
+        type: string
+      - name: href
+        label: "Link (z.B. /portugal)"
+        type: string
+      - name: image
+        label: "Vorschaubild"
+        type: image
+      - name: show_on_homepage
+        label: "Auf Startseite zeigen?"
+        type: boolean
+      - name: status
+        label: "Status"
+        type: select
+        options:
+          - aktiv
+          - ausgebucht
+          - abgesagt
+      - name: spots_left
+        label: "Verbleibende Plätze (leer = unbegrenzt)"
+        type: number
+
+  - name: page-en
+    label: "🌐 Englische Startseite"
+    type: file
+    path: src/content/pages/en.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: badge
+            label: "Badge (kleiner Text oben)"
+            type: string
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: subheading
+            label: "Untertext"
+            type: text
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
+          - name: cta_text
+            label: "Button-Text"
+            type: string
+          - name: cta_href
+            label: "Button-Link"
+            type: string
+          - name: secondary_cta_text
+            label: "Zweiter Button-Text"
+            type: string
+          - name: secondary_cta_href
+            label: "Zweiter Button-Link"
+            type: string
+      - name: training_pathway
+        label: "Training Pathway — 2 Levels"
+        type: object
+        fields:
+          - name: label
+            label: "Label (oben klein)"
+            type: string
+          - name: heading
+            label: "Überschrift"
+            type: string
+      - name: parallax_1
+        label: "Parallax-Bild 1 (nach Training Pathway)"
+        type: image
+      - name: videos
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+      - name: upcoming_trainings
+        label: "Upcoming Trainings Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: cta_text
+            label: "Link-Text"
+            type: string
+          - name: cta_href
+            label: "Link"
+            type: string
+      - name: parallax_2
+        label: "Parallax-Bild 2 (vor About)"
+        type: image
+      - name: about_teaser
+        label: "Über Daniel — Teaser"
+        type: object
+        fields:
+          - name: label
+            label: "Label (oben klein)"
+            type: string
+          - name: heading
+            label: "Name"
+            type: string
+          - name: title
+            label: "Titel/Rolle"
+            type: string
+          - name: image
+            label: "Portrait-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
+          - name: bio
+            label: "Bio-Text"
+            type: rich-text
+          - name: cta_text
+            label: "Link-Text"
+            type: string
+          - name: cta_href
+            label: "Link"
+            type: string
+      - name: contact
+        label: "Kontakt-Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: subtext
+            label: "Text"
+            type: text
+          - name: cta_text
+            label: "Button-Text"
+            type: string
+          - name: cta_href
+            label: "Button-Link"
+            type: string
+          - name: email
+            label: "E-Mail-Adresse"
+            type: string
+
+  - name: page-about-dan
+    label: "👤 About Dan"
+    type: file
+    path: src/content/pages/about-dan.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+
+  - name: page-about-the-work
+    label: "🙌 About the Work"
+    type: file
+    path: src/content/pages/about-the-work.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+
+  - name: page-sessions
+    label: "💆 Private Sessions (EN)"
+    type: file
+    path: src/content/pages/sessions.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+
+  - name: page-massage
+    label: "💆 Einzelsitzungen (DE)"
+    type: file
+    path: src/content/pages/massage.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+
+  - name: retreat-portugal
+    label: "🌿 Portugal Retreat"
+    type: file
+    path: src/content/retreats/portugal.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: location_badge
+            label: "Ort-Badge (z.B. Portugal · Level 1)"
+            type: string
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: dates
+            label: "Datum (z.B. Portugal · 1 – 7 June, 2026)"
+            type: string
+          - name: subtitle
+            label: "Untertitel"
+            type: text
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
+      - name: video
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: youtube_id
+            label: "YouTube ID"
+            type: string
+          - name: title
+            label: "Video-Überschrift"
+            type: string
+      - name: closing_quote
+        label: "Abschluss-Zitat"
+        type: rich-text
+
+  - name: retreat-mazunte
+    label: "🌿 Mazunte Retreat"
+    type: file
+    path: src/content/retreats/mazunte.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: location_badge
+            label: "Ort-Badge"
+            type: string
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: dates
+            label: "Datum"
+            type: string
+          - name: subtitle
+            label: "Untertitel"
+            type: text
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
+      - name: video
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: youtube_id
+            label: "YouTube ID"
+            type: string
+          - name: title
+            label: "Video-Überschrift"
+            type: string
+      - name: closing_quote
+        label: "Abschluss-Zitat"
+        type: rich-text
+
+  - name: retreat-spain
+    label: "🌿 Spain Retreat"
+    type: file
+    path: src/content/retreats/spain.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: location_badge
+            label: "Ort-Badge"
+            type: string
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: dates
+            label: "Datum"
+            type: string
+          - name: subtitle
+            label: "Untertitel"
+            type: text
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
+      - name: video
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: youtube_id
+            label: "YouTube ID"
+            type: string
+          - name: title
+            label: "Video-Überschrift"
+            type: string
+      - name: closing_quote
+        label: "Abschluss-Zitat"
+        type: rich-text
+
+  - name: retreat-tulum
+    label: "🌿 Tulum Retreat"
+    type: file
+    path: src/content/retreats/tulum.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero-Bereich"
+        type: object
+        fields:
+          - name: location_badge
+            label: "Ort-Badge"
+            type: string
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: dates
+            label: "Datum"
+            type: string
+          - name: subtitle
+            label: "Untertitel"
+            type: text
+          - name: image
+            label: "Hero-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
+      - name: video
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: youtube_id
+            label: "YouTube ID"
+            type: string
+          - name: title
+            label: "Video-Überschrift"
+            type: string
+      - name: closing_quote
+        label: "Abschluss-Zitat"
+        type: rich-text
+
+  - name: retreat-level-1
+    label: "📋 Level 1 — Kurs-Übersicht"
+    type: file
+    path: src/content/retreats/level-1.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero"
+        type: object
+        fields:
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: image
+            label: "Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+
+  - name: retreat-level-2
+    label: "📋 Level 2 — Kurs-Übersicht"
+    type: file
+    path: src/content/retreats/level-2.yaml
+    format: yaml
+    fields:
+      - name: page_title
+        label: "Browser-Tab Titel"
+        type: string
+      - name: page_description
+        label: "Google-Beschreibung"
+        type: text
+      - name: hero
+        label: "Hero"
+        type: object
+        fields:
+          - name: heading
+            label: "Hauptüberschrift"
+            type: string
+          - name: image
+            label: "Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
       - name: motto
         label: "Motto (kleiner Kursiv-Text)"
         type: string
@@ -83,3 +702,4 @@ content:
       - name: bildAlt
         label: "Bild-Beschreibung (für Barrierefreiheit)"
         type: string
+
