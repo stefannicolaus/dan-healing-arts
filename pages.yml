@@ -44,12 +44,8 @@ content:
         label: "Überschrift"
         type: string
       - name: paragraphs
-        label: "Absätze"
-        type: collection
-        fields:
-          - name: value
-            label: "Absatz"
-            type: text
+        label: "Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
       - name: highlight
         label: "Hervorhebung (letzter Satz, grün)"
         type: string
@@ -73,12 +69,8 @@ content:
         label: "Bild Alt-Text"
         type: string
       - name: paragraphs
-        label: "Absätze"
-        type: collection
-        fields:
-          - name: value
-            label: "Absatz"
-            type: text
+        label: "Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
       - name: highlight
         label: "Hervorhebung (letzter Satz, grün)"
         type: string
@@ -102,12 +94,8 @@ content:
         label: "Bild Alt-Text"
         type: string
       - name: paragraphs
-        label: "Absätze"
-        type: collection
-        fields:
-          - name: value
-            label: "Absatz"
-            type: text
+        label: "Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
       - name: highlight
         label: "Hervorhebung"
         type: string
@@ -128,22 +116,8 @@ content:
         label: "Bild Alt-Text"
         type: string
       - name: paragraphs
-        label: "Bio-Absätze"
-        type: collection
-        fields:
-          - name: value
-            label: "Absatz"
-            type: text
-      - name: stats
-        label: "Statistiken (3 Zahlen)"
-        type: collection
-        fields:
-          - name: zahl
-            label: "Zahl (z.B. 22+)"
-            type: string
-          - name: label
-            label: "Bezeichnung"
-            type: string
+        label: "Bio-Absätze (einen Absatz pro Zeile, Leerzeile = neuer Absatz)"
+        type: text
 
   - name: trainings
     label: "📅 Alle Trainings & Termine"
@@ -239,34 +213,6 @@ content:
           - name: heading
             label: "Überschrift"
             type: string
-          - name: levels
-            label: "Level-Karten (Level 1 + Level 2)"
-            type: collection
-            fields:
-              - name: badge
-                label: "Badge (z.B. Level 1)"
-                type: string
-              - name: href
-                label: "Link"
-                type: string
-              - name: image
-                label: "Bild"
-                type: image
-              - name: imageAlt
-                label: "Bild Alt-Text"
-                type: string
-              - name: imagePosition
-                label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
-                type: string
-              - name: heading
-                label: "Überschrift"
-                type: string
-              - name: description
-                label: "Beschreibung"
-                type: text
-              - name: cta_text
-                label: "Link-Text"
-                type: string
       - name: parallax_1
         label: "Parallax-Bild 1 (nach Training Pathway)"
         type: image
@@ -277,16 +223,6 @@ content:
           - name: heading
             label: "Überschrift"
             type: string
-          - name: items
-            label: "Videos"
-            type: collection
-            fields:
-              - name: youtube_id
-                label: "YouTube ID"
-                type: string
-              - name: caption
-                label: "Beschriftung (z.B. Portugal, September 2025)"
-                type: string
       - name: upcoming_trainings
         label: "Upcoming Trainings Sektion"
         type: object
@@ -687,23 +623,6 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
-      - name: learn_topics
-        label: "Was du lernst"
-        type: collection
-        fields:
-          - name: value
-            label: "Punkt"
-            type: string
-      - name: body_regions
-        label: "Körperregionen"
-        type: collection
-        fields:
-          - name: area
-            label: "Region"
-            type: string
-          - name: theme
-            label: "Thema"
-            type: string
 
   - name: retreat-level-2
     label: "📋 Level 2 — Kurs-Übersicht"
@@ -729,16 +648,6 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
-            type: string
-      - name: elements
-        label: "5 Elemente"
-        type: collection
-        fields:
-          - name: element
-            label: "Element (z.B. Earth)"
-            type: string
-          - name: emotion
-            label: "Emotion"
             type: string
       - name: motto
         label: "Motto (kleiner Kursiv-Text)"
