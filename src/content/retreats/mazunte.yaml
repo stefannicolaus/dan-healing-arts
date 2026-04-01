@@ -1,0 +1,159 @@
+page_title: "Mazunte Retreat — The Essence of Deep Touch | Dan Healing Arts"
+page_description: "A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement. Mazunte, Mexico, 24–30 January 2027."
+og_image: "/images/mazunte/hero.jpg"
+hero:
+  location_badge: "Mazunte, Mexico · Level 1"
+  heading: "The Essence of Deep Touch"
+  level_text: "Level 1"
+  level_href: "/level-1"
+  dates: "Mexico · 24 – 30 January, 2027"
+  subtitle: "A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement."
+  image: "/images/mazunte/hero.jpg"
+  imageAlt: "Mazunte retreat — The Essence of Deep Touch"
+video:
+  youtube_id: "mB88cuuMA84"
+  title: "Real moments from the Mazunte Training"
+sections:
+  - id: learning_art
+    heading: "Learning the Art of Deep Touch"
+    image: "/images/mazunte/learning-art.jpg"
+    imageAlt: "Learning the art of deep touch — hands-on bodywork"
+    reversed: false
+    paragraphs:
+      - "**The Essence of Deep Touch** is an immersive **professional training in fascia-based bodywork.** It offers the Level 1 training program of the Myofascial Somatic Liberation pathway."
+      - "→ *Learn more about the full Level 1 training*"
+      - "Over the course of a week, you will learn how to offer deep, slow and emotionally attuned massage sessions that work not only with muscles and fascia, but with the nervous system and emotional body."
+      - "Alongside learning practical hands-on techniques, you will also receive nourishing touch each day, allowing you to experience the work within your own system."
+      - "Through this reciprocal process, the body softens, perception deepens, and a natural understanding begins to emerge of how to support others through touch."
+  - id: training_experience
+    heading: "The Training Experience"
+    image: "/images/mazunte/training-experience.jpg"
+    imageAlt: "The training experience — somatic bodywork practice"
+    reversed: true
+    paragraphs:
+      - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
+      - "You'll learn to offer full-body touch that is structurally and anatomically grounded, drawing from myofascial release and deep tissue techniques while remaining sensitive to the nervous system and emotional responses that can unfold through touch."
+      - "Alongside these hands-on techniques, the training cultivates the subtle skills of presence, listening and energetic awareness that allow sessions to become deeply restorative and transformative."
+      - "During this week you will develop **both the practical skills and the embodied sensitivity needed to begin offering this work to others.**"
+  - id: experiential
+    image: "/images/portugal/experiential.jpg"
+    imageAlt: "Experiential learning — hands-on bodywork practice"
+    reversed: false
+    show_apply_button: true
+    paragraphs:
+      - "The learning is highly experiential and hands-on. Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice."
+      - "Through this rhythm of practicing and being worked on, your system becomes more receptive and your hands gradually become more refined and precise, learning to respond to what they meet in the body."
+      - "Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably."
+  - id: field_1
+    heading: "The Field We Practice In"
+    image: "/images/mazunte/gallery-1.jpg"
+    imageAlt: "Bodywork session during the Mazunte training"
+    reversed: false
+    paragraphs:
+      - "This training isn't just about learning to touch - it's about remembering how to listen."
+      - "Within a warm, grounded, and playful group field, you'll experience the healing power of connection: with your body, with others and with the intelligence that lives beneath the surface."
+  - id: field_2
+    image: "/images/mazunte/gallery-2.jpg"
+    imageAlt: "Group practice at the Mazunte training"
+    reversed: true
+    paragraphs:
+      - "Energetic awareness and supportive pacing are woven into the hands-on bodywork - not to overwhelm you with information, but to support learning that can truly land and integrate in your system."
+      - "You will be held in an environment that supports what is ready to move, physically, emotionally and energetically, allowing release to unfold naturally, in its own time."
+      - "This is not only a training, but a journey: a spiraling movement of opening, unwinding and empowerment."
+  - id: venue_1
+    heading: "The Space That Holds the Work"
+    image: "/images/mazunte/venue-garden.jpg"
+    imageAlt: "Bliss Haven Retreat Center — lush garden near the beach in Mazunte"
+    reversed: true
+    paragraphs:
+      - "Set in the tranquil yet vibrant beach town of Mazunte, this training unfolds in a place where scenic coastlines, coconut trees and a laid-back rhythm of life welcome you in."
+      - "Bliss Haven Retreat Center is tucked into a lush garden just a few minutes walk from the beach. With a pool, communal spaces and beautiful accommodations, it's a place where time slows down, and your body remembers how to rest."
+      - "The coast is famous for its incredible wildlife — humpback whales passing along the shore from December to March, as well as turtles and dolphins which can be seen all year around."
+      - "Just like the beaches, the village of Mazunte with many amazing restaurants and a rich culture is only a few minutes walk away."
+  - id: venue_2
+    image: "/images/mazunte/sunset.jpg"
+    imageAlt: "Mazunte sunset — Pacific Ocean coastline"
+    reversed: false
+    paragraphs:
+      - "The sun and ever-present warm tropical breeze caress your body, while the sound of the ocean becomes a continuous, soothing symphony in the background — holding and nourishing every step of your process."
+      - "In the early mornings, during the breaks and in the evenings you will have time to explore the rich culture and culinary delights of Mazunte."
+      - "Each day you will have the opportunity to absorb the sounds of nature while sitting on the beach, watch the sunrise, and experience the cleansing and refreshing qualities of a dip in the Pacific Ocean."
+      - "Included in the training is a group excursion to see the amazing sunrise at Punta Cometa, Mexico's most southwestern point with 180-degree ocean view."
+  - id: nourished
+    heading: "Held & Nourished"
+    image: "/images/mazunte/food-1.jpg"
+    imageAlt: "Fresh nourishing meal prepared at the Mazunte retreat"
+    reversed: false
+    paragraphs:
+      - "**Breakfast and lunch are included each day**, prepared by the amazing catering team of Umami Restaurant — offering fresh, nourishing and grounding meals to support our time together."
+      - "These shared meals also become moments of connection and integration — time to rest, digest and gently transition between inner work and daily life."
+      - "**Dinner is left open** so you can explore Mazunte in your own way — whether that means quiet solo meals, nourishing moments with new friends or spontaneous group dinners."
+      - "The retreat center also offers a well-equipped communal kitchen, available if you wish to prepare your own food in the evenings."
+  - id: for_whom
+    heading: "Who Is This Training For"
+    image: "/images/mazunte/gallery-4.jpg"
+    imageAlt: "Mazunte retreat — participants in the training space"
+    reversed: true
+    show_apply_button: true
+    paragraphs:
+      - "This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork."
+      - "It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work."
+      - "If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path."
+      - "**Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.**"
+what_you_receive:
+  heading: "What You'll Receive"
+  image: "/images/mazunte/group-photo.jpg"
+  imageAlt: "Mazunte training group"
+  items:
+    - "7 days/ 6 nights accommodation"
+    - "2 nourishing meals daily"
+    - "Daily bodywork/massage lessons and practice sessions"
+    - "Daily yoga, meditation, breathwork, and voice work"
+    - "Integration circles, kirtan and ceremonial spaces"
+    - "Course manual"
+    - "Video recordings of all bodywork sequences"
+    - "Certificate of completion"
+    - "Pre- and post-retreat support"
+pricing:
+  heading: "Your Stay at Bliss Haven"
+  intro:
+    - "A range of comfortable accommodation options are available on-site, allowing you to fully immerse yourself in the retreat experience."
+    - "**All options include full participation in the training, meals, and practices.** Also included are the Training Manual, Video Recordings of all bodywork sequences, a Certificate of Completion and a Group Zoom Integration Call."
+    - "There is also the option to stay outside of the venue."
+    - "After your application, I'll personally confirm availability and next steps."
+    - "Choose the room option that feels right for you below."
+  cards:
+    - title: "Shared Triple Room / Private Bathroom"
+      image: "/images/mazunte/room-triple.jpg"
+      early_price: 1499
+      early_label: "Early Bird"
+      early_deadline: "until 30. June 2026"
+      regular_price: 1699
+      regular_label: "from 1. July 2026"
+      currency: "$ "
+    - title: "Shared Twin Room / Private Bathroom"
+      image: "/images/mazunte/room-twin.jpg"
+      early_price: 1599
+      early_label: "Early Bird"
+      early_deadline: "until 30. June 2026"
+      regular_price: 1799
+      regular_label: "Regular"
+      currency: "$ "
+    - title: "Private Single Studio / Private Bathroom"
+      image: "/images/mazunte/room-single.jpg"
+      early_price: 1749
+      early_label: "Early Bird"
+      early_deadline: "until 30. June 2026"
+      regular_price: 1949
+      regular_label: "Regular"
+      currency: "$ "
+    - title: "Program & 2 Daily Meals (No Lodging)"
+      image: "/images/mazunte/no-lodging.jpg"
+      early_price: 1349
+      early_label: "Early Bird"
+      early_deadline: "until 30. June 2026"
+      regular_price: 1499
+      regular_label: "Regular"
+      currency: "$ "
+  closing: "Still unsure which option is right for you? Feel free to reach out with any questions."
+closing_quote: "This training is an invitation to slow down, to listen, and to reconnect with the intelligence of touch - in yourself and in others. If you feel called, you're warmly welcome to join us."
