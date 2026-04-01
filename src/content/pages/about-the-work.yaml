@@ -1,0 +1,31 @@
+page_title: "About the Work — Dan Healing Arts"
+page_description: "Myofascial Somatic Liberation — a holistic approach to deep, slow bodywork where presence and sensitivity open space for profound emotional release and transformation."
+hero:
+  heading: "Myofascial Somatic Liberation"
+  subheading: "A holistic approach to deep, slow and nuanced bodywork."
+  image: "/images/about/work-hero.jpg"
+  imageAlt: "Daniel Wendt practicing myofascial somatic bodywork"
+  paragraphs:
+    - "Myofascial Somatic Liberation is a holistic approach to deep, slow and nuanced bodywork — where presence, sensitivity and depth open space for profound emotional release and inner transformation."
+    - "At its core, this work is a unique and well-balanced blend of myofascial release, deep tissue massage, and energy work. It brings playful ease into therapeutic depth, grounding mystical insight in the physical tissue through a bridge of modern anatomy."
+    - "It is a method designed to relieve chronic tension, pain, and deeply held emotional patterns — all while honoring the natural rhythm of your nervous system and supporting your body's primal needs."
+    - "This naturally leads us to two essential elements for applying deep touch: slowness and simplicity."
+sections:
+  - id: slowness
+    heading: "The Power of Slowness"
+    image: "/images/about/daniel-7165.jpg"
+    imageAlt: "Deep slow bodywork session demonstrating the power of presence and slowness"
+    reversed: true
+    paragraphs:
+      - "Slowness is the most powerful tool for guiding the body out of protective patterns and into a parasympathetic state, where rest, regulation, and a deep sense of safety emerge. It invites trust, not only between giver and receiver, but also within the body itself. From that trust, the release of held emotion and stagnant energy unfolds naturally."
+      - "At the same time, the body's connective tissue — the fascia — requires time to feel, respond, and reorganize. It opens when it's met with presence. Through slowing down, we give the system space to adapt and unwind. Muscular tension and subtle patterns of resistance begin to soften — not because we push through them, but because we listen."
+      - "By allowing the body to set the pace, we are guided into deeper layers that would otherwise remain hidden, creating the conditions for real transformation to occur."
+  - id: simplicity
+    heading: "The Ease of Simplicity"
+    image: "/images/about/massage-25.jpg"
+    imageAlt: "Close-up of hands working on the neck demonstrating the ease and simplicity of deep bodywork"
+    reversed: false
+    paragraphs:
+      - "True depth comes not from complexity, but from simplicity and attunement. We don't need to create complicated techniques and sequences or get lost in an over-intellectualized approach to anatomy. Instead, we learn to follow the body's natural structures — muscle pathways, fascial lines, bones, joints, ligaments, and energy channels — which clearly reveal themselves when we slow down, listen, and feel."
+      - "This work is never mechanical. It requires moment-to-moment listening, a dance between your hands, your presence, and the subtle intelligence within the body. It's about sensing the unique physical and energetic landscape beneath your hands, and how touching someone also affects you."
+parallax_image: "/images/about/learning-banner.jpg"

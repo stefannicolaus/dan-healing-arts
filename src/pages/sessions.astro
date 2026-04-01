@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -13,12 +13,13 @@ import StatsDivider from '../components/StatsDivider.astro';
 const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
 const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
+const pageData = (await getEntry('pages', 'sessions'))?.data;
 ---
 
 <Layout
   lang="en"
-  title="Somatic Deep Tissue Bodywork — Private Sessions with Daniel Wendt"
-  description="Deep, slow bodywork with Daniel Wendt. Myofascial work that reaches beyond muscles and fascia — touching the nervous system and emotional body. Zürich & worldwide."
+  title={pageData?.page_title ?? "Somatic Deep Tissue Bodywork — Private Sessions with Daniel Wendt"}
+  description={pageData?.page_description ?? "Deep, slow bodywork with Daniel Wendt. Myofascial work that reaches beyond muscles and fascia — touching the nervous system and emotional body. Zürich & worldwide."}
   canonicalPath="/sessions"
 >
   <Nav lang="en" />
@@ -33,8 +34,8 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
         <div class="w-full md:w-[55%] shrink-0 min-h-0">
           <div class="rounded-card overflow-hidden h-full bg-surface-mid relative">
             <img
-              src="/images/daniel-bodywork.jpg"
-              alt="Daniel Wendt offering private somatic bodywork session"
+              src={pageData?.hero.image ?? "/images/daniel-bodywork.jpg"}
+              alt={pageData?.hero.imageAlt ?? "Daniel Wendt offering private somatic bodywork session"}
               class="w-full h-full object-cover object-top"
             />
           </div>
@@ -42,14 +43,14 @@ const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
 
         <!-- Text: 45% -->
         <div class="w-full md:w-[45%] flex flex-col justify-center items-start">
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Private Sessions</p>
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Private Sessions"}</p>
           <h1 class="font-serif font-black text-forest text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-            Touch that listens.
+            {pageData?.hero.heading ?? "Touch that listens."}
           </h1>
           <p class="font-sans text-stone text-base md:text-lg font-light leading-relaxed mb-8 max-w-md">
-            Deep, slow bodywork that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence and trust.
+            {pageData?.hero.subheading ?? "Deep, slow bodywork that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence and trust."}
           </p>
-          <ApplyButton text="Book a Session" href="/contact" />
+          <ApplyButton text={pageData?.hero.cta_text ?? "Book a Session"} href={pageData?.hero.cta_href ?? "/contact"} />
         </div>
 
       </div>

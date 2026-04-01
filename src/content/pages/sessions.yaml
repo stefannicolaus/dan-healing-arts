@@ -1,0 +1,29 @@
+page_title: "Somatic Deep Tissue Bodywork — Private Sessions with Daniel Wendt"
+page_description: "Deep, slow bodywork with Daniel Wendt. Myofascial work that reaches beyond muscles and fascia — touching the nervous system and emotional body. Zürich & worldwide."
+hero:
+  badge: "Private Sessions"
+  heading: "Touch that listens."
+  subheading: "Deep, slow bodywork that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence and trust."
+  image: "/images/daniel-bodywork.jpg"
+  imageAlt: "Daniel Wendt offering private somatic bodywork session"
+  cta_text: "Book a Session"
+  cta_href: "/contact"
+sections:
+  - id: what_is
+    heading: "What is Somatic Deep Tissue Bodywork?"
+    image: "/images/about/massage-25.jpg"
+    imageAlt: "Daniel Wendt offering somatic bodywork"
+    reversed: false
+    paragraphs:
+      - "Somatic deep tissue bodywork combines precise fascial work with deep attention to what is stored in the body. Slow, mindful touch doesn't just release physical tension — it creates space for what lies beneath."
+      - "Daniel works with the myofascial structures of the body: the layers of connective tissue that surround and connect muscles, organs, and joints. Through targeted, deep pressure and somatic presence, tensions that have been held in the body for years can begin to release."
+      - "The work is never purely mechanical. It always considers the emotional and energetic qualities stored in different areas of the body."
+  - id: how_a_session_works
+    heading: "How a Session Works"
+    image: "/images/general/dan-two-men.jpg"
+    imageAlt: "Daniel Wendt during a private bodywork session"
+    reversed: true
+    paragraphs:
+      - "Each session begins with a brief conversation — what brings you here, what you need, what's present. Then we work together on the body."
+      - "The touch is slow, deep, and mindful. I follow the structures of the body — the fascia, the muscles, the rhythm of your nervous system. Some areas need intensity, others softness. The body shows what it needs."
+      - "After the session, there is time to arrive and settle. Many people report deep relaxation, new clarity, or a feeling of lightness."
