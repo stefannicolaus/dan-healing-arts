@@ -10,6 +10,7 @@ hero:
   subtitle: "A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement."
   image: "/images/mazunte/hero.jpg"
   imageAlt: "Mazunte retreat — The Essence of Deep Touch"
+  imagePosition: "center"
 video:
   youtube_id: "mB88cuuMA84"
   title: "Real moments from the Mazunte Training"
@@ -18,6 +19,7 @@ sections:
     heading: "Learning the Art of Deep Touch"
     image: "/images/mazunte/learning-art.jpg"
     imageAlt: "Learning the art of deep touch — hands-on bodywork"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "**The Essence of Deep Touch** is an immersive **professional training in fascia-based bodywork.** It offers the Level 1 training program of the Myofascial Somatic Liberation pathway."
@@ -29,6 +31,7 @@ sections:
     heading: "The Training Experience"
     image: "/images/mazunte/training-experience.jpg"
     imageAlt: "The training experience — somatic bodywork practice"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
@@ -38,6 +41,7 @@ sections:
   - id: experiential
     image: "/images/portugal/experiential.jpg"
     imageAlt: "Experiential learning — hands-on bodywork practice"
+    imagePosition: "center"
     reversed: false
     show_apply_button: true
     paragraphs:
@@ -48,6 +52,7 @@ sections:
     heading: "The Field We Practice In"
     image: "/images/mazunte/gallery-1.jpg"
     imageAlt: "Bodywork session during the Mazunte training"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "This training isn't just about learning to touch - it's about remembering how to listen."
@@ -55,6 +60,7 @@ sections:
   - id: field_2
     image: "/images/mazunte/gallery-2.jpg"
     imageAlt: "Group practice at the Mazunte training"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Energetic awareness and supportive pacing are woven into the hands-on bodywork - not to overwhelm you with information, but to support learning that can truly land and integrate in your system."
@@ -64,6 +70,7 @@ sections:
     heading: "The Space That Holds the Work"
     image: "/images/mazunte/venue-garden.jpg"
     imageAlt: "Bliss Haven Retreat Center — lush garden near the beach in Mazunte"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Set in the tranquil yet vibrant beach town of Mazunte, this training unfolds in a place where scenic coastlines, coconut trees and a laid-back rhythm of life welcome you in."
@@ -73,6 +80,7 @@ sections:
   - id: venue_2
     image: "/images/mazunte/sunset.jpg"
     imageAlt: "Mazunte sunset — Pacific Ocean coastline"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "The sun and ever-present warm tropical breeze caress your body, while the sound of the ocean becomes a continuous, soothing symphony in the background — holding and nourishing every step of your process."
@@ -83,6 +91,7 @@ sections:
     heading: "Held & Nourished"
     image: "/images/mazunte/food-1.jpg"
     imageAlt: "Fresh nourishing meal prepared at the Mazunte retreat"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "**Breakfast and lunch are included each day**, prepared by the amazing catering team of Umami Restaurant — offering fresh, nourishing and grounding meals to support our time together."
@@ -93,6 +102,7 @@ sections:
     heading: "Who Is This Training For"
     image: "/images/mazunte/gallery-4.jpg"
     imageAlt: "Mazunte retreat — participants in the training space"
+    imagePosition: "center"
     reversed: true
     show_apply_button: true
     paragraphs:
@@ -104,6 +114,7 @@ what_you_receive:
   heading: "What You'll Receive"
   image: "/images/mazunte/group-photo.jpg"
   imageAlt: "Mazunte training group"
+  imagePosition: "center"
   items:
     - "7 days/ 6 nights accommodation"
     - "2 nourishing meals daily"

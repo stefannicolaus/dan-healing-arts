@@ -10,11 +10,13 @@ hero:
   subtitle: "A 7-day immersive training deepening your practice in fascia-based bodywork and somatic sensitivity."
   image: "/images/spain/hero.jpg"
   imageAlt: "Hidden Paradise retreat center in the Alpujarra mountains of southern Spain"
+  imagePosition: "center"
 sections:
   - id: deepening
     heading: "Deepening Your Practice"
     image: "/images/spain/dsc2233.jpg"
     imageAlt: "Practitioners in deep bodywork training at Hidden Paradise, Spain"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "**An Evolution of Sensitivity** is an immersive **advanced training in fascia-based bodywork.** It offers the Level 2 training program of the Myofascial Somatic Liberation pathway."
@@ -26,6 +28,7 @@ sections:
     heading: "The Training Experience"
     image: "/images/spain/dsc2128.jpg"
     imageAlt: "Training experience at Hidden Paradise — group bodywork practice in Spain"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
@@ -35,6 +38,7 @@ sections:
   - id: experiential
     image: "/images/spain/dsc08074.jpg"
     imageAlt: "Hands-on practice at Hidden Paradise Spain"
+    imagePosition: "center"
     reversed: false
     show_apply_button: true
     paragraphs:
@@ -45,6 +49,7 @@ sections:
     heading: "The Field We Practice In"
     image: "/images/spain/dsc08001.jpg"
     imageAlt: "Practice space at Hidden Paradise retreat, southern Spain"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize."
@@ -52,6 +57,7 @@ sections:
   - id: field_2
     image: "/images/spain/dsc2233.jpg"
     imageAlt: "Deep bodywork practice at the Spain training"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands."
@@ -61,6 +67,7 @@ sections:
     heading: "The Space That Holds the Work"
     image: "/images/spain/hidden-paradise-62.jpg"
     imageAlt: "Hidden Paradise retreat center — view from above, Alpujarra mountains"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Hidden Paradise is a family-run retreat center nestled in the Alpujarra mountains of southern Spain, near Granada."
@@ -70,6 +77,7 @@ sections:
   - id: venue_2
     image: "/images/spain/dsc08074.jpg"
     imageAlt: "Practice space at Hidden Paradise — circular domed workshop room"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "These circular practice spaces create a naturally sacred and focused container for the depth of work we do."
@@ -79,6 +87,7 @@ sections:
     heading: "Held & Nourished"
     image: "/images/spain/dsc08001.jpg"
     imageAlt: "Nourishing meals at Hidden Paradise"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "Throughout the retreat, you'll be nourished with three daily meals prepared with care, love and vitality — designed to support deep physical and emotional work."
@@ -88,6 +97,7 @@ sections:
     heading: "Who Is This Training For"
     image: "/images/spain/dsc2128.jpg"
     imageAlt: "Spain training — practitioners deepening their practice"
+    imagePosition: "center"
     reversed: false
     show_apply_button: true
     paragraphs:
@@ -99,6 +109,7 @@ what_you_receive:
   heading: "What You'll Receive"
   image: "/images/spain/hidden-paradise-36.jpg"
   imageAlt: "Hidden Paradise — mountain landscape, southern Spain"
+  imagePosition: "center"
   items:
     - "7 days/ 6 nights accommodation"
     - "3 daily nourishing meals"

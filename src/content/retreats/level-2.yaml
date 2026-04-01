@@ -6,6 +6,7 @@ hero:
   subheading: "The natural next step for all who have completed the foundation."
   image: "/images/level2/hero.jpg"
   imageAlt: "Advanced Level 2 bodywork training — practitioners deepening their sensitivity"
+  imagePosition: "center"
   paragraphs:
     - "Our Level 2 training is the natural next step for all who have completed the foundation. Here we deepen our capacity to feel the tissue's subtle intelligence, the quiet pulses of emotion, and the energetic currents that weave through the body."
     - "In addition to learning new massage sequences and release techniques, you'll discover how to enhance your sessions through trance induction, and intonation — tools that allow the body to surrender beyond the thinking mind."
@@ -17,6 +18,7 @@ sections:
     heading: "The Language of the Elements and Emotions"
     image: "/images/level2/massage-35.png"
     imageAlt: "Practitioners working with emotional body dimensions in advanced bodywork training"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "This training unfolds as an inner journey through the five elements and the five primal emotions. Each element is an invitation to explore how emotion moves through your own body — not as a concept to apply, but as a direct experience."
@@ -25,6 +27,7 @@ sections:
     heading: "Touching Emotion Through Presence"
     image: "/images/level2/massage-35.png"
     imageAlt: "Advanced bodywork — presence and emotional attunement in practice"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "In the practical bodywork sessions, we do not try to 'work on fear' or 'release sadness.' Instead, we attune to what is alive in the field, and allow these elemental languages to inform the quality of our touch."
@@ -34,6 +37,7 @@ sections:
     heading: "Embodiment in Practice"
     image: "/images/level2/massage-35.png"
     imageAlt: "Practitioners working with emotional body dimensions in advanced bodywork training"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Throughout the retreat, the five elements and their emotional resonances will color our movement, meditation, and partner work. They serve as mirrors, not methods — ways of refining perception and deepening your somatic vocabulary."

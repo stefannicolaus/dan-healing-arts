@@ -65,7 +65,7 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={pageData?.hero.image ?? "/images/level2/hero.jpg"} imageAlt={pageData?.hero.imageAlt ?? "Advanced Level 2 bodywork training — practitioners deepening their sensitivity"}>
+        <TextImageSection image={pageData?.hero.image ?? "/images/level2/hero.jpg"} imageAlt={pageData?.hero.imageAlt ?? "Advanced Level 2 bodywork training — practitioners deepening their sensitivity"} imagePosition={pageData?.hero.imagePosition ?? 'center'}>
           <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Level 2 Training"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             {pageData?.hero.heading ?? "An Evolution of Sensitivity"}

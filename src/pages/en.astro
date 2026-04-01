@@ -60,6 +60,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
             src={pageData?.hero.image ?? "/images/daniel-bodywork.jpg"}
             alt={pageData?.hero.imageAlt ?? "Daniel Wendt giving a deep somatic bodywork session"}
             class="w-full h-[500px] md:h-[600px] object-cover"
+            style={`object-position: ${pageData?.hero.imagePosition ?? 'center'}`}
             fetchpriority="high"
           />
         </div>
@@ -114,7 +115,8 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
                   <img
                     src={level.image}
                     alt={level.imageAlt}
-                    class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                    style={`object-position: ${level.imagePosition ?? 'center'}`}
                     loading="lazy"
                   />
                 </div>
@@ -233,6 +235,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
             src={pageData?.about_teaser?.image ?? "/images/daniel-portrait.jpg"}
             alt={pageData?.about_teaser?.imageAlt ?? "Daniel Wendt"}
             class="w-full h-full object-cover"
+            style={`object-position: ${pageData?.about_teaser?.imagePosition ?? 'center'}`}
           />
         </div>
 

@@ -10,6 +10,7 @@ hero:
   subtitle: "A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement."
   image: "/images/portugal/hero.jpg"
   imageAlt: "Portugal retreat — The Essence of Deep Touch"
+  imagePosition: "center"
 video:
   youtube_id: "6X1a70jgbM0"
   title: "Real moments from the Portugal Training"
@@ -18,6 +19,7 @@ sections:
     heading: "Learning the Art of Deep Touch"
     image: "/images/portugal/learning-art.jpg"
     imageAlt: "Learning the art of deep touch — hands-on bodywork"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "**The Essence of Deep Touch** is an immersive **professional training in fascia-based bodywork.** It offers the Level 1 training program of the Myofascial Somatic Liberation pathway."
@@ -29,6 +31,7 @@ sections:
     heading: "The Training Experience"
     image: "/images/portugal/training-experience.jpg"
     imageAlt: "The training experience — somatic bodywork practice"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
@@ -38,6 +41,7 @@ sections:
   - id: experiential
     image: "/images/portugal/experiential.jpg"
     imageAlt: "Experiential learning — hands-on bodywork practice"
+    imagePosition: "center"
     reversed: false
     show_apply_button: true
     paragraphs:
@@ -48,6 +52,7 @@ sections:
     heading: "The Field We Practice In"
     image: "/images/portugal/field-1.jpg"
     imageAlt: "Bodywork session in the Garden Shala at The Shanti Space, Portugal"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize."
@@ -55,6 +60,7 @@ sections:
   - id: field_2
     image: "/images/portugal/field-2.jpg"
     imageAlt: "Deep bodywork practice session at the Portugal training"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands."
@@ -64,6 +70,7 @@ sections:
     heading: "The Space That Holds the Work"
     image: "/images/portugal/venue-1.jpg"
     imageAlt: "The Shanti Space — outdoor venue near Lisbon"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Nestled in nature just 30 minutes from Lisbon, The Shanti Space offers a safe and beautiful container for deep emotional and physical exploration."
@@ -75,6 +82,7 @@ sections:
     heading: "Held & Nourished"
     image: "/images/portugal/food.jpg"
     imageAlt: "Nourishing food prepared with care at the Portugal retreat"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "Throughout the retreat, you'll be nourished with three daily meals prepared with care, love and vitality by our amazing chef Zoe."
@@ -85,6 +93,7 @@ sections:
     heading: "Who Is This Training For"
     image: "/images/portugal/gallery-3.jpg"
     imageAlt: "Portugal retreat — outdoor training space at The Shanti Space"
+    imagePosition: "center"
     reversed: false
     show_apply_button: true
     paragraphs:
@@ -96,6 +105,7 @@ what_you_receive:
   heading: "What You'll Receive"
   image: "/images/portugal/gallery-2.jpg"
   imageAlt: "Portugal training — participants in the practice space"
+  imagePosition: "center"
   items:
     - "7 days/ 6 nights accommodation"
     - "3 daily nourishing meals"

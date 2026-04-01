@@ -10,11 +10,13 @@ hero:
   subtitle: "An immersive training in fascia release, deep tissue massage and nervous system attunement — held in the jungle."
   image: "/images/tulum/hero.jpg"
   imageAlt: "Casa Arkaana — ecological retreat center in the jungle near Tulum, Mexico"
+  imagePosition: "center"
 sections:
   - id: learning_art
     heading: "Learning the Art of Deep Touch"
     image: "/images/tulum/venue.jpg"
     imageAlt: "Casa Arkaana retreat center — jungle setting near Tulum, Mexico"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "**The Essence of Deep Touch** is an immersive **professional training in fascia-based bodywork.** It offers the Level 1 training program of the Myofascial Somatic Liberation pathway."
@@ -26,6 +28,7 @@ sections:
     heading: "The Training Experience"
     image: "/images/tulum/sahil.jpg"
     imageAlt: "Bodywork training session at Casa Arkaana, Tulum"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
@@ -35,6 +38,7 @@ sections:
   - id: experiential
     image: "/images/tulum/hero.jpg"
     imageAlt: "Hands-on bodywork practice at the Tulum training"
+    imagePosition: "center"
     reversed: false
     show_apply_button: true
     paragraphs:
@@ -45,6 +49,7 @@ sections:
     heading: "The Field We Practice In"
     image: "/images/tulum/venue.jpg"
     imageAlt: "Practice space at Casa Arkaana — jungle retreat center near Tulum"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize."
@@ -52,6 +57,7 @@ sections:
   - id: field_2
     image: "/images/tulum/hero.jpg"
     imageAlt: "Bodywork practice session at the Tulum jungle training"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands."
@@ -61,6 +67,7 @@ sections:
     heading: "The Space That Holds the Work"
     image: "/images/tulum/venue.jpg"
     imageAlt: "Casa Arkaana — ecological retreat center in the jungle near Tulum"
+    imagePosition: "center"
     reversed: true
     paragraphs:
       - "Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum on the Yucatán Peninsula of Mexico."
@@ -70,6 +77,7 @@ sections:
   - id: venue_2
     image: "/images/tulum/twin-room.jpg"
     imageAlt: "Accommodation at Casa Arkaana retreat center"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - '"Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other." — Sahil'
@@ -78,6 +86,7 @@ sections:
     heading: "Held & Nourished"
     image: "/images/tulum/sahil.jpg"
     imageAlt: "Nourishing meals at Casa Arkaana"
+    imagePosition: "center"
     reversed: false
     paragraphs:
       - "Throughout the retreat, you'll be nourished with daily meals prepared with care and intention — designed to support the depth of work you're moving through."
@@ -87,6 +96,7 @@ sections:
     heading: "Who Is This Training For"
     image: "/images/tulum/single-room.jpg"
     imageAlt: "Casa Arkaana training — participants in the practice space"
+    imagePosition: "center"
     reversed: true
     show_apply_button: true
     paragraphs:
@@ -98,6 +108,7 @@ what_you_receive:
   heading: "What You'll Receive"
   image: "/images/tulum/private-bath.jpg"
   imageAlt: "Casa Arkaana accommodation and facilities"
+  imagePosition: "center"
   items:
     - "7 days/ 6 nights accommodation"
     - "3 daily nourishing meals"

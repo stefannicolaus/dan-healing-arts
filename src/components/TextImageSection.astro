@@ -3,9 +3,10 @@ interface Props {
   image?: string;
   imageAlt?: string;
   reversed?: boolean;
+  imagePosition?: string;
 }
 
-const { image, imageAlt, reversed = false } = Astro.props;
+const { image, imageAlt, reversed = false, imagePosition = 'center' } = Astro.props;
 ---
 
 {image ? (
@@ -15,6 +16,7 @@ const { image, imageAlt, reversed = false } = Astro.props;
         src={image}
         alt={imageAlt}
         class="w-full h-auto rounded-card object-cover"
+        style={`object-position: ${imagePosition}`}
         loading="lazy"
       />
     </div>

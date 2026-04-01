@@ -204,6 +204,9 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
           - name: cta_text
             label: "Button-Text"
             type: string
@@ -241,6 +244,9 @@ content:
                 type: image
               - name: imageAlt
                 label: "Bild Alt-Text"
+                type: string
+              - name: imagePosition
+                label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
                 type: string
               - name: heading
                 label: "Überschrift"
@@ -305,6 +311,9 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
             type: string
           - name: bio
             label: "Bio-Text"
@@ -473,6 +482,9 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
       - name: video
         label: "Video-Sektion"
         type: object
@@ -520,6 +532,9 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
             type: string
       - name: video
         label: "Video-Sektion"
@@ -569,6 +584,9 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
       - name: video
         label: "Video-Sektion"
         type: object
@@ -616,6 +634,9 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
             type: string
       - name: video
         label: "Video-Sektion"
@@ -936,6 +957,9 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
           - name: cta_text
             label: "Button-Text"
             type: string
@@ -973,6 +997,9 @@ content:
                 type: image
               - name: imageAlt
                 label: "Bild Alt-Text"
+                type: string
+              - name: imagePosition
+                label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
                 type: string
               - name: heading
                 label: "Überschrift"
@@ -1037,6 +1064,9 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
             type: string
           - name: bio
             label: "Bio-Text"
@@ -1205,6 +1235,9 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
       - name: video
         label: "Video-Sektion"
         type: object
@@ -1252,6 +1285,9 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
             type: string
       - name: video
         label: "Video-Sektion"
@@ -1301,6 +1337,9 @@ content:
           - name: imageAlt
             label: "Bild Alt-Text"
             type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
+            type: string
       - name: video
         label: "Video-Sektion"
         type: object
@@ -1348,6 +1387,9 @@ content:
             type: image
           - name: imageAlt
             label: "Bild Alt-Text"
+            type: string
+          - name: imagePosition
+            label: "Bildausschnitt (z.B. center, top, bottom, 50% 30%)"
             type: string
       - name: video
         label: "Video-Sektion"

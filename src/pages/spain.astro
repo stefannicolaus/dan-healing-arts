@@ -33,7 +33,7 @@ const retreat = (await getEntry('retreats', 'spain'))?.data;
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={retreat?.hero.image ?? "/images/spain/hero.jpg"} imageAlt={retreat?.hero.imageAlt ?? "Hidden Paradise retreat center in the Alpujarra mountains of southern Spain"}>
+        <TextImageSection image={retreat?.hero.image ?? "/images/spain/hero.jpg"} imageAlt={retreat?.hero.imageAlt ?? "Hidden Paradise retreat center in the Alpujarra mountains of southern Spain"} imagePosition={retreat?.hero.imagePosition ?? 'center'}>
           <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{retreat?.hero.location_badge ?? "Spain · Level 2"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             {retreat?.hero.heading ?? "An Evolution of Sensitivity"}
@@ -94,6 +94,7 @@ const retreat = (await getEntry('retreats', 'spain'))?.data;
               image={section.image}
               imageAlt={section.imageAlt}
               reversed={section.reversed ?? false}
+              imagePosition={section.imagePosition ?? 'center'}
             >
               {section.heading && (
                 <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">{section.heading}</h2>
@@ -160,6 +161,7 @@ const retreat = (await getEntry('retreats', 'spain'))?.data;
           image={retreat?.what_you_receive?.image ?? "/images/spain/hidden-paradise-36.jpg"}
           imageAlt={retreat?.what_you_receive?.imageAlt ?? "Hidden Paradise — mountain landscape, southern Spain"}
           reversed
+          imagePosition={retreat?.what_you_receive?.imagePosition ?? 'center'}
         >
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
             {retreat?.what_you_receive?.heading ?? "What You'll Receive"}
