@@ -8,6 +8,8 @@ hero:
   imageAlt: "Daniel Wendt giving a deep somatic bodywork session"
   cta_text: "Explore Trainings"
   cta_href: "/dates"
+  secondary_cta_text: "About the Work"
+  secondary_cta_href: "/about-the-work"
 sections:
   - id: intro
     paragraphs:
@@ -15,3 +17,49 @@ sections:
       - "Embark on a profound journey into your own and others' depths, and learn a full-on practical approach to touch and taking care of the human body - on a physical, emotional and energetic level."
       - "Learn to listen, not just with your ears but with your hands and your whole being, and cultivate the ability to create a space of deep mutual connection and trust - with your clients and your loved ones."
       - "Unleash your potential and support others in doing the same, by releasing stuck emotions, stagnant energy and subconscious patterns in the most natural and safe way - at the unique rhythm of the nervous system."
+training_pathway:
+  label: "Training Pathway"
+  heading: "Two Levels of Learning"
+  levels:
+    - badge: "Level 1"
+      href: "/level-1"
+      image: "/images/level1/hero.jpg"
+      imageAlt: "Level 1 — The Essence of Deep Touch"
+      heading: "The Essence of Deep Touch"
+      description: "A foundational immersion into the art of slow, listening touch. You'll learn to work with fascia, breath and somatic awareness — building a complete framework for a deep bodywork practice and deepening your understanding of the body's psycho-emotional landscape."
+      cta_text: "Learn more"
+    - badge: "Level 2"
+      href: "/level-2"
+      image: "/images/level2/hero.jpg"
+      imageAlt: "Level 2 — An Evolution of Sensitivity"
+      heading: "An Evolution of Sensitivity"
+      description: "A deeper exploration for those who have completed the foundation. You'll refine your perception, and deepen your capacity to feel the tissue's subtle intelligence — the quiet pulses of emotion and the energetic currents weaving through the body."
+      cta_text: "Learn more"
+parallax_1: "/images/general/dan-outside-38.jpg"
+videos:
+  heading: "An Insight into the Bodywork Trainings"
+  items:
+    - youtube_id: "6X1a70jgbM0"
+      caption: "Portugal, September 2025"
+    - youtube_id: "mB88cuuMA84"
+      caption: "México, January 2023"
+upcoming_trainings:
+  heading: "Upcoming Trainings"
+  cta_text: "View all dates"
+  cta_href: "/dates"
+parallax_2: "/images/general/training-flyer-2.jpg"
+about_teaser:
+  label: "About"
+  heading: "Daniel Wendt"
+  title: "Founder & Instructor"
+  image: "/images/daniel-portrait.jpg"
+  imageAlt: "Daniel Wendt"
+  bio: "With over 18 years of experience in bodywork and yoga, Daniel has guided more than 22 trainings across Germany, Mexico, Portugal, and beyond. His approach weaves together deep tissue work, fascial release, and somatic awareness into an integrated practice rooted in presence and connection."
+  cta_text: "Read more"
+  cta_href: "/about-dan"
+contact:
+  heading: "Get in Touch"
+  subtext: "Have questions about the trainings or want to apply? Reach out directly."
+  cta_text: "Contact"
+  cta_href: "/contact"
+  email: "danhealingarts@gmail.com"
