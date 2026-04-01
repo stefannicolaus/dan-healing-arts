@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -11,18 +11,13 @@ import StatsDivider from '../components/StatsDivider.astro';
 
 const allTestimonials = await getCollection('testimonials');
 const paigeUSA = allTestimonials.find(t => t.id === 'paige-about-dan')?.data;
-
-const stats = [
-  { number: '18', label: 'Years in bodywork & yoga' },
-  { number: '20+', label: 'Bodywork training courses' },
-  { number: '2,500+', label: 'Hours of yoga teacher training' },
-];
+const pageData = (await getEntry('pages', 'about-dan'))?.data;
 ---
 
 <Layout
   lang="en"
-  title="About Dan — Dan Healing Arts"
-  description="Meet Daniel Wendt — Myofascial Somatic Release Practitioner and teacher with 18 years of experience guiding people to reconnect with their bodies and lives."
+  title={pageData?.page_title ?? "About Dan — Dan Healing Arts"}
+  description={pageData?.page_description ?? "Meet Daniel Wendt — Myofascial Somatic Release Practitioner and teacher with 18 years of experience guiding people to reconnect with their bodies and lives."}
   canonicalPath="/about-dan"
 >
   <Nav lang="en" />
@@ -38,8 +33,8 @@ const stats = [
           <!-- Portraits -->
           <div class="order-2 md:order-1 space-y-6">
             <img
-              src="/images/daniel-portrait.jpg"
-              alt="Daniel Wendt — Dan Healing Arts"
+              src={pageData?.hero.image ?? "/images/daniel-portrait.jpg"}
+              alt={pageData?.hero.imageAlt ?? "Daniel Wendt — Dan Healing Arts"}
               class="w-full rounded-card object-cover"
             />
             <img
@@ -52,14 +47,18 @@ const stats = [
 
           <!-- Bio intro -->
           <div class="order-1 md:order-2">
-            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Founder &amp; Trainer</p>
+            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Founder & Trainer"}</p>
             <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-              Daniel Wendt
+              {pageData?.hero.heading ?? "Daniel Wendt"}
             </h1>
 
             <!-- Stats -->
             <div class="grid grid-cols-3 gap-4 mb-10">
-              {stats.map(({ number, label }) => (
+              {(pageData?.stats ?? [
+                { number: '18', label: 'Years in bodywork & yoga' },
+                { number: '20+', label: 'Bodywork training courses' },
+                { number: '2,500+', label: 'Hours of yoga teacher training' },
+              ]).map(({ number, label }) => (
                 <div class="text-center bg-surface-lo rounded-card p-4">
                   <p class="font-serif text-3xl text-forest font-bold mb-1">{number}</p>
                   <p class="font-sans text-stone text-xs leading-tight">{label}</p>
@@ -68,18 +67,9 @@ const stats = [
             </div>
 
             <div class="font-sans text-stone leading-relaxed space-y-4">
-              <p>
-                Hi, my name is Daniel.
-              </p>
-              <p>
-                By nature, more of an adventurer and explorer than a philosopher, I have always looked for direct experiences throughout my life's journey.
-              </p>
-              <p>
-                From backpacking to construction work, from rap stages to real estate agencies, from hitchhiking the world to starting a family and taking care of two wonderful kids, I have been through immensely beautiful as well as tough and painful times.
-              </p>
-              <p>
-                I found freedom, peace and inspiration when I started to dive deep into bodywork and yoga 18 years ago and eventually broke free from many limiting beliefs and conventional norms.
-              </p>
+              {pageData?.sections?.find(s => s.id === 'bio_intro')?.paragraphs.map((p) => (
+                <p>{p}</p>
+              ))}
             </div>
           </div>
 
