@@ -10,9 +10,10 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { trainings } from '../data/trainings';
-
-const level1Trainings = trainings.filter(t => ['Level 1', 'Level 1a', 'Level 1b'].includes(t.level));
+const allTrainingsEntries = await getCollection('trainings');
+const level1Trainings = allTrainingsEntries
+  .map(t => t.data)
+  .filter(t => ['Level 1', 'Level 1a', 'Level 1b'].includes(t.level));
 
 const allTestimonials = await getCollection('testimonials');
 const nicoUSA = allTestimonials.find(t => t.id === 'nico-usa')?.data;

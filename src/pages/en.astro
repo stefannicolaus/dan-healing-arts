@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
-import { trainings } from '../data/trainings';
+const allTrainingsEntries = await getCollection('trainings');
+const trainings = allTrainingsEntries.map(t => t.data);
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
