@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -10,6 +10,7 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+
 const allTrainingsEntries = await getCollection('trainings');
 const level1Trainings = allTrainingsEntries
   .map(t => t.data)
@@ -22,35 +23,15 @@ const paigeUSA = allTestimonials.find(t => t.id === 'paige-usa')?.data;
 const jiliUSA = allTestimonials.find(t => t.id === 'jili-usa')?.data;
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-level1')?.data;
 
-const learnTopics = [
-  'The foundational principles of deep bodywork through muscle and fascia',
-  'An overview of the key fascial lines and how to access them through touch',
-  'The psycho-emotional language of the body - how different areas hold stories and patterns',
-  'Cultivating connection with yourself to enhance your ability to hold presence and connection with clients throughout a session',
-  'Applying pressure with sensitivity: long, deep, and slow strokes that invite safety and openness for physical and emotional release',
-  'How to read the body, listen with your hands and follow its natural architecture, rhythms, and signals',
-  'Bridging modern anatomy with traditional spiritual wisdom, making subtle energy accessible and tangible',
-  'Using your bodyweight efficiently to offer deep touch in a gentle, sustainable way',
-  'Crafting sessions and sequences for different purpose, tailored for release and healing',
-  'The art of slowing down - not only in treatments, but in life itself',
-  'Hands-on learning about fascia, trigger points, and energy dynamics',
-  'Structured sequences that support intuition, clarity, and creative flow',
-];
-
-const bodyRegions = [
-  { area: 'Upper back, lower back, neck', theme: 'Looking back on the past to move forward' },
-  { area: 'Legs, feet', theme: 'Grounding into Mother Earth' },
-  { area: 'Abdomen, hips, pelvis', theme: 'Unleash your potential' },
-  { area: 'Thorax, chest, shoulders, arms', theme: 'Expansion of the heart' },
-  { area: 'Head, face, throat, neck', theme: 'Sky as space in your head' },
-];
-
+const pageData = (await getEntry('retreats', 'level-1'))?.data;
+const learnTopics = pageData?.learn_topics ?? [];
+const bodyRegions = pageData?.body_regions ?? [];
 ---
 
 <Layout
   lang="en"
-  title="Level 1: The Essence of Deep Touch — Dan Healing Arts"
-  description="The foundational training in a professional two-level pathway in fascia-based somatic bodywork. Learn deep touch, myofascial release, and the psycho-emotional language of the body."
+  title={pageData?.page_title ?? "Level 1: The Essence of Deep Touch — Dan Healing Arts"}
+  description={pageData?.page_description ?? "The foundational training in a professional two-level pathway in fascia-based somatic bodywork. Learn deep touch, myofascial release, and the psycho-emotional language of the body."}
   canonicalPath="/level-1"
 >
   <Nav lang="en" />
@@ -61,30 +42,16 @@ const bodyRegions = [
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/level1/hero.jpg" imageAlt="Level 1 bodywork training participants practicing deep touch">
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Level 1 Training</p>
+        <TextImageSection image={pageData?.hero.image ?? "/images/level1/hero.jpg"} imageAlt={pageData?.hero.imageAlt ?? "Level 1 bodywork training participants practicing deep touch"}>
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Level 1 Training"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-            The Essence of Deep Touch
+            {pageData?.hero.heading ?? "The Essence of Deep Touch"}
           </h1>
           <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
-            The foundational training in a professional two-level pathway in fascia-based somatic bodywork.
+            {pageData?.hero.subheading ?? "The foundational training in a professional two-level pathway in fascia-based somatic bodywork."}
           </p>
           <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              The Essence of Deep Touch is the foundational training in a professional two-level pathway in fascia-based somatic bodywork. It can later be followed by the advanced Level 2 training.
-            </p>
-            <p>
-              The Training invites you into a grounded, somatic approach to deep, slow bodywork - woven with presence, curiosity and care. It's also a journey of self-exploration, opening space to feel and be felt more deeply.
-            </p>
-            <p>
-              You'll learn how to work with muscles and fascia through the principles of deep touch, while gaining insight into the emotional qualities stored within different body regions. Physical, energetic, and psycho-emotional layers are all part of the unfolding.
-            </p>
-            <p>
-              Each day offers hands-on practice and the gift of receiving. This shared rhythm brings balance to your body, mind and nervous system - and lets you explore both the art of giving and the medicine of being touched.
-            </p>
-            <p>
-              You'll reconnect to the primal need for presence and care, for feeling yourself and others. Through meaningful work, rooted in awareness and connection, you'll leave with real, embodied skills ready to share.
-            </p>
+            {(pageData?.hero.paragraphs ?? []).map((p) => <p>{p}</p>)}
           </div>
         </TextImageSection>
       </div>
@@ -102,28 +69,22 @@ const bodyRegions = [
     )}
 
     <!-- ===== 2. A PRACTICAL APPROACH ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/level1/outside-5.jpg" imageAlt="Participants learning bodywork in an outdoor natural setting" reversed>
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-            A Practical Approach to Learning in a Natural Environment
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              Set in a retreat space surrounded by nature, the training offers a spacious rhythm to slow down and reconnect - with yourself and others. Each teaching is infused with presence, embodiment, and ease.
-            </p>
-            <p>
-              Rather than memorizing content, you'll absorb it through touch and practice. You'll begin to feel the structures from the inside out, letting anatomical and energetic maps come alive in your own body.
-            </p>
-            <p>
-              This experiential learning creates a deep foundation. You'll feel how the body responds to trust, touch, and connection - and discover within yourself an inner landscape of awareness, resilience, and healing.
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
+    {pageData?.sections?.filter(s => s.id === 'practical_approach').map((section) => (
+      <FadeIn>
+      <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
+        <div class="max-w-page mx-auto">
+          <TextImageSection image={section.image} imageAlt={section.imageAlt} reversed={section.reversed ?? false}>
+            {section.heading && (
+              <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">{section.heading}</h2>
+            )}
+            <div class="font-sans text-stone leading-relaxed space-y-4">
+              {section.paragraphs.map((p) => <p>{p}</p>)}
+            </div>
+          </TextImageSection>
+        </div>
+      </section>
+      </FadeIn>
+    ))}
 
     <!-- ===== TESTIMONIAL: ERIKA, LITHUANIA ===== -->
     {erikaLithuania && (
@@ -247,28 +208,22 @@ const bodyRegions = [
     )}
 
     <!-- ===== 5. YOGA, BREATHWORK, MEDITATION ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/level1/outside-27.jpg" imageAlt="Group yoga and breathwork practice outdoors during the training" reversed>
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-            Yoga, Breathwork, Meditation and Voice Activation
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              Daily yoga and breathwork sessions support the themes of each day, grounding the body and opening your awareness. These embodied practices deepen the work and nourish your nervous system.
-            </p>
-            <p>
-              Group chanting, voice work and sharing circles invite you into expression and connection, while guided meditations and stories from yoga philosophy add context and depth to your journey.
-            </p>
-            <p>
-              Together, these practices create an integrated inner and outer retreat - an immersion into body, energy and presence.
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
+    {pageData?.sections?.filter(s => s.id === 'yoga_breathwork').map((section) => (
+      <FadeIn>
+      <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
+        <div class="max-w-page mx-auto">
+          <TextImageSection image={section.image} imageAlt={section.imageAlt} reversed={section.reversed ?? false}>
+            {section.heading && (
+              <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">{section.heading}</h2>
+            )}
+            <div class="font-sans text-stone leading-relaxed space-y-4">
+              {section.paragraphs.map((p) => <p>{p}</p>)}
+            </div>
+          </TextImageSection>
+        </div>
+      </section>
+      </FadeIn>
+    ))}
 
     <!-- ===== PARALLAX ===== -->
     <Parallax src="/images/level1/inside-12.jpg" height="45vh" position="center 20%" />

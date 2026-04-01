@@ -1,5 +1,5 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -14,13 +14,16 @@ const allTestimonials = await getCollection('testimonials');
 const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
 const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
 const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
+
+const retreat = (await getEntry('retreats', 'spain'))?.data;
 ---
 
 <Layout
   lang="en"
-  title="Spain — An Evolution of Sensitivity | Dan Healing Arts"
-  description="A 7-day Level 2 training in the Alpujarra mountains of southern Spain. Hidden Paradise retreat center, near Granada. 10–16 May, 2026."
+  title={retreat?.page_title ?? "Spain — An Evolution of Sensitivity | Dan Healing Arts"}
+  description={retreat?.page_description ?? "A 7-day Level 2 training in the Alpujarra mountains of southern Spain. Hidden Paradise retreat center, near Granada. 10–16 May, 2026."}
   canonicalPath="/spain"
+  ogImage={retreat?.og_image ?? "/images/spain/hero.jpg"}
 >
   <Nav lang="en" />
 
@@ -30,22 +33,22 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/hero.jpg" imageAlt="Hidden Paradise retreat center in the Alpujarra mountains of southern Spain">
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Spain · Level 2</p>
+        <TextImageSection image={retreat?.hero.image ?? "/images/spain/hero.jpg"} imageAlt={retreat?.hero.imageAlt ?? "Hidden Paradise retreat center in the Alpujarra mountains of southern Spain"}>
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{retreat?.hero.location_badge ?? "Spain · Level 2"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-            An Evolution of Sensitivity
+            {retreat?.hero.heading ?? "An Evolution of Sensitivity"}
           </h1>
           <p class="font-sans text-stone text-lg italic mb-2">
             A Myofascial Somatic Liberation Training —{' '}
-            <a href="/level-2" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
-              Level 2
+            <a href={retreat?.hero.level_href ?? "/level-2"} class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+              {retreat?.hero.level_text ?? "Level 2"}
             </a>
           </p>
           <p class="font-sans text-stone text-base mb-4">
-            Spain · 10 – 16 May, 2026
+            {retreat?.hero.dates ?? "Spain · 10 – 16 May, 2026"}
           </p>
           <p class="font-sans text-stone text-base italic mb-10">
-            A 7-day immersive training deepening your practice in fascia-based bodywork and somatic sensitivity.
+            {retreat?.hero.subtitle ?? "A 7-day immersive training deepening your practice in fascia-based bodywork and somatic sensitivity."}
           </p>
           <ApplyButton text="Get in Touch" />
         </TextImageSection>
@@ -81,304 +84,88 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
     <StatsDivider />
     -->
 
-    <!-- ===== 3. DEEPENING YOUR PRACTICE ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/dsc2233.jpg" imageAlt="Practitioners in deep bodywork training at Hidden Paradise, Spain">
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
-            Deepening Your Practice
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              <strong class="text-text-main">An Evolution of Sensitivity</strong> is an immersive{' '}
-              <strong class="text-text-main">advanced training in fascia-based bodywork.</strong>
-              {' '}It offers the Level 2 training program of the Myofascial Somatic Liberation pathway.
-            </p>
-            <p>
-              → <em><a href="/level-2" class="text-forest hover:text-sage transition-colors underline underline-offset-4">Learn more about the full Level 2 training</a></em>
-            </p>
-            <p>
-              Building on the foundations of Level 1, this training takes you deeper — into subtler layers of the fascia, more refined touch, and a more intimate relationship with the body's nervous system and emotional landscape.
-            </p>
-            <p>
-              Over the course of the week, you will expand your range as a practitioner, learning how to hold more complexity, respond with greater nuance, and guide sessions with increased confidence and depth.
-            </p>
-            <p>
-              As in Level 1, you will both give and receive sessions each day — deepening not only your skills but your own embodied understanding of what this work can offer.
-            </p>
+    <!-- ===== 3–10. CONTENT SECTIONS ===== -->
+    {retreat?.sections?.map((section) => (
+      <>
+        <FadeIn>
+        <section class={`py-12 md:py-16 px-6 md:px-12 bg-canvas ${section.id === 'field_2' || section.id === 'venue_2' ? 'md:pt-6' : ''}`}>
+          <div class="max-w-page mx-auto">
+            <TextImageSection
+              image={section.image}
+              imageAlt={section.imageAlt}
+              reversed={section.reversed ?? false}
+            >
+              {section.heading && (
+                <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">{section.heading}</h2>
+              )}
+              <div class={`font-sans text-stone leading-relaxed space-y-4${section.show_apply_button ? ' mb-10' : ''}`}>
+                {section.paragraphs.map((p) => <p>{p}</p>)}
+              </div>
+              {section.show_apply_button && <ApplyButton text="Get in Touch" />}
+            </TextImageSection>
           </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
+        </section>
+        </FadeIn>
 
-    <!-- ===== PARALLAX ===== -->
-    <Parallax src="/images/spain/hidden-paradise-62.jpg" height="45vh" />
+        {/* Parallax after deepening section */}
+        {section.id === 'deepening' && (
+          <Parallax src="/images/spain/hidden-paradise-62.jpg" height="45vh" />
+        )}
 
-    <!-- ===== 4. THE TRAINING EXPERIENCE ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/dsc2128.jpg" imageAlt="Training experience at Hidden Paradise — group bodywork practice in Spain" reversed>
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
-            The Training Experience
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision.
-            </p>
-            <p>
-              You'll refine your ability to offer full-body touch that is structurally and anatomically grounded, drawing from advanced myofascial and deep tissue techniques while remaining attuned to the nervous system and emotional responses that unfold through touch.
-            </p>
-            <p>
-              Alongside these hands-on techniques, the training cultivates the subtle skills of presence, listening and energetic awareness that allow sessions to become deeply restorative and transformative.
-            </p>
-            <p>
-              During this week you will develop{' '}
-              <strong class="text-text-main">both the advanced practical skills and the embodied sensitivity needed to take your work to the next level.</strong>
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
+        {/* Testimonials after specific sections */}
+        {section.id === 'experiential' && rebeccaCanada && (
+          <TestimonialDivider
+            quote={rebeccaCanada.quote}
+            name={rebeccaCanada.name}
+            location={rebeccaCanada.location}
+            photo={rebeccaCanada.photo}
+          />
+        )}
+        {section.id === 'field_2' && lasseFinland && (
+          <TestimonialDivider
+            quote={lasseFinland.quote}
+            name={lasseFinland.name}
+            location={lasseFinland.location}
+            photo={lasseFinland.photo}
+          />
+        )}
+        {section.id === 'nourished' && lauraUK && (
+          <TestimonialDivider
+            quote={lauraUK.quote}
+            name={lauraUK.name}
+            location={lauraUK.location}
+            photo={lauraUK.photo}
+          />
+        )}
+
+        {/* Parallax before venue */}
+        {section.id === 'field_2' && (
+          <Parallax src="/images/spain/hidden-paradise-36.jpg" height="45vh" />
+        )}
+
+        {/* StatsDividers after specific sections */}
+        {(section.id === 'training_experience' || section.id === 'venue_2' || section.id === 'for_whom') && (
+          <StatsDivider />
+        )}
+      </>
+    ))}
 
     <StatsDivider />
 
-    <!-- ===== 5. EXPERIENTIAL LEARNING ===== -->
+    <!-- ===== WHAT YOU'LL RECEIVE ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
-          image="/images/spain/dsc08074.jpg"
-          imageAlt="Hands-on practice at Hidden Paradise Spain"
-        >
-          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
-            <p>
-              The learning is highly experiential and hands-on.
-              Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice.
-            </p>
-            <p>
-              Through this rhythm of practicing and being worked on, your system becomes more receptive and your hands gradually become more refined and precise, learning to respond to increasingly subtle layers of what they meet in the body.
-            </p>
-            <p>
-              Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably.
-            </p>
-          </div>
-          <ApplyButton text="Get in Touch" />
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <!-- ===== 6. TESTIMONIAL — REBECCA, CANADA ===== -->
-    {rebeccaCanada && (
-      <TestimonialDivider
-        quote={rebeccaCanada.quote}
-        name={rebeccaCanada.name}
-        location={rebeccaCanada.location}
-        photo={rebeccaCanada.photo}
-      />
-    )}
-
-    <!-- ===== 7. THE FIELD WE PRACTICE IN ===== -->
-    <FadeIn>
-    <section class="py-12 md:pb-6 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/dsc08001.jpg" imageAlt="Practice space at Hidden Paradise retreat, southern Spain">
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-            The Field We Practice In
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize.
-            </p>
-            <p>
-              It is not only about learning how to touch, but also about remembering how to listen.
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <FadeIn>
-    <section class="py-6 md:py-12 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/dsc2233.jpg" imageAlt="Deep bodywork practice at the Spain training" reversed>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands.
-            </p>
-            <p>
-              In this relational space, connection deepens — with your own body, with others, and with the deeper intelligence that lives beneath the surface.
-            </p>
-            <p>
-              More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment.
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <!-- ===== 8. TESTIMONIAL — LASSE, FINLAND ===== -->
-    {lasseFinland && (
-      <TestimonialDivider
-        quote={lasseFinland.quote}
-        name={lasseFinland.name}
-        location={lasseFinland.location}
-        photo={lasseFinland.photo}
-      />
-    )}
-
-    <!-- ===== PARALLAX before venue ===== -->
-    <Parallax src="/images/spain/hidden-paradise-36.jpg" height="45vh" />
-
-    <!-- ===== 9. THE SPACE THAT HOLDS THE WORK (VENUE) ===== -->
-    <FadeIn>
-    <section class="py-12 md:pb-6 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/hidden-paradise-62.jpg" imageAlt="Hidden Paradise retreat center — view from above, Alpujarra mountains" reversed>
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
-            The Space That Holds the Work
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              Hidden Paradise is a family-run retreat center nestled in the Alpujarra mountains of southern Spain, near Granada.
-            </p>
-            <p>
-              Perched at over 1,000 meters above the Mediterranean, the views stretch all the way to Morocco — and the sense of altitude, silence and distance from ordinary life is immediate upon arrival.
-            </p>
-            <p>
-              Completely off-grid, the center offers two pools, a wood-fired sauna, and two round, temple-like domed spaces designed specifically for movement and sound work.
-            </p>
-            <p>
-              <a href="https://www.hiddenparadise.org" target="_blank" rel="noopener noreferrer" class="text-forest hover:text-sage transition-colors underline underline-offset-4">
-                Location: www.hiddenparadise.org
-              </a>
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <FadeIn>
-    <section class="py-6 md:py-12 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/dsc08074.jpg" imageAlt="Practice space at Hidden Paradise — circular domed workshop room">
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              These circular practice spaces create a naturally sacred and focused container for the depth of work we do.
-            </p>
-            <p>
-              The land itself invites surrender. Far from the noise of modern life, it becomes easier to slow down, go inward, and let the work move through you.
-            </p>
-            <p>
-              Between sessions, there is space to walk, breathe, swim, integrate, and simply be — allowing the work to settle beyond the mat and table.
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <StatsDivider />
-
-    <!-- ===== 10. HELD & NOURISHED ===== -->
-    <!-- TODO Daniel: Bitte Details zum Essen / Catering in Hidden Paradise ergänzen + passendes Bild bereitstellen -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection
-          image="/images/spain/dsc08001.jpg"
-          imageAlt="Nourishing meals at Hidden Paradise — TODO: replace with food image"
-        >
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
-            Held & Nourished
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4">
-            <p>
-              Throughout the retreat, you'll be nourished with three daily meals prepared with care, love and vitality — designed to support deep physical and emotional work.
-            </p>
-            <p>
-              The food is thoughtfully prepared to ground the nervous system while keeping the body clear and well-fueled throughout the training.
-            </p>
-            <p>
-              Shared meals also become moments of connection and integration — time to rest, digest, and gently transition between inner work and daily life.
-            </p>
-          </div>
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <!-- ===== 11. TESTIMONIAL — LAURA, UK ===== -->
-    {lauraUK && (
-      <TestimonialDivider
-        quote={lauraUK.quote}
-        name={lauraUK.name}
-        location={lauraUK.location}
-        photo={lauraUK.photo}
-      />
-    )}
-
-    <!-- ===== 12. WHO IS THIS TRAINING FOR ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection image="/images/spain/dsc2128.jpg" imageAlt="Spain training — practitioners deepening their practice">
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-            Who Is This Training For
-          </h2>
-          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
-            <p>
-              This training is designed for practitioners who have already completed Level 1 of the Myofascial Somatic Liberation pathway, or who carry equivalent experience in body-based therapeutic work.
-            </p>
-            <p>
-              It is for those who are ready to move beyond the foundational techniques — into greater subtlety, complexity, and relational depth in their practice.
-            </p>
-            <p>
-              If you are drawn to working more deeply with the emotional and nervous system dimensions of bodywork, and if you value learning through direct experience rather than theory alone, this training offers the next step on your path.
-            </p>
-            <p>
-              <strong class="text-text-main">Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.</strong>
-            </p>
-          </div>
-          <ApplyButton text="Get in Touch" />
-        </TextImageSection>
-      </div>
-    </section>
-    </FadeIn>
-
-    <StatsDivider />
-
-    <!-- ===== 13. WHAT YOU'LL RECEIVE ===== -->
-    <FadeIn>
-    <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto">
-        <TextImageSection
-          image="/images/spain/hidden-paradise-36.jpg"
-          imageAlt="Hidden Paradise — mountain landscape, southern Spain"
+          image={retreat?.what_you_receive?.image ?? "/images/spain/hidden-paradise-36.jpg"}
+          imageAlt={retreat?.what_you_receive?.imageAlt ?? "Hidden Paradise — mountain landscape, southern Spain"}
           reversed
         >
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-            What You'll Receive
+            {retreat?.what_you_receive?.heading ?? "What You'll Receive"}
           </h2>
           <ul class="font-sans text-stone leading-relaxed space-y-3 mb-10">
-            {[
-              '7 days/ 6 nights accommodation',
-              '3 daily nourishing meals',
-              'Daily advanced bodywork/massage lessons and practice sessions',
-              'Daily yoga, meditation, breathwork, and voice work',
-              'Integration circles, kirtan and ceremonial spaces',
-              'Course manual',
-              'Video recordings of all bodywork sequences',
-              'Certificate of completion',
-              'Pre- and post-retreat support',
-            ].map((item) => (
+            {(retreat?.what_you_receive?.items ?? []).map((item) => (
               <li class="flex items-start gap-3">
                 <span class="text-forest mt-1 shrink-0">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -397,7 +184,7 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 14. YOUR STAY AT HIDDEN PARADISE (PRICING) ===== -->
+    <!-- ===== INTERESTED? (pricing placeholder) ===== -->
     <!-- TODO Daniel: Preise und Zimmeroptionen ergänzen wenn bestätigt -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
@@ -425,12 +212,12 @@ const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
 
     <StatsDivider />
 
-    <!-- ===== 15. CLOSING STATEMENT ===== -->
+    <!-- ===== CLOSING STATEMENT ===== -->
     <FadeIn>
     <section class="py-8 md:py-12 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto text-center max-w-3xl">
         <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
-          This training is an invitation to go deeper — to listen with greater sensitivity, and to trust the intelligence that lives in your hands and in the body you meet. If you feel called, you're warmly welcome to join us.
+          {retreat?.closing_quote ?? "This training is an invitation to go deeper — to listen with greater sensitivity, and to trust the intelligence that lives in your hands and in the body you meet. If you feel called, you're warmly welcome to join us."}
         </p>
       </div>
     </section>
