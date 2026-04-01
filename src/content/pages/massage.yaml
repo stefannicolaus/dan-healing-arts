@@ -1,0 +1,29 @@
+page_title: "Somatische Tiefenmassage — Einzelsitzungen mit Daniel Wendt"
+page_description: "Tiefe, langsame Körperarbeit mit Daniel Wendt in Zürich. Myofasziale Arbeit, die Muskeln, Faszien, Nervensystem und den emotionalen Körper erreicht. 90 min / 120 min."
+hero:
+  badge: "Einzelsitzungen"
+  heading: "Berührung, die tief hört."
+  subheading: "Eine tiefe, langsame Körperarbeit, die Muskeln, Faszien und das Nervensystem erreicht. Jede Sitzung ist ein individueller Prozess — gehalten in Präsenz und Vertrauen."
+  image: "/images/daniel-bodywork.jpg"
+  imageAlt: "Daniel Wendt bei der somatischen Tiefenmassage"
+  cta_text: "Termin anfragen"
+  cta_href: "/contact"
+sections:
+  - id: was_ist
+    heading: "Was ist Somatische Tiefenmassage?"
+    image: "/images/about/massage-25.jpg"
+    imageAlt: "Daniel Wendt bei der somatischen Körperarbeit"
+    reversed: false
+    paragraphs:
+      - "Die Somatische Tiefenmassage verbindet präzise Faszienarbeit mit einer tiefen Aufmerksamkeit für das, was im Körper gespeichert ist. Langsame, achtsame Berührung löst nicht nur physische Spannungen — sie schafft Raum für das, was darunter liegt."
+      - "Daniel arbeitet mit den myofaszialen Strukturen des Körpers: den Bindegewebsschichten, die Muskeln, Organe und Gelenke umhüllen und verbinden. Durch gezielten, tiefen Druck und eine somatische Präsenz können sich Verspannungen lösen, die oft über Jahre im Körper gehalten werden."
+      - "Die Arbeit ist dabei nie nur mechanisch. Sie berücksichtigt immer auch die emotionalen und energetischen Qualitäten, die in verschiedenen Körperbereichen gespeichert sind."
+  - id: wie_ablauf
+    heading: "Wie eine Sitzung abläuft"
+    image: "/images/general/dan-two-men.jpg"
+    imageAlt: "Daniel Wendt bei einer Einzelsitzung"
+    reversed: true
+    paragraphs:
+      - "Jede Sitzung beginnt mit einem kurzen Gespräch — was dich herführt, was du brauchst, was gerade präsent ist. Dann arbeiten wir gemeinsam am Körper."
+      - "Die Berührung ist langsam, tief und achtsam. Ich folge den Strukturen des Körpers — den Faszien, den Muskeln, dem Rhythmus deines Nervensystems. Manche Bereiche brauchen Intensität, andere Sanftheit. Der Körper zeigt, was er braucht."
+      - "Nach der Sitzung gibt es Zeit zum Ankommen und Nachspüren. Viele Menschen berichten von tiefer Entspannung, neuer Klarheit oder einem Gefühl von Leichtigkeit."
