@@ -100,6 +100,26 @@ Manuals: Englisch vollständig; Deutsch für 2 Module bereits vorhanden.
 
 ---
 
+## AKTUELLE SEITEN-STRUKTUR (Stand 2026-03-31)
+
+Alle 4 englischen Retreat-Seiten auf schweiz.danhealingarts.com live. Einheitliche Struktur:
+Hero → Video → "The Field We Practice In" (2x TextImageSection) → Venue (2x TextImageSection) → Held & Nourished → Testimonial → Who Is This For → What You'll Receive → Certification/Payment → Pricing → "Still unsure"
+
+| Seite | Status | Offen |
+|-------|--------|-------|
+| `/portugal/` | Fertig ✓ | — |
+| `/mazunte/` | Fertig ✓ | — |
+| `/spain/` | Platzhalter gebaut | YouTube-ID, Held & Nourished Inhalt, Preise/Daten |
+| `/tulum/` | Platzhalter gebaut | YouTube-ID, Held & Nourished Inhalt, Preise/Daten |
+| `/level-1/` | Noch nicht gebaut | Briefing-Dokument: Google Doc ID `1G_1BKjqWaMZ8QxvLU6TSX38NkCw8y5Jt` |
+
+**TODO für Daniel (Spain + Tulum):**
+- YouTube Video-ID für die Trainings (Kommentar `<!-- TODO Daniel: YouTube video ID -->` im Code)
+- "Held & Nourished": echten Text + passendes Foto ersetzen
+- Preise + Daten bestätigen → dann PricingCards statt "Interested?" CTA einbauen
+
+---
+
 ## STEFAN'S ROLLE
 
 Stefan hilft Daniel dabei:

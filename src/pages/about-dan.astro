@@ -30,18 +30,12 @@ const pageData = (await getEntry('pages', 'about-dan'))?.data;
       <div class="max-w-page mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          <!-- Portraits -->
-          <div class="order-2 md:order-1 space-y-6">
+          <!-- Portrait -->
+          <div class="order-2 md:order-1">
             <img
               src={pageData?.hero.image ?? "/images/daniel-portrait.jpg"}
               alt={pageData?.hero.imageAlt ?? "Daniel Wendt — Dan Healing Arts"}
               class="w-full rounded-card object-cover"
-            />
-            <img
-              src="/images/general/daniel-portrait-2.jpg"
-              alt="Daniel Wendt in session — Dan Healing Arts"
-              class="w-full rounded-card object-cover"
-              loading="lazy"
             />
           </div>
 

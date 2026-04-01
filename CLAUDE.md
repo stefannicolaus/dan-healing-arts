@@ -60,10 +60,13 @@ Wenn Daniel ein Briefing-Dokument schickt (Google Doc / .docx):
 
 ```bash
 npm run build && \
+chmod -R a+r dist/images/ && \
 rsync -az --delete dist/ root@178.104.15.187:/tmp/dan-dist/ && \
 rsync nginx.conf root@178.104.15.187:/tmp/nginx-default.conf && \
 ssh root@178.104.15.187 "docker cp /tmp/dan-dist/. 44bb0dde9718:/usr/share/nginx/html/ && docker cp /tmp/nginx-default.conf 44bb0dde9718:/etc/nginx/conf.d/default.conf && docker exec 44bb0dde9718 nginx -s reload"
 ```
+
+**Wichtig:** `chmod -R a+r dist/images/` ist Pflicht vor jedem rsync — Google Drive Dateien kommen mit `600` Berechtigungen und werden sonst mit 403 geblockt.
 
 Der Deploy-Hook (`post-deploy-check.sh`) prüft danach automatisch ob die Live-Site den neuen Inhalt liefert. Erst wenn das grün ist: fertig.
 
