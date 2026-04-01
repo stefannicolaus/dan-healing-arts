@@ -1,0 +1,85 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: kurstermine
+    label: "Kurstermine & Module"
+    type: collection
+    path: src/content/courses
+    format: yaml
+    fields:
+      - name: nr
+        label: "Modul-Nummer (z.B. Modul 1)"
+        type: string
+      - name: titel
+        label: "Titel"
+        type: string
+      - name: datum
+        label: "Datum (z.B. 18.–19. April 2026)"
+        type: string
+      - name: beschreibung
+        label: "Beschreibung"
+        type: text
+      - name: link
+        label: "Buchungs-Link (jupiterhaus.ch)"
+        type: string
+      - name: bild
+        label: "Bild"
+        type: image
+      - name: bildAlt
+        label: "Bild-Beschreibung (für Barrierefreiheit)"
+        type: string
+      - name: motto
+        label: "Motto (kleiner Kursiv-Text)"
+        type: string
+      - name: schwerpunkte
+        label: "Schwerpunkte (eine pro Zeile)"
+        type: rich-text
+      - name: bildPos
+        label: "Bild-Position (object-center / object-top)"
+        type: string
+      - name: bildLinks
+        label: "Bild links (true) oder rechts (false)"
+        type: boolean
+
+  - name: testimonials
+    label: "Testimonials (Kundenstimmen)"
+    type: collection
+    path: src/content/testimonials
+    format: yaml
+    fields:
+      - name: name
+        label: "Name"
+        type: string
+      - name: location
+        label: "Herkunft (z.B. USA, Germany)"
+        type: string
+      - name: quote
+        label: "Zitat"
+        type: text
+      - name: photo
+        label: "Foto"
+        type: image
+
+  - name: hero
+    label: "Startseite — Hauptbild & Text"
+    type: file
+    path: src/content/hero/zurich.yaml
+    format: yaml
+    fields:
+      - name: headline
+        label: "Überschrift (große Schrift oben)"
+        type: text
+      - name: subtext
+        label: "Untertext (kleine Beschreibung)"
+        type: text
+      - name: cta_text
+        label: "Button-Text"
+        type: string
+      - name: bild
+        label: "Hauptbild"
+        type: image
+      - name: bildAlt
+        label: "Bild-Beschreibung (für Barrierefreiheit)"
+        type: string
