@@ -7,7 +7,9 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { trainings } from '../data/trainings';
+import { getCollection } from 'astro:content';
+const allTrainingsEntries = await getCollection('trainings');
+const trainings = allTrainingsEntries.map(t => t.data);
 ---
 
 <Layout
