@@ -210,6 +210,130 @@ content:
           - name: cta_href
             label: "Button-Link"
             type: string
+          - name: secondary_cta_text
+            label: "Zweiter Button-Text"
+            type: string
+          - name: secondary_cta_href
+            label: "Zweiter Button-Link"
+            type: string
+      - name: training_pathway
+        label: "Training Pathway — 2 Levels"
+        type: object
+        fields:
+          - name: label
+            label: "Label (oben klein)"
+            type: string
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: levels
+            label: "Level-Karten (Level 1 + Level 2)"
+            type: collection
+            fields:
+              - name: badge
+                label: "Badge (z.B. Level 1)"
+                type: string
+              - name: href
+                label: "Link"
+                type: string
+              - name: image
+                label: "Bild"
+                type: image
+              - name: imageAlt
+                label: "Bild Alt-Text"
+                type: string
+              - name: heading
+                label: "Überschrift"
+                type: string
+              - name: description
+                label: "Beschreibung"
+                type: text
+              - name: cta_text
+                label: "Link-Text"
+                type: string
+      - name: parallax_1
+        label: "Parallax-Bild 1 (nach Training Pathway)"
+        type: image
+      - name: videos
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: items
+            label: "Videos"
+            type: collection
+            fields:
+              - name: youtube_id
+                label: "YouTube ID"
+                type: string
+              - name: caption
+                label: "Beschriftung (z.B. Portugal, September 2025)"
+                type: string
+      - name: upcoming_trainings
+        label: "Upcoming Trainings Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: cta_text
+            label: "Link-Text"
+            type: string
+          - name: cta_href
+            label: "Link"
+            type: string
+      - name: parallax_2
+        label: "Parallax-Bild 2 (vor About)"
+        type: image
+      - name: about_teaser
+        label: "Über Daniel — Teaser"
+        type: object
+        fields:
+          - name: label
+            label: "Label (oben klein)"
+            type: string
+          - name: heading
+            label: "Name"
+            type: string
+          - name: title
+            label: "Titel/Rolle"
+            type: string
+          - name: image
+            label: "Portrait-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: bio
+            label: "Bio-Text"
+            type: text
+          - name: cta_text
+            label: "Link-Text"
+            type: string
+          - name: cta_href
+            label: "Link"
+            type: string
+      - name: contact
+        label: "Kontakt-Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: subtext
+            label: "Text"
+            type: text
+          - name: cta_text
+            label: "Button-Text"
+            type: string
+          - name: cta_href
+            label: "Button-Link"
+            type: string
+          - name: email
+            label: "E-Mail-Adresse"
+            type: string
 
   - name: page-about-dan
     label: "👤 About Dan"
@@ -817,6 +941,130 @@ content:
             type: string
           - name: cta_href
             label: "Button-Link"
+            type: string
+          - name: secondary_cta_text
+            label: "Zweiter Button-Text"
+            type: string
+          - name: secondary_cta_href
+            label: "Zweiter Button-Link"
+            type: string
+      - name: training_pathway
+        label: "Training Pathway — 2 Levels"
+        type: object
+        fields:
+          - name: label
+            label: "Label (oben klein)"
+            type: string
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: levels
+            label: "Level-Karten (Level 1 + Level 2)"
+            type: collection
+            fields:
+              - name: badge
+                label: "Badge (z.B. Level 1)"
+                type: string
+              - name: href
+                label: "Link"
+                type: string
+              - name: image
+                label: "Bild"
+                type: image
+              - name: imageAlt
+                label: "Bild Alt-Text"
+                type: string
+              - name: heading
+                label: "Überschrift"
+                type: string
+              - name: description
+                label: "Beschreibung"
+                type: text
+              - name: cta_text
+                label: "Link-Text"
+                type: string
+      - name: parallax_1
+        label: "Parallax-Bild 1 (nach Training Pathway)"
+        type: image
+      - name: videos
+        label: "Video-Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: items
+            label: "Videos"
+            type: collection
+            fields:
+              - name: youtube_id
+                label: "YouTube ID"
+                type: string
+              - name: caption
+                label: "Beschriftung (z.B. Portugal, September 2025)"
+                type: string
+      - name: upcoming_trainings
+        label: "Upcoming Trainings Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: cta_text
+            label: "Link-Text"
+            type: string
+          - name: cta_href
+            label: "Link"
+            type: string
+      - name: parallax_2
+        label: "Parallax-Bild 2 (vor About)"
+        type: image
+      - name: about_teaser
+        label: "Über Daniel — Teaser"
+        type: object
+        fields:
+          - name: label
+            label: "Label (oben klein)"
+            type: string
+          - name: heading
+            label: "Name"
+            type: string
+          - name: title
+            label: "Titel/Rolle"
+            type: string
+          - name: image
+            label: "Portrait-Bild"
+            type: image
+          - name: imageAlt
+            label: "Bild Alt-Text"
+            type: string
+          - name: bio
+            label: "Bio-Text"
+            type: text
+          - name: cta_text
+            label: "Link-Text"
+            type: string
+          - name: cta_href
+            label: "Link"
+            type: string
+      - name: contact
+        label: "Kontakt-Sektion"
+        type: object
+        fields:
+          - name: heading
+            label: "Überschrift"
+            type: string
+          - name: subtext
+            label: "Text"
+            type: text
+          - name: cta_text
+            label: "Button-Text"
+            type: string
+          - name: cta_href
+            label: "Button-Link"
+            type: string
+          - name: email
+            label: "E-Mail-Adresse"
             type: string
 
   - name: page-about-dan
