@@ -2,6 +2,11 @@ media:
   input: public/images
   output: /images
 
+actions:
+  - name: optimize-images
+    label: "🖼️ Bilder optimieren"
+    workflow: optimize-images.yml
+
 content:
   - name: kurstermine
     label: "Kurstermine & Module"
@@ -172,6 +177,16 @@ content:
       - name: show_on_homepage
         label: "Auf Startseite zeigen?"
         type: boolean
+      - name: status
+        label: "Status"
+        type: select
+        options:
+          - aktiv
+          - ausgebucht
+          - abgesagt
+      - name: spots_left
+        label: "Verbleibende Plätze (leer = unbegrenzt)"
+        type: number
 
   - name: page-en
     label: "🌐 Englische Startseite"
@@ -317,7 +332,7 @@ content:
             type: string
           - name: bio
             label: "Bio-Text"
-            type: text
+            type: rich-text
           - name: cta_text
             label: "Link-Text"
             type: string
@@ -497,7 +512,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-mazunte
     label: "🌿 Mazunte Retreat"
@@ -548,7 +563,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-spain
     label: "🌿 Spain Retreat"
@@ -599,7 +614,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-tulum
     label: "🌿 Tulum Retreat"
@@ -650,7 +665,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-level-1
     label: "📋 Level 1 — Kurs-Übersicht"
@@ -925,6 +940,16 @@ content:
       - name: show_on_homepage
         label: "Auf Startseite zeigen?"
         type: boolean
+      - name: status
+        label: "Status"
+        type: select
+        options:
+          - aktiv
+          - ausgebucht
+          - abgesagt
+      - name: spots_left
+        label: "Verbleibende Plätze (leer = unbegrenzt)"
+        type: number
 
   - name: page-en
     label: "🌐 Englische Startseite"
@@ -1070,7 +1095,7 @@ content:
             type: string
           - name: bio
             label: "Bio-Text"
-            type: text
+            type: rich-text
           - name: cta_text
             label: "Link-Text"
             type: string
@@ -1250,7 +1275,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-mazunte
     label: "🌿 Mazunte Retreat"
@@ -1301,7 +1326,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-spain
     label: "🌿 Spain Retreat"
@@ -1352,7 +1377,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-tulum
     label: "🌿 Tulum Retreat"
@@ -1403,7 +1428,7 @@ content:
             type: string
       - name: closing_quote
         label: "Abschluss-Zitat"
-        type: text
+        type: rich-text
 
   - name: retreat-level-1
     label: "📋 Level 1 — Kurs-Übersicht"

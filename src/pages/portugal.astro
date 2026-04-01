@@ -227,9 +227,9 @@ const retreat = (await getEntry('retreats', 'portugal'))?.data;
     <FadeIn>
     <section class="py-8 md:py-12 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto text-center max-w-3xl">
-        <p class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed">
-          {retreat?.closing_quote ?? "This training is an invitation to slow down, to listen, and to reconnect with the intelligence of touch - in yourself and in others. If you feel called, you're warmly welcome to join us."}
-        </p>
+        <div class="font-serif italic text-text-main text-xl md:text-2xl leading-relaxed prose prose-stone max-w-none">
+          <div set:html={retreat?.closing_quote ?? "This training is an invitation to slow down, to listen, and to reconnect with the intelligence of touch - in yourself and in others. If you feel called, you're warmly welcome to join us."} />
+        </div>
       </div>
     </section>
     </FadeIn>

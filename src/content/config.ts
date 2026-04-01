@@ -235,6 +235,8 @@ const trainings = defineCollection({
     href: z.string(),
     image: z.string(),
     show_on_homepage: z.boolean().default(false),
+    status: z.enum(['aktiv', 'ausgebucht', 'abgesagt']).default('aktiv'),
+    spots_left: z.number().optional(),
   }),
 });
 

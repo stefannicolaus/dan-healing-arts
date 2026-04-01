@@ -5,3 +5,4 @@ level: "Level 1a"
 href: "/zurich"
 image: "/images/zurich/hero.jpg"
 show_on_homepage: true
+status: aktiv

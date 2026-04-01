@@ -6,9 +6,12 @@ interface Props {
   level: string;
   href: string;
   image?: string;
+  status?: 'aktiv' | 'ausgebucht' | 'abgesagt';
+  spots_left?: number;
 }
 
-const { title, date, location, level, href, image } = Astro.props;
+const { title, date, location, level, href, image, status = 'aktiv', spots_left } = Astro.props;
+const showSpotsWarning = status === 'aktiv' && spots_left !== undefined && spots_left <= 5;
 ---
 
 <a
@@ -33,6 +36,22 @@ const { title, date, location, level, href, image } = Astro.props;
           {location}
         </p>
       </div>
+      <!-- Status badge -->
+      {status === 'ausgebucht' && (
+        <span class="absolute top-3 right-3 bg-red-700 text-white text-xs font-bold uppercase tracking-wide px-2 py-1 rounded">
+          Ausgebucht
+        </span>
+      )}
+      {status === 'abgesagt' && (
+        <span class="absolute top-3 right-3 bg-stone-500 text-white text-xs font-bold uppercase tracking-wide px-2 py-1 rounded">
+          Abgesagt
+        </span>
+      )}
+      {showSpotsWarning && (
+        <span class="absolute top-3 right-3 bg-amber-600 text-white text-xs font-bold uppercase tracking-wide px-2 py-1 rounded">
+          Noch {spots_left} Plätze
+        </span>
+      )}
     </div>
   )}
 

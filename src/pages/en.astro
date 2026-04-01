@@ -196,6 +196,8 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
               level={t.level}
               href={t.href}
               image={t.image}
+              status={t.status}
+              spots_left={t.spots_left}
             />
           ))}
         </div>
@@ -244,9 +246,9 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
           <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">{pageData?.about_teaser?.label}</p>
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-2">{pageData?.about_teaser?.heading}</h2>
           <p class="font-sans text-forest text-sm font-medium uppercase tracking-widest mb-6">{pageData?.about_teaser?.title}</p>
-          <p class="font-sans text-stone text-lg leading-relaxed mb-8">
-            {pageData?.about_teaser?.bio}
-          </p>
+          <div class="font-sans text-stone text-lg leading-relaxed mb-8 prose prose-stone max-w-none">
+            <div set:html={pageData?.about_teaser?.bio ?? ''} />
+          </div>
           <a href={pageData?.about_teaser?.cta_href ?? "/about-dan"} class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
             {pageData?.about_teaser?.cta_text ?? "Read more"}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
