@@ -1,0 +1,111 @@
+page_title: "Tulum — The Essence of Deep Touch | Dan Healing Arts"
+page_description: "A Myofascial Somatic Liberation Training at Casa Arkaana — an ecological retreat center in the jungle near Chemuyil, Yucatán Peninsula, Mexico. Dates to be announced."
+og_image: "/images/tulum/hero.jpg"
+hero:
+  location_badge: "Tulum, Mexico · Level 1"
+  heading: "The Essence of Deep Touch"
+  level_text: "Level 1"
+  level_href: "/level-1"
+  dates: "Tulum, Mexico · Dates to Be Announced"
+  subtitle: "An immersive training in fascia release, deep tissue massage and nervous system attunement — held in the jungle."
+  image: "/images/tulum/hero.jpg"
+  imageAlt: "Casa Arkaana — ecological retreat center in the jungle near Tulum, Mexico"
+sections:
+  - id: learning_art
+    heading: "Learning the Art of Deep Touch"
+    image: "/images/tulum/venue.jpg"
+    imageAlt: "Casa Arkaana retreat center — jungle setting near Tulum, Mexico"
+    reversed: false
+    paragraphs:
+      - "**The Essence of Deep Touch** is an immersive **professional training in fascia-based bodywork.** It offers the Level 1 training program of the Myofascial Somatic Liberation pathway."
+      - "→ *Learn more about the full Level 1 training*"
+      - "Over the course of the training, you will learn how to offer deep, slow and emotionally attuned massage sessions that work not only with muscles and fascia, but with the nervous system and emotional body."
+      - "Alongside learning practical hands-on techniques, you will also receive nourishing touch each day, allowing you to experience the work within your own system."
+      - "Through this reciprocal process, the body softens, perception deepens, and a natural understanding begins to emerge of how to support others through touch."
+  - id: training_experience
+    heading: "The Training Experience"
+    image: "/images/tulum/sahil.jpg"
+    imageAlt: "Bodywork training session at Casa Arkaana, Tulum"
+    reversed: true
+    paragraphs:
+      - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
+      - "You'll learn to offer full-body touch that is structurally and anatomically grounded, drawing from myofascial release and deep tissue techniques while remaining sensitive to the nervous system and emotional responses that can unfold through touch."
+      - "Alongside these hands-on techniques, the training cultivates the subtle skills of presence, listening and energetic awareness that allow sessions to become deeply restorative and transformative."
+      - "During this training you will develop **both the practical skills and the embodied sensitivity needed to begin offering this work to others.**"
+  - id: experiential
+    image: "/images/tulum/hero.jpg"
+    imageAlt: "Hands-on bodywork practice at the Tulum training"
+    reversed: false
+    show_apply_button: true
+    paragraphs:
+      - "The learning is highly experiential and hands-on. Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice."
+      - "Through this rhythm of practicing and being worked on, your system becomes more receptive and your hands gradually become more refined and precise, learning to respond to what they meet in the body."
+      - "Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably."
+  - id: field_1
+    heading: "The Field We Practice In"
+    image: "/images/tulum/venue.jpg"
+    imageAlt: "Practice space at Casa Arkaana — jungle retreat center near Tulum"
+    reversed: false
+    paragraphs:
+      - "This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize."
+      - "It is not only about learning how to touch, but also about remembering how to listen."
+  - id: field_2
+    image: "/images/tulum/hero.jpg"
+    imageAlt: "Bodywork practice session at the Tulum jungle training"
+    reversed: true
+    paragraphs:
+      - "Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands."
+      - "In this relational space, connection deepens — with your own body, with others, and with the deeper intelligence that lives beneath the surface."
+      - "More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment."
+  - id: venue
+    heading: "The Space That Holds the Work"
+    image: "/images/tulum/venue.jpg"
+    imageAlt: "Casa Arkaana — ecological retreat center in the jungle near Tulum"
+    reversed: true
+    paragraphs:
+      - "Casa Arkaana is an ecological retreat center set in the jungle near Chemuyil, between Playa del Carmen and Tulum on the Yucatán Peninsula of Mexico."
+      - "Run by Maja and Asdrubal, the center is dedicated to healing arts, conscious transformation, permaculture and slow living — values that are woven into the fabric of everyday life there."
+      - "Just 6 km from pristine beaches and close to cenotes, the location offers both the stillness of deep jungle and easy access to the extraordinary natural world of the Yucatán Peninsula."
+      - "Location: [www.casaarkaana.com](https://www.casaarkaana.com)"
+  - id: venue_2
+    image: "/images/tulum/twin-room.jpg"
+    imageAlt: "Accommodation at Casa Arkaana retreat center"
+    reversed: false
+    paragraphs:
+      - '"Casa Arkaana is a place where you can truly slow down and reconnect. The jungle, the cenotes, and the care of Maja and Asdrubal create a container unlike any other." — Sahil'
+      - "Between sessions, there is space to walk in the jungle, swim in cenotes, integrate, and simply be — allowing the work to settle beyond the mat and table."
+  - id: nourished
+    heading: "Held & Nourished"
+    image: "/images/tulum/sahil.jpg"
+    imageAlt: "Nourishing meals at Casa Arkaana"
+    reversed: false
+    paragraphs:
+      - "Throughout the retreat, you'll be nourished with daily meals prepared with care and intention — designed to support the depth of work you're moving through."
+      - "The food is thoughtfully prepared to ground the nervous system while keeping the body clear and well-fueled throughout the training."
+      - "Shared meals also become moments of connection and integration — time to rest, digest, and gently transition between inner work and daily life."
+  - id: for_whom
+    heading: "Who Is This Training For"
+    image: "/images/tulum/single-room.jpg"
+    imageAlt: "Casa Arkaana training — participants in the practice space"
+    reversed: true
+    show_apply_button: true
+    paragraphs:
+      - "This is for anyone drawn to explore the power of deep, slow and profound emotional bodywork."
+      - "It is open to those new to bodywork as well as experienced practitioners who wish to bring more depth, clarity, and presence into their work."
+      - "If you are curious about how touch can support emotional release, nervous system regulation, and embodied awareness, and if you value learning through direct experience rather than theory alone, this training offers a supportive place to begin or deepen your path."
+      - "**Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.**"
+what_you_receive:
+  heading: "What You'll Receive"
+  image: "/images/tulum/private-bath.jpg"
+  imageAlt: "Casa Arkaana accommodation and facilities"
+  items:
+    - "7 days/ 6 nights accommodation"
+    - "3 daily nourishing meals"
+    - "Daily bodywork/massage lessons and practice sessions"
+    - "Daily yoga, meditation, breathwork, and voice work"
+    - "Integration circles, kirtan and ceremonial spaces"
+    - "Course manual"
+    - "Video recordings of all bodywork sequences"
+    - "Certificate of completion"
+    - "Pre- and post-retreat support"
+closing_quote: "This training is an invitation to slow down, to listen, and to reconnect with the intelligence of touch — in yourself and in others. If you feel called, you're warmly welcome to join us."

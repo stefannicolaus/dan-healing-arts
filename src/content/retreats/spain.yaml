@@ -1,0 +1,112 @@
+page_title: "Spain — An Evolution of Sensitivity | Dan Healing Arts"
+page_description: "A 7-day Level 2 training in the Alpujarra mountains of southern Spain. Hidden Paradise retreat center, near Granada. 10–16 May, 2026."
+og_image: "/images/spain/hero.jpg"
+hero:
+  location_badge: "Spain · Level 2"
+  heading: "An Evolution of Sensitivity"
+  level_text: "Level 2"
+  level_href: "/level-2"
+  dates: "Spain · 10 – 16 May, 2026"
+  subtitle: "A 7-day immersive training deepening your practice in fascia-based bodywork and somatic sensitivity."
+  image: "/images/spain/hero.jpg"
+  imageAlt: "Hidden Paradise retreat center in the Alpujarra mountains of southern Spain"
+sections:
+  - id: deepening
+    heading: "Deepening Your Practice"
+    image: "/images/spain/dsc2233.jpg"
+    imageAlt: "Practitioners in deep bodywork training at Hidden Paradise, Spain"
+    reversed: false
+    paragraphs:
+      - "**An Evolution of Sensitivity** is an immersive **advanced training in fascia-based bodywork.** It offers the Level 2 training program of the Myofascial Somatic Liberation pathway."
+      - "→ *Learn more about the full Level 2 training*"
+      - "Building on the foundations of Level 1, this training takes you deeper — into subtler layers of the fascia, more refined touch, and a more intimate relationship with the body's nervous system and emotional landscape."
+      - "Over the course of the week, you will expand your range as a practitioner, learning how to hold more complexity, respond with greater nuance, and guide sessions with increased confidence and depth."
+      - "As in Level 1, you will both give and receive sessions each day — deepening not only your skills but your own embodied understanding of what this work can offer."
+  - id: training_experience
+    heading: "The Training Experience"
+    image: "/images/spain/dsc2128.jpg"
+    imageAlt: "Training experience at Hidden Paradise — group bodywork practice in Spain"
+    reversed: true
+    paragraphs:
+      - "This training invites you to slow down, listen deeply, and enter the landscape of the body with care and precision."
+      - "You'll refine your ability to offer full-body touch that is structurally and anatomically grounded, drawing from advanced myofascial and deep tissue techniques while remaining attuned to the nervous system and emotional responses that unfold through touch."
+      - "Alongside these hands-on techniques, the training cultivates the subtle skills of presence, listening and energetic awareness that allow sessions to become deeply restorative and transformative."
+      - "During this week you will develop **both the advanced practical skills and the embodied sensitivity needed to take your work to the next level.**"
+  - id: experiential
+    image: "/images/spain/dsc08074.jpg"
+    imageAlt: "Hands-on practice at Hidden Paradise Spain"
+    reversed: false
+    show_apply_button: true
+    paragraphs:
+      - "The learning is highly experiential and hands-on. Each day, you will observe, give, and receive two full bodywork sessions, giving you extensive hands-on practice."
+      - "Through this rhythm of practicing and being worked on, your system becomes more receptive and your hands gradually become more refined and precise, learning to respond to increasingly subtle layers of what they meet in the body."
+      - "Daily practices such as yoga, meditation, breathwork, voice work and ceremonial spaces support integration, allowing what moves through the body to land gently and sustainably."
+  - id: field_1
+    heading: "The Field We Practice In"
+    image: "/images/spain/dsc08001.jpg"
+    imageAlt: "Practice space at Hidden Paradise retreat, southern Spain"
+    reversed: false
+    paragraphs:
+      - "This training takes place within a warm, grounded and playful group field, where learning happens not only through instruction, but through direct experience — through touch, presence and the body's natural capacity to release and reorganize."
+      - "It is not only about learning how to touch, but also about remembering how to listen."
+  - id: field_2
+    image: "/images/spain/dsc2233.jpg"
+    imageAlt: "Deep bodywork practice at the Spain training"
+    reversed: true
+    paragraphs:
+      - "Anatomy is explored directly through touch, learning on the body rather than only through theory. As you work with the structure of the fascia, anatomical understanding becomes increasingly tangible and grounded in your hands."
+      - "In this relational space, connection deepens — with your own body, with others, and with the deeper intelligence that lives beneath the surface."
+      - "More than simply a training, the week becomes a gradual spiraling process of opening, unwinding and empowerment."
+  - id: venue
+    heading: "The Space That Holds the Work"
+    image: "/images/spain/hidden-paradise-62.jpg"
+    imageAlt: "Hidden Paradise retreat center — view from above, Alpujarra mountains"
+    reversed: true
+    paragraphs:
+      - "Hidden Paradise is a family-run retreat center nestled in the Alpujarra mountains of southern Spain, near Granada."
+      - "Perched at over 1,000 meters above the Mediterranean, the views stretch all the way to Morocco — and the sense of altitude, silence and distance from ordinary life is immediate upon arrival."
+      - "Completely off-grid, the center offers two pools, a wood-fired sauna, and two round, temple-like domed spaces designed specifically for movement and sound work."
+      - "Location: [www.hiddenparadise.org](https://www.hiddenparadise.org)"
+  - id: venue_2
+    image: "/images/spain/dsc08074.jpg"
+    imageAlt: "Practice space at Hidden Paradise — circular domed workshop room"
+    reversed: false
+    paragraphs:
+      - "These circular practice spaces create a naturally sacred and focused container for the depth of work we do."
+      - "The land itself invites surrender. Far from the noise of modern life, it becomes easier to slow down, go inward, and let the work move through you."
+      - "Between sessions, there is space to walk, breathe, swim, integrate, and simply be — allowing the work to settle beyond the mat and table."
+  - id: nourished
+    heading: "Held & Nourished"
+    image: "/images/spain/dsc08001.jpg"
+    imageAlt: "Nourishing meals at Hidden Paradise"
+    reversed: false
+    paragraphs:
+      - "Throughout the retreat, you'll be nourished with three daily meals prepared with care, love and vitality — designed to support deep physical and emotional work."
+      - "The food is thoughtfully prepared to ground the nervous system while keeping the body clear and well-fueled throughout the training."
+      - "Shared meals also become moments of connection and integration — time to rest, digest, and gently transition between inner work and daily life."
+  - id: for_whom
+    heading: "Who Is This Training For"
+    image: "/images/spain/dsc2128.jpg"
+    imageAlt: "Spain training — practitioners deepening their practice"
+    reversed: false
+    show_apply_button: true
+    paragraphs:
+      - "This training is designed for practitioners who have already completed Level 1 of the Myofascial Somatic Liberation pathway, or who carry equivalent experience in body-based therapeutic work."
+      - "It is for those who are ready to move beyond the foundational techniques — into greater subtlety, complexity, and relational depth in their practice."
+      - "If you are drawn to working more deeply with the emotional and nervous system dimensions of bodywork, and if you value learning through direct experience rather than theory alone, this training offers the next step on your path."
+      - "**Please note: This training is designed to touch deeply and to be deeply touched. A respectful presence and clear boundaries are essential.**"
+what_you_receive:
+  heading: "What You'll Receive"
+  image: "/images/spain/hidden-paradise-36.jpg"
+  imageAlt: "Hidden Paradise — mountain landscape, southern Spain"
+  items:
+    - "7 days/ 6 nights accommodation"
+    - "3 daily nourishing meals"
+    - "Daily advanced bodywork/massage lessons and practice sessions"
+    - "Daily yoga, meditation, breathwork, and voice work"
+    - "Integration circles, kirtan and ceremonial spaces"
+    - "Course manual"
+    - "Video recordings of all bodywork sequences"
+    - "Certificate of completion"
+    - "Pre- and post-retreat support"
+closing_quote: "This training is an invitation to go deeper — to listen with greater sensitivity, and to trust the intelligence that lives in your hands and in the body you meet. If you feel called, you're warmly welcome to join us."

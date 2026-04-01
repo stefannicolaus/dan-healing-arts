@@ -1,0 +1,57 @@
+page_title: "Level 1: The Essence of Deep Touch — Dan Healing Arts"
+page_description: "The foundational training in a professional two-level pathway in fascia-based somatic bodywork. Learn deep touch, myofascial release, and the psycho-emotional language of the body."
+hero:
+  badge: "Level 1 Training"
+  heading: "The Essence of Deep Touch"
+  subheading: "The foundational training in a professional two-level pathway in fascia-based somatic bodywork."
+  image: "/images/level1/hero.jpg"
+  imageAlt: "Level 1 bodywork training participants practicing deep touch"
+  paragraphs:
+    - "The Essence of Deep Touch is the foundational training in a professional two-level pathway in fascia-based somatic bodywork. It can later be followed by the advanced Level 2 training."
+    - "The Training invites you into a grounded, somatic approach to deep, slow bodywork - woven with presence, curiosity and care. It's also a journey of self-exploration, opening space to feel and be felt more deeply."
+    - "You'll learn how to work with muscles and fascia through the principles of deep touch, while gaining insight into the emotional qualities stored within different body regions. Physical, energetic, and psycho-emotional layers are all part of the unfolding."
+    - "Each day offers hands-on practice and the gift of receiving. This shared rhythm brings balance to your body, mind and nervous system - and lets you explore both the art of giving and the medicine of being touched."
+    - "You'll reconnect to the primal need for presence and care, for feeling yourself and others. Through meaningful work, rooted in awareness and connection, you'll leave with real, embodied skills ready to share."
+sections:
+  - id: practical_approach
+    heading: "A Practical Approach to Learning in a Natural Environment"
+    image: "/images/level1/outside-5.jpg"
+    imageAlt: "Participants learning bodywork in an outdoor natural setting"
+    reversed: true
+    paragraphs:
+      - "Set in a retreat space surrounded by nature, the training offers a spacious rhythm to slow down and reconnect - with yourself and others. Each teaching is infused with presence, embodiment, and ease."
+      - "Rather than memorizing content, you'll absorb it through touch and practice. You'll begin to feel the structures from the inside out, letting anatomical and energetic maps come alive in your own body."
+      - "This experiential learning creates a deep foundation. You'll feel how the body responds to trust, touch, and connection - and discover within yourself an inner landscape of awareness, resilience, and healing."
+  - id: yoga_breathwork
+    heading: "Yoga, Breathwork, Meditation and Voice Activation"
+    image: "/images/level1/outside-27.jpg"
+    imageAlt: "Group yoga and breathwork practice outdoors during the training"
+    reversed: true
+    paragraphs:
+      - "Daily yoga and breathwork sessions support the themes of each day, grounding the body and opening your awareness. These embodied practices deepen the work and nourish your nervous system."
+      - "Group chanting, voice work and sharing circles invite you into expression and connection, while guided meditations and stories from yoga philosophy add context and depth to your journey."
+      - "Together, these practices create an integrated inner and outer retreat - an immersion into body, energy and presence."
+learn_topics:
+  - "The foundational principles of deep bodywork through muscle and fascia"
+  - "An overview of the key fascial lines and how to access them through touch"
+  - "The psycho-emotional language of the body - how different areas hold stories and patterns"
+  - "Cultivating connection with yourself to enhance your ability to hold presence and connection with clients throughout a session"
+  - "Applying pressure with sensitivity: long, deep, and slow strokes that invite safety and openness for physical and emotional release"
+  - "How to read the body, listen with your hands and follow its natural architecture, rhythms, and signals"
+  - "Bridging modern anatomy with traditional spiritual wisdom, making subtle energy accessible and tangible"
+  - "Using your bodyweight efficiently to offer deep touch in a gentle, sustainable way"
+  - "Crafting sessions and sequences for different purpose, tailored for release and healing"
+  - "The art of slowing down - not only in treatments, but in life itself"
+  - "Hands-on learning about fascia, trigger points, and energy dynamics"
+  - "Structured sequences that support intuition, clarity, and creative flow"
+body_regions:
+  - area: "Upper back, lower back, neck"
+    theme: "Looking back on the past to move forward"
+  - area: "Legs, feet"
+    theme: "Grounding into Mother Earth"
+  - area: "Abdomen, hips, pelvis"
+    theme: "Unleash your potential"
+  - area: "Thorax, chest, shoulders, arms"
+    theme: "Expansion of the heart"
+  - area: "Head, face, throat, neck"
+    theme: "Sky as space in your head"

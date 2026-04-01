@@ -1,0 +1,52 @@
+page_title: "Level 2: An Evolution of Sensitivity — Dan Healing Arts"
+page_description: "The advanced training in fascia-based somatic bodywork. Deepen your capacity to feel subtle tissue intelligence, emotional currents, and the elemental language of the body."
+hero:
+  badge: "Level 2 Training"
+  heading: "An Evolution of Sensitivity"
+  subheading: "The natural next step for all who have completed the foundation."
+  image: "/images/level2/hero.jpg"
+  imageAlt: "Advanced Level 2 bodywork training — practitioners deepening their sensitivity"
+  paragraphs:
+    - "Our Level 2 training is the natural next step for all who have completed the foundation. Here we deepen our capacity to feel the tissue's subtle intelligence, the quiet pulses of emotion, and the energetic currents that weave through the body."
+    - "In addition to learning new massage sequences and release techniques, you'll discover how to enhance your sessions through trance induction, and intonation — tools that allow the body to surrender beyond the thinking mind."
+    - "We also explore how posture, movement, and breath reflect the inner landscape of a person — and how these patterns can either restrict or support emotional flow."
+    - "You'll learn to recognize these expressions in your clients and to meet them skillfully, integrating physical, emotional, and energetic dimensions into one coherent language of touch."
+    - "This is where bodywork becomes art — when presence, sound, and movement begin to communicate more than technique ever could."
+sections:
+  - id: elements_intro
+    heading: "The Language of the Elements and Emotions"
+    image: "/images/level2/massage-35.png"
+    imageAlt: "Practitioners working with emotional body dimensions in advanced bodywork training"
+    reversed: true
+    paragraphs:
+      - "This training unfolds as an inner journey through the five elements and the five primal emotions. Each element is an invitation to explore how emotion moves through your own body — not as a concept to apply, but as a direct experience."
+      - "When you allow yourself to feel these qualities — the contraction of fear, the softening of sadness, the ignition of anger, the expansion of joy, the subtle withdrawal of shame — you begin to recognize them in the bodies of others with natural empathy and precision."
+  - id: touching_emotion
+    heading: "Touching Emotion Through Presence"
+    image: "/images/level2/massage-35.png"
+    imageAlt: "Advanced bodywork — presence and emotional attunement in practice"
+    reversed: false
+    paragraphs:
+      - "In the practical bodywork sessions, we do not try to 'work on fear' or 'release sadness.' Instead, we attune to what is alive in the field, and allow these elemental languages to inform the quality of our touch."
+      - "Rather than aiming for catharsis, we explore presence as the medicine. Rather than trying to make something happen, we learn to listen so closely that the body begins to reorganize itself."
+      - "Every emotion has its own rhythm, its own language, and our task as practitioners is simply to accompany that movement. To hold space without demand, and to allow the body's intelligence to unfold in its own time."
+  - id: embodiment
+    heading: "Embodiment in Practice"
+    image: "/images/level2/massage-35.png"
+    imageAlt: "Practitioners working with emotional body dimensions in advanced bodywork training"
+    reversed: true
+    paragraphs:
+      - "Throughout the retreat, the five elements and their emotional resonances will color our movement, meditation, and partner work. They serve as mirrors, not methods — ways of refining perception and deepening your somatic vocabulary."
+      - "We explore how the qualities of the elements express through touch, sound, and rhythm: the grounded steadiness of earth, the fluid yielding of water, the clear direction of fire, the expansive breath of air, and the spacious stillness of space."
+      - "By journey's end, you will have learned not only new, advanced techniques, but a subtler form of listening — how to meet another person's body from the inside out, with presence that includes the whole spectrum of feeling."
+elements:
+  - element: "Earth"
+    emotion: "Fear"
+  - element: "Water"
+    emotion: "Sadness"
+  - element: "Fire"
+    emotion: "Anger"
+  - element: "Air"
+    emotion: "Joy"
+  - element: "Space"
+    emotion: "Shame"
