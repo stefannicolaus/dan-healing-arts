@@ -17,6 +17,9 @@ import FadeIn from '../components/FadeIn.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
 
 const allTestimonials = await getCollection('testimonials');
+const heroEntries = await getCollection('hero');
+const heroData = heroEntries.find(e => e.id === 'zurich')?.data;
+if (!heroData) throw new Error('Hero content for zurich not found');
 const nicoUSA = allTestimonials.find(t => t.id === 'nico-usa')?.data;
 const ilincaGermany = allTestimonials.find(t => t.id === 'ilinca-germany')?.data;
 ---
@@ -29,7 +32,14 @@ const ilincaGermany = allTestimonials.find(t => t.id === 'ilinca-germany')?.data
 >
   <Nav lang="de" />
   <main>
-    <ZurichHero />
+    <ZurichHero
+      headline={heroData.headline}
+      subtext={heroData.subtext}
+      cta_text={heroData.cta_text}
+      cta_link={heroData.cta_link}
+      bild={heroData.bild}
+      bildAlt={heroData.bildAlt}
+    />
     <StatsDivider />
     <FadeIn><ZurichMethode /></FadeIn>
     <Parallax src="/images/parallax-1.jpg" height="50vh" />
