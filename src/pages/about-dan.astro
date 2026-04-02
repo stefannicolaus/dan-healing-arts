@@ -1,5 +1,4 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -8,10 +7,12 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+import { getPage, getTestimonials } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
 
-const allTestimonials = await getCollection('testimonials');
-const paigeUSA = allTestimonials.find(t => t.id === 'paige-about-dan')?.data;
-const pageData = (await getEntry('pages', 'about-dan'))?.data;
+const allTestimonials = await getTestimonials();
+const paigeUSA = allTestimonials.find((t: any) => t.name === 'Paige');
+const pageData = await getPage('about-dan');
 ---
 
 <Layout
@@ -33,17 +34,17 @@ const pageData = (await getEntry('pages', 'about-dan'))?.data;
           <!-- Portrait -->
           <div class="order-2 md:order-1">
             <img
-              src={pageData?.hero.image ?? "/images/daniel-portrait.jpg"}
-              alt={pageData?.hero.imageAlt ?? "Daniel Wendt — Dan Healing Arts"}
+              src={imageUrl(pageData?.hero_image, "/images/daniel-portrait.jpg")}
+              alt="Daniel Wendt — Dan Healing Arts"
               class="w-full rounded-card object-cover"
             />
           </div>
 
           <!-- Bio intro -->
           <div class="order-1 md:order-2">
-            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Founder & Trainer"}</p>
+            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Founder & Trainer"}</p>
             <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-              {pageData?.hero.heading ?? "Daniel Wendt"}
+              {pageData?.hero_heading ?? "Daniel Wendt"}
             </h1>
 
             <!-- Stats -->
@@ -61,7 +62,7 @@ const pageData = (await getEntry('pages', 'about-dan'))?.data;
             </div>
 
             <div class="font-sans text-stone leading-relaxed space-y-4">
-              {pageData?.sections?.find(s => s.id === 'bio_intro')?.paragraphs.map((p) => (
+              {(pageData?.hero_paragraphs ?? []).map((p: string) => (
                 <p>{p}</p>
               ))}
             </div>

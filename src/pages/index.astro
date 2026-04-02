@@ -1,5 +1,4 @@
 ---
-import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import ZurichHero from '../components/ZurichHero.astro';
@@ -15,13 +14,15 @@ import StatsDivider from '../components/StatsDivider.astro';
 import Footer from '../components/Footer.astro';
 import FadeIn from '../components/FadeIn.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
+import { getStartseite, getTestimonials } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
 
-const allTestimonials = await getCollection('testimonials');
-const heroEntries = await getCollection('hero');
-const heroData = heroEntries.find(e => e.id === 'zurich')?.data;
-if (!heroData) throw new Error('Hero content for zurich not found');
-const nicoUSA = allTestimonials.find(t => t.id === 'nico-usa')?.data;
-const ilincaGermany = allTestimonials.find(t => t.id === 'ilinca-germany')?.data;
+const s = await getStartseite();
+const allTestimonials = await getTestimonials();
+const nicoUSA = allTestimonials.find((t: any) => t.name === 'Nico' && t.location?.includes('USA'));
+const ilincaGermany = allTestimonials.find((t: any) => t.name === 'Ilinca' && t.location?.includes('Germany'));
+
+const heroBild = imageUrl(s?.hero_bild, '/images/general/dan-outside-38.jpg');
 ---
 
 <Layout
@@ -33,24 +34,50 @@ const ilincaGermany = allTestimonials.find(t => t.id === 'ilinca-germany')?.data
   <Nav lang="de" />
   <main>
     <ZurichHero
-      headline={heroData.headline}
-      subtext={heroData.subtext}
-      cta_text={heroData.cta_text}
-      cta_link={heroData.cta_link}
-      bild={heroData.bild}
-      bildAlt={heroData.bildAlt}
+      headline={s?.hero_headline ?? 'Lerne, mit deinen Händen zu hören.'}
+      subtext={s?.hero_subtext ?? ''}
+      cta_text={s?.hero_cta_text ?? 'Jetzt anmelden'}
+      cta_link={s?.hero_cta_href ?? '/contact'}
+      bild={heroBild}
+      bildAlt="Daniel Wendt — Dan Healing Arts"
     />
     <StatsDivider />
-    <FadeIn><ZurichMethode /></FadeIn>
-    <Parallax src="/images/parallax-1.jpg" height="50vh" />
-    <FadeIn><ZurichWasEntwickelst /></FadeIn>
-    <FadeIn><ZurichErfahrungsraum /></FadeIn>
+    <FadeIn>
+      <ZurichMethode
+        label={s?.methode_label}
+        heading={s?.methode_heading}
+        paragraphs={s?.methode_paragraphs ?? []}
+        highlight={s?.methode_highlight}
+      />
+    </FadeIn>
+    <Parallax src={s?.parallax_1 ?? '/images/parallax-1.jpg'} height="50vh" />
+    <FadeIn>
+      <ZurichWasEntwickelst
+        label={s?.entwickelst_label}
+        heading={s?.entwickelst_heading}
+        paragraphs={s?.entwickelst_paragraphs ?? []}
+        highlight={s?.entwickelst_highlight}
+        image={s?.entwickelst_bild}
+        imageAlt={s?.entwickelst_label ?? ''}
+      />
+    </FadeIn>
+    <FadeIn>
+      <ZurichErfahrungsraum
+        label={s?.erfahrungsraum_label}
+        heading={s?.erfahrungsraum_heading}
+        paragraphs={s?.erfahrungsraum_paragraphs ?? []}
+        highlight={s?.erfahrungsraum_highlight}
+        image={s?.erfahrungsraum_bild}
+        imageAlt={s?.erfahrungsraum_label ?? ''}
+      />
+    </FadeIn>
     <FadeIn><ZurichModule /></FadeIn>
     {nicoUSA && (
       <TestimonialDivider
         quote={nicoUSA.quote}
         name={nicoUSA.name}
         location={nicoUSA.location}
+        photo={nicoUSA.photo}
       />
     )}
     <ZurichTestimonials />
@@ -59,11 +86,19 @@ const ilincaGermany = allTestimonials.find(t => t.id === 'ilinca-germany')?.data
         quote={ilincaGermany.quote}
         name={ilincaGermany.name}
         location={ilincaGermany.location}
+        photo={ilincaGermany.photo}
       />
     )}
     <StatsDivider />
-    <FadeIn><ZurichUeberDaniel /></FadeIn>
-    <Parallax src="/images/parallax-2.jpg" height="50vh" />
+    <FadeIn>
+      <ZurichUeberDaniel
+        heading={s?.ueber_heading}
+        paragraphs={s?.ueber_paragraphs ?? []}
+        stats={s?.ueber_stats}
+        image={s?.ueber_bild}
+      />
+    </FadeIn>
+    <Parallax src={s?.parallax_2 ?? '/images/parallax-2.jpg'} height="50vh" />
     <FadeIn><ZurichKontakt /></FadeIn>
   </main>
   <Footer lang="de" />

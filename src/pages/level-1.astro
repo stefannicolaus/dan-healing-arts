@@ -1,5 +1,4 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -10,20 +9,20 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+import { getRetreat, getTrainings, getTestimonials } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
 
-const allTrainingsEntries = await getCollection('trainings');
-const level1Trainings = allTrainingsEntries
-  .map(t => t.data)
-  .filter(t => ['Level 1', 'Level 1a', 'Level 1b'].includes(t.level));
+const allTrainings = await getTrainings();
+const level1Trainings = allTrainings.filter((t: any) => ['Level 1', 'Level 1a', 'Level 1b'].includes(t.level));
 
-const allTestimonials = await getCollection('testimonials');
-const nicoUSA = allTestimonials.find(t => t.id === 'nico-usa')?.data;
-const erikaLithuania = allTestimonials.find(t => t.id === 'erika-lithuania')?.data;
-const paigeUSA = allTestimonials.find(t => t.id === 'paige-usa')?.data;
-const jiliUSA = allTestimonials.find(t => t.id === 'jili-usa')?.data;
-const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-level1')?.data;
+const allTestimonials = await getTestimonials();
+const nicoUSA = allTestimonials.find((t: any) => t.name === 'Nico' && t.location?.includes('USA'));
+const erikaLithuania = allTestimonials.find((t: any) => t.name === 'Erika' && t.location?.includes('Lithuania'));
+const paigeUSA = allTestimonials.find((t: any) => t.name === 'Paige' && t.location?.includes('USA'));
+const jiliUSA = allTestimonials.find((t: any) => t.name === 'Jili' && t.location?.includes('USA'));
+const rebeccaCanada = allTestimonials.find((t: any) => t.name === 'Rebecca' && t.location?.includes('Canada'));
 
-const pageData = (await getEntry('retreats', 'level-1'))?.data;
+const pageData = await getRetreat('level-1');
 const learnTopics = pageData?.learn_topics ?? [];
 const bodyRegions = pageData?.body_regions ?? [];
 ---
@@ -42,16 +41,16 @@ const bodyRegions = pageData?.body_regions ?? [];
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={pageData?.hero.image ?? "/images/level1/hero.jpg"} imageAlt={pageData?.hero.imageAlt ?? "Level 1 bodywork training participants practicing deep touch"} imagePosition={pageData?.hero.imagePosition ?? 'center'}>
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Level 1 Training"}</p>
+        <TextImageSection image={imageUrl(pageData?.hero_image, "/images/level1/hero.jpg")} imageAlt="Level 1 bodywork training participants practicing deep touch" imagePosition="center">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Level 1 Training"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-            {pageData?.hero.heading ?? "The Essence of Deep Touch"}
+            {pageData?.hero_heading ?? "The Essence of Deep Touch"}
           </h1>
           <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
-            {pageData?.hero.subheading ?? "The foundational training in a professional two-level pathway in fascia-based somatic bodywork."}
+            {pageData?.hero_subheading ?? "The foundational training in a professional two-level pathway in fascia-based somatic bodywork."}
           </p>
           <div class="font-sans text-stone leading-relaxed space-y-4">
-            {(pageData?.hero.paragraphs ?? []).map((p) => <p>{p}</p>)}
+            {(pageData?.hero_paragraphs ?? []).map((p: string) => <p>{p}</p>)}
           </div>
         </TextImageSection>
       </div>
@@ -73,12 +72,12 @@ const bodyRegions = pageData?.body_regions ?? [];
       <FadeIn>
       <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
         <div class="max-w-page mx-auto">
-          <TextImageSection image={section.image} imageAlt={section.imageAlt} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
+          <TextImageSection image={imageUrl(section.image, section.image)} imageAlt={section.imageAlt ?? ''} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
             {section.heading && (
               <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">{section.heading}</h2>
             )}
             <div class="font-sans text-stone leading-relaxed space-y-4">
-              {section.paragraphs.map((p) => <p>{p}</p>)}
+              {section.paragraphs.map((p: string) => <p>{p}</p>)}
             </div>
           </TextImageSection>
         </div>
@@ -212,12 +211,12 @@ const bodyRegions = pageData?.body_regions ?? [];
       <FadeIn>
       <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
         <div class="max-w-page mx-auto">
-          <TextImageSection image={section.image} imageAlt={section.imageAlt} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
+          <TextImageSection image={imageUrl(section.image, section.image)} imageAlt={section.imageAlt ?? ''} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
             {section.heading && (
               <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">{section.heading}</h2>
             )}
             <div class="font-sans text-stone leading-relaxed space-y-4">
-              {section.paragraphs.map((p) => <p>{p}</p>)}
+              {section.paragraphs.map((p: string) => <p>{p}</p>)}
             </div>
           </TextImageSection>
         </div>
@@ -246,14 +245,14 @@ const bodyRegions = pageData?.body_regions ?? [];
           Upcoming Level 1 Trainings
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
-          {level1Trainings.map(t => (
+          {level1Trainings.map((t: any) => (
             <TrainingCard
               title={t.title}
               date={t.date}
               location={t.location}
               level={t.level}
               href={t.href}
-              image={t.image}
+              image={imageUrl(t.image, '')}
               status={t.status}
               spots_left={t.spots_left}
             />

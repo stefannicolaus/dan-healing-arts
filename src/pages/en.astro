@@ -1,8 +1,4 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
-const allTrainingsEntries = await getCollection('trainings');
-const trainings = allTrainingsEntries.map(t => t.data);
-const pageData = (await getEntry('pages', 'en'))?.data;
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -12,10 +8,14 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+import { getPage, getTrainings, getTestimonials } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
 
-const allTestimonials = await getCollection('testimonials');
-const elyUK = allTestimonials.find(t => t.id === 'ely-uk')?.data;
-const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
+const trainings = await getTrainings();
+const pageData = await getPage('en');
+const allTestimonials = await getTestimonials();
+const elyUK = allTestimonials.find((t: any) => t.name === 'Ely' && t.location?.includes('UK'));
+const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location?.includes('USA'));
 ---
 
 <Layout
@@ -34,22 +34,22 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
         <!-- Text -->
         <div>
-          <p class="font-sans text-stone text-xs uppercase tracking-[0.25em] mb-6">{pageData?.hero.badge ?? "Dan Healing Arts"}</p>
+          <p class="font-sans text-stone text-xs uppercase tracking-[0.25em] mb-6">{pageData?.hero_badge ?? "Dan Healing Arts"}</p>
           <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-text-main leading-[1.1] mb-6">
-            {pageData?.hero.heading ? pageData.hero.heading.split('\n').map((line, i) => (
+            {pageData?.hero_heading ? pageData.hero_heading.split('\n').map((line: string, i: number) => (
               i === 0 ? <>{line}<br /></> : <>{line}</>
             )) : <>"Learn to Listen<br />with Your Hands"</>}
           </h1>
           <p class="font-sans text-stone text-lg leading-relaxed max-w-lg mb-10">
-            {pageData?.hero.subheading ?? "Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway rooted in fascia and deep tissue work that transforms how you touch and how you listen."}
+            {pageData?.hero_subheading ?? "Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway rooted in fascia and deep tissue work that transforms how you touch and how you listen."}
           </p>
           <div class="flex flex-wrap gap-4">
-            <ApplyButton text={pageData?.hero.cta_text ?? "Explore Trainings"} href={pageData?.hero.cta_href ?? "/dates"} />
+            <ApplyButton text={pageData?.hero_cta_text ?? "Explore Trainings"} href={pageData?.hero_cta_href ?? "/dates"} />
             <a
-              href={pageData?.hero.secondary_cta_href ?? "/about-the-work"}
+              href="/about-the-work"
               class="inline-flex items-center px-8 py-3 border border-forest text-forest rounded-btn font-medium hover:bg-forest hover:text-white transition-colors duration-200"
             >
-              {pageData?.hero.secondary_cta_text ?? "About the Work"}
+              About the Work
             </a>
           </div>
         </div>
@@ -57,10 +57,10 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
         <!-- Image -->
         <div class="rounded-lg overflow-hidden">
           <img
-            src={pageData?.hero.image ?? "/images/daniel-bodywork.jpg"}
-            alt={pageData?.hero.imageAlt ?? "Daniel Wendt giving a deep somatic bodywork session"}
+            src={imageUrl(pageData?.hero_image, "/images/daniel-bodywork.jpg")}
+            alt="Daniel Wendt giving a deep somatic bodywork session"
             class="w-full h-[500px] md:h-[600px] object-cover"
-            style={`object-position: ${pageData?.hero.imagePosition ?? 'center'}`}
+            style="object-position: center"
             fetchpriority="high"
           />
         </div>
@@ -73,7 +73,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     <!-- ===== 1b. INTRO TEXT (from Wix homepage) ===== -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-3xl mx-auto text-center space-y-8">
-        {pageData?.sections?.find(s => s.id === 'intro')?.paragraphs.map((p) => (
+        {pageData?.sections?.find((s: any) => s.id === 'intro')?.paragraphs.map((p: string) => (
           <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">{p}</p>
         ))}
         <div class="pt-4">
@@ -105,7 +105,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
         <div class="flex flex-col gap-16">
 
-          {pageData?.training_pathway?.levels.map((level, i) => (
+          {(pageData?.training_pathway?.levels ?? []).map((level: any, i: number) => (
             <a
               href={level.href}
               class={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white`}
@@ -158,7 +158,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {pageData?.videos?.items.map((video) => (
+          {(pageData?.videos?.items ?? []).map((video: any) => (
             <div>
               <div class="relative w-full aspect-video rounded-card overflow-hidden">
                 <iframe
@@ -188,14 +188,14 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
         </FadeIn>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {trainings.map(t => (
+          {trainings.map((t: any) => (
             <TrainingCard
               title={t.title}
               date={t.date}
               location={t.location}
               level={t.level}
               href={t.href}
-              image={t.image}
+              image={imageUrl(t.image, '')}
               status={t.status}
               spots_left={t.spots_left}
             />

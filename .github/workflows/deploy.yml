@@ -1,0 +1,57 @@
+name: Deploy — schweiz.danhealingarts.com
+
+on:
+  # Manuell auslösbar (z.B. nach Code-Änderungen)
+  workflow_dispatch:
+  # Automatisch wenn Sanity Inhalte veröffentlicht
+  repository_dispatch:
+    types: [sanity-publish]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code holen
+        uses: actions/checkout@v4
+
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Pakete installieren
+        run: npm ci
+
+      - name: Site bauen
+        run: npm run build
+
+      - name: Bild-Rechte setzen (Google Drive Fix)
+        run: chmod -R a+r dist/images/ || true
+
+      - name: SSH-Key einrichten
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Server-Fingerprint hinterlegen
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
+
+      - name: Auf Hetzner deployen
+        run: |
+          rsync -az --delete dist/ root@178.104.15.187:/tmp/dan-dist/
+          rsync nginx.conf root@178.104.15.187:/tmp/nginx-default.conf
+          ssh root@178.104.15.187 "
+            docker cp /tmp/dan-dist/. 44bb0dde9718:/usr/share/nginx/html/ && \
+            docker cp /tmp/nginx-default.conf 44bb0dde9718:/etc/nginx/conf.d/default.conf && \
+            docker exec 44bb0dde9718 nginx -s reload
+          "
+
+      - name: Live-Check
+        run: |
+          sleep 5
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://schweiz.danhealingarts.com)
+          echo "HTTP Status: $STATUS"
+          if [ "$STATUS" != "200" ]; then exit 1; fi

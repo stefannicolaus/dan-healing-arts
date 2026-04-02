@@ -1,5 +1,4 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -10,13 +9,15 @@ import PricingCard from '../components/PricingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+import { getRetreat, getTestimonials } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
 
-const allTestimonials = await getCollection('testimonials');
-const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
-const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
-const lauraUK = allTestimonials.find(t => t.id === 'laura-uk')?.data;
+const allTestimonials = await getTestimonials();
+const rebeccaCanada = allTestimonials.find((t: any) => t.name === 'Rebecca' && t.location?.includes('Canada'));
+const lasseFinland = allTestimonials.find((t: any) => t.name === 'Lasse' && t.location?.includes('Finland'));
+const lauraUK = allTestimonials.find((t: any) => t.name === 'Laura' && t.location?.includes('UK'));
 
-const retreat = (await getEntry('retreats', 'portugal'))?.data;
+const retreat = await getRetreat('portugal');
 ---
 
 <Layout
@@ -34,22 +35,22 @@ const retreat = (await getEntry('retreats', 'portugal'))?.data;
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={retreat?.hero.image ?? "/images/portugal/hero.jpg"} imageAlt={retreat?.hero.imageAlt ?? "Portugal retreat — The Essence of Deep Touch"} imagePosition={retreat?.hero.imagePosition ?? 'center'}>
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{retreat?.hero.location_badge ?? "Portugal · Level 1"}</p>
+        <TextImageSection image={imageUrl(retreat?.hero_image, "/images/portugal/hero.jpg")} imageAlt="Portugal retreat — The Essence of Deep Touch" imagePosition="center">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{retreat?.hero_badge ?? "Portugal · Level 1"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-            {retreat?.hero.heading ?? "The Essence of Deep Touch"}
+            {retreat?.hero_heading ?? "The Essence of Deep Touch"}
           </h1>
           <p class="font-sans text-stone text-lg italic mb-2">
             A Myofascial Somatic Liberation Training —{' '}
-            <a href={retreat?.hero.level_href ?? "/level-1"} class="text-forest hover:text-sage transition-colors underline underline-offset-4">
-              {retreat?.hero.level_text ?? "Level 1"}
+            <a href={retreat?.hero_cta_href ?? "/level-1"} class="text-forest hover:text-sage transition-colors underline underline-offset-4">
+              {retreat?.hero_cta_text ?? "Level 1"}
             </a>
           </p>
           <p class="font-sans text-stone text-base mb-4">
-            {retreat?.hero.dates ?? "Portugal · 1 – 7 June, 2026"}
+            {retreat?.hero_dates ?? "Portugal · 1 – 7 June, 2026"}
           </p>
           <p class="font-sans text-stone text-base italic mb-10">
-            {retreat?.hero.subtitle ?? "A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement."}
+            {retreat?.hero_subheading ?? "A 7-day immersive training in fascia release, deep tissue massage and nervous system attunement."}
           </p>
           <ApplyButton />
         </TextImageSection>
@@ -89,8 +90,8 @@ const retreat = (await getEntry('retreats', 'portugal'))?.data;
         <section class={`py-12 md:py-16 px-6 md:px-12 bg-canvas ${section.id === 'field_2' ? 'md:pt-6' : ''}`}>
           <div class="max-w-page mx-auto">
             <TextImageSection
-              image={section.image}
-              imageAlt={section.imageAlt}
+              image={imageUrl(section.image, section.image)}
+              imageAlt={section.imageAlt ?? ''}
               reversed={section.reversed ?? false}
               imagePosition={section.imagePosition ?? 'center'}
             >
@@ -179,19 +180,15 @@ const retreat = (await getEntry('retreats', 'portugal'))?.data;
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
-          {retreat?.pricing?.heading ?? "Your Stay at The Shanti Space"}
+          {retreat?.pricing_heading ?? "Your Stay at The Shanti Space"}
         </h2>
-
-        <div class="font-sans text-stone leading-relaxed space-y-3 mb-12 max-w-3xl">
-          {(retreat?.pricing?.intro ?? []).map((p) => <p>{p}</p>)}
-        </div>
 
         <!-- Pricing Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 grid-rows-[auto_auto_1fr_auto] gap-6 mb-10">
-          {(retreat?.pricing?.cards ?? []).map((card) => (
+          {(retreat?.pricing_cards ?? []).map((card: any) => (
             <PricingCard
               title={card.title}
-              image={card.image}
+              image={imageUrl(card.image, '')}
               earlyPrice={card.early_price}
               earlyLabel={card.early_label}
               earlyDeadline={card.early_deadline}

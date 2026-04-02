@@ -7,9 +7,9 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getCollection } from 'astro:content';
-const allTrainingsEntries = await getCollection('trainings');
-const trainings = allTrainingsEntries.map(t => t.data);
+import { getTrainings } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
+const trainings = await getTrainings();
 ---
 
 <Layout
@@ -47,14 +47,14 @@ const trainings = allTrainingsEntries.map(t => t.data);
     <section class="pb-12 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
-          {trainings.map((training) => (
+          {trainings.map((training: any) => (
             <TrainingCard
               title={training.title}
               date={training.date}
               location={training.location}
               level={training.level}
               href={training.href}
-              image={training.image}
+              image={imageUrl(training.image, '')}
               status={training.status}
               spots_left={training.spots_left}
             />

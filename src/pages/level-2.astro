@@ -1,5 +1,4 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
@@ -10,13 +9,15 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+import { getRetreat, getTestimonials } from '../lib/queries';
+import { imageUrl } from '../lib/sanity';
 
-const allTestimonials = await getCollection('testimonials');
-const jeremyUSA = allTestimonials.find(t => t.id === 'jeremy-usa')?.data;
-const robinUSA = allTestimonials.find(t => t.id === 'robin-usa')?.data;
-const samUSA = allTestimonials.find(t => t.id === 'sam-usa')?.data;
+const allTestimonials = await getTestimonials();
+const jeremyUSA = allTestimonials.find((t: any) => t.name === 'Jeremy' && t.location?.includes('USA'));
+const robinUSA = allTestimonials.find((t: any) => t.name === 'Robin' && t.location?.includes('USA'));
+const samUSA = allTestimonials.find((t: any) => t.name === 'Sam' && t.location?.includes('USA'));
 
-const pageData = (await getEntry('retreats', 'level-2'))?.data;
+const pageData = await getRetreat('level-2');
 
 // SVG icons stay hardcoded — they are presentation, not content
 const elementIcons: Record<string, string> = {
@@ -65,16 +66,16 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={pageData?.hero.image ?? "/images/level2/hero.jpg"} imageAlt={pageData?.hero.imageAlt ?? "Advanced Level 2 bodywork training — practitioners deepening their sensitivity"} imagePosition={pageData?.hero.imagePosition ?? 'center'}>
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero.badge ?? "Level 2 Training"}</p>
+        <TextImageSection image={imageUrl(pageData?.hero_image, "/images/level2/hero.jpg")} imageAlt="Advanced Level 2 bodywork training — practitioners deepening their sensitivity" imagePosition="center">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Level 2 Training"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-            {pageData?.hero.heading ?? "An Evolution of Sensitivity"}
+            {pageData?.hero_heading ?? "An Evolution of Sensitivity"}
           </h1>
           <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
-            {pageData?.hero.subheading ?? "The natural next step for all who have completed the foundation."}
+            {pageData?.hero_subheading ?? "The natural next step for all who have completed the foundation."}
           </p>
           <div class="font-sans text-stone leading-relaxed space-y-4">
-            {(pageData?.hero.paragraphs ?? []).map((p) => <p>{p}</p>)}
+            {(pageData?.hero_paragraphs ?? []).map((p: string) => <p>{p}</p>)}
           </div>
         </TextImageSection>
       </div>
