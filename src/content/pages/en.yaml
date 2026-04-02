@@ -11,39 +11,40 @@ hero:
   cta_href: "/dates"
   secondary_cta_text: "About the Work"
   secondary_cta_href: "/about-the-work"
-sections:
-  - id: intro
-    paragraphs:
-      - "Discover the transformative power of deep and slow somatic bodywork, both for giver and receiver, and fully connect to yourself and others - in sessions and in everyday life."
-      - "Embark on a profound journey into your own and others' depths, and learn a full-on practical approach to touch and taking care of the human body - on a physical, emotional and energetic level."
-      - "Learn to listen, not just with your ears but with your hands and your whole being, and cultivate the ability to create a space of deep mutual connection and trust - with your clients and your loved ones."
-      - "Unleash your potential and support others in doing the same, by releasing stuck emotions, stagnant energy and subconscious patterns in the most natural and safe way - at the unique rhythm of the nervous system."
+intro_p1: "Discover the transformative power of deep and slow somatic bodywork, both for giver and receiver, and fully connect to yourself and others - in sessions and in everyday life."
+intro_p2: "Embark on a profound journey into your own and others' depths, and learn a full-on practical approach to touch and taking care of the human body - on a physical, emotional and energetic level."
+intro_p3: "Learn to listen, not just with your ears but with your hands and your whole being, and cultivate the ability to create a space of deep mutual connection and trust - with your clients and your loved ones."
+intro_p4: "Unleash your potential and support others in doing the same, by releasing stuck emotions, stagnant energy and subconscious patterns in the most natural and safe way - at the unique rhythm of the nervous system."
 training_pathway:
   label: "Training Pathway"
   heading: "Two Levels of Learning"
-  levels:
-    - badge: "Level 1"
-      href: "/level-1"
-      image: "/images/level1/hero.jpg"
-      imageAlt: "Level 1 — The Essence of Deep Touch"
-      heading: "The Essence of Deep Touch"
-      description: "A foundational immersion into the art of slow, listening touch. You'll learn to work with fascia, breath and somatic awareness — building a complete framework for a deep bodywork practice and deepening your understanding of the body's psycho-emotional landscape."
-      cta_text: "Learn more"
-    - badge: "Level 2"
-      href: "/level-2"
-      image: "/images/level2/hero.jpg"
-      imageAlt: "Level 2 — An Evolution of Sensitivity"
-      heading: "An Evolution of Sensitivity"
-      description: "A deeper exploration for those who have completed the foundation. You'll refine your perception, and deepen your capacity to feel the tissue's subtle intelligence — the quiet pulses of emotion and the energetic currents weaving through the body."
-      cta_text: "Learn more"
+  level_1:
+    badge: "Level 1"
+    href: "/level-1"
+    image: "/images/level1/hero.jpg"
+    imageAlt: "Level 1 — The Essence of Deep Touch"
+    imagePosition: "center"
+    heading: "The Essence of Deep Touch"
+    description: "A foundational immersion into the art of slow, listening touch. You'll learn to work with fascia, breath and somatic awareness — building a complete framework for a deep bodywork practice and deepening your understanding of the body's psycho-emotional landscape."
+    cta_text: "Learn more"
+  level_2:
+    badge: "Level 2"
+    href: "/level-2"
+    image: "/images/level2/hero.jpg"
+    imageAlt: "Level 2 — An Evolution of Sensitivity"
+    imagePosition: "center"
+    heading: "An Evolution of Sensitivity"
+    description: "A deeper exploration for those who have completed the foundation. You'll refine your perception, and deepen your capacity to feel the tissue's subtle intelligence — the quiet pulses of emotion and the energetic currents weaving through the body."
+    cta_text: "Learn more"
 parallax_1: "/images/general/dan-outside-38.jpg"
 videos:
   heading: "An Insight into the Bodywork Trainings"
-  items:
-    - youtube_id: "6X1a70jgbM0"
-      caption: "Portugal, September 2025"
-    - youtube_id: "mB88cuuMA84"
-      caption: "México, January 2023"
+  video_1:
+    youtube_id: "6X1a70jgbM0"
+    caption: "Portugal, September 2025"
+  video_2:
+    youtube_id: "mB88cuuMA84"
+    caption: "México, January 2023"
 upcoming_trainings:
   heading: "Upcoming Trainings"
   cta_text: "View all dates"

@@ -102,10 +102,14 @@ const pages = defineCollection({
       element: z.string(),
       emotion: z.string(),
     })).optional(),
+    intro_p1: z.string().optional(),
+    intro_p2: z.string().optional(),
+    intro_p3: z.string().optional(),
+    intro_p4: z.string().optional(),
     training_pathway: z.object({
       label: z.string().optional(),
       heading: z.string().optional(),
-      levels: z.array(z.object({
+      level_1: z.object({
         badge: z.string().optional(),
         href: z.string().optional(),
         image: z.string().optional(),
@@ -114,14 +118,28 @@ const pages = defineCollection({
         heading: z.string().optional(),
         description: z.string().optional(),
         cta_text: z.string().optional(),
-      })).optional(),
+      }).optional(),
+      level_2: z.object({
+        badge: z.string().optional(),
+        href: z.string().optional(),
+        image: z.string().optional(),
+        imageAlt: z.string().optional(),
+        imagePosition: z.string().optional(),
+        heading: z.string().optional(),
+        description: z.string().optional(),
+        cta_text: z.string().optional(),
+      }).optional(),
     }).optional(),
     videos: z.object({
       heading: z.string().optional(),
-      items: z.array(z.object({
-        youtube_id: z.string(),
+      video_1: z.object({
+        youtube_id: z.string().optional(),
         caption: z.string().optional(),
-      })).optional(),
+      }).optional(),
+      video_2: z.object({
+        youtube_id: z.string().optional(),
+        caption: z.string().optional(),
+      }).optional(),
     }).optional(),
     upcoming_trainings: z.object({
       heading: z.string().optional(),
