@@ -73,7 +73,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
     <!-- ===== 1b. INTRO TEXT (from Wix homepage) ===== -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-3xl mx-auto text-center space-y-8">
-        {pageData?.sections?.find(s => s.id === 'intro')?.paragraphs.map((p) => (
+        {[pageData?.intro_p1, pageData?.intro_p2, pageData?.intro_p3, pageData?.intro_p4].filter(Boolean).map((p) => (
           <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">{p}</p>
         ))}
         <div class="pt-4">
@@ -105,7 +105,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
         <div class="flex flex-col gap-16">
 
-          {pageData?.training_pathway?.levels.map((level, i) => (
+          {[pageData?.training_pathway?.level_1, pageData?.training_pathway?.level_2].filter(Boolean).map((level, i) => (
             <a
               href={level.href}
               class={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white`}
@@ -158,7 +158,7 @@ const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {pageData?.videos?.items.map((video) => (
+          {[pageData?.videos?.video_1, pageData?.videos?.video_2].filter(Boolean).map((video) => (
             <div>
               <div class="relative w-full aspect-video rounded-card overflow-hidden">
                 <iframe

@@ -203,6 +203,18 @@ content:
           - name: secondary_cta_href
             label: "Zweiter Button-Link"
             type: string
+      - name: intro_p1
+        label: "Intro-Text — Absatz 1"
+        type: text
+      - name: intro_p2
+        label: "Intro-Text — Absatz 2"
+        type: text
+      - name: intro_p3
+        label: "Intro-Text — Absatz 3"
+        type: text
+      - name: intro_p4
+        label: "Intro-Text — Absatz 4"
+        type: text
       - name: training_pathway
         label: "Training Pathway — 2 Levels"
         type: object
@@ -213,6 +225,62 @@ content:
           - name: heading
             label: "Überschrift"
             type: string
+          - name: level_1
+            label: "Level 1 — Karte"
+            type: object
+            fields:
+              - name: badge
+                label: "Badge (z.B. Level 1)"
+                type: string
+              - name: href
+                label: "Link"
+                type: string
+              - name: image
+                label: "Bild"
+                type: image
+              - name: imageAlt
+                label: "Bild Alt-Text"
+                type: string
+              - name: imagePosition
+                label: "Bildausschnitt (z.B. center, top, bottom)"
+                type: string
+              - name: heading
+                label: "Überschrift"
+                type: string
+              - name: description
+                label: "Beschreibung"
+                type: text
+              - name: cta_text
+                label: "Link-Text"
+                type: string
+          - name: level_2
+            label: "Level 2 — Karte"
+            type: object
+            fields:
+              - name: badge
+                label: "Badge (z.B. Level 2)"
+                type: string
+              - name: href
+                label: "Link"
+                type: string
+              - name: image
+                label: "Bild"
+                type: image
+              - name: imageAlt
+                label: "Bild Alt-Text"
+                type: string
+              - name: imagePosition
+                label: "Bildausschnitt (z.B. center, top, bottom)"
+                type: string
+              - name: heading
+                label: "Überschrift"
+                type: string
+              - name: description
+                label: "Beschreibung"
+                type: text
+              - name: cta_text
+                label: "Link-Text"
+                type: string
       - name: parallax_1
         label: "Parallax-Bild 1 (nach Training Pathway)"
         type: image
@@ -223,6 +291,26 @@ content:
           - name: heading
             label: "Überschrift"
             type: string
+          - name: video_1
+            label: "Video 1"
+            type: object
+            fields:
+              - name: youtube_id
+                label: "YouTube ID (z.B. 6X1a70jgbM0)"
+                type: string
+              - name: caption
+                label: "Beschriftung (z.B. Portugal, September 2025)"
+                type: string
+          - name: video_2
+            label: "Video 2"
+            type: object
+            fields:
+              - name: youtube_id
+                label: "YouTube ID"
+                type: string
+              - name: caption
+                label: "Beschriftung"
+                type: string
       - name: upcoming_trainings
         label: "Upcoming Trainings Sektion"
         type: object
