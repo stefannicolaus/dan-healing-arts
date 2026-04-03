@@ -7,6 +7,7 @@ import Parallax from '../components/Parallax.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
+import MassageKontakt from '../components/MassageKontakt.astro';
 import { getPage } from '../lib/content';
 
 const pageData = await getPage('massage');
@@ -46,7 +47,7 @@ const pageData = await getPage('massage');
           <p class="font-sans text-stone text-base md:text-lg font-light leading-relaxed mb-8 max-w-md">
             {pageData?.hero?.subheading ?? "Eine tiefe, langsame Körperarbeit, die Muskeln, Faszien und das Nervensystem erreicht. Jede Sitzung ist ein individueller Prozess — gehalten in Präsenz und Vertrauen."}
           </p>
-          <ApplyButton text={pageData?.hero?.cta_text ?? "Termin anfragen"} href={pageData?.hero?.cta_href ?? "/contact"} />
+          <ApplyButton text={pageData?.hero?.cta_text ?? "Termin anfragen"} href="#kontakt" />
         </div>
 
       </div>
@@ -151,12 +152,12 @@ const pageData = await getPage('massage');
           Preise auf Anfrage. Daniel bietet Sitzungen in Zürich und an wechselnden Standorten an, wenn er unterwegs ist. Für aktuelle Verfügbarkeit, Preise und Termine nimm bitte direkt Kontakt auf.
         </p>
 
-        <ApplyButton text="Termin anfragen" href="/contact" />
+        <ApplyButton text="Termin anfragen" href="#kontakt" />
       </div>
     </section>
     </FadeIn>
 
-    <StatsDivider />
+    <MassageKontakt />
 
     <!-- ===== 10. CLOSING STATEMENT ===== -->
     <FadeIn>
