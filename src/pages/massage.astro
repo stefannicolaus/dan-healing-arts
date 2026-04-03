@@ -2,17 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import Parallax from '../components/Parallax.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getPage, getTestimonials } from '../lib/content';
+import { getPage } from '../lib/content';
 
-const allTestimonials = await getTestimonials();
-const rebeccaCanada = allTestimonials.find((t: any) => t.name === 'Rebecca' && t.location?.includes('Canada'));
-const lasseFinland = allTestimonials.find((t: any) => t.name === 'Lasse' && t.location?.includes('Finland'));
 const pageData = await getPage('massage');
 ---
 
@@ -83,16 +79,6 @@ const pageData = await getPage('massage');
     </section>
     </FadeIn>
 
-    <!-- ===== 3. TESTIMONIAL — REBECCA, CANADA ===== -->
-    {rebeccaCanada && (
-      <TestimonialDivider
-        quote={rebeccaCanada.quote}
-        name={rebeccaCanada.name}
-        location={rebeccaCanada.location}
-        photo={rebeccaCanada.photo}
-      />
-    )}
-
     <!-- ===== 4. PARALLAX ===== -->
     <Parallax src="/images/level1/inside-12.jpg" height="45vh" />
 
@@ -162,16 +148,6 @@ const pageData = await getPage('massage');
       </div>
     </section>
     </FadeIn>
-
-    <!-- ===== 7. TESTIMONIAL — LASSE, FINLAND ===== -->
-    {lasseFinland && (
-      <TestimonialDivider
-        quote={lasseFinland.quote}
-        name={lasseFinland.name}
-        location={lasseFinland.location}
-        photo={lasseFinland.photo}
-      />
-    )}
 
     <!-- ===== 8. PARALLAX ===== -->
     <Parallax src="/images/level1/outside-27.jpg" height="45vh" />
