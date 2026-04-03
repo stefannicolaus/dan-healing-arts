@@ -34,7 +34,7 @@ const pageData = await getPage('massage');
         <div class="w-full md:w-[55%] shrink-0 min-h-0">
           <div class="rounded-card overflow-hidden h-full bg-surface-mid">
             <img
-              src={pageData?.hero_image ?? "/images/daniel-bodywork.jpg"}
+              src={pageData?.hero?.image ?? "/images/daniel-bodywork.jpg"}
               alt="Daniel Wendt bei der somatischen Tiefenmassage"
               class="w-full h-full object-cover object-top"
             />
@@ -43,14 +43,14 @@ const pageData = await getPage('massage');
 
         <!-- Text: 45% -->
         <div class="w-full md:w-[45%] flex flex-col justify-center items-start">
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Einzelsitzungen"}</p>
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero?.badge ?? "Einzelsitzungen"}</p>
           <h1 class="font-serif font-black text-forest text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-            {pageData?.hero_heading ?? "Berührung, die tief hört."}
+            {pageData?.hero?.heading ?? "Berührung, die dem Körper zuhört."}
           </h1>
           <p class="font-sans text-stone text-base md:text-lg font-light leading-relaxed mb-8 max-w-md">
-            {pageData?.hero_subheading ?? "Eine tiefe, langsame Körperarbeit, die Muskeln, Faszien und das Nervensystem erreicht. Jede Sitzung ist ein individueller Prozess — gehalten in Präsenz und Vertrauen."}
+            {pageData?.hero?.subheading ?? "Eine tiefe, langsame Körperarbeit, die Muskeln, Faszien und das Nervensystem erreicht. Jede Sitzung ist ein individueller Prozess — gehalten in Präsenz und Vertrauen."}
           </p>
-          <ApplyButton text={pageData?.hero_cta_text ?? "Termin anfragen"} href={pageData?.hero_cta_href ?? "/contact"} />
+          <ApplyButton text={pageData?.hero?.cta_text ?? "Termin anfragen"} href={pageData?.hero?.cta_href ?? "/contact"} />
         </div>
 
       </div>
