@@ -2,19 +2,58 @@
 interface Props {
   videoId: string;
   title?: string;
+  poster?: string;
+  posterAlt?: string;
 }
 
-const { videoId, title = 'Video' } = Astro.props;
+const { videoId, title = 'Video', poster, posterAlt = 'Video abspielen' } = Astro.props;
 ---
 
-<div class="w-full aspect-video rounded-card overflow-hidden">
-  <iframe
-    src={`https://www.youtube-nocookie.com/embed/${videoId}`}
-    title={title}
-    class="w-full h-full"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen
-    loading="lazy"
-  ></iframe>
-</div>
+{poster ? (
+  <div class="youtube-facade w-full aspect-video rounded-card overflow-hidden relative cursor-pointer group" data-video-id={videoId} data-title={title}>
+    <img
+      src={poster}
+      alt={posterAlt}
+      class="w-full h-full object-cover"
+    />
+    <div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+      <div class="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/90 group-hover:bg-white group-hover:scale-110 transition-all duration-300 flex items-center justify-center shadow-lg">
+        <svg class="w-7 h-7 md:w-8 md:h-8 text-forest ml-1" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+) : (
+  <div class="w-full aspect-video rounded-card overflow-hidden">
+    <iframe
+      src={`https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&controls=1&disablekb=1&iv_load_policy=3`}
+      title={title}
+      class="w-full h-full"
+      frameborder="0"
+      allow="accelerometer; encrypted-media; gyroscope"
+      allowfullscreen
+      loading="lazy"
+    ></iframe>
+  </div>
+)}
+
+<script>
+  document.querySelectorAll('.youtube-facade').forEach(el => {
+    el.addEventListener('click', () => {
+      const videoId = el.getAttribute('data-video-id');
+      const title = el.getAttribute('data-title') || 'Video';
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&modestbranding=1&showinfo=0&controls=1&disablekb=1&iv_load_policy=3&autoplay=1`;
+      iframe.title = title;
+      iframe.className = 'w-full h-full';
+      iframe.frameBorder = '0';
+      iframe.allow = 'accelerometer; autoplay; encrypted-media; gyroscope';
+      iframe.allowFullscreen = true;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'w-full aspect-video rounded-card overflow-hidden';
+      wrapper.appendChild(iframe);
+      el.replaceWith(wrapper);
+    });
+  });
+</script>

@@ -8,8 +8,7 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getPage, getTestimonials } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getPage, getTestimonials } from '../lib/content';
 
 const allTestimonials = await getTestimonials();
 const ilinca = allTestimonials.find((t: any) => t.name === 'Ilinca');
@@ -32,7 +31,7 @@ const pageData = await getPage('about-the-work');
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={imageUrl(pageData?.hero_image, "/images/about/work-hero.jpg")} imageAlt="Daniel Wendt practicing myofascial somatic bodywork">
+        <TextImageSection image={pageData?.hero_image ?? "/images/about/work-hero.jpg"} imageAlt="Daniel Wendt practicing myofascial somatic bodywork">
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             {pageData?.hero_heading ?? "Myofascial Somatic Liberation"}
           </h1>
@@ -67,7 +66,7 @@ const pageData = await getPage('about-the-work');
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         {(() => { const s = pageData?.sections?.find((s: any) => s.id === 'slowness'); return (
-        <TextImageSection image={imageUrl(s?.image, "/images/about/daniel-7165.jpg")} imageAlt={s?.imageAlt ?? "Deep slow bodywork session demonstrating the power of presence and slowness"} reversed>
+        <TextImageSection image={"/images/about/daniel-7165.jpg"} imageAlt={s?.imageAlt ?? "Deep slow bodywork session demonstrating the power of presence and slowness"} reversed>
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
             {s?.heading ?? "The Power of Slowness"}
           </h2>
@@ -102,7 +101,7 @@ const pageData = await getPage('about-the-work');
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         {(() => { const s = pageData?.sections?.find((s: any) => s.id === 'simplicity'); return (
-        <TextImageSection image={imageUrl(s?.image, "/images/about/massage-25.jpg")} imageAlt={s?.imageAlt ?? "Close-up of hands working on the neck demonstrating the ease and simplicity of deep bodywork"}>
+        <TextImageSection image={"/images/about/massage-25.jpg"} imageAlt={s?.imageAlt ?? "Close-up of hands working on the neck demonstrating the ease and simplicity of deep bodywork"}>
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
             {s?.heading ?? "The Ease of Simplicity"}
           </h2>

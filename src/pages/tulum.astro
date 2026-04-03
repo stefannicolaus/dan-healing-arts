@@ -8,8 +8,7 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getRetreat, getTestimonials } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getRetreat, getTestimonials } from '../lib/content';
 
 const allTestimonials = await getTestimonials();
 const rebeccaCanada = allTestimonials.find((t: any) => t.name === 'Rebecca' && t.location?.includes('Canada'));
@@ -34,7 +33,7 @@ const retreat = await getRetreat('tulum');
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={imageUrl(retreat?.hero_image, "/images/tulum/hero.jpg")} imageAlt="Casa Arkaana — ecological retreat center in the jungle near Tulum, Mexico" imagePosition="center">
+        <TextImageSection image={retreat?.hero_image ?? "/images/tulum/hero.jpg"} imageAlt="Casa Arkaana — ecological retreat center in the jungle near Tulum, Mexico" imagePosition="center">
           <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{retreat?.hero_badge ?? "Tulum, Mexico · Level 1"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             {retreat?.hero_heading ?? "The Essence of Deep Touch"}
@@ -92,7 +91,7 @@ const retreat = await getRetreat('tulum');
         <section class={`py-12 md:py-16 px-6 md:px-12 bg-canvas ${section.id === 'field_2' || section.id === 'venue_2' ? 'md:pt-6' : ''}`}>
           <div class="max-w-page mx-auto">
             <TextImageSection
-              image={imageUrl(section.image, section.image)}
+              image={section.image}
               imageAlt={section.imageAlt ?? ''}
               reversed={section.reversed ?? false}
               imagePosition={section.imagePosition ?? 'center'}

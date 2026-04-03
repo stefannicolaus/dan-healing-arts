@@ -7,8 +7,7 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getTrainings } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getTrainings } from '../lib/content';
 const trainings = await getTrainings();
 ---
 
@@ -54,7 +53,7 @@ const trainings = await getTrainings();
               location={training.location}
               level={training.level}
               href={training.href}
-              image={imageUrl(training.image, '')}
+              image={training.image}
               status={training.status}
               spots_left={training.spots_left}
             />

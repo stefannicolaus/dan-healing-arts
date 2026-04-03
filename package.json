@@ -4,13 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/optimize-images.mjs && astro build",
+    "build:skip-optimize": "astro build",
+    "optimize": "node scripts/optimize-images.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@sanity/client": "^7.20.0",
-    "@sanity/image-url": "^2.1.1",
     "astro": "^4.16.18"
   },
   "devDependencies": {

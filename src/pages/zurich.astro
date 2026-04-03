@@ -14,15 +14,14 @@ import StatsDivider from '../components/StatsDivider.astro';
 import Footer from '../components/Footer.astro';
 import FadeIn from '../components/FadeIn.astro';
 import TestimonialDivider from '../components/TestimonialDivider.astro';
-import { getStartseite, getTestimonials } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getStartseite, getTestimonials } from '../lib/content';
 
-const s = await getStartseite();
+const { hero, methode, entwickelst, erfahrungsraum, ueber } = await getStartseite();
 const allTestimonials = await getTestimonials();
-const nicoUSA = allTestimonials.find((t: any) => t.name === 'Nico' && t.location?.includes('USA'));
+const nicoUSA = allTestimonials.find((t: any) => t.name === 'Nico Akiba' && t.location?.includes('USA'));
 const ilincaGermany = allTestimonials.find((t: any) => t.name === 'Ilinca' && t.location?.includes('Germany'));
 
-const heroBild = imageUrl(s?.hero_bild, '/images/general/dan-outside-38.jpg');
+const heroBild = '/images/general/dan-outside-38.jpg';
 ---
 
 <Layout
@@ -31,74 +30,58 @@ const heroBild = imageUrl(s?.hero_bild, '/images/general/dan-outside-38.jpg');
   description="Lerne präzise Faszienarbeit mit somatischer Präsenz. 4 Wochenendkurse in Zürich mit Daniel Wendt. Einzeln buchbar, je 420 CHF."
   canonicalPath="/zurich"
 >
-  <Nav lang="en" />
+  <Nav lang="de" />
   <main>
     <ZurichHero
-      headline={s?.hero_headline ?? 'Lerne, mit deinen Händen zu hören.'}
-      subtext={s?.hero_subtext ?? ''}
-      cta_text={s?.hero_cta_text ?? 'Jetzt anmelden'}
-      cta_link={s?.hero_cta_href ?? '/contact'}
+      headline={hero?.headline ?? 'Lerne, mit deinen Händen zu hören.'}
+      subtext={hero?.subtext ?? ''}
+      cta_text={hero?.cta_text ?? 'Jetzt anmelden'}
+      cta_link={hero?.cta_link ?? '/contact'}
       bild={heroBild}
-      bildAlt="Daniel Wendt — Dan Healing Arts"
+      bildAlt={hero?.bildAlt ?? "Daniel Wendt — Dan Healing Arts"}
     />
     <StatsDivider />
     <FadeIn>
       <ZurichMethode
-        label={s?.methode_label}
-        heading={s?.methode_heading}
-        paragraphs={s?.methode_paragraphs ?? []}
-        highlight={s?.methode_highlight}
+        label={methode?.label}
+        heading={methode?.heading}
+        paragraphs={methode?.paragraphs ?? []}
+        highlight={methode?.highlight}
       />
     </FadeIn>
-    <Parallax src={s?.parallax_1 ?? '/images/parallax-1.jpg'} height="50vh" />
+    <Parallax src="/images/parallax-1.jpg" height="50vh" />
     <FadeIn>
       <ZurichWasEntwickelst
-        label={s?.entwickelst_label}
-        heading={s?.entwickelst_heading}
-        paragraphs={s?.entwickelst_paragraphs ?? []}
-        highlight={s?.entwickelst_highlight}
-        image={s?.entwickelst_bild}
-        imageAlt={s?.entwickelst_label ?? ''}
+        label={entwickelst?.label}
+        heading={entwickelst?.heading}
+        paragraphs={entwickelst?.paragraphs ?? []}
+        highlight={entwickelst?.highlight}
+        image={entwickelst?.image}
+        imageAlt={entwickelst?.imageAlt ?? ''}
       />
     </FadeIn>
     <FadeIn>
       <ZurichErfahrungsraum
-        label={s?.erfahrungsraum_label}
-        heading={s?.erfahrungsraum_heading}
-        paragraphs={s?.erfahrungsraum_paragraphs ?? []}
-        highlight={s?.erfahrungsraum_highlight}
-        image={s?.erfahrungsraum_bild}
-        imageAlt={s?.erfahrungsraum_label ?? ''}
+        label={erfahrungsraum?.label}
+        heading={erfahrungsraum?.heading}
+        paragraphs={erfahrungsraum?.paragraphs ?? []}
+        highlight={erfahrungsraum?.highlight}
+        image={erfahrungsraum?.image}
+        imageAlt={erfahrungsraum?.imageAlt ?? ''}
       />
     </FadeIn>
     <FadeIn><ZurichModule /></FadeIn>
-    {nicoUSA && (
-      <TestimonialDivider
-        quote={nicoUSA.quote}
-        name={nicoUSA.name}
-        location={nicoUSA.location}
-        photo={nicoUSA.photo}
-      />
-    )}
     <ZurichTestimonials />
-    {ilincaGermany && (
-      <TestimonialDivider
-        quote={ilincaGermany.quote}
-        name={ilincaGermany.name}
-        location={ilincaGermany.location}
-        photo={ilincaGermany.photo}
-      />
-    )}
     <StatsDivider />
     <FadeIn>
       <ZurichUeberDaniel
-        heading={s?.ueber_heading}
-        paragraphs={s?.ueber_paragraphs ?? []}
-        stats={s?.ueber_stats}
-        image={s?.ueber_bild}
+        heading={ueber?.heading}
+        paragraphs={ueber?.paragraphs ?? []}
+        stats={ueber?.stats}
+        image={ueber?.image}
       />
     </FadeIn>
-    <Parallax src={s?.parallax_2 ?? '/images/parallax-2.jpg'} height="50vh" />
+    <Parallax src="/images/parallax-2.jpg" height="70vh" />
     <FadeIn><ZurichKontakt /></FadeIn>
   </main>
   <Footer lang="de" />

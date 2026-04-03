@@ -1,13 +1,27 @@
 ---
+import YouTubeEmbed from './YouTubeEmbed.astro';
 ---
 
 <section class="py-12 md:py-16 bg-surface-lo overflow-hidden">
   <div class="max-w-page mx-auto px-6 md:px-12">
-    <div class="max-w-2xl mx-auto">
-      <!-- Video Placeholder -->
-      <div class="rounded-card overflow-hidden aspect-video bg-surface-dim flex items-center justify-center">
-        <p class="font-sans text-stone/50 text-sm">Video folgt</p>
-      </div>
+    <div class="max-w-3xl mx-auto text-center mb-8">
+      <span class="font-sans font-bold tracking-[0.2em] uppercase text-xs text-sage mb-5 block">
+        Einblick
+      </span>
+      <h2 class="font-serif font-black text-forest text-3xl md:text-4xl mb-6 tracking-tight">
+        Die Arbeit erleben
+      </h2>
+      <p class="font-sans text-stone text-base md:text-lg leading-[1.75]">
+        In diesem Video zeigt Daniel, wie somatische Tiefenmassage in der Praxis aussieht — die Qualität der Berührung, die Langsamkeit, die Präsenz. Das Video ist auf Englisch, doch die Körperarbeit spricht eine universelle Sprache: Du siehst und spürst, was Worte allein nicht vermitteln können.
+      </p>
+    </div>
+    <div class="max-w-3xl mx-auto">
+      <YouTubeEmbed
+        videoId="6X1a70jgbM0"
+        title="Myofascial Somatic Liberation — Daniel Wendt"
+        poster="/images/video-poster.jpg"
+        posterAlt="Daniel Wendt bei der somatischen Körperarbeit — Video abspielen"
+      />
     </div>
   </div>
 </section>

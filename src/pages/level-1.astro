@@ -9,8 +9,7 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getRetreat, getTrainings, getTestimonials } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getRetreat, getTrainings, getTestimonials } from '../lib/content';
 
 const allTrainings = await getTrainings();
 const level1Trainings = allTrainings.filter((t: any) => ['Level 1', 'Level 1a', 'Level 1b'].includes(t.level));
@@ -41,7 +40,7 @@ const bodyRegions = pageData?.body_regions ?? [];
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={imageUrl(pageData?.hero_image, "/images/level1/hero.jpg")} imageAlt="Level 1 bodywork training participants practicing deep touch" imagePosition="center">
+        <TextImageSection image={pageData?.hero_image ?? "/images/level1/hero.jpg"} imageAlt="Level 1 bodywork training participants practicing deep touch" imagePosition="center">
           <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Level 1 Training"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             {pageData?.hero_heading ?? "The Essence of Deep Touch"}
@@ -72,7 +71,7 @@ const bodyRegions = pageData?.body_regions ?? [];
       <FadeIn>
       <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
         <div class="max-w-page mx-auto">
-          <TextImageSection image={imageUrl(section.image, section.image)} imageAlt={section.imageAlt ?? ''} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
+          <TextImageSection image={section.image} imageAlt={section.imageAlt ?? ''} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
             {section.heading && (
               <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">{section.heading}</h2>
             )}
@@ -211,7 +210,7 @@ const bodyRegions = pageData?.body_regions ?? [];
       <FadeIn>
       <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
         <div class="max-w-page mx-auto">
-          <TextImageSection image={imageUrl(section.image, section.image)} imageAlt={section.imageAlt ?? ''} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
+          <TextImageSection image={section.image} imageAlt={section.imageAlt ?? ''} reversed={section.reversed ?? false} imagePosition={section.imagePosition ?? 'center'}>
             {section.heading && (
               <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">{section.heading}</h2>
             )}
@@ -252,7 +251,7 @@ const bodyRegions = pageData?.body_regions ?? [];
               location={t.location}
               level={t.level}
               href={t.href}
-              image={imageUrl(t.image, '')}
+              image={t.image}
               status={t.status}
               spots_left={t.spots_left}
             />

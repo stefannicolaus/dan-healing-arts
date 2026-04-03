@@ -8,8 +8,7 @@ import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getPage, getTrainings, getTestimonials } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getPage, getTrainings, getTestimonials } from '../lib/content';
 
 const trainings = await getTrainings();
 const pageData = await getPage('en');
@@ -57,7 +56,7 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
         <!-- Image -->
         <div class="rounded-lg overflow-hidden">
           <img
-            src={imageUrl(pageData?.hero_image, "/images/daniel-bodywork.jpg")}
+            src={pageData?.hero_image ?? "/images/daniel-bodywork.jpg"}
             alt="Daniel Wendt giving a deep somatic bodywork session"
             class="w-full h-[500px] md:h-[600px] object-cover"
             style="object-position: center"
@@ -195,7 +194,7 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
               location={t.location}
               level={t.level}
               href={t.href}
-              image={imageUrl(t.image, '')}
+              image={t.image}
               status={t.status}
               spots_left={t.spots_left}
             />

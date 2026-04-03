@@ -9,8 +9,7 @@ import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getRetreat, getTestimonials } from '../lib/queries';
-import { imageUrl } from '../lib/sanity';
+import { getRetreat, getTestimonials } from '../lib/content';
 
 const allTestimonials = await getTestimonials();
 const jeremyUSA = allTestimonials.find((t: any) => t.name === 'Jeremy' && t.location?.includes('USA'));
@@ -66,7 +65,7 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={imageUrl(pageData?.hero_image, "/images/level2/hero.jpg")} imageAlt="Advanced Level 2 bodywork training — practitioners deepening their sensitivity" imagePosition="center">
+        <TextImageSection image={pageData?.hero_image ?? "/images/level2/hero.jpg"} imageAlt="Advanced Level 2 bodywork training — practitioners deepening their sensitivity" imagePosition="center">
           <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Level 2 Training"}</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
             {pageData?.hero_heading ?? "An Evolution of Sensitivity"}
