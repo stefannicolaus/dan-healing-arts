@@ -27,7 +27,7 @@ const entwickelst = (await getEntry('zurichSektionen', 'entwickelst'))?.data;
 const erfahrungsraum = (await getEntry('zurichSektionen', 'erfahrungsraum'))?.data;
 const ueber = (await getEntry('zurichSektionen', 'ueber'))?.data;
 
-const heroBild = '/images/general/dan-outside-38.jpg';
+const heroBild = heroData?.bild ?? '/images/zurich/hero.jpg';
 ---
 
 <Layout
