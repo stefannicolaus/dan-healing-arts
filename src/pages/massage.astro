@@ -24,11 +24,11 @@ const pageData = await getPage('massage');
   <main>
 
     <!-- ===== 1. HERO ===== -->
-    <section class="h-[100dvh] flex flex-col justify-center px-6 md:px-12 pt-[72px]">
-      <div class="max-w-page mx-auto w-full flex flex-col md:flex-row items-stretch gap-8 lg:gap-16 h-full py-6 md:py-8">
+    <section class="min-h-[100dvh] md:h-[100dvh] flex flex-col md:justify-center px-6 md:px-12 pt-[72px]">
+      <div class="max-w-page mx-auto w-full flex flex-col md:flex-row items-stretch gap-8 lg:gap-16 md:h-full py-6 md:py-8">
 
         <!-- Bild: 55% -->
-        <div class="w-full h-[45vh] md:h-auto md:w-[55%] shrink-0">
+        <div class="w-full h-[30vh] md:h-auto md:w-[55%] shrink-0">
           <div class="rounded-card overflow-hidden h-full bg-surface-mid">
             <img
               src={pageData?.hero?.image ?? "/images/daniel-bodywork.jpg"}
