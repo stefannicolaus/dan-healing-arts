@@ -24,13 +24,13 @@ const module_optionen = [
     <form
       action="https://formspree.io/f/mlgopwnk"
       method="POST"
-      class="bg-parchment p-5 md:p-14 rounded-card space-y-7"
+      class="w-full bg-parchment p-5 md:p-14 rounded-card space-y-7"
     >
       <input type="hidden" name="_next" value="https://schweiz.danhealingarts.com/?danke=1" />
       <input type="hidden" name="_subject" value="Neue Kursanmeldung — schweiz.danhealingarts.com" />
 
       <div class="grid md:grid-cols-2 gap-7">
-        <div class="flex flex-col gap-2">
+        <div class="min-w-0 flex flex-col gap-2">
           <label class="font-sans text-xs font-bold text-forest uppercase tracking-wider">
             Name *
           </label>
@@ -39,7 +39,7 @@ const module_optionen = [
             name="name"
             required
             placeholder="Vor- und Nachname"
-            class="bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
+            class="w-full bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
           />
         </div>
         <div class="flex flex-col gap-2">
@@ -51,13 +51,13 @@ const module_optionen = [
             name="email"
             required
             placeholder="deine@mail.ch"
-            class="bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
+            class="w-full bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
           />
         </div>
       </div>
 
       <div class="grid md:grid-cols-2 gap-7">
-        <div class="flex flex-col gap-2">
+        <div class="min-w-0 flex flex-col gap-2">
           <label class="font-sans text-xs font-bold text-forest uppercase tracking-wider">
             WhatsApp <span class="text-stone font-normal normal-case tracking-normal">(optional)</span>
           </label>
@@ -65,7 +65,7 @@ const module_optionen = [
             type="tel"
             name="whatsapp"
             placeholder="+41 7x xxx xx xx"
-            class="bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
+            class="w-full bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
           />
         </div>
         <div class="flex flex-col gap-2">
@@ -74,7 +74,7 @@ const module_optionen = [
           </label>
           <select
             name="modul"
-            class="bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
+            class="w-full bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none"
           >
             {module_optionen.map((opt) => (
               <option value={opt}>{opt}</option>
@@ -91,7 +91,7 @@ const module_optionen = [
           name="nachricht"
           rows="4"
           placeholder="Was möchtest du uns mitteilen?"
-          class="bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none resize-none"
+          class="w-full bg-surface-lo border-none rounded-btn py-3.5 px-4 font-sans text-base text-umber focus:ring-2 focus:ring-sage outline-none resize-none"
         ></textarea>
       </div>
 
