@@ -1,23 +1,27 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialDivider from '../components/TestimonialDivider.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getPage, getTestimonials } from '../lib/content';
 
-const allTestimonials = await getTestimonials();
-const paigeUSA = allTestimonials.find((t: any) => t.name === 'Paige');
-const pageData = await getPage('about-dan');
+const allTestimonials = await getCollection('testimonials');
+const paigeUSA = allTestimonials.find(t => t.id === 'paige-about-dan')?.data;
+
+const stats = [
+  { number: '18', label: 'Years in bodywork & yoga' },
+  { number: '20+', label: 'Bodywork training courses' },
+  { number: '2,500+', label: 'Hours of yoga teacher training' },
+];
 ---
 
 <Layout
   lang="en"
-  title={pageData?.page_title ?? "About Dan — Dan Healing Arts"}
-  description={pageData?.page_description ?? "Meet Daniel Wendt — Myofascial Somatic Release Practitioner and teacher with 18 years of experience guiding people to reconnect with their bodies and lives."}
+  title="About Dan — Dan Healing Arts"
+  description="Meet Daniel Wendt — Myofascial Somatic Release Practitioner and teacher with 18 years of experience guiding people to reconnect with their bodies and lives."
   canonicalPath="/about-dan"
 >
   <Nav lang="en" />
@@ -30,29 +34,31 @@ const pageData = await getPage('about-dan');
       <div class="max-w-page mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20 items-start">
 
-          <!-- Portrait -->
-          <div class="order-2 md:order-1">
+          <!-- Portraits -->
+          <div class="order-2 md:order-1 space-y-6">
             <img
-              src={pageData?.hero_image ?? "/images/daniel-portrait.jpg"}
+              src="/images/daniel-portrait.jpg?v=20260406"
               alt="Daniel Wendt — Dan Healing Arts"
               class="w-full rounded-card object-cover"
+            />
+            <img
+              src="/images/general/daniel-portrait-2.jpg?v=20260406"
+              alt="Daniel Wendt in session — Dan Healing Arts"
+              class="w-full rounded-card object-cover"
+              loading="lazy"
             />
           </div>
 
           <!-- Bio intro -->
           <div class="order-1 md:order-2">
-            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Founder & Trainer"}</p>
+            <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Founder &amp; Trainer</p>
             <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-              {pageData?.hero_heading ?? "Daniel Wendt"}
+              Daniel Wendt
             </h1>
 
             <!-- Stats -->
             <div class="grid grid-cols-3 gap-4 mb-10">
-              {(pageData?.stats ?? [
-                { number: '18', label: 'Years in bodywork & yoga' },
-                { number: '20+', label: 'Bodywork training courses' },
-                { number: '2,500+', label: 'Hours of yoga teacher training' },
-              ]).map(({ number, label }) => (
+              {stats.map(({ number, label }) => (
                 <div class="text-center bg-surface-lo rounded-card p-4">
                   <p class="font-serif text-3xl text-forest font-bold mb-1">{number}</p>
                   <p class="font-sans text-stone text-xs leading-tight">{label}</p>
@@ -61,9 +67,18 @@ const pageData = await getPage('about-dan');
             </div>
 
             <div class="font-sans text-stone leading-relaxed space-y-4">
-              {(pageData?.hero_paragraphs ?? []).map((p: string) => (
-                <p>{p}</p>
-              ))}
+              <p>
+                Hi, my name is Daniel.
+              </p>
+              <p>
+                By nature, more of an adventurer and explorer than a philosopher, I have always looked for direct experiences throughout my life's journey.
+              </p>
+              <p>
+                From backpacking to construction work, from rap stages to real estate agencies, from hitchhiking the world to starting a family and taking care of two wonderful kids, I have been through immensely beautiful as well as tough and painful times.
+              </p>
+              <p>
+                I found freedom, peace and inspiration when I started to dive deep into bodywork and yoga 18 years ago and eventually broke free from many limiting beliefs and conventional norms.
+              </p>
             </div>
           </div>
 
@@ -94,17 +109,9 @@ const pageData = await getPage('about-dan');
     </FadeIn>
 
     <!-- ===== PARALLAX — after bio ===== -->
-    <Parallax src="/images/general/dan-outside-38.jpg" height="45vh" />
+    <Parallax src="/images/general/dan-outside-38.jpg?v=20260406" height="45vh" />
 
     <!-- ===== TESTIMONIAL: PAIGE, USA ===== -->
-    {paigeUSA && (
-      <TestimonialDivider
-        quote={paigeUSA.quote}
-        name={paigeUSA.name}
-        location={paigeUSA.location}
-        photo={paigeUSA.photo}
-      />
-    )}
 
     <!-- ===== 3. CTA ===== -->
     <FadeIn>

@@ -27,7 +27,7 @@ const entwickelst = (await getEntry('zurichSektionen', 'entwickelst'))?.data;
 const erfahrungsraum = (await getEntry('zurichSektionen', 'erfahrungsraum'))?.data;
 const ueber = (await getEntry('zurichSektionen', 'ueber'))?.data;
 
-const heroBild = heroData?.bild ?? '/images/zurich/hero.jpg';
+const heroBild = heroData?.bild ?? '/images/zurich/hero.webp';
 ---
 
 <Layout
@@ -35,11 +35,68 @@ const heroBild = heroData?.bild ?? '/images/zurich/hero.jpg';
   title="Somatische Tiefenmassage & Faszien Release — Wochenendkurse Zürich | Dan Healing Arts"
   description="Lerne präzise Faszienarbeit mit somatischer Präsenz. 4 Wochenendkurse in Zürich mit Daniel Wendt. Einzeln buchbar, je 420 CHF."
   canonicalPath="/"
+  preloadImage={heroBild.replace(/\.webp$/, '.avif')}
+  hreflangLinks={[
+    { lang: 'de', href: 'https://schweiz.danhealingarts.com/' },
+    { lang: 'en', href: 'https://schweiz.danhealingarts.com/en' },
+    { lang: 'x-default', href: 'https://schweiz.danhealingarts.com/' },
+  ]}
+  jsonLd={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "name": "Somatische Tiefenmassage & Faszien Release — Wochenendkurse Zürich",
+    "description": "4 Wochenendkurse in Zürich: Lerne präzise Faszienarbeit mit somatischer Präsenz. Alle Module einzeln buchbar, je 420 CHF.",
+    "url": "https://schweiz.danhealingarts.com/",
+    "provider": {
+      "@type": "Person",
+      "name": "Daniel Wendt",
+      "url": "https://schweiz.danhealingarts.com/en/about-dan"
+    },
+    "hasCourseInstance": [
+      {
+        "@type": "CourseInstance",
+        "name": "Modul 1: Rücken & Nacken",
+        "startDate": "2026-04-18",
+        "endDate": "2026-04-19",
+        "courseMode": "in-person",
+        "location": { "@type": "Place", "name": "Jupiterhaus Zürich", "address": { "@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH" } },
+        "offers": { "@type": "Offer", "price": "420", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "CourseInstance",
+        "name": "Modul 2: Bauch, Becken, Beine",
+        "startDate": "2026-06-13",
+        "endDate": "2026-06-14",
+        "courseMode": "in-person",
+        "location": { "@type": "Place", "name": "Jupiterhaus Zürich", "address": { "@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH" } },
+        "offers": { "@type": "Offer", "price": "420", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "CourseInstance",
+        "name": "Modul 3: Brustkorb, Schultergürtel, Arme & Herzraum",
+        "startDate": "2026-08-22",
+        "endDate": "2026-08-23",
+        "courseMode": "in-person",
+        "location": { "@type": "Place", "name": "Jupiterhaus Zürich", "address": { "@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH" } },
+        "offers": { "@type": "Offer", "price": "420", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+      },
+      {
+        "@type": "CourseInstance",
+        "name": "Modul 4: Gesicht, Kopf, Nacken (Vertiefung)",
+        "startDate": "2026-10-17",
+        "endDate": "2026-10-18",
+        "courseMode": "in-person",
+        "location": { "@type": "Place", "name": "Jupiterhaus Zürich", "address": { "@type": "PostalAddress", "addressLocality": "Zürich", "addressCountry": "CH" } },
+        "offers": { "@type": "Offer", "price": "420", "priceCurrency": "CHF", "availability": "https://schema.org/InStock" }
+      }
+    ]
+  })}
 >
   <Nav lang="de" />
   <main>
     <ZurichHero
-      headline={heroData?.headline ?? 'Lerne, mit deinen Händen zu hören.'}
+      headline={heroData?.headline ?? 'Lerne Berührung,<br>die dem Körper zuhört.'}
+      subheadline={heroData?.subheadline}
       subtext={heroData?.subtext ?? ''}
       cta_text={heroData?.cta_text ?? 'Jetzt anmelden'}
       cta_link={heroData?.cta_link ?? '/contact'}
@@ -54,7 +111,7 @@ const heroBild = heroData?.bild ?? '/images/zurich/hero.jpg';
         highlight={methode?.highlight}
       />
     </FadeIn>
-    <Parallax src="/images/parallax-1-v2.jpg" height="50vh" />
+    <Parallax src="/images/parallax-1-v2.webp" height="50vh" />
     <FadeIn>
       <ZurichWasEntwickelst
         label={entwickelst?.label}
@@ -86,7 +143,7 @@ const heroBild = heroData?.bild ?? '/images/zurich/hero.jpg';
         image={ueber?.image}
       />
     </FadeIn>
-    <Parallax src="/images/parallax-2-v2.jpg" height="70vh" />
+    <Parallax src="/images/parallax-2-v2.webp" height="70vh" />
     <FadeIn><ZurichKontakt /></FadeIn>
   </main>
   <Footer lang="de" />

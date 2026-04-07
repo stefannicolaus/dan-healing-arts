@@ -1,25 +1,23 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import Parallax from '../components/Parallax.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getPage, getTestimonials } from '../lib/content';
 
-const allTestimonials = await getTestimonials();
-const rebeccaCanada = allTestimonials.find((t: any) => t.name === 'Rebecca' && t.location?.includes('Canada'));
-const lasseFinland = allTestimonials.find((t: any) => t.name === 'Lasse' && t.location?.includes('Finland'));
-const pageData = await getPage('sessions');
+const allTestimonials = await getCollection('testimonials');
+const rebeccaCanada = allTestimonials.find(t => t.id === 'rebecca-canada')?.data;
+const lasseFinland = allTestimonials.find(t => t.id === 'lasse-finland')?.data;
 ---
 
 <Layout
   lang="en"
-  title={pageData?.page_title ?? "Somatic Deep Tissue Bodywork — Private Sessions with Daniel Wendt"}
-  description={pageData?.page_description ?? "Deep, slow bodywork with Daniel Wendt. Myofascial work that reaches beyond muscles and fascia — touching the nervous system and emotional body. Zürich & worldwide."}
+  title="Somatic Deep Tissue Bodywork — Private Sessions with Daniel Wendt"
+  description="Deep, slow bodywork with Daniel Wendt. Myofascial work that reaches beyond muscles and fascia — touching the nervous system and emotional body. Zürich & worldwide."
   canonicalPath="/sessions"
 >
   <Nav lang="en" />
@@ -34,7 +32,7 @@ const pageData = await getPage('sessions');
         <div class="w-full md:w-[55%] shrink-0 min-h-0">
           <div class="rounded-card overflow-hidden h-full bg-surface-mid relative">
             <img
-              src={pageData?.hero_image ?? "/images/daniel-bodywork.jpg"}
+              src="/images/daniel-bodywork.jpg?v=20260406"
               alt="Daniel Wendt offering private somatic bodywork session"
               class="w-full h-full object-cover object-top"
             />
@@ -43,14 +41,14 @@ const pageData = await getPage('sessions');
 
         <!-- Text: 45% -->
         <div class="w-full md:w-[45%] flex flex-col justify-center items-start">
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Private Sessions"}</p>
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Private Sessions</p>
           <h1 class="font-serif font-black text-forest text-4xl md:text-5xl lg:text-6xl leading-[1.05] tracking-tight mb-6">
-            {pageData?.hero_heading ?? "Touch that listens."}
+            Touch that listens.
           </h1>
           <p class="font-sans text-stone text-base md:text-lg font-light leading-relaxed mb-8 max-w-md">
-            {pageData?.hero_subheading ?? "Deep, slow bodywork that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence and trust."}
+            Deep, slow bodywork that reaches beyond muscles and fascia — touching the nervous system and emotional body. Each session is an individual process, held in presence and trust.
           </p>
-          <ApplyButton text={pageData?.hero_cta_text ?? "Book a Session"} href={pageData?.hero_cta_href ?? "/contact"} />
+          <ApplyButton text="Book a Session" href="/contact" />
         </div>
 
       </div>
@@ -61,7 +59,7 @@ const pageData = await getPage('sessions');
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
-          image="/images/about/massage-25.jpg"
+          image="/images/about/massage-25.jpg?v=20260406"
           imageAlt="Daniel Wendt offering somatic bodywork"
         >
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-6">
@@ -84,17 +82,9 @@ const pageData = await getPage('sessions');
     </FadeIn>
 
     <!-- ===== 3. TESTIMONIAL — REBECCA, CANADA ===== -->
-    {rebeccaCanada && (
-      <TestimonialDivider
-        quote={rebeccaCanada.quote}
-        name={rebeccaCanada.name}
-        location={rebeccaCanada.location}
-        photo={rebeccaCanada.photo}
-      />
-    )}
 
     <!-- ===== 4. PARALLAX ===== -->
-    <Parallax src="/images/level1/inside-12.jpg" height="45vh" />
+    <Parallax src="/images/level1/inside-12.jpg?v=20260406" height="45vh" />
 
     <!-- ===== 5. WHO IS THIS WORK FOR? ===== -->
     <FadeIn>
@@ -140,7 +130,7 @@ const pageData = await getPage('sessions');
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <TextImageSection
-          image="/images/general/dan-two-men.jpg"
+          image="/images/general/dan-two-men.jpg?v=20260406"
           imageAlt="Daniel Wendt during a private bodywork session"
           reversed
         >
@@ -164,17 +154,9 @@ const pageData = await getPage('sessions');
     </FadeIn>
 
     <!-- ===== 7. TESTIMONIAL — LASSE, FINLAND ===== -->
-    {lasseFinland && (
-      <TestimonialDivider
-        quote={lasseFinland.quote}
-        name={lasseFinland.name}
-        location={lasseFinland.location}
-        photo={lasseFinland.photo}
-      />
-    )}
 
     <!-- ===== 8. PARALLAX ===== -->
-    <Parallax src="/images/level1/outside-27.jpg" height="45vh" />
+    <Parallax src="/images/level1/outside-27.jpg?v=20260406" height="45vh" />
 
     <!-- ===== 9. PRICING & BOOKING ===== -->
     <FadeIn>

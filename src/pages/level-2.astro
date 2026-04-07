@@ -1,60 +1,75 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TrainingCard from '../components/TrainingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import TextImageSection from '../components/TextImageSection.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getRetreat, getTestimonials } from '../lib/content';
 
-const allTestimonials = await getTestimonials();
-const jeremyUSA = allTestimonials.find((t: any) => t.name === 'Jeremy' && t.location?.includes('USA'));
-const robinUSA = allTestimonials.find((t: any) => t.name === 'Robin' && t.location?.includes('USA'));
-const samUSA = allTestimonials.find((t: any) => t.name === 'Sam' && t.location?.includes('USA'));
+const allTestimonials = await getCollection('testimonials');
+const jeremyUSA = allTestimonials.find(t => t.id === 'jeremy-usa')?.data;
+const robinUSA = allTestimonials.find(t => t.id === 'robin-usa')?.data;
+const samUSA = allTestimonials.find(t => t.id === 'sam-usa')?.data;
 
-const pageData = await getRetreat('level-2');
-
-// SVG icons stay hardcoded — they are presentation, not content
-const elementIcons: Record<string, string> = {
-  Earth: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 36 L5 11 L35 11 Z"/>
-    <line x1="11" y1="22" x2="29" y2="22"/>
-  </svg>`,
-  Water: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 5 C11 15 11 22 11 27 A9 9 0 0 0 29 27 C29 22 29 15 20 5 Z"/>
-    <path d="M14.5 23 C13.5 26 14 29 16.5 30.5"/>
-  </svg>`,
-  Fire: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 4 L5 29 L35 29 Z"/>
-    <path d="M20 25 C23 20 23 16 20 12 C17 16 17 20 20 25"/>
-  </svg>`,
-  Air: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M8 13 Q20 8 32 13"/>
-    <path d="M8 20 Q20 15 32 20"/>
-    <path d="M8 27 Q20 22 32 27"/>
-  </svg>`,
-  Space: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="20" cy="20" r="15"/>
-    <circle cx="20" cy="20" r="7"/>
-    <circle cx="20" cy="20" r="1.5" fill="currentColor" stroke="none"/>
-  </svg>`,
-};
-
-const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
-  element,
-  emotion,
-  icon: elementIcons[element] ?? '',
-}));
+const elements = [
+  {
+    element: 'Earth',
+    emotion: 'Fear',
+    // Alchemical earth: downward triangle + horizontal crossbar
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 36 L5 11 L35 11 Z"/>
+      <line x1="11" y1="22" x2="29" y2="22"/>
+    </svg>`,
+  },
+  {
+    element: 'Water',
+    emotion: 'Sadness',
+    // Teardrop — a single tear, water and sadness as one
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 5 C11 15 11 22 11 27 A9 9 0 0 0 29 27 C29 22 29 15 20 5 Z"/>
+      <path d="M14.5 23 C13.5 26 14 29 16.5 30.5"/>
+    </svg>`,
+  },
+  {
+    element: 'Fire',
+    emotion: 'Anger',
+    // Alchemical fire: upward triangle + inner flame rising
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 4 L5 29 L35 29 Z"/>
+      <path d="M20 25 C23 20 23 16 20 12 C17 16 17 20 20 25"/>
+    </svg>`,
+  },
+  {
+    element: 'Air',
+    emotion: 'Joy',
+    // Three breath lines — rising prana, the lightness of joy
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 13 Q20 8 32 13"/>
+      <path d="M8 20 Q20 15 32 20"/>
+      <path d="M8 27 Q20 22 32 27"/>
+    </svg>`,
+  },
+  {
+    element: 'Space',
+    emotion: 'Shame',
+    // Cosmos contracting: two circles collapsing toward a vanishing point
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="20" cy="20" r="15"/>
+      <circle cx="20" cy="20" r="7"/>
+      <circle cx="20" cy="20" r="1.5" fill="currentColor" stroke="none"/>
+    </svg>`,
+  },
+];
 ---
 
 <Layout
   lang="en"
-  title={pageData?.page_title ?? "Level 2: An Evolution of Sensitivity — Dan Healing Arts"}
-  description={pageData?.page_description ?? "The advanced training in fascia-based somatic bodywork. Deepen your capacity to feel subtle tissue intelligence, emotional currents, and the elemental language of the body."}
+  title="Level 2: An Evolution of Sensitivity — Dan Healing Arts"
+  description="The advanced training in fascia-based somatic bodywork. Deepen your capacity to feel subtle tissue intelligence, emotional currents, and the elemental language of the body."
   canonicalPath="/level-2"
 >
   <Nav lang="en" />
@@ -65,16 +80,30 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
     <FadeIn>
     <section class="pt-32 pb-24 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
-        <TextImageSection image={pageData?.hero_image ?? "/images/level2/hero.jpg"} imageAlt="Advanced Level 2 bodywork training — practitioners deepening their sensitivity" imagePosition="center">
-          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">{pageData?.hero_badge ?? "Level 2 Training"}</p>
+        <TextImageSection image="/images/level2/hero.jpg?v=20260406" imageAlt="Advanced Level 2 bodywork training — practitioners deepening their sensitivity">
+          <p class="font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest mb-4">Level 2 Training</p>
           <h1 class="font-serif text-4xl md:text-5xl text-text-main mb-6 leading-tight">
-            {pageData?.hero_heading ?? "An Evolution of Sensitivity"}
+            An Evolution of Sensitivity
           </h1>
           <p class="font-sans text-stone text-lg italic mb-10 leading-relaxed">
-            {pageData?.hero_subheading ?? "The natural next step for all who have completed the foundation."}
+            The natural next step for all who have completed the foundation.
           </p>
           <div class="font-sans text-stone leading-relaxed space-y-4">
-            {(pageData?.hero_paragraphs ?? []).map((p: string) => <p>{p}</p>)}
+            <p>
+              Our Level 2 training is the natural next step for all who have completed the foundation. Here we deepen our capacity to feel the tissue's subtle intelligence, the quiet pulses of emotion, and the energetic currents that weave through the body.
+            </p>
+            <p>
+              In addition to learning new massage sequences and release techniques, you'll discover how to enhance your sessions through trance induction, and intonation — tools that allow the body to surrender beyond the thinking mind.
+            </p>
+            <p>
+              We also explore how posture, movement, and breath reflect the inner landscape of a person — and how these patterns can either restrict or support emotional flow.
+            </p>
+            <p>
+              You'll learn to recognize these expressions in your clients and to meet them skillfully, integrating physical, emotional, and energetic dimensions into one coherent language of touch.
+            </p>
+            <p>
+              This is where bodywork becomes art — when presence, sound, and movement begin to communicate more than technique ever could.
+            </p>
           </div>
         </TextImageSection>
       </div>
@@ -82,32 +111,30 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
     </FadeIn>
 
     <!-- ===== TESTIMONIAL 1 ===== -->
-    {jeremyUSA && (
-      <TestimonialDivider
-        quote={jeremyUSA.quote}
-        name={jeremyUSA.name}
-        location={jeremyUSA.location}
-        photo={jeremyUSA.photo}
-      />
-    )}
 
     <!-- ===== PARALLAX — between sections ===== -->
-    <Parallax src="/images/level2/massage-15.jpg" height="45vh" />
+    <Parallax src="/images/level2/massage-15.jpg?v=20260406" height="45vh" />
 
     <!-- ===== 2. THE LANGUAGE OF ELEMENTS ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
-      <div class="max-w-page mx-auto max-w-3xl">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
-          The Language of the Elements and Emotions
-        </h2>
-        <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
-          {pageData?.sections?.filter(s => s.id === 'elements_intro').flatMap(s => s.paragraphs).map((p) => (
-            <p>{p}</p>
-          ))}
+      <div class="max-w-page mx-auto">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8 text-center">
+            The Language of the Elements and Emotions
+          </h2>
+          <div class="font-sans text-stone leading-relaxed space-y-4 mb-10 text-center">
+            <p>
+              This training unfolds as an inner journey through the five elements and the five primal emotions.
+              Each element is an invitation to explore how emotion moves through your own body — not as a concept to apply, but as a direct experience.
+            </p>
+            <p>
+              When you allow yourself to feel these qualities — the contraction of fear, the softening of sadness, the ignition of anger, the expansion of joy, the subtle withdrawal of shame — you begin to recognize them in the bodies of others with natural empathy and precision.
+            </p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-5 gap-3 mb-10">
+        <div class="grid grid-cols-5 gap-3 mb-10 max-w-3xl mx-auto">
           {elements.map(({ element, emotion, icon }) => (
             <div class="bg-canvas rounded-card p-4 flex flex-col items-center text-center gap-3">
               <div class="text-forest" set:html={icon} />
@@ -119,41 +146,47 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
           ))}
         </div>
 
-        <h3 class="font-serif text-2xl text-text-main mb-4">Touching Emotion Through Presence</h3>
-        <div class="font-sans text-stone leading-relaxed space-y-4">
-          {pageData?.sections?.filter(s => s.id === 'touching_emotion').flatMap(s => s.paragraphs).map((p) => (
-            <p>{p}</p>
-          ))}
+        <div class="max-w-4xl mx-auto">
+          <h3 class="font-serif text-2xl text-text-main mb-4 text-center">Touching Emotion Through Presence</h3>
+          <div class="font-sans text-stone leading-relaxed space-y-4 text-center">
+            <p>
+              In the practical bodywork sessions, we do not try to "work on fear" or "release sadness." Instead, we attune to what is alive in the field, and allow these elemental languages to inform the quality of our touch.
+            </p>
+            <p>
+              Rather than aiming for catharsis, we explore presence as the medicine. Rather than trying to make something happen, we learn to listen so closely that the body begins to reorganize itself.
+            </p>
+            <p>
+              Every emotion has its own rhythm, its own language, and our task as practitioners is simply to accompany that movement. To hold space without demand, and to allow the body's intelligence to unfold in its own time.
+            </p>
+          </div>
         </div>
       </div>
     </section>
     </FadeIn>
 
     <!-- ===== TESTIMONIAL 2 ===== -->
-    {robinUSA && (
-      <TestimonialDivider
-        quote={robinUSA.quote}
-        name={robinUSA.name}
-        location={robinUSA.location}
-        photo={robinUSA.photo}
-      />
-    )}
 
     <!-- ===== PARALLAX — between sections ===== -->
-    <Parallax src="/images/level2/dsc08054.jpg" height="45vh" />
+    <Parallax src="/images/level2/dsc08054.jpg?v=20260406" height="45vh" />
 
     <!-- ===== 3. EMBODIMENT IN PRACTICE ===== -->
     <FadeIn>
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto max-w-3xl">
-        <TextImageSection image="/images/level2/massage-35.png" imageAlt="Practitioners working with emotional body dimensions in advanced bodywork training" reversed>
+        <TextImageSection image="/images/level2/massage-35.png?v=20260406" imageAlt="Practitioners working with emotional body dimensions in advanced bodywork training" reversed>
           <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-8">
             Embodiment in Practice
           </h2>
           <div class="font-sans text-stone leading-relaxed space-y-4 mb-10">
-            {pageData?.sections?.filter(s => s.id === 'embodiment').flatMap(s => s.paragraphs).map((p) => (
-              <p>{p}</p>
-            ))}
+            <p>
+              Throughout the retreat, the five elements and their emotional resonances will color our movement, meditation, and partner work. They serve as mirrors, not methods — ways of refining perception and deepening your somatic vocabulary.
+            </p>
+            <p>
+              We explore how the qualities of the elements express through touch, sound, and rhythm: the grounded steadiness of earth, the fluid yielding of water, the clear direction of fire, the expansive breath of air, and the spacious stillness of space.
+            </p>
+            <p>
+              By journey's end, you will have learned not only new, advanced techniques, but a subtler form of listening — how to meet another person's body from the inside out, with presence that includes the whole spectrum of feeling.
+            </p>
           </div>
         </TextImageSection>
 
@@ -176,14 +209,6 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
     </FadeIn>
 
     <!-- ===== TESTIMONIAL 3 ===== -->
-    {samUSA && (
-      <TestimonialDivider
-        quote={samUSA.quote}
-        name={samUSA.name}
-        location={samUSA.location}
-        photo={samUSA.photo}
-      />
-    )}
 
     <!-- ===== 4. UPCOMING TRAININGS ===== -->
     <FadeIn>
@@ -199,7 +224,7 @@ const elements = (pageData?.elements ?? []).map(({ element, emotion }) => ({
             location="Alpujarra, Spain"
             level="Level 2"
             href="/spain"
-            image="/images/spain/hero.jpg"
+            image="/images/spain/hero.jpg?v=20260406"
           />
         </div>
         <ApplyButton />

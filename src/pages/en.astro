@@ -1,27 +1,25 @@
 ---
+import { getCollection } from 'astro:content';
+import { trainings } from '../data/trainings';
 import Layout from '../layouts/Layout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import TestimonialDivider from '../components/TestimonialDivider.astro';
 import TrainingCard from '../components/TrainingCard.astro';
 import ApplyButton from '../components/ApplyButton.astro';
 import Parallax from '../components/Parallax.astro';
 import FadeIn from '../components/FadeIn.astro';
 import StatsDivider from '../components/StatsDivider.astro';
-import { getPage, getTrainings, getTestimonials } from '../lib/content';
 
-const trainings = await getTrainings();
-const pageData = await getPage('en');
-const allTestimonials = await getTestimonials();
-const elyUK = allTestimonials.find((t: any) => t.name === 'Ely' && t.location?.includes('UK'));
-const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location?.includes('USA'));
+const allTestimonials = await getCollection('testimonials');
+const elyUK = allTestimonials.find(t => t.id === 'ely-uk')?.data;
+const janeUSA = allTestimonials.find(t => t.id === 'jane-usa')?.data;
 ---
 
 <Layout
   lang="en"
-  title={pageData?.page_title ?? "Dan Healing Arts — Learn to Listen with Your Hands"}
-  description={pageData?.page_description ?? "Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway in fascia-based bodywork."}
-  canonicalPath="/en"
+  title="Dan Healing Arts — Learn to Listen with Your Hands"
+  description="Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway in fascia-based bodywork."
+  canonicalPath="/"
 >
   <Nav lang="en" />
 
@@ -29,21 +27,19 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
 
     <!-- ===== 1. HERO ===== -->
     <section class="relative min-h-screen flex items-center pt-28 pb-16 md:pt-32 md:pb-24 bg-canvas">
-      <div class="max-w-page mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div class="max-w-page mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-[38%_1fr] gap-12 md:gap-10 items-center">
 
         <!-- Text -->
         <div>
-          <p class="font-sans text-stone text-xs uppercase tracking-[0.25em] mb-6">{pageData?.hero_badge ?? "Dan Healing Arts"}</p>
+          <p class="font-sans text-stone text-xs uppercase tracking-[0.25em] mb-6">Dan Healing Arts</p>
           <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-text-main leading-[1.1] mb-6">
-            {pageData?.hero_heading ? pageData.hero_heading.split('\n').map((line: string, i: number) => (
-              i === 0 ? <>{line}<br /></> : <>{line}</>
-            )) : <>"Learn to Listen<br />with Your Hands"</>}
+            Learn to Listen<br />with Your Hands
           </h1>
           <p class="font-sans text-stone text-lg leading-relaxed max-w-lg mb-10">
-            {pageData?.hero_subheading ?? "Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway rooted in fascia and deep tissue work that transforms how you touch and how you listen."}
+            Immersive trainings in deep, slow somatic bodywork — woven with presence, curiosity and care. A professional pathway rooted in fascia and deep tissue work that transforms how you touch and how you listen.
           </p>
           <div class="flex flex-wrap gap-4">
-            <ApplyButton text={pageData?.hero_cta_text ?? "Explore Trainings"} href={pageData?.hero_cta_href ?? "/dates"} />
+            <ApplyButton text="Explore Trainings" href="/dates" />
             <a
               href="/about-the-work"
               class="inline-flex items-center px-8 py-3 border border-forest text-forest rounded-btn font-medium hover:bg-forest hover:text-white transition-colors duration-200"
@@ -56,10 +52,9 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
         <!-- Image -->
         <div class="rounded-lg overflow-hidden">
           <img
-            src={pageData?.hero_image ?? "/images/daniel-bodywork.jpg"}
+            src="/images/daniel-bodywork-v2.jpg?v=20260406"
             alt="Daniel Wendt giving a deep somatic bodywork session"
-            class="w-full h-[500px] md:h-[600px] object-cover"
-            style="object-position: center"
+            class="w-full h-[500px] md:h-[700px] object-cover object-top"
             fetchpriority="high"
           />
         </div>
@@ -72,9 +67,18 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
     <!-- ===== 1b. INTRO TEXT (from Wix homepage) ===== -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-3xl mx-auto text-center space-y-8">
-        {pageData?.sections?.find((s: any) => s.id === 'intro')?.paragraphs.map((p: string) => (
-          <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">{p}</p>
-        ))}
+        <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">
+          Discover the transformative power of deep and slow somatic bodywork, both for giver and receiver, and fully connect to yourself and others - in sessions and in everyday life.
+        </p>
+        <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">
+          Embark on a profound journey into your own and others' depths, and learn a full-on practical approach to touch and taking care of the human body - on a physical, emotional and energetic level.
+        </p>
+        <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">
+          Learn to listen, not just with your ears but with your hands and your whole being, and cultivate the ability to create a space of deep mutual connection and trust - with your clients and your loved ones.
+        </p>
+        <p class="font-sans text-text-main text-lg md:text-xl leading-relaxed">
+          Unleash your potential and support others in doing the same, by releasing stuck emotions, stagnant energy and subconscious patterns in the most natural and safe way - at the unique rhythm of the nervous system.
+        </p>
         <div class="pt-4">
           <a href="/about-the-work" class="inline-flex items-center px-8 py-3 border border-forest text-forest rounded-btn font-medium hover:bg-forest hover:text-white transition-colors duration-200">
             Learn more about this work
@@ -84,94 +88,132 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
     </section>
 
     <!-- ===== 2. TESTIMONIAL DIVIDER — Ely, UK ===== -->
-    {elyUK && (
-      <TestimonialDivider
-        quote={elyUK.quote}
-        name={elyUK.name}
-        location={elyUK.location}
-        photo={elyUK.photo}
-
-      />
-    )}
 
     <!-- ===== 3. TRAINING PATHWAY ===== -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <FadeIn>
-        <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">{pageData?.training_pathway?.label}</p>
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">{pageData?.training_pathway?.heading}</h2>
+        <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">Training Pathway</p>
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Two Levels of Learning</h2>
         </FadeIn>
 
         <div class="flex flex-col gap-16">
 
-          {(pageData?.training_pathway?.levels ?? []).map((level: any, i: number) => (
-            <a
-              href={level.href}
-              class={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white`}
-            >
-              <div class="w-full md:w-[45%] shrink-0">
-                <div class="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
-                  <img
-                    src={level.image}
-                    alt={level.imageAlt}
-                    class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    style={`object-position: ${level.imagePosition ?? 'center'}`}
-                    loading="lazy"
-                  />
-                </div>
+          <!-- Level 1 -->
+          <a
+            href="/level-1"
+            class="flex flex-col md:flex-row rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white"
+          >
+            <div class="w-full md:w-[45%] shrink-0">
+              <div class="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                <img
+                  src="/images/level1/hero-v2.jpg?v=20260406"
+                  alt="Level 1 — The Essence of Deep Touch"
+                  class="w-full h-full object-cover object-center scale-[1.2] group-hover:scale-[1.22] transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
-              <div class="w-full md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
-                <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4 self-start">
-                  {level.badge}
-                </span>
-                <h3 class="font-serif font-black text-text-main text-2xl md:text-3xl leading-tight mb-4 group-hover:text-forest transition-colors">
-                  {level.heading}
-                </h3>
-                <p class="font-sans text-stone text-base leading-relaxed">
-                  {level.description}
-                </p>
-                <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">
-                  {level.cta_text}
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"/>
-                    <polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </span>
+            </div>
+            <div class="w-full md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
+              <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4 self-start">
+                Level 1
+              </span>
+              <h3 class="font-serif font-black text-text-main text-2xl md:text-3xl leading-tight mb-4 group-hover:text-forest transition-colors">
+                The Essence of Deep Touch
+              </h3>
+              <p class="font-sans text-stone text-base leading-relaxed">
+                A foundational immersion into the art of slow, listening touch. You'll learn to work with fascia, breath and somatic awareness — building a complete framework for deep bodywork practice and deepening your understanding of the body's psycho-emotional landscape.
+              </p>
+              <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Level 2 -->
+          <a
+            href="/level-2"
+            class="flex flex-col md:flex-row-reverse rounded-card border border-stone/10 overflow-hidden hover:border-stone/30 hover:shadow-md transition-all duration-200 group bg-white"
+          >
+            <div class="w-full md:w-[45%] shrink-0">
+              <div class="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                <img
+                  src="/images/level2/hero-v2.jpg?v=20260406"
+                  alt="Level 2 — An Evolution of Sensitivity"
+                  class="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+                  loading="lazy"
+                />
               </div>
-            </a>
-          ))}
+            </div>
+            <div class="w-full md:w-[55%] p-8 md:p-10 flex flex-col justify-center">
+              <span class="inline-block font-sans text-xs font-bold uppercase tracking-[0.15rem] text-forest bg-surface-lo px-3 py-1 rounded-btn mb-4 self-start">
+                Level 2
+              </span>
+              <h3 class="font-serif font-black text-text-main text-2xl md:text-3xl leading-tight mb-4 group-hover:text-forest transition-colors">
+                An Evolution of Sensitivity
+              </h3>
+              <p class="font-sans text-stone text-base leading-relaxed">
+                A deeper exploration for those who have completed the foundation. You'll refine your perception, and deepen your capacity to feel the tissue's subtle intelligence — the quiet pulses of emotion and the energetic currents weaving through the body.
+              </p>
+              <span class="inline-flex items-center gap-2 font-sans text-forest font-medium text-sm mt-6 group-hover:gap-3 transition-all">
+                Learn more
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="12 5 19 12 12 19"/>
+                </svg>
+              </span>
+            </div>
+          </a>
 
         </div>
       </div>
     </section>
 
     <!-- ===== PARALLAX — after Training Pathway ===== -->
-    <Parallax src={pageData?.parallax_1 ?? "/images/general/dan-outside-38.jpg"} height="50vh" />
+    <Parallax src="/images/general/dan-outside-38-v2.jpg?v=20260406" height="50vh" />
 
     <!-- ===== 4. VIDEO INSIGHTS ===== -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12 text-center">
-          {pageData?.videos?.heading}
+          An Insight into the Bodywork Trainings
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          {(pageData?.videos?.items ?? []).map((video: any) => (
-            <div>
-              <div class="relative w-full aspect-video rounded-card overflow-hidden">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${video.youtube_id}`}
-                  title={pageData?.videos?.heading}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen
-                  class="absolute inset-0 w-full h-full"
-                  loading="lazy"
-                ></iframe>
-              </div>
-              <p class="font-sans text-stone text-sm mt-3 text-center">{video.caption}</p>
+          <!-- Video 1: Portugal Training -->
+          <div>
+            <div class="relative w-full aspect-video rounded-card overflow-hidden">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/6X1a70jgbM0"
+                title="An Insight into the Bodywork Trainings — Portugal"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full"
+                loading="lazy"
+              ></iframe>
             </div>
-          ))}
+            <p class="font-sans text-stone text-sm mt-3 text-center">Portugal, September 2025</p>
+          </div>
+
+          <!-- Video 2: México Training -->
+          <div>
+            <div class="relative w-full aspect-video rounded-card overflow-hidden">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/mB88cuuMA84"
+                title="An Insight into the Bodywork Trainings — México"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute inset-0 w-full h-full"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <p class="font-sans text-stone text-sm mt-3 text-center">México, January 2023</p>
+          </div>
 
         </div>
       </div>
@@ -183,11 +225,11 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto">
         <FadeIn>
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">{pageData?.upcoming_trainings?.heading ?? "Upcoming Trainings"}</h2>
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-12">Upcoming Trainings</h2>
         </FadeIn>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-          {trainings.map((t: any) => (
+          {trainings.map(t => (
             <TrainingCard
               title={t.title}
               date={t.date}
@@ -195,14 +237,12 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
               level={t.level}
               href={t.href}
               image={t.image}
-              status={t.status}
-              spots_left={t.spots_left}
             />
           ))}
         </div>
 
-        <a href={pageData?.upcoming_trainings?.cta_href ?? "/dates"} class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
-          {pageData?.upcoming_trainings?.cta_text ?? "View all dates"}
+        <a href="/dates" class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
+          View all dates
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"/>
             <polyline points="12 5 19 12 12 19"/>
@@ -212,18 +252,9 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
     </section>
 
     <!-- ===== 6. TESTIMONIAL DIVIDER — Jane, USA ===== -->
-    {janeUSA && (
-      <TestimonialDivider
-        quote={janeUSA.quote}
-        name={janeUSA.name}
-        location={janeUSA.location}
-        photo={janeUSA.photo}
-
-      />
-    )}
 
     <!-- ===== PARALLAX — before About Teaser ===== -->
-    <Parallax src={pageData?.parallax_2 ?? "/images/general/training-flyer-2.jpg"} height="40vh" position="top" />
+    <Parallax src="/images/general/training-flyer-2.jpg?v=20260406" height="40vh" position="top" />
 
     <!-- ===== 7. ABOUT TEASER ===== -->
     <section class="py-12 md:py-16 px-6 md:px-12 bg-canvas">
@@ -233,23 +264,22 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
         <!-- Image — 2/5 -->
         <div class="md:col-span-2 rounded-card overflow-hidden">
           <img
-            src={pageData?.about_teaser?.image ?? "/images/daniel-portrait.jpg"}
-            alt={pageData?.about_teaser?.imageAlt ?? "Daniel Wendt"}
+            src="/images/daniel-portrait.jpg?v=20260406"
+            alt="Daniel Wendt"
             class="w-full h-full object-cover"
-            style={`object-position: ${pageData?.about_teaser?.imagePosition ?? 'center'}`}
           />
         </div>
 
         <!-- Text — 3/5 -->
         <div class="md:col-span-3">
-          <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">{pageData?.about_teaser?.label}</p>
-          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-2">{pageData?.about_teaser?.heading}</h2>
-          <p class="font-sans text-forest text-sm font-medium uppercase tracking-widest mb-6">{pageData?.about_teaser?.title}</p>
-          <div class="font-sans text-stone text-lg leading-relaxed mb-8 prose prose-stone max-w-none">
-            <div set:html={pageData?.about_teaser?.bio ?? ''} />
-          </div>
-          <a href={pageData?.about_teaser?.cta_href ?? "/about-dan"} class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
-            {pageData?.about_teaser?.cta_text ?? "Read more"}
+          <p class="font-sans text-stone text-xs uppercase tracking-widest mb-4">About</p>
+          <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-2">Daniel Wendt</h2>
+          <p class="font-sans text-forest text-sm font-medium uppercase tracking-widest mb-6">Founder & Instructor</p>
+          <p class="font-sans text-stone text-lg leading-relaxed mb-8">
+            With over 18 years of experience in bodywork and yoga, Daniel has guided more than 22 trainings across Germany, Mexico, Portugal, and beyond. His approach weaves together deep tissue work, fascial release, and somatic awareness into an integrated practice rooted in presence and connection.
+          </p>
+          <a href="/about-dan" class="font-sans text-forest font-medium hover:text-sage transition-colors inline-flex items-center gap-2">
+            Read more
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"/>
               <polyline points="12 5 19 12 12 19"/>
@@ -266,17 +296,17 @@ const janeUSA = allTestimonials.find((t: any) => t.name === 'Jane' && t.location
     <!-- ===== 8. CONTACT SECTION ===== -->
     <section class="py-8 md:py-12 px-6 md:px-12 bg-canvas">
       <div class="max-w-page mx-auto text-center">
-        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">{pageData?.contact?.heading}</h2>
+        <h2 class="font-serif text-3xl md:text-4xl text-text-main mb-4">Get in Touch</h2>
         <p class="font-sans text-stone text-lg leading-relaxed max-w-xl mx-auto mb-10">
-          {pageData?.contact?.subtext}
+          Have questions about the trainings or want to apply? Reach out directly.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
-          <ApplyButton text={pageData?.contact?.cta_text ?? "Contact"} href={pageData?.contact?.cta_href ?? "/contact"} />
+          <ApplyButton text="Contact" href="/contact" />
           <a
-            href={`mailto:${pageData?.contact?.email ?? "danhealingarts@gmail.com"}`}
+            href="mailto:danhealingarts@gmail.com"
             class="inline-flex items-center px-8 py-3.5 border border-forest text-forest rounded-btn font-medium text-base hover:bg-forest hover:text-white transition-colors duration-200"
           >
-            {pageData?.contact?.email ?? "danhealingarts@gmail.com"}
+            danhealingarts@gmail.com
           </a>
         </div>
       </div>
