@@ -1100,7 +1100,7 @@ In Coolify (178.104.15.187:8000):
 ```bash
 # Nach dem Setup in Coolify — UUID aus der Coolify UI kopieren
 curl -s "http://178.104.15.187:8000/api/v1/deploy?uuid=<COOLIFY_UUID>" \
-  -H "Authorization: Bearer 34|4140dc1a1b2a699456ab4184ce45c091aaafa9fb03cd6b30bee1105735697e3ec8173c750bf828c8"
+  -H "Authorization: Bearer $(grep '^COOLIFY_TOKEN' ~/.coolify/config | cut -d= -f2)"
 ```
 
 - [ ] **Schritt 4: DNS prüfen**
