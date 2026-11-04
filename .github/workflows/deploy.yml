@@ -3,9 +3,6 @@ name: Deploy — schweiz.danhealingarts.com
 on:
   # Manuell auslösbar (z.B. nach Code-Änderungen)
   workflow_dispatch:
-  # Automatisch wenn Sanity Inhalte veröffentlicht
-  repository_dispatch:
-    types: [sanity-publish]
 
 jobs:
   build-and-deploy:
